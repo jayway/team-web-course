@@ -19,8 +19,10 @@
 * Positioning
 * Forms
 * Preprocessors
+* Media queries
 
-
+* CSS3 fallbacks, how to degrade well in older browsers
+* Maintainable CSS
 
 ## Javascript in the Browser
 
