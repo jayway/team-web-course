@@ -74,13 +74,13 @@ equals( 'undefined', typeof i, "no assignment to 'i' still gives us 'undefined')
 caveat: equals( true, null == undefined, "== consider them equal" );
         equals( false, null === undefined, "BUT === does not" );
 
-* Objects 
+### Objects 
 
 An object is a container of keys and values, i.e. a map. 
 { name: 'John', age: function() { return differenceInYears( new Date(1973,3,5), new Date()) } }
 
 
-* Functions
+### Functions
 
 Javascript is a functional language so a function is a first class citizen 
 (unlike Java). 
