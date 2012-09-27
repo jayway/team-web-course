@@ -23,12 +23,16 @@
 ## CSS
 
 * Basic styling
+    * Pseudo classes
 * Basic layout
 * The cascade (inheritance, specificity)
+    * multiple IDs, classes etc.
 * Box model
 * Positioning
 * Styling of forms
 * Media queries
+
+* Firebug / Inspector
 
 * CSS3 fallbacks, how to degrade well in older browsers
 * Maintainable CSS
