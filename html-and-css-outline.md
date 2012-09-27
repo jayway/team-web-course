@@ -3,24 +3,33 @@
 ## HTML
 
 * Structure
-* Div and Span
+** Basic building blocks (doctype, body etc.)
 * Elements
-* Semantic Model
-
+** The most basic elements
+*** Headlines
+*** Paragraphs
+*** div
+*** (span)
+** More advanced elements
+*** Lists
+*** Tables
+*** Forms
+** Less common elements
+*** Blockquotes etc.
+** New HTML5 elements
+* Semantic markup
 
 
 ## CSS
 
-* Style
-* Layout
-* Inheritance, the cascade, Specificity
-* Agent(Browser), Reader and Author stylesheets
-* Box Model
+* Basic styling
+* Basic layout
+* The cascade (inheritance, specificity)
+* Box model
 * Positioning
-* Forms
-* Preprocessors
+* Styling of forms
 * Media queries
 
 * CSS3 fallbacks, how to degrade well in older browsers
 * Maintainable CSS
-
+* Agent (browser), reader and author stylesheets (?)
