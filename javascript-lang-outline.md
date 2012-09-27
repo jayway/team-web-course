@@ -20,17 +20,17 @@ example: var a = 352661;
          var b = 334.22;
 
 Special values:
-NaN
-+Infinity
--Infinity
+    NaN
+    +Infinity
+    -Infinity
          
 
     test("Strange arithmetic", function() {
         var a = NaN;
         equals( a <  10, false, "bigger than 10");
         equals( a >  10, false, "smaller than 10");
-        equals( a == 10, false, "not equal to 10");
-        equals( a == NaN, false, "not NaN??? " );
+        equals( a === 10, false, "not equal to 10");
+        equals( a === NaN, false, "not NaN??? " );
         equals( isNaN( a ), true, "Ahh!!" );
     });
 
@@ -40,37 +40,38 @@ will be performed by the operator.
 
 ### Strings
 
-example: var txt  = 'Hello World!';
-         var txt2 = "I'm happy" + " happy";
+example: 
+    var txt  = 'Hello World!';
+    var txt2 = "I'm happy" + " happy";
          
 Sequence of 16 bit elements interpreted as UTF-16. 
 
 
 Useful operators: 
 
-split
-txt.split( ' ' );
+    split
+    txt.split( ' ' );
 
-substring
-txt.substring( 5 );
-txt.substring( 2, 5 );
+    substring
+    txt.substring( 5 );
+    txt.substring( 2, 5 );
 
-String to number
-parseInt(“1234blue”); //returns 1234
-parseInt(“0xA”); //returns 10
-parseInt(“22.5”); //returns 22
-parseInt(“blue”); //returns NaN
-parseFloat(“1234blue”); //returns 1234.0
-parseFloat(“0xA”); //returns NaN
-parseFloat(“22.5”); //returns 22.5
+    String to number
+    parseInt(“1234blue”); //returns 1234
+    parseInt(“0xA”); //returns 10
+    parseInt(“22.5”); //returns 22
+    parseInt(“blue”); //returns NaN
+    parseFloat(“1234blue”); //returns 1234.0
+    parseFloat(“0xA”); //returns NaN
+    parseFloat(“22.5”); //returns 22.5
 
 
 ### Booleans
 
 Two possible values: true or false
 
-var a = true;
-var b = a && ( a == false );
+    var a = true;
+    var b = a && ( a == false );
 
 
 ### undefined and null
@@ -120,8 +121,6 @@ When not used to this "first class citizen" it can make code look a little
 scary at first: _f( 'whack' )()  <= a function called _f invoked with argument
 'whack'. Result of that is expected to be a function that subsequently is 
 invoked.
-
-
 
 Statements
 ----------
@@ -208,18 +207,13 @@ The negated operators are called: '!=' and '!==' respectively.
 * Mixins
 * Dynamic Module
 
-## Standard library
 
-Coding in Javascript
-====================
+Learning Javascript
+===================
 
-## Common pitfalls
-
-### Forgetting var
-
-### == vs ===
-
-### Other awful/bad parts
+* Online resources
+* Standard library
+* Common pitfalls
 
 Future of Javascript
 ====================
