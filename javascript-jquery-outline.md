@@ -27,11 +27,16 @@
 
 ### Ajax
 * Deferreds
-* JSONP
-* CORS
+* CORS (JSONP)
 * Error handlling
 
 ### Traversal
+
+### Focus
+
+### Selector
+* Speed
+
 
 ### Custom Events
 
