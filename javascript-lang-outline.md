@@ -24,6 +24,7 @@ test("Strange arithmetic", function() {
     equals( isNaN( a ), true, "Ahh!!" );
   });
 
+
 Caveat: some operators only work on 32 bit numbers. A silent conversion 
 will be performed by the operator. 
 
@@ -43,6 +44,14 @@ txt.split( ' ' );
 substring
 txt.substring( 5 );
 txt.substring( 2, 5 );
+
+String to number
+parseInt(“1234blue”); //returns 1234
+parseInt(“0xA”); //returns 10
+parseInt(“22.5”); //returns 22
+parseInt(“blue”); //returns NaN
+parseFloat(“0xA”); //returns NaN
+parseFloat(“22.5”); //returns 22.5
 
 
 ### Booleans
