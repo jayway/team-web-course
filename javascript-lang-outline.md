@@ -1,6 +1,15 @@
-# Javascript Basic
+Javascript Basics
+=================
 
-## Values and Primitives
+What is Javascript?
+-------------------
+
+### History
+
+### ECMAScript
+
+Values and Primitives
+---------------------
 
 ### Numbers
 
@@ -15,14 +24,15 @@ NaN
 +Infinity
 -Infinity
          
-test("Strange arithmetic", function() {
-    var a = NaN;
-    equals( a <  10, false, "bigger than 10");
-    equals( a >  10, false, "smaller than 10");
-    equals( a == 10, false, "not equal to 10");
-    equals( a == NaN, false, "not NaN??? " );
-    equals( isNaN( a ), true, "Ahh!!" );
-  });
+
+    test("Strange arithmetic", function() {
+        var a = NaN;
+        equals( a <  10, false, "bigger than 10");
+        equals( a >  10, false, "smaller than 10");
+        equals( a == 10, false, "not equal to 10");
+        equals( a == NaN, false, "not NaN??? " );
+        equals( isNaN( a ), true, "Ahh!!" );
+    });
 
 
 Caveat: some operators only work on 32 bit numbers. A silent conversion 
@@ -113,7 +123,8 @@ invoked.
 
 
 
-## Statements
+Statements
+----------
 
 * Declarations
 * Conditionals
@@ -121,31 +132,32 @@ invoked.
 * Exceptions
 * Flow statments
 
-## Equality and Comparison
+Equality and Comparison
+-----------------------
 
 In Javascript there are two kinds of comparison operators '==' (equality) and 
 '===' (identity). The difference is that '==' will perform type conversion whereas
 '===' will not. Performance wise '===' is faster if the types differ, but maybe 
 more importantly '==' can produce confusing results:
 
-equals( false, '' == '0' );
-equals( true, 0 == '' );
-equals( true, 0 == '0' );
+    equals( false, '' == '0' );
+    equals( true, 0 == '' );
+    equals( true, 0 == '0' );
 
-equals( false, false == 'false' );
-equals( true, false == '0' );
+    equals( false, false == 'false' );
+    equals( true, false == '0' );
 
-equals( false, false == undefined );
-equals( false, false == null );
-equals( true, null == undefined );
+    equals( false, false == undefined );
+    equals( false, false == null );
+    equals( true, null == undefined );
 
-equals( true, ' \t\r\n ' == 0 );
+    equals( true, ' \t\r\n ' == 0 );
 
 
 However, because of lack of type conversion, there can be WTF with '===':
 
-equals( true, "abc" == new String( "abc" ) );
-equals( false, "abc" === new String( "abc" ) );
+    equals( true, "abc" == new String( "abc" ) );
+    equals( false, "abc" === new String( "abc" ) );
 
 
 The negated operators are called: '!=' and '!==' respectively. 
@@ -195,5 +207,22 @@ The negated operators are called: '!=' and '!==' respectively.
 * Module
 * Mixins
 * Dynamic Module
+
+## Standard library
+
+Coding in Javascript
+====================
+
+## Common pitfalls
+
+### Forgetting var
+
+### == vs ===
+
+### Other awful/bad parts
+
+Future of Javascript
+====================
+
 
 
