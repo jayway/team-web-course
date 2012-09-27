@@ -3,20 +3,20 @@
 ## HTML
 
 * Structure
-** Basic building blocks (doctype, body etc.)
+    * Basic building blocks (doctype, body etc.)
 * Elements
-** The most basic elements
-*** Headlines
-*** Paragraphs
-*** div
-*** (span)
-** More advanced elements
-*** Lists
-*** Tables
-*** Forms
-** Less common elements
-*** Blockquotes etc.
-** New HTML5 elements
+    * The most basic elements
+        * Headlines
+        * Paragraphs
+        * div
+        * (span)
+    * More advanced elements
+        * Lists
+        * Tables
+        * Forms
+    * Less common elements
+        * Blockquotes etc.
+    * New HTML5 elements
 * Semantic markup
 
 
