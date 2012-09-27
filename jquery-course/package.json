@@ -5,7 +5,8 @@
   "main": "mocha.js",
   "dependencies": {},
   "devDependencies": {
-    "mocha": "~1.5.0"
+    "mocha": "",
+    "chai": ""
   },
   "scripts": {
     "test": "mocha"
