@@ -86,6 +86,29 @@
             will be performed by the operator.
         </section>
         <section data-markdown>
+            ### Strings
+
+                //example:
+                var txt  = 'Hello World!';
+                var txt2 = "I'm happy" + " happy";
+
+            Sequence of 16 bit elements interpreted as UTF-16.
+
+            Useful operators:
+
+                //split
+                txt.split( ' ' );
+                //substring:
+                txt.substring( 5 );
+                txt.substring( 2, 5 );
+                parseInt(“1234blue”); //returns 1234
+                parseInt(“0xA”); //returns 10
+                parseInt(“22.5”); //returns 22
+                parseInt(“blue”); //returns NaN
+                parseFloat(“1234blue”); //returns 1234.0
+                parseFloat(“0xA”); //returns NaN
+                parseFloat(“22.5”); //returns 22.5
+
         </section>
       </div>
 			<!-- The navigational controls UI -->
