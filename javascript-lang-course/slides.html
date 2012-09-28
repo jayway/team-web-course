@@ -13,7 +13,8 @@
 		
 		<link rel="stylesheet" href="../reveal.js/css/main.css">
 		<link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
-
+		<link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
+		
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
@@ -31,11 +32,17 @@
 		
 		<div class="reveal">
 
+	   	<img src="../reveal.js/jayway-theme/img/jayway-logo.png" class="jayway-logo header">
+	   	
 			<!-- Used to fade in a background when a specific slide state is reached -->
 			<div class="state-background"></div>
+
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
+
+
+	        
         <section>
           <h1>Javascript Basics</h1>
           <p>Jayway Course</p>
@@ -43,12 +50,118 @@
           <br>
           </p>
         </section>
+
         <section>
           <h2>Why Javascript?</h2>
           <div>It's everywhere!</div>
           <div>
           <br>
           </div>
+        </section>
+        <section data-markdown>
+            Values and Primitives
+            ---------------------
+
+            ### Numbers
+
+            Represents both integers and reals. 64 bit representation.
+            Integral values range: +/- 9007199254740992:
+
+                var a = 352661;
+                var b = 334.22;
+
+            Special values:
+
+                NaN
+                +Infinity
+                -Infinity
+
+        </section>
+        <section data-markdown>
+            ### Numbers
+
+                test("Strange arithmetic", function() {
+                    var a = NaN;
+                    equals( a <  10, false, "bigger than 10");
+                    equals( a >  10, false, "smaller than 10");
+                    equals( a === 10, false, "not equal to 10");
+                    equals( a === NaN, false, "not NaN??? " );
+                    equals( isNaN( a ), true, "Ahh!!" );
+                });
+
+
+            Caveat: some operators only work on 32 bit numbers. A silent conversion
+            will be performed by the operator.
+        </section>
+        <section data-markdown>
+            ### Strings
+
+                //example:
+                var txt  = 'Hello World!';
+                var txt2 = "I'm happy" + " happy";
+
+            Sequence of 16 bit elements interpreted as UTF-16.
+
+            Useful operators:
+
+                //split
+                txt.split( ' ' );
+                //substring:
+                txt.substring( 5 );
+                txt.substring( 2, 5 );
+                parseInt(“1234blue”); //returns 1234
+                parseInt(“0xA”); //returns 10
+                parseInt(“22.5”); //returns 22
+                parseInt(“blue”); //returns NaN
+                parseFloat(“1234blue”); //returns 1234.0
+                parseFloat(“0xA”); //returns NaN
+                parseFloat(“22.5”); //returns 22.5
+
+        </section>
+        <section data-markdown>
+            ### Booleans
+
+                //Two possible values: true or false
+                var a = true;
+                var b = a && ( a == false );
+
+        </section>
+        <section data-markdown>
+            ### undefined and null
+
+            Javascript declares both null and undefined which has subtle
+            differences.
+
+            Anything unassigned or not declared has the value 'undefined'.
+
+            null is a special value meaning "no value".
+
+                equals( "object", typeof null, "type of null is 'object'");
+
+        </section>
+        <section data-markdown>
+            ### undefined and null
+
+            On the other hand, undefined means that the variable has not been declared, or has not been given a value.
+
+
+                equals( 'undefined', typeof i, "no 'i' anywhere yeilds 'undefined' ");
+                var i;
+                equals( 'undefined', typeof i, "no assignment to 'i' " +
+                    "still gives us 'undefined'");
+
+                //caveat:
+                equals( true, null == undefined, "== consider them equal" );
+                equals( false, null === undefined, "BUT === does not" );
+        </section>
+        <section data-markdown>
+            ### Objects
+
+                //An object is a container of keys and values, i.e. a map.
+                { name: 'John', age: function() {
+                    return differenceInYears( new Date(1973,3,5), new Date())
+                } }
+
         </section>
       </div>
 			<!-- The navigational controls UI -->
