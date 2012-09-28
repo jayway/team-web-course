@@ -290,7 +290,59 @@
             ## JSON
 
             * Javascript Object Notation
+                * objects
+                * arrays
+                * strings
+                * numbers
+                * booleans
+                * null
 
+        </section>
+        <section>
+            <p>JSON</p>
+            <pre><code>
+            var flight = {
+                airline = "Oceanic",   // string
+                number = 815,          // number
+                departure : {          // object
+                    IATA: "SYD",
+                    time: "2004-09-22 14:55",
+                    city: "Sydney"
+                },
+                arrival : {            // object
+                    IATA : "LAX",
+                    time : "2004-09-23 10:42"
+                    city : "Los Angeles"
+                }
+            };
+            </code></pre>
+        </section>
+        <section>
+            <p>JSON</p>
+            <pre><code>
+                // array of objects
+                var array = [
+                       {
+                        firstName : "John",
+                        lastName  : "Doe",
+                        mobile    : 2353,
+                        loggedin  : true
+                       },
+                       {
+                        firstName : "Mary",
+                        lastName  : "Smith",
+                        mobile    : 3243,
+                        loggedin  : false
+                       },
+                       {
+                        firstName : "Fax",
+                        lastName  : "",
+                        mobile    : 1234,
+                        loggedin  : null
+                       }
+
+                ];
+            </code></pre>
         </section>
         <section data-markdown>
             ## Functions
