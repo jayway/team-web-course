@@ -1,0 +1,16 @@
+.animal {
+    color: red;
+}
+
+.selected {
+    background-color: yellow;
+}
+
+.even {
+    background-color: green;
+}
+
+.first {
+    background-color: blue;
+}
+
