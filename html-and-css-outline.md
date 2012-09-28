@@ -48,15 +48,15 @@
 * Participants should interpret and try to replicate
 * Each lab is divided into a subfolder named labX containing an *index.html* and a *solution.html*
 
-    lab1/
-        index.html
-        solution.html
-    lab2/
-        index.html
-        solution.html
-    lab3/
-        index.html
-        solution.html
+´´´lab1/
+    index.html
+    solution.html
+lab2/
+    index.html
+    solution.html
+lab3/
+    index.html
+    solution.html```
 
 ### HTML basics (no styling)
 * Start with basic markup (set up a header, some paragraphs with linked text, an image etc.)
