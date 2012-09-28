@@ -48,7 +48,7 @@
 * Participants should interpret and try to replicate
 * Each lab is divided into a subfolder named labX containing an *index.html* and a *solution.html*
 
-´´´lab1/
+```lab1/
     index.html
     solution.html
 lab2/
