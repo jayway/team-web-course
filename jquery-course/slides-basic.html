@@ -116,19 +116,104 @@ $( '.person' ); // select all elements with a class of 'person'
 			</section>
 		  
 			<section>
-				<h1>Effects</h1>
+				<h1>Querying the selection</h1>
+				<p>Working with the raw DOM element</p>
+				<pre><code>
+var listItems = $( 'li' );
+var rawListItem = listItems[0]; // or listItems.get( 0 )
+var html = rawListItem.innerHTML;
+				</code></pre>
+				<br/>
+				<div class="fragment">
+					<p>Using jQuery functions</p>
+					<pre><code>
+var listItems = $( 'li' );
+var secondListItem = listItems.eq( 1 );
+secondListItem.html();
+					</code></pre>
+				</div>
+			</section>
+			
+			<section>
+				<h1>Working with the selection</h1>
+				<p>jQuery will always return an object</p>
+				<pre><code>
+if ( $( '#nonexistent' ) ) {
+  // Wrong! This code will always run!
+}
 
-				hide, show
-				fadeIn, fadeOut
+if ( $( '#nonexistent' ).length > 0 ) {
+  // Correct! This code will only run if there's an element
+  // in your page with an ID of 'nonexistent'
+}
+				</code></pre>
+			</section>
+			
+			<section>
+				<h1>Effects</h1>
+				<p>Select an item and hide/show it<p/>
+				<pre><code>
+$( '.secret' ).hide();
+...
+$( '.important' ).show();
+				</code></pre>
+				<br/>
+				Control the speed
+				<pre><code>
+$( '.important' ).show( 'slow' );
+...
+$( '.important' ).show( '300' );
+				</code></pre>
+			</section>
+			
+			<section>
+				<h1>More effects</h1>
+				<pre><code>
+.toogle()				
+.fadeIn()
+.fadeOut()
+.slideDown()
+.slideUp()
+.slideToggle()
+...
+				</code></pre>
 			</section>
 			
 			<section>
 				<h1>Manipulation</h1>
-				addClass / removeClass, toggleClass
+				<p>Use jQuery to alter classes on elements in the DOM</p>
+				<pre><code>
+$( 'li' ).addClass( 'hidden' );
+$( 'li' ).eq( 1 ).removeClass( 'hidden' );
+				</code></pre>
+				<br/>
+				<div class="fragment">
+					<p>Use Toogle to add/remove the desired class depending on if it already exists or not</p>
+					<pre><code>
+$( 'li' ).eq( 1 ).toggleClass( 'hidden' );
+					</code></pre>
+				</div>
+				<aside class="notes">
+					Avoid manipulation of the style directly, use jQuery to alter classes and use CSS to decide what they mean
+				</aside>
+			</section>
+			
+			<section>
+				<h1>...continued</h1>
+				<p>Changing form values</p>
+				<pre><code>
+$( 'input[type="text"]' ).val( 'new value' );
+				</code></pre>
+				<br/>
+				<p>Changing attributes</p>
+				<pre><code>
+$( 'a' ).attr( 'title', 'Click me!' );
+				</code></pre>
 			</section>
 		  
 			<section>
 				<h1>Traversal, basic</h1>
+				
 				find, parent, ancestors?
 			</section>
 			
