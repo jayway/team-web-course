@@ -1,37 +1,26 @@
-describe('Santity test', function() {
+describe('Intro', function() {
     it('works properly', function() {
         expect(true).to.equal(true);
     })
 });
 
-describe('Intro', function() {
+describe('Selectors', function() {
     var markup;
     beforeEach(function() {
         markup = $('#markup').html();
     });
-    describe('Selectors', function() {
-        it('Find the element with id="markup"', function() {
-            var actual = findElementWithIdMarkup();
-            expect(actual.attr('id')).to.equal('markup');
-            expect(actual.parent()[0].tagName).to.equal('BODY');
-        });
 
-        it("finds 5 li's and adds class items", function() {
-            findFiveLisAndAddClassAnimal();
-            var actual = $('.animal');
-            expect(actual.length).to.equal(5);
-        })
+    it('Find the element with id="markup"', function() {
+        var actual = findElementWithIdMarkup();
+        expect(actual.attr('id')).to.equal('markup');
+        expect(actual.parent()[0].tagName).to.equal('BODY');
     });
-    describe('Effects', function() {
-    });
-    describe('Manipulation', function() {
-    });
-    describe('Traversal', function() {
-    });
-    describe('Events', function() {
-    });
-    describe('Ajax', function() {
-    });
+
+    it("finds 5 li's with class animal", function() {
+        findFiveLisAndAddClassAnimal();
+        var actual = $('li.animal');
+        expect(actual.length).to.equal(5);
+    })
 
     afterEach(function() {
         $('#markup').html(markup);
