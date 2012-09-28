@@ -69,6 +69,20 @@ describe('Selectors', function() {
         });
     });
 
+    describe('Form Selection', function() {
+        it("finds all input elements and adds class highlight", function() {
+            findAllInputElementsAndAddClassHighlight();
+            var actual = $('.highlight');
+            expect(actual.length).to.equal(8);
+        });
+
+        it("finds all buttons", function() {
+            findAllButtonsAndAddClassHighlight();
+            var actual = $('.highlight');
+            expect(actual.length).to.equal(2);
+        });
+    });
+
     afterEach(function() {
         $('#markup').html(markup);
     });

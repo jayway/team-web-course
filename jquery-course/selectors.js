@@ -55,5 +55,20 @@ $(function(exports) {
     exports.findFirstLisInsideLisAndAddClassFirst = function() {
         $('#markup li li:first-child').addClass('first');
     };
+
+
+    // Form selection
+    // Find all input elements 
+    // and add class highlight
+    exports.findAllInputElementsAndAddClassHighlight = function() {
+        $(':input').addClass('highlight');
+    };
+
+    // Form selection
+    // Find all buttons
+    // and add class highlight
+    exports.findAllButtonsAndAddClassHighlight = function() {
+        $(':button').addClass('highlight');
+    };
 }(window));
 
