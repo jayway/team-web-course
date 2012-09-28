@@ -201,6 +201,43 @@
             * Exceptions
             * Flow statments
         </section>
+        <section data-markdown>
+            Equality and Comparison
+            -----------------------
+
+                /*In Javascript there are two kinds of comparison operators '=='
+                (equality) and '===' (identity). The difference is that '=='
+                will perform type conversion whereas '===' will not.
+                Performance wise '===' is faster if the types differ, but maybe
+                more importantly '==' can produce confusing results:*/
+
+                equals( false, '' == '0' );
+                equals( true, 0 == '' );
+                equals( true, 0 == '0' );
+
+                equals( false, false == 'false' );
+                equals( true, false == '0' );
+
+                equals( false, false == undefined );
+                equals( false, false == null );
+                equals( true, null == undefined );
+
+                equals( true, ' \t\r\n ' == 0 );
+
+        </section>
+        <section data-markdown>
+            Equality and Comparison
+            -----------------------
+
+                // However, because of lack of type conversion,
+                // there can be WTF with '===':
+
+                equals( true, "abc" == new String( "abc" ) );
+                equals( false, "abc" === new String( "abc" ) );
+
+                // The negated operators are called: '!=' and '!==' respectively.
+
+        </section>
 
       </div>
 			<!-- The navigational controls UI -->
