@@ -50,6 +50,43 @@
           <br>
           </div>
         </section>
+        <section data-markdown>
+            Values and Primitives
+            ---------------------
+
+            ### Numbers
+
+            Represents both integers and reals. 64 bit representation.
+            Integral values range: +/- 9007199254740992:
+
+                var a = 352661;
+                var b = 334.22;
+
+            Special values:
+
+                NaN
+                +Infinity
+                -Infinity
+
+        </section>
+        <section data-markdown>
+            ### Numbers
+
+                test("Strange arithmetic", function() {
+                    var a = NaN;
+                    equals( a <  10, false, "bigger than 10");
+                    equals( a >  10, false, "smaller than 10");
+                    equals( a === 10, false, "not equal to 10");
+                    equals( a === NaN, false, "not NaN??? " );
+                    equals( isNaN( a ), true, "Ahh!!" );
+                });
+
+
+            Caveat: some operators only work on 32 bit numbers. A silent conversion
+            will be performed by the operator.
+        </section>
+        <section data-markdown>
+        </section>
       </div>
 			<!-- The navigational controls UI -->
 			<aside class="controls">
