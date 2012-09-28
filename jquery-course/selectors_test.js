@@ -16,10 +16,10 @@ describe('Selectors', function() {
         expect(actual.parent()[0].tagName).to.equal('BODY');
     });
 
-    it("finds 5 li's with class animal", function() {
+    it("finds 11 li's with class animal", function() {
         findFiveLisAndAddClassAnimal();
         var actual = $('li.animal');
-        expect(actual.length).to.equal(5);
+        expect(actual.length).to.equal(11);
     })
 
     afterEach(function() {
