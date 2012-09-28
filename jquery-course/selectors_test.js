@@ -17,10 +17,16 @@ describe('Selectors', function() {
     });
 
     it("finds 11 li's with class animal", function() {
-        findFiveLisAndAddClassAnimal();
+        findLisAndAddClassAnimal();
         var actual = $('li.animal');
         expect(actual.length).to.equal(11);
-    })
+    });
+
+    it("finds 2 top levels li's with class animal-group", function() {
+        findTopLevelLisAndAddClassAnimalGroup();
+        var actual = $('li.animal-group');
+        expect(actual.length).to.equal(2);
+    });
 
     afterEach(function() {
         $('#markup').html(markup);
