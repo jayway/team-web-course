@@ -61,6 +61,12 @@ describe('Selectors', function() {
             var actual = $('.even');
             expect(actual.length).to.equal(5);
         });
+
+        it("finds the first li's inside li's and add class first", function() {
+            findFirstLisInsideLisAndAddClassFirst();
+            var actual = $('.first');
+            expect(actual.length).to.equal(2);
+        });
     });
 
     afterEach(function() {

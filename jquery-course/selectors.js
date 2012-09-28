@@ -48,5 +48,12 @@ $(function(exports) {
     exports.findEvenLisInsideLisAndAddClassEven = function() {
         $('#markup li li:even').addClass('even');
     };
+
+    // Filter selection
+    // Find the first li's inside other li's below the markup id
+    // and add class first
+    exports.findFirstLisInsideLisAndAddClassFirst = function() {
+        $('#markup li li:first-child').addClass('first');
+    };
 }(window));
 
