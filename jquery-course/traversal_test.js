@@ -30,6 +30,18 @@ describe('Traversal', function() {
         });
     });
 
+    describe("Using parent()", function () {
+
+        it("Finds h2's parent li, using parent()", function() {
+            var actual = findParentOfH2UsingParent();
+            var expected = $("#markup h2").parent();
+            var actualHtmlElement = actual.get(0);
+            var expectedHtmlElement = expected.get(0);
+            expect(actualHtmlElement).to.equal(expectedHtmlElement);
+        });
+
+    });
+
     afterEach(function() {
         $('#markup').html(markup);
     });

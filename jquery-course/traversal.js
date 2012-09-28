@@ -12,6 +12,11 @@ $(function(exports) {
         return $('#markup ul').find("h1");
     };
 
+    // Finds the parent element of the h2, using parent()
+    exports.findParentOfH2UsingParent = function() {
+        return $('#markup h2').parent();
+    };
+
 
 
 }(window));
