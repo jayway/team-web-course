@@ -38,12 +38,13 @@
       <div class="slides">
 			<section>
 				<h1>jQuery</h1>
-				
+				<q>write less, do more</q>
+				<br/><br/>
 				<p>require(["html","css"]);</p>
 			</section>
 		  
 			<section>
-				<h2>What is jQuery?</h2>
+				<h1>What is jQuery?</h1>
 				<p>JavaScript library to:
 				<ul>
 					<li>Manipulate a HTML page after it's displayed by the browser</li>
@@ -55,29 +56,63 @@
 			</section>
 			
 			<section>
-				<section>
-					<h2>Getting started</h2>
-					<p>a.k.a '$'
-				</section>
-				<section>
-					<h2>the jQuery function</h2>
+				<p>Examples from http://jqfundamentals.com/</p>
+			</section>
+			
+			<section>
+				<h1>Getting started</h1>
+				<br/>
+				<pre><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;</code></pre>
+			</section>
+			
+			<section>
+				<h1>the jQuery function</h1>
+				<p>a.k.a '$'</p>
+				
+				<br/>
+				
+				<div class="fragment">
 					<p>Select all &lt;li&gt; in the document</p>
 					<pre><code>var listItems = jQuery( 'li' );</code></pre>
-					
-					<div class="fragment">
+				</div>
+				
+				<br/>
+				
+				<div class="fragment">
 					<p>There is a shorter way...</p>
 					<pre><code>var listItems = $( 'li' );</code></pre>
-					</div>
-					
-					<div class="fragment">
+				</div>
+				
+				<br/>
+				
+				<div class="fragment">
 					<p>..becasue of the end of the jQuery library</p>
 					<pre><code>window.jQuery = window.$ = jQuery;</code></pre>
-					</div>
-				</section>
+				</div>
+			</section>	
+				
+			<section>
+				<h1>Wait!</h1>
+				<p>Make sure that the page is ready before manipulating it</p>
+				<pre><code>
+$( document ).ready(function() {
+  console.log( 'ready!' );
+});
+				</code></pre>
 			</section>
 			
 			<section>
 				<h1>Selectors</h1>
+				<pre><code>
+$( '#header' ); // select the element with an ID of 'header'
+$( 'li' );      // select all list items on the page
+$( 'ul li' );   // select list items that are in unordered lists
+$( '.person' ); // select all elements with a class of 'person'
+				</code></pre>
+				<aside class="notes">
+					Selections will only contain the element that existed in the DOM when the query was executed.
+					Any additions later on will not be propagated
+				</aside>
 			</section>
 		  
 			<section>
