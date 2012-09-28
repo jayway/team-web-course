@@ -5,12 +5,27 @@ describe('Ajax', function() {
     });
 
     describe('GET', function() {
-        it('gets the json from the github api', function(done) {
-            $.get('http://api.github.com/users/andersjanmyr', function() {
-                console.log(arguments);
+        it('gets the google favicon from the g.etfv.co api', function(done) {
+            getUserAndersJanmyrFromGithub(function(icon) {
+                done();
             });
         });
+
+        it('calls a service with parameters');
+
     });
+
+    describe('POST', function() {
+        it('calls a service with parameters');
+        it('calls a service with parameters');
+    });
+
+    describe('Ajax', function() {
+        it('calls a service with parameters');
+        it('calls a service with parameters');
+    });
+
+
 
     afterEach(function() {
         $('#markup').html(markup);

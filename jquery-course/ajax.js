@@ -3,9 +3,10 @@ $(function(exports) {
     // add a breakpoint in afterEach in the test.
 
     // GET Request
-    // Get user andersjanmyr from github
-    // https://api.github.com/users/andersjanmyr
-    exports.getUserAndersJanmyrFromGithub = function() {
+    // Gets the Google favicone from the http://g.etfv.co
+    // http://g.etfv.co/http://www.google.com
+    exports.getUserAndersJanmyrFromGithub = function(callback) {
+        $.get('http://g.etfv.co/http://www.google.com', callback);
     };
 
 }(window));
