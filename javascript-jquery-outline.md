@@ -14,7 +14,7 @@
 * `addClass` / `removeClass`, `toggleClass`
 
 ### Traversal, basic
-* `find`, `parent`, `ancestors?`
+* `find`, `parent`, `parents`
 * 
 
 ### Events, basic
