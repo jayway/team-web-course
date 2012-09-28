@@ -35,7 +35,7 @@
 		<div class="reveal">
 
 	   	<img src="../reveal.js/jayway-theme/img/jayway-logo.png" class="jayway-logo header">
-	   	
+
 			<!-- Used to fade in a background when a specific slide state is reached -->
 			<div class="state-background"></div>
 
@@ -81,6 +81,15 @@
         </section>
 
         <section data-markdown>
+          Language Syntax
+          ---------------
+          * Numbers, Strings, Booleans
+          * Objects
+          * Functions
+          * Statements
+        </section>
+
+        <section data-markdown>
             Values and Primitives
             ---------------------
 
@@ -104,8 +113,8 @@
 
                 test("Strange arithmetic", function() {
                     var a = NaN;
-                    equals( a <  10, false, "bigger than 10");
-                    equals( a >  10, false, "smaller than 10");
+                    equals( a &lt;  10, false, "bigger than 10");
+                    equals( a &gt;  10, false, "smaller than 10");
                     equals( a === 10, false, "not equal to 10");
                     equals( a === NaN, false, "not NaN??? " );
                     equals( isNaN( a ), true, "Ahh!!" );
@@ -147,7 +156,7 @@
 
                 //Two possible values: true or false
                 var a = true;
-                var b = a && ( a == false );
+                var b = a &amp;&amp; ( a == false );
 
         </section>
 
@@ -231,6 +240,7 @@
             * Exceptions
             * Flow statments
         </section>
+
         <section data-markdown>
             Equality and Comparison
             -----------------------
@@ -255,6 +265,7 @@
                 equals( true, ' \t\r\n ' == 0 );
 
         </section>
+
         <section data-markdown>
             Equality and Comparison
             -----------------------
@@ -268,6 +279,7 @@
                 // The negated operators are called: '!=' and '!==' respectively.
 
         </section>
+
         <section data-markdown>
             ## Objects
 
@@ -278,6 +290,7 @@
             * Inheritance
 
         </section>
+
         <section data-markdown>
             ## Arrays
 
@@ -286,6 +299,7 @@
             * Methods
 
         </section>
+
         <section data-markdown>
             ## JSON
 
@@ -298,6 +312,7 @@
                 * null
 
         </section>
+
         <section>
             <p>JSON</p>
             <pre><code>
@@ -317,6 +332,7 @@
             };
             </code></pre>
         </section>
+
         <section>
             <p>JSON</p>
             <pre><code>
@@ -344,6 +360,7 @@
                 ];
             </code></pre>
         </section>
+
         <section data-markdown>
             ## Functions
 
@@ -357,12 +374,14 @@
             * Arguments
 
         </section>
+
         <section data-markdown>
             ## Dynamic Compilation
 
             * Eval
             * Function
         </section>
+
         <section data-markdown>
             ## Modules and Namespaces
 
@@ -371,6 +390,7 @@
             * Mixins
             * Dynamic Module
         </section>
+
         <section data-markdown>
             Learning Javascript
             ===================
@@ -379,6 +399,7 @@
             * Standard library
             * Common pitfalls
         </section>
+
         <section data-markdown>
             Future of Javascript
             ====================
