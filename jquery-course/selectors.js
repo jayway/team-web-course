@@ -61,14 +61,14 @@ $(function(exports) {
     // Find all input elements 
     // and add class highlight
     exports.findAllInputElementsAndAddClassHighlight = function() {
-        $(':input').addClass('highlight');
+        $('#markup :input').addClass('highlight');
     };
 
     // Form selection
     // Find all buttons
     // and add class highlight
     exports.findAllButtonsAndAddClassHighlight = function() {
-        $(':button, input[type="submit"]').addClass('highlight');
+        $('#markup :button, input[type="submit"]').addClass('highlight');
     };
 }(window));
 
