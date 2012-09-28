@@ -1,113 +1,126 @@
 <!doctype html>  
 <html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>HTML and CSS</title>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
-		<link rel="stylesheet" href="../reveal.js/css/main.css">
-		<link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
+<head>
+    <meta charset="utf-8">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <title>HTML and CSS</title>
 
-		<script>
-			// If the query includes 'print-pdf' we'll use the PDF print sheet
-			document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<!--[if lt IE 9]>
-		<script src="../reveal.js/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body>
-		
-		<div class="reveal">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
-			<!-- Used to fade in a background when a specific slide state is reached -->
-			<div class="state-background"></div>
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-                <section>
-                    <h1>HTML and CSS</h1>
-                    <p>Add more slides</p>
-                </section>
-                <section>
-                    <h1>HTML</h1>
-                    <p>Add more slides</p>
-                </section>
-                <section>
-                    <h1>Structure Your Doc</h1>
-                    <pre><code class="html">
-                    &lt;!DOCTYPE html&gt;
-                    &lt;html&gt;
-                    &lt;head&gt;&lt;/head&gt;
-                    &lt;body&gt;&lt;/body&gt;
-                    &lt;/html&gt;
-                    </code></pre>
-                </section>
-                <section>
-                    <h1>HTML and CSS</h1>
-                    <p>Add more slides</p>
-                </section>
-                <section>
-                    <h1>HTML and CSS</h1>
-          <p>Add more slides</p>
-        </section>
-        <section>
-          <h1>HTML and CSS</h1>
-          <p>Add more slides</p>
-        </section>
-      </div>
+    <link rel="stylesheet" href="../reveal.js/css/main.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
 
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
-			<!-- Presentation progress bar -->
-			<div class="progress"><span></span></div>
-			
-		</div>
+    <script>
+    // If the query includes 'print-pdf' we'll use the PDF print sheet
+    document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
 
-		<script>
-			
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				
-				theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+<body>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-				]
-			});
-			
-		</script>
+    <div class="reveal">
 
-	</body>
+        <!-- Used to fade in a background when a specific slide state is reached -->
+        <div class="state-background"></div>
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>HTML and CSS</h1>
+                <p>Add more slides</p>
+            </section>
+            <section>
+                <h1>HTML</h1>
+                <p>Add more slides</p>
+            </section>
+            <section>
+                <h1>The basic structure</h1>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;sv&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+            <section>
+                <h1>Some basic elements</h1>
+                <p>Headlines, paragraphs, divs and spans</p>
+            </section>
+            <section>
+                <h1>Headlines</h1>
+                <pre><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;
+    &lt;h2&gt;Heading level 2&lt;/h2&gt;
+        &lt;h3&gt;Heading level 3&lt;/h3&gt;
+            &lt;h4&gt;Heading level 4&lt;/h4&gt;
+                &lt;h5&gt;Heading level 5&lt;/h5&gt;
+                    &lt;h6&gt;Heading level 6&lt;/h6&gt;</code></pre>
+                <p>There are no more levels!</p>
+            </section>
+            <section>
+                <h1>Headlines</h1>
+                <ul>
+                    <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels</li>
+                    <li>The title of the document’s main content should be a level 1 heading</li>
+                    <li>There should be only one level 1 heading in each document</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- The navigational controls UI -->
+        <aside class="controls">
+            <a class="left" href="#">&#x25C4;</a>
+            <a class="right" href="#">&#x25BA;</a>
+            <a class="up" href="#">&#x25B2;</a>
+            <a class="down" href="#">&#x25BC;</a>
+        </aside>
+
+        <!-- Presentation progress bar -->
+        <div class="progress"><span></span></div>
+
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+        { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+        ]
+    });
+
+    </script>
+
+</body>
 </html>
