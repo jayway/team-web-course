@@ -110,6 +110,42 @@
                 parseFloat(“22.5”); //returns 22.5
 
         </section>
+        <section data-markdown>
+            ### Booleans
+
+                //Two possible values: true or false
+                var a = true;
+                var b = a && ( a == false );
+
+        </section>
+        <section data-markdown>
+            ### undefined and null
+
+            Javascript declares both null and undefined which has subtle
+            differences.
+
+            Anything unassigned or not declared has the value 'undefined'.
+
+            null is a special value meaning "no value".
+
+                equals( "object", typeof null, "type of null is 'object'");
+
+        </section>
+        <section data-markdown>
+            ### undefined and null
+
+            On the other hand, undefined means that the variable has not been declared, or has not been given a value.
+
+
+                equals( 'undefined', typeof i, "no 'i' anywhere yeilds 'undefined' ");
+                var i;
+                equals( 'undefined', typeof i, "no assignment to 'i' " +
+                    "still gives us 'undefined'");
+
+                //caveat:
+                equals( true, null == undefined, "== consider them equal" );
+                equals( false, null === undefined, "BUT === does not" );
+        </section>
       </div>
 			<!-- The navigational controls UI -->
 			<aside class="controls">
