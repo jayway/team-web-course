@@ -193,7 +193,8 @@
         <section data-markdown>
             ### Objects
 
-                //An object is a container of keys and values, i.e. a map.
+            An object is a container of keys and values, i.e. a map.
+
                 { name: 'John', age: function() {
                     return differenceInYears( new Date(1973,3,5), new Date())
                 } }
@@ -203,30 +204,36 @@
         <section data-markdown>
             ### Functions
 
-            _Javascript is a functional language so a function is a first class citizen
-            (unlike Java)._
+            Javascript is a functional language.
+            A function is a first class citizen (unlike Java).
 
-            _As in many languages a function is invoked by using parenthesis._
+            As in many languages a function is invoked by using parenthesis.
 
                 //Example:
-                var tst = function() { return 'hello'; }
+                var greeter = function() { return 'hello'; }
 
-                tst   (a pointer to the function)
-                tst() (invocation of the function)
-                quals( 'hello', tst(), 'invoking the function' )
+                greeter   (a reference to the function)
+                greeter() (invocation of the function, yields the value 'hello')
+                equals( 'hello', tst(), 'invoking the function' )
 
         </section>
 
         <section data-markdown>
             ### Functions
 
-                <!-- First class citizen means functions can be arguments to functions
-                and functions can be returned from functions.
+            Functions being "first class citizen" means
 
-                When not used to this "first class citizen" it can make code look a
-                little scary at first: _f( 'whack' )()  &lt;= a function called _f
-                invoked with argument 'whack'. Result of that is expected to be a
-                function that subsequently is invoked. -->
+            * Functions can be arguments to functions
+            * Functions can be returned from functions
+
+            When not used to this "first class citizen" it can make code look a
+            little scary at first:
+
+            `_f( 'whack' )()`
+
+            is a function called _f invoked with argument 'whack'. 
+            Result of that is expected to be a
+            function that subsequently is invoked.
 
         </section>
 
