@@ -7,9 +7,16 @@ body {
     margin: 20px;
 }
 
-
 .reveal h1 {
     text-shadow: none;
+}
+
+.reveal .progress span {
+    background: none repeat scroll 0 0 #18b3e5;
+}
+
+.reveal .controls a.enabled {
+    color: #18b3e5;
 }
 
 
