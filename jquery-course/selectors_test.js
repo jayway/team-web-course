@@ -5,6 +5,10 @@ describe('Santity test', function() {
 });
 
 describe('Intro', function() {
+    var markup;
+    beforeEach(function() {
+        markup = $('#markup').html();
+    });
     describe('Selectors', function() {
         it('Find the element with id="markup"', function() {
             var actual = findElementWithIdMarkup();
@@ -27,5 +31,9 @@ describe('Intro', function() {
     describe('Events', function() {
     });
     describe('Ajax', function() {
+    });
+
+    afterEach(function() {
+        $('#markup').html(markup);
     });
 });
