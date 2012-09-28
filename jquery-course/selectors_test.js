@@ -51,7 +51,15 @@ describe('Selectors', function() {
         it("finds all h1's and h2's with class selected", function() {
             findH1sAndH2sAndAddSelected();
             var actual = $('.selected');
-            expect(actual.length).to.equal(4);
+            expect(actual.length).to.equal(2);
+        });
+    });
+
+    describe('Filter selection', function() {
+        it("finds even li's inside li's and add class even", function() {
+            findEvenLisInsideLisAndAddClassEven();
+            var actual = $('.even');
+            expect(actual.length).to.equal(5);
         });
     });
 

@@ -39,8 +39,14 @@ $(function(exports) {
     // Find all h1's and h2's below the markup id
     // and add class selected
     exports.findH1sAndH2sAndAddSelected = function() {
-        $('#markup ul, #markup h1 ').addClass('selected');
+        $('#markup h1, #markup h2 ').addClass('selected');
     };
 
+    // Filter selection
+    // Find even li's inside other li's below the markup id
+    // and add class even
+    exports.findEvenLisInsideLisAndAddClassEven = function() {
+        $('#markup li li:even').addClass('even');
+    };
 }(window));
 
