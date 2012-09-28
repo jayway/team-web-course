@@ -22,17 +22,24 @@ $(function(exports) {
     };
 
     // Child selection
-    // find the top level li elements below the markup id
+    // Find the top level li elements below the markup id
     // and add class animal-group
     exports.findTopLevelLisAndAddClassAnimalGroup = function() {
         $('#markup > ul > li').addClass('animal-group');
     };
 
     // Child selection
-    // find the top level li elements below the markup id
+    // Find the top level li elements below the markup id
     // and add class animal-group
     exports.findChildLisAndAddClassAnimal= function() {
         $('#markup > ul > li > ul > li').addClass('animal');
+    };
+
+    // Or selection
+    // Find all h1's and h2's below the markup id
+    // and add class selected
+    exports.findH1sAndH2sAndAddSelected = function() {
+        $('#markup ul, #markup h1 ').addClass('selected');
     };
 
 }(window));

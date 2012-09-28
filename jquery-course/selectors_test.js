@@ -27,9 +27,9 @@ describe('Selectors', function() {
     });
 
     describe('Find by class', function() {
-        it("finds 2 h1 with class .title", function() {
+        it("finds 2 headings with class .title", function() {
             findByClassTitleAndRemoveIt();
-            var actual = $('#markup h1:not(.title)');
+            var actual = $('#markup :header:not(.title)');
             expect(actual.length).to.equal(2);
         });
     });
@@ -44,6 +44,14 @@ describe('Selectors', function() {
             findChildLisAndAddClassAnimal();
             var actual = $('li.animal');
             expect(actual.length).to.equal(9);
+        });
+    });
+
+    describe('Or Selection', function() {
+        it("finds all h1's and h2's with class selected", function() {
+            findH1sAndH2sAndAddSelected();
+            var actual = $('.selected');
+            expect(actual.length).to.equal(4);
         });
     });
 
