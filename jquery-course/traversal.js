@@ -3,12 +3,12 @@ $(function(exports) {
     // add a breakpoint in afterEach in the test.
 
     // Finds (at least) one ul and then the li's underneath, using find()
-    exports.findUlThenLisWithFind = function() {
+    exports.findUlThenLisUsingFind = function() {
         return $('#markup ul').find("li");
     };
 
     // Finds (at least) one ul and then the h1's underneath, using find()
-    exports.findUlThenH1sWithFind = function() {
+    exports.findUlThenH1sUsingFind = function() {
         return $('#markup ul').find("h1");
     };
 
