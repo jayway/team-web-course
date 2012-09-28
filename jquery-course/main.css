@@ -17,3 +17,7 @@
 .highlight {
     border: solid 3px red;
 }
+
+.hide {
+    display: none;
+}
