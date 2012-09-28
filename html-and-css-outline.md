@@ -86,7 +86,8 @@ lab3/
 
 #### Lab 6
 * Tools
-    * Firebug
+    * Chrome Inspector
+    * Mention Firebug
 
 #### Lab 7
 * Basic layout
