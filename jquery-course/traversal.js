@@ -17,6 +17,11 @@ $(function(exports) {
         return $('#markup h2').parent();
     };
 
+    // Finds the .card which has a span in its .card-footer, using parents()
+    exports.findCardWithSpanInCardFooterUsingParents = function() {
+        return $('#markup .card-footer span').parents(".card");
+    };
+
 
 
 }(window));

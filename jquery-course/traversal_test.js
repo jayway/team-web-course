@@ -42,6 +42,18 @@ describe('Traversal', function() {
 
     });
 
+    describe("Using parents()", function () {
+
+        it("Finds the .card which has a span in its .card-footer, using parents()", function() {
+            var actual = findCardWithSpanInCardFooterUsingParents();
+            var expected = $('#markup .card:last');
+            var actualHtmlElement = actual.get(0);
+            var expectedHtmlElement = expected.get(0);
+            expect(actualHtmlElement).to.equal(expectedHtmlElement);
+        });
+
+    });
+
     afterEach(function() {
         $('#markup').html(markup);
     });
