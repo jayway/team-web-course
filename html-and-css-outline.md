@@ -61,40 +61,41 @@ lab3/
 ```
 
 ### HTML basics (no styling)
-* Lab 1
-    * Start with basic markup (set up a header, some paragraphs with linked text, an image etc.)
-* Lab 2
-    * How to create a list
-* Lab 3
-    * How to create a table
-* Lab 4
-    * How to create a form
-* Lab 5
-    * Walkthrough of classes and IDs
-    * Grouping with divs
+#### Lab 1
+* Start with basic markup (set up a header, some paragraphs with linked text, an image etc.)
+
+#### Lab 2
+* How to create a list
+
+#### Lab 3
+* How to create a table
+
+#### Lab 4
+* How to create a form
+
+#### Lab 5
+* Walkthrough of classes and IDs
+* Grouping with divs
 
 
 ### Styling with CSS
-* Start with the basics
-    * How selectors work (element, class and ID)
-    * Properties
-    * Pseudo selectors (:link, :hover, :active, :visited)
-* Lab 6
-    * Tools
-        * Firebug
-* Lab 7
-    * Basic layout
-        * Floating an image
-        * Inline vs block
-        * Make two divs appear side by side
-        * Positioning (static, fixed, relative, absolute)
-* Lab 8
-    * The cascade
-        * How inheritance works
-        * Specificity (chaining classes and IDs)
+#### Start with the basics
+* How selectors work (element, class and ID)
+* Properties
+* Pseudo selectors (:link, :hover, :active, :visited)
 
+#### Lab 6
+* Tools
+    * Firebug
 
+#### Lab 7
+* Basic layout
+    * Floating an image
+    * Inline vs block
+    * Make two divs appear side by side
+    * Positioning (static, fixed, relative, absolute)
 
-
-
-
+#### Lab 8
+* The cascade
+    * How inheritance works
+    * Specificity (chaining classes and IDs)
