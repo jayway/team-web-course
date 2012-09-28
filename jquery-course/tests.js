@@ -6,6 +6,12 @@ describe('Santity test', function() {
 
 describe('Intro', function() {
     describe('Selectors', function() {
+        it('Find the element with id="markup"', function() {
+            var actual = findElementWithIdMarkup();
+            expect(actual.attr('id')).to.equal('markup');
+            expect(actual.parent()[0].tagName).to.equal('BODY');
+        });
+
         it("finds 5 li's and adds class items", function() {
             findFiveLisAndAddClassAnimal();
             var actual = $('.animal');
