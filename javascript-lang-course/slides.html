@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<title>jQuery</title>
+		<title>Javascript Basics</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -41,10 +41,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
-
-	        
         <section>
-          <h1>Javascript Basics</h1>
+          <h1>JavaScript Basics</h1>
           <p>Jayway Course</p>
           <p>
           <br>
@@ -52,12 +50,27 @@
         </section>
 
         <section>
-          <h2>Why Javascript?</h2>
+          <h2>Why JavaScript?</h2>
           <div>It's everywhere!</div>
           <div>
           <br>
           </div>
         </section>
+
+        <section>
+          <h2>History</h2>
+          <h3>LiveScript/Mocha - 1994-95</h3>
+          <p>Developed by Brendan Eich at Netscape</p>
+          <p>Intended as a light-weight Java-alternative</p>
+
+          <h3>JavaScript, 1995-96</h3>
+          <p>Included in Netscape Navigator 2.0</p>
+          <p>Included in Microsoft IE 3.0, 1996</p>
+          <p>(MS later renamed it <b>JScript</b>)</p>
+          <p></p>
+          <p>Standardized as <b>ECMAScript</b>, 1997</p>
+        </section>
+
         <section data-markdown>
             Values and Primitives
             ---------------------
@@ -77,6 +90,7 @@
                 -Infinity
 
         </section>
+
         <section data-markdown>
             ### Numbers
 
@@ -93,6 +107,7 @@
             Caveat: some operators only work on 32 bit numbers. A silent conversion
             will be performed by the operator.
         </section>
+
         <section data-markdown>
             ### Strings
 
@@ -118,6 +133,7 @@
                 parseFloat(“22.5”); //returns 22.5
 
         </section>
+
         <section data-markdown>
             ### Booleans
 
@@ -126,6 +142,7 @@
                 var b = a && ( a == false );
 
         </section>
+
         <section data-markdown>
             ### undefined and null
 
@@ -139,6 +156,7 @@
                 equals( "object", typeof null, "type of null is 'object'");
 
         </section>
+
         <section data-markdown>
             ### undefined and null
 
@@ -154,6 +172,7 @@
                 equals( true, null == undefined, "== consider them equal" );
                 equals( false, null === undefined, "BUT === does not" );
         </section>
+
         <section data-markdown>
             ### Objects
 
@@ -163,6 +182,7 @@
                 } }
 
         </section>
+
         <section data-markdown>
             ### Functions
 
@@ -179,6 +199,7 @@
                 quals( 'hello', tst(), 'invoking the function' )
 
         </section>
+
         <section data-markdown>
             ### Functions
 
@@ -186,11 +207,12 @@
             and functions can be returned from functions.
 
             When not used to this "first class citizen" it can make code look a little
-            scary at first: _f( 'whack' )()  <= a function called _f invoked with argument
+            scary at first: _f( 'whack' )()  &lt;= a function called _f invoked with argument
             'whack'. Result of that is expected to be a function that subsequently is
             invoked.
 
         </section>
+
         <section data-markdown>
             Statements
             ----------
@@ -201,8 +223,82 @@
             * Exceptions
             * Flow statments
         </section>
+        <section data-markdown>
+            Equality and Comparison
+            -----------------------
 
+                /*In Javascript there are two kinds of comparison operators '=='
+                (equality) and '===' (identity). The difference is that '=='
+                will perform type conversion whereas '===' will not.
+                Performance wise '===' is faster if the types differ, but maybe
+                more importantly '==' can produce confusing results:*/
+
+                equals( false, '' == '0' );
+                equals( true, 0 == '' );
+                equals( true, 0 == '0' );
+
+                equals( false, false == 'false' );
+                equals( true, false == '0' );
+
+                equals( false, false == undefined );
+                equals( false, false == null );
+                equals( true, null == undefined );
+
+                equals( true, ' \t\r\n ' == 0 );
+
+        </section>
+        <section data-markdown>
+            Equality and Comparison
+            -----------------------
+
+                // However, because of lack of type conversion,
+                // there can be WTF with '===':
+
+                equals( true, "abc" == new String( "abc" ) );
+                equals( false, "abc" === new String( "abc" ) );
+
+                // The negated operators are called: '!=' and '!==' respectively.
+
+        </section>
+        <section data-markdown>
+            ## Objects
+
+            * Object literals
+            * Properties
+            * Methods
+            * Prototypes
+            * Inheritance
+
+        </section>
+        <section data-markdown>
+            ## Arrays
+
+            * Array literals
+            * Properties
+            * Methods
+
+        </section>
+        <section data-markdown>
+            ## JSON
+
+            * Javascript Object Notation
+
+        </section>
+        <section data-markdown>
+            ## Functions
+
+            * Lambda
+            * Anonymous functions
+            * First Class Objects
+            * Methods
+            * Prototypes
+            * Scope
+            * Invocation forms (this)
+            * Arguments
+
+        </section>
       </div>
+
 			<!-- The navigational controls UI -->
 			<aside class="controls">
 				<a class="left" href="#">&#x25C4;</a>
