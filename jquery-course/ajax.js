@@ -3,11 +3,13 @@ $(function(exports) {
     // add a breakpoint in afterEach in the test.
 
     // GET Request
-    // Gets the Google favicone from the http://g.etfv.co
-    // http://g.etfv.co/http://www.google.com
-    exports.getUserAndersJanmyrFromGithub = function(callback) {
-        $.get('http://g.etfv.co/http://www.google.com', callback);
+    // Gets the Google favicone from the Tapirs site
+    // http://tapirs.herokuapp.com/
+    exports.getRootFromTapirs = function(callback) {
+        $.get('http://tapirs.herokuapp.com/', callback);
     };
+
+
 
 }(window));
 
