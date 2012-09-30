@@ -3,7 +3,7 @@ $(function(exports) {
     // add a breakpoint in afterEach in the test.
 
     // GET Request
-    // Gets the Google favicone from the Tapirs site
+    // Gets the root resource of the tapir site
     // http://tapirs.herokuapp.com/
     exports.getRootFromTapirs = function(callback) {
         $.get('http://tapirs.herokuapp.com/', callback);

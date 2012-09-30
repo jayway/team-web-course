@@ -5,7 +5,7 @@ describe('Ajax', function() {
     });
 
     describe('GET', function() {
-        it('gets the google favicon from the g.etfv.co api', function(done) {
+        it('Gets the root resource of the tapirs site', function(done) {
             getRootFromTapirs(function(text) {
                 expect(text).to.equal('Tapirs Rule!')
                 done();
