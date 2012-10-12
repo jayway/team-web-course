@@ -13,7 +13,7 @@
     <script src="node_modules/chai/chai.js"></script>
     <script src="node_modules/sinon-chai/lib/sinon-chai.js"></script>
     <script src="node_modules/chai-jquery/chai-jquery.js"></script>
-    <script>mocha.setup('bdd')</script>
+    <script> mocha.setup({ ui: 'bdd', ignoreLeaks: true }); </script>
     <script src="selectors.js"></script>
     <script src="manipulation.js"></script>
     <script src="traversal.js"></script>
