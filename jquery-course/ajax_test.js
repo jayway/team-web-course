@@ -1,18 +1,25 @@
 describe('Ajax', function() {
+    "use strict";
+    
     var markup;
     beforeEach(function() {
         markup = $('#markup').html();
     });
 
     describe('GET', function() {
-        it('Gets the root resource of the tapirs site', function(done) {
+        it('Gets the root resource of the tapirs site with $.get', function(done) {
             getRootFromTapirs(function(text) {
-                expect(text).to.equal('Tapirs Rule!')
+                expect(text).to.equal('Tapirs Rule!');
                 done();
             });
         });
 
-        it('calls a service with parameters');
+        it('calls a service with parameters with $.get', function(done) {
+            getFacts('swim', function(list) {
+                expect(list).to.have.length(1);
+                done();
+            });
+        });
 
     });
 
