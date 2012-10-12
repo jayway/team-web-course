@@ -6,7 +6,9 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "",
-    "chai": ""
+    "chai": "",
+    "sinon-chai": "",
+    "chai-jquery": ""
   },
   "scripts": {
     "test": "mocha"
