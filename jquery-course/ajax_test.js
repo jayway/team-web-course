@@ -21,6 +21,16 @@ describe('Ajax', function() {
             });
         });
 
+        it('calls a service with parameters with $.ajax', function(done) {
+            var getSpy = sinon.spy($, 'get');
+            var ajaxSpy = sinon.spy($, 'ajax');
+            getFactsAjax('mate', function(list) {
+                expect(list).to.have.length(2);
+                expect(getSpy).to.not.have.been.called;
+                expect(ajaxSpy).to.have.been.called;
+                done();
+            });
+        });
     });
 
     describe('POST', function() {
