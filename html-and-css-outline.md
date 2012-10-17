@@ -22,6 +22,7 @@
 
 ## CSS
 
+### Basics of CSS
 * Basic styling
     * Pseudo classes
 * Basic layout
@@ -32,8 +33,10 @@
 * Styling of forms
 * Media queries
 
+### Tools
 * Firebug / Inspector
 
+### Extra curricular stuff
 * CSS3 fallbacks, how to degrade well in older browsers
 * Maintainable CSS
 * Agent (browser), reader and author stylesheets (?)
@@ -62,10 +65,11 @@ lab3/
 
 ### HTML basics (no styling)
 #### Lab 1
+* Create the basic document structure (HTML, HEAD, BODY etc.)
 * Start with basic markup (set up a header, some paragraphs with linked text, an image etc.)
 
 #### Lab 2
-* How to create a list
+* How to create two lists (ordered & unordered)
 
 #### Lab 3
 * How to create a table
