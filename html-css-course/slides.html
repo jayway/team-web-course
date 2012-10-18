@@ -213,6 +213,72 @@ Just some free flying text separated by some line breaks</code></pre>
     &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
                 </section>
+                <section>
+                    <h1>Lab 4</h1>
+                    <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containting checkbox resp. radiobutton groups and a submit button.</p>
+                    <img src="form.png" alt="">
+                </section>
+                <section>
+                    <h1>The form element</h1>
+                    <pre><code>&lt;form action=&quot;solution.html&quot; method=&quot;post&quot;&gt;
+...
+&lt;/form&gt;</code></pre>
+                </section>
+                <section>
+                    <h1>Simple input fields</h1>
+                    <p>Separated label and input field</p>
+                    <pre><code>&lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;</code></pre>
+                    <p>Nested input field within label</p>
+                    <pre><code>&lt;label&gt;Text input 2 &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot;&gt;&lt;/label&gt;</code></pre>
+                    <p>And here is a textarea</p>
+                    <pre><code>&lt;label for=&quot;textarea&quot;&gt;Textarea&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot; cols=&quot;30&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;</code></pre>       
+                </section>
+                <section>
+                    <h1>Single and multiple select</h1>
+                    <pre><code>&lt;label for=&quot;select-1&quot;&gt;Single select&lt;/label&gt;
+&lt;select name=&quot;select-1&quot; id=&quot;select-1&quot;&gt;
+    &lt;option value=&quot;option1&quot;&gt;option1&lt;/option&gt;
+    &lt;option value=&quot;option2&quot;&gt;option2&lt;/option&gt;
+    &lt;option value=&quot;option3&quot;&gt;option3&lt;/option&gt;
+&lt;/select&gt;
+        
+&lt;label for=&quot;select-2&quot;&gt;Multiple select&lt;/label&gt;
+&lt;select name=&quot;select-2&quot; id=&quot;select-2&quot; multiple=&quot;multiple&quot;&gt;
+    &lt;option value=&quot;option1&quot;&gt;option1&lt;/option&gt;
+    &lt;option value=&quot;option2&quot;&gt;option2&lt;/option&gt;
+    &lt;option value=&quot;option3&quot;&gt;option3&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </section>
+                <section>
+                    <h1>Fieldset with checkbox group</h1>
+                    <pre><code>&lt;fieldset&gt;
+    &lt;legend class=&quot;wrap&quot;&gt;Check boxes&lt;/legend&gt;
+    
+    &lt;input type=&quot;checkbox&quot; value=&quot;one&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-1&quot; checkboxed=&quot;checkboxed&quot;&gt;
+    &lt;label for=&quot;checkbox2-1&quot;&gt;one&lt;/label&gt;
+    
+    &lt;input type=&quot;checkbox&quot; value=&quot;two&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-2&quot;&gt;
+    &lt;label for=&quot;checkbox2-2&quot;&gt;two&lt;/label&gt;
+&lt;fieldset&gt;</code></pre>
+                </section>      
+                <section>
+                    <h1>Fieldset with radiobutton group</h1>
+                    <pre><code>&lt;fieldset&gt;
+    &lt;legend class=&quot;wrap&quot;&gt;Radio buttons&lt;/legend&gt;
+    
+    &lt;input type=&quot;radio&quot; value=&quot;one&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-1&quot; checked=&quot;checked&quot;&gt;
+    &lt;label for=&quot;radio2-1&quot;&gt;one&lt;/label&gt;
+    
+    &lt;input type=&quot;radio&quot; value=&quot;two&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-2&quot;&gt;
+    &lt;label for=&quot;radio2-2&quot;&gt;two&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+                </section>      
+                <section>
+                    <h1>Finally, the submit button</h1>
+                    <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre>
+                </section>
             </section>
         </div>
 
