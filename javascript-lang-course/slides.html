@@ -204,17 +204,16 @@
         <section data-markdown>
             ### Functions
 
-            Javascript is a functional language.
             A function is a first class citizen (unlike Java).
 
-            As in many languages a function is invoked by using parenthesis.
+            Invoked by using parenthesis.
 
                 //Example:
                 var greeter = function() { return 'hello'; }
-
-                greeter   (a reference to the function)
-                greeter() (invocation of the function, yields the value 'hello')
-                equals( 'hello', tst(), 'invoking the function' )
+                
+                greeter // a reference to the function
+                greeter() // invocation of the function
+                equals( 'hello', greeter(), 'invocation')
 
         </section>
 
@@ -298,6 +297,57 @@
 
         </section>
 
+	<section>
+	    <p>Object Literal</p>
+            <pre><code>
+var myObject = {
+  name: 'andreas',
+  sayHello: function() { alert("hello") }
+}
+myObject.sayHello();
+            </code></pre>
+        </section>
+
+	<section>
+	    <p>Object Retrieval</p>
+            <pre><code>
+var flight = {
+  airline: "Oceanic",
+  departure : {       
+    IATA: "SYD",
+    time: "2004-09-22 14:55",
+    city: "Sydney"
+  }
+}
+flight.departure.city;
+// Same as
+flight["departure"]["city"];            
+            </code></pre>
+        </section>
+
+       <section>
+	    <p>Propotype instead of Class</p>
+             <pre><code>
+var foo = {name: "foo", one: 1, two: 2};
+var bar = {three: 3};
+bar.__proto__ = foo; // foo is now the prototype of bar.
+bar.one // Resolves to 1.
+            </code></pre>
+       </section>
+                 
+	<section>
+	    <p>Object Inheritance</p>
+            <pre><code>
+            var myMammal = { name: 'Mammal' };
+            var myCat = Object.create(myMammal);
+            myCat.saying = 'meow';
+            myMammal.name;   // 'Mammal'
+            myMammal.saying; // => undefined
+            myCat.name;   // 'Mammal'
+            myCat.saying; // => 'meow'
+            </code></pre>
+        </section>
+       
         <section data-markdown>
             ## Arrays
 
@@ -310,7 +360,8 @@
         <section data-markdown>
             ## JSON
 
-            * Javascript Object Notation
+            * A subset of javascript
+            * JavaScript Object Notation 
                 * objects
                 * arrays
                 * strings
@@ -324,8 +375,8 @@
             <p>JSON</p>
             <pre><code>
             var flight = {
-                airline = "Oceanic",   // string
-                number = 815,          // number
+                airline: "Oceanic",   // string
+                number: 815,          // number
                 departure : {          // object
                     IATA: "SYD",
                     time: "2004-09-22 14:55",
@@ -333,7 +384,7 @@
                 },
                 arrival : {            // object
                     IATA : "LAX",
-                    time : "2004-09-23 10:42"
+                    time : "2004-09-23 10:42",
                     city : "Los Angeles"
                 }
             };
