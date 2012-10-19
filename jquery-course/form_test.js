@@ -1,4 +1,4 @@
-describe('Manipulation', function() {
+describe('Form', function() {
     var markup;
     beforeEach(function() {
         markup = $('#markup').html();
@@ -65,6 +65,6 @@ describe('Manipulation', function() {
     });
 
     afterEach(function() {
-        // $('#markup').html(markup);
+        $('#markup').html(markup);
     });
 });
