@@ -32,6 +32,19 @@ describe('Manipulation', function() {
     });
 
     describe('HTML', function() {
+
+        it('adds a list element to the end of #tasty-animals list', function() {
+            appendElementToList('#tasty-animals', 'Dolphin');
+            expect($('#tasty-animals li').length).to.equal(5);
+            expect($('#tasty-animals li:last').text()).to.equal('Dolphin');
+        });
+
+        it('inserts a list element to the front of #tasty-animals list', function() {
+            insertElementFirst('#tasty-animals', 'Dolphin');
+            expect($('#tasty-animals li').length).to.equal(5);
+            expect($('#tasty-animals li:first').text()).to.equal('Dolphin');
+        });
+
     });
 
     afterEach(function() {

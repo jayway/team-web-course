@@ -21,8 +21,20 @@ $(function(exports) {
 
     // Gets a data attribute of image
     exports.setDataAttributeOfImage = function(attribute, value) {
-        console.log(arguments);
         $('img').data(attribute, value);
     };
+
+    // Appends an element to list
+    // The value sent in must be wrapped in an li.
+    exports.appendElementToList = function(list, value) {
+        $(list).append('<li>' + value + '</li>');
+    };
+
+    // Inserts an element first in the list
+    // The value sent in must be wrapped in an li.
+    exports.insertElementFirst = function(list, value) {
+        $('<li>' + value + '</li>').insertBefore(list + ' li:first');
+    };
+
 }(window));
 
