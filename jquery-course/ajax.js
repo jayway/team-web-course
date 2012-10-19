@@ -83,6 +83,12 @@ $(function(exports) {
         });
     };
 
+
+    // $.get Request a fact by id
+    // Gets an existing fact from the server
+    // http://tapirs.herokuapp.com/facts/:id
+    // Call callback on success
+    // Returns the deferred object.
     exports.getFact = function(id, callback) {
         return $.get('http://tapirs.herokuapp.com/facts/' + id, callback);
     };
