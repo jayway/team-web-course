@@ -9,7 +9,7 @@ $(function(exports) {
     exports.addClickHandlerToButton = function() {
         $('#markup button').click(function(event) {
             event.preventDefault();
-            $(this).addClass('highlight');
+            $(this).toggleClass('highlight');
         });
     };
 
