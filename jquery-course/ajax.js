@@ -35,9 +35,8 @@ $(function(exports) {
     };
 
     // $.ajax Request to a failing service
-    // Gets the root resource of the tapir site
+    // Tries to get a missing resource
     // http://tapirs.herokuapp.com/facts
-    // Parameter: search
     // Call callback on error
     exports.getMissing = function(callback) {
         $.ajax({
@@ -48,7 +47,7 @@ $(function(exports) {
 
 
     // $.post Request with parameters
-    // Gets the root resource of the tapir site
+    // Adds a new fact to the service
     // http://tapirs.herokuapp.com/facts
     // Parameter: fact
     // Call callback on success
@@ -56,15 +55,29 @@ $(function(exports) {
         $.post('http://tapirs.herokuapp.com/facts', {fact: fact}, callback);
     };
 
-    // $.post Request with parameters
-    // Gets the root resource of the tapir site
+    // $.ajax Request with parameters
+    // Adds a new fact to the service
     // http://tapirs.herokuapp.com/facts
-    // Parameter: search
+    // Parameter: fact
     // Call callback on success
     exports.addFactAjax = function(fact, callback) {
         $.ajax({
-            method: 'POST',
+            type: 'POST',
             url: 'http://tapirs.herokuapp.com/facts',
+            data: {fact: fact},
+            success: callback
+        });
+    };
+
+    // $.ajax Request with parameters
+    // Updates an existing fact on the server
+    // http://tapirs.herokuapp.com/facts
+    // Parameter: id, fact
+    // Call callback on success
+    exports.updateFact = function(id, fact, callback) {
+        $.ajax({
+            type: 'PUT',
+            url: 'http://tapirs.herokuapp.com/facts/' + id,
             data: {fact: fact},
             success: callback
         });

@@ -63,12 +63,18 @@ describe('Ajax', function() {
                 spy.restore();
             });
         });
-
-        it('calls a service with parameters');
     });
 
-    describe('Ajax', function() {
-        it('calls a service with parameters');
+    describe('PUT', function() {
+        it('updates a fact with $.ajax', function(done) {
+            var id = 1;
+            updateFact(id, 'A tapir kid is born after 11-15 months of gestation', function(data) {
+                expect(data.id).to.equal(1);
+                expect(data.fact).to.equal('A tapir kid is born after 11-15 months of gestation');
+                done();
+            });
+
+        });
         it('calls a service with parameters');
     });
 
