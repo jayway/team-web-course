@@ -53,7 +53,6 @@ describe('Manipulation', function() {
 
             it('serializes the form as an array', function() {
                 var valueArray = getFormArray();
-                console.log(valueArray);
                 expect(valueArray).to.deep.equal(
                     [
                         { name: 'name', value: 'platypus'},
