@@ -225,15 +225,43 @@
             * Functions can be arguments to functions
             * Functions can be returned from functions
 
-            When not used to this "first class citizen" it can make code look a
-            little scary at first:
+        </section>
 
-            `_f( 'whack' )()`
+        <section data-markdown>
+            ### Example
 
-            is a function called _f invoked with argument 'whack'. 
-            Result of that is expected to be a
-            function that subsequently is invoked.
+                _f('whack')();
 
+            `_f` is a function returning a function
+
+        </section>
+
+        <section data-markdown>
+            ### Function Statement
+
+                function foo() {}
+
+            expands to
+
+                var foo = function foo() {};
+
+        </section>
+
+        <section data-markdown>
+            ## Anonymous Functions
+
+                var f = function(a, b) { return a + b; }
+                f(1,2); # => 3
+        </section>
+
+       <section data-markdown>
+            ### Returning Functions
+
+                var sayHello = function() {
+                  return function() { return "Hello " + name; }
+                };
+                var helloMe = sayHello('andreas');
+                helloMe(); // => "Hello andreas"
         </section>
 
         <section data-markdown>
@@ -309,7 +337,7 @@ myObject.sayHello();
         </section>
 
 	<section>
-	    <p>Object Retrieval</p>
+	    <p>Retrieval</p>
             <pre><code>
 var flight = {
   airline: "Oceanic",
@@ -325,36 +353,173 @@ flight["departure"]["city"];
             </code></pre>
         </section>
 
+	<section>
+	    <p>Non-existent properties</p>
+            <pre><code>
+flight.foo // undefined
+flight['foo'] // undefined
+flight.foo.city; // undefined
+            </code></pre>
+        </section>
+
+	<section>
+	    <p>Setting Non-existent properties</p>
+            <pre><code>
+flight.foo = 'bar';
+flight['baaz'] = 42
+            </code></pre>
+        </section>
+
+	<section>
+            <pre><code>
+delete flight.foo
+flight.foo // undefined
+            </code></pre>
+        </section>
+
+
+        <section data-markdown>
+            ### Prototype-based programming
+
+            * OO without classes !
+            * Inheritance by object delegation
+       </section>
+
        <section>
-	    <p>Propotype instead of Class</p>
+	    <p>Prototype Delegation</p>
              <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
-var bar = {three: 3};
-bar.__proto__ = foo; // foo is now the prototype of bar.
+var bar = {two: 'two'};
+// Make bar delegate method calls the prototype foo:
+bar.__proto__ = foo;  // don't do this !
 bar.one // Resolves to 1.
+bar.two // Resolves to 'two'
+delete bar.two
+bar.two // Resolves to 2
             </code></pre>
        </section>
                  
 	<section>
-	    <p>Object Inheritance</p>
+	    <p>Object.create</p>
             <pre><code>
-            var myMammal = { name: 'Mammal' };
-            var myCat = Object.create(myMammal);
-            myCat.saying = 'meow';
-            myMammal.name;   // 'Mammal'
-            myMammal.saying; // => undefined
-            myCat.name;   // 'Mammal'
-            myCat.saying; // => 'meow'
+var foo = {name: "foo", one: 1, two: 2};
+var bar = Object.create(foo); // do this !
+bar.one // Resolves to 1.
+bar.two // Resolves to 'two'
             </code></pre>
         </section>
+
+       <section>
+	    <p>Prototypal Inheritance</p>
+            <pre><code>
+var foo = {
+    name: "foo",
+    sayHello: function() {
+        alert("hello from " + this.name);
+    }
+};
+foo.sayHello();
+            </code></pre>
+      </section>
+
+       <section>
+	    <p>Prototypal Inheritance</p>
+            <pre><code>
+var foo = {
+    name: "foo",
+    sayHello: function() {
+        alert("hello from " + this.name);
+    }
+};
+
+var bar = Object.create(foo);
+bar.sayGoodbye = function() {
+    alert("goodbye from " + this.name);
+}
+bar.sayHello();
+bar.sayGoodbye();
+            </code></pre>
+      </section>
+
+        <section data-markdown>
+JavaScript does not have classes, but we can program as though it does.
+
+### 
+
+### But is not needed !
+
+        </section>
+
+        <section data-markdown>
+### The Constructor Functions
+
+        function Pet(species){
+           this.species = species;
+           this.sayHello = function() { 
+              return "Hello " + this.species;
+           }
+        }
+
+        var cat = new Pet('cat');
+        cat.sayHello(); 
+        </section>
+        
+        <section data-markdown>
+### Classes and Inheritance
+
+"I have never once found need to use an uber function. The super idea is fairly important in the classical pattern, but it appears to be unnecessary in the prototypal and functional patterns. I now see my early attempts to support the classical model in JavaScript as a mistake."
+
+Douglas Crockford
+
+        </section>
+
+        <section data-markdown>
+            ## Arrays
        
+            * Array inherits from object
+            * Indexes are converted to strings
+        </section>
+
         <section data-markdown>
             ## Arrays
 
-            * Array literals
-            * Properties
-            * Methods
+            * [ ]
+            * names =  [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
+            * typeof value == ‘object’
+            * value.constructor === Array
+        </section>
 
+        <section data-markdown>
+            ## Array Methods
+
+            * concat
+            * join
+            * pop
+            * push
+            * slice
+            * sort
+            * splice
+        </section>
+
+
+        <section data-markdown>
+            ## Built-in Prototypes
+            * Object.prototype
+            * Array.prototype
+            * Function.prototype
+            * Number.prototype
+            * String.prototype
+            * Boolean.prototype
+        </section>
+
+       <section data-markdown>
+           ## Extending
+
+               Array.prototype.last = function() {
+                   return this[this.length - 1];
+               };
+
+               [1.2.3].last(); // => 3
         </section>
 
         <section data-markdown>
@@ -368,7 +533,6 @@ bar.one // Resolves to 1.
                 * numbers
                 * booleans
                 * null
-
         </section>
 
         <section>
@@ -419,34 +583,199 @@ bar.one // Resolves to 1.
         </section>
 
         <section data-markdown>
-            ## Functions
+            ## Scope
 
-            * Lambda
-            * Anonymous functions
-            * First Class Objects
-            * Methods
-            * Prototypes
-            * Scope
-            * Invocation forms (this)
-            * Arguments
+            The function is the scope of the variables.
+        </section>
 
+        <section data-markdown>
+            ## Global Scope
+
+                var iAmGlobal = 42;
+                var x = function(){ 
+                   var secret = 1;
+                   return iAmGlobal + 1;
+                }(); # => 43
+               
+                secret # => ReferenceError: secret not defined
+
+        </section>
+
+        <section data-markdown>
+            ## This
+
+            Refers to: how we get into the neighborhood 
+
+                var x = { 
+                  name: 'andreas',
+                  me: function() { return this.andreas; }
+                };
+
+                # Calling an Object's Method:
+                x.me(); # => 'andreas'
+
+                var y = x.me
+                y(); # => ""  !!!
+                this.name = 'root';
+                y(); #=> 'root'
+        </section>
+
+        <section data-markdown>
+            ## Root Context
+
+                function test_this() { 
+                   return this; 
+                } 
+                var i_wonder_what_this_is = test_this(); 
+
+            this reference the window object
+
+            (for browsers)
+        </section>
+
+        <section>
+            Eventhandling
+
+            <pre><code>
+  function click_handler() { 
+   alert(this); // alerts the window object 
+  } 
+
+ button id='thebutton' onclick='click_handler()'>Click me!</button>
+            </code></pre>
+This is the DOM element clicked
+
+        </section>
+
+        <section data-markdown>
+            ## Manipulating Context/this
+
+            * apply
+            * call
+
+        </section>
+
+        <section data-markdown>
+            ## Call
+
+                 var first_object = { 
+                  num: 42 
+                 }; 
+                 var second_object = { 
+                  num: 24 
+                 }; 
+  
+                 function multiply(mult) { 
+                  return this.num * mult; 
+                 } 
+  
+                 multiply.call(first_object, 5); // returns 42 * 5 
+                 multiply.call(second_object, 5); // returns 24 * 5 
+        </section>
+
+        <section data-markdown>
+            ## Apply
+
+            Similar to call, but with args as an array:
+
+                multiply.apply(first_object, [5]); // returns 42 * 5 
+                multiply.apply(second_object, [5]); // returns 24 * 5 
         </section>
 
         <section data-markdown>
             ## Dynamic Compilation
-
-            * Eval
-            * Function
+            * eval
+                * Evaluates a string and returns the result.
+            * new Function(parameterArray, codeString)
+                * Creates and returns a function.
+                * var add=new Function("a", "b", "return a+b;");
         </section>
 
         <section data-markdown>
-            ## Modules and Namespaces
-
-            * Namespace
-            * Module
-            * Mixins
-            * Dynamic Module
+            ## Best Practices
         </section>
+
+        <section data-markdown>
+            ## Modules
+
+                var MyNamespace = {};
+                var MyNS = MyNS || {};
+        </section>
+
+        <section data-markdown>
+            ## Cascade
+
+                setFirst: function(name) {
+                  this.first = name;
+                  return this;
+                } 
+                person
+                .setFirst(“Anders”)
+                .setLast(“Janmyr”)
+                .setAge(40);
+       </section>
+
+        <section data-markdown>
+            ## Encapsulation
+
+                var Esperanto = Esperanto || {};
+
+                Esperanto.Lab = function() {
+                    var privVar = "example";
+                    function privFunc() {
+                        return privVar;
+                    }
+                    return {
+                        example: function() {
+                            return privFunc();
+                        }
+                    }
+                }()
+
+        </section>
+
+
+        <section data-markdown>
+            ## Local Functions
+
+                costData: function(current) {
+                    var data = {};
+                    function addEntry(name, cost) {
+                        data[name + "PerHour"] = model.withTwoDec(cost/hours);
+                        data[name] = model.noDecimalsWithSeparator(cost);
+                    };
+
+                    addEntry("interest", this.financialCost(current)),
+                    addEntry("depreciation", this.depreciationCost(current)),
+                    return data;
+                },
+        </section>
+
+        <section data-markdown>
+            ## self = this
+
+                attachFormListener: function(form, object) {
+                    var self = this;
+                    function populator(event) {
+                        self.populateFromForm(form, object);
+                        object.notify();
+                    };
+                    form.getElements().each(function(child) {
+                    child.observe('change', populator);
+                    });
+                },
+        </section>
+
+        <section data-markdown>
+            ## Mixins
+
+                Object.mixin = function(destination, source) {
+                   for (property in source) 
+                        destination[property] = source[property];
+                   return destination;
+                }
+        </section>
+
 
         <section data-markdown>
             Learning Javascript
