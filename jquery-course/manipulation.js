@@ -36,5 +36,11 @@ $(function(exports) {
         $('<li>' + value + '</li>').insertBefore(list + ' li:first');
     };
 
+    // Removes all elements
+    // The value sent in must be wrapped in an li.
+    exports.removeElements = function(list) {
+        $(list).empty();
+    };
+
 }(window));
 

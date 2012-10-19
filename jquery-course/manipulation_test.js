@@ -45,6 +45,10 @@ describe('Manipulation', function() {
             expect($('#tasty-animals li:first').text()).to.equal('Dolphin');
         });
 
+        it('removes all elements from the #tasty-animals list', function() {
+            removeElements('#tasty-animals');
+            expect($('#tasty-animals li').length).to.equal(0);
+        });
     });
 
     afterEach(function() {
