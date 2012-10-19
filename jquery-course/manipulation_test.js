@@ -49,6 +49,12 @@ describe('Manipulation', function() {
             removeElements('#tasty-animals');
             expect($('#tasty-animals li').length).to.equal(0);
         });
+
+        it('removes the first element of the list', function() {
+            removeFirst('#tasty-animals');
+            expect($('#tasty-animals li').length).to.equal(3);
+            expect($('#tasty-animals li:first').text()).to.equal('Cow');
+        });
     });
 
     afterEach(function() {

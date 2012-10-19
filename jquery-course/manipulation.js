@@ -42,5 +42,11 @@ $(function(exports) {
         $(list).empty();
     };
 
+    // Removes the first element of the list
+    // The value sent in must be wrapped in an li.
+    exports.removeFirst = function(list) {
+        $(list).children().first().remove();
+    };
+
 }(window));
 
