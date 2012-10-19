@@ -16,6 +16,21 @@ describe('Manipulation', function() {
         });
     });
 
+    describe('Data Attributes', function () {
+        it('gets the data-style attribute from img', function() {
+            var style = getDataAttributeOfImage('style');
+            expect(style).to.equal('cool');
+        });
+
+        it('sets the data-style attribute of the image', function() {
+            setDataAttributeOfImage('style', 'smooth');
+            var data = $('img').data('style');
+            var val = $('img').attr('data-style');
+            expect(data).to.equal('smooth');
+            expect(val).to.equal('cool');
+        });
+    });
+
     describe('HTML', function() {
     });
 

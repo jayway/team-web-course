@@ -14,5 +14,15 @@ $(function(exports) {
         return $('img').attr(attribute);
     };
 
+    // Gets a data attribute of image
+    exports.getDataAttributeOfImage = function(attribute) {
+        return $('img').data(attribute);
+    };
+
+    // Gets a data attribute of image
+    exports.setDataAttributeOfImage = function(attribute, value) {
+        console.log(arguments);
+        $('img').data(attribute, value);
+    };
 }(window));
 
