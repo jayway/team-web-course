@@ -45,14 +45,13 @@
 
             <section>
                 <h1>What is jQuery?</h1>
-                <p>JavaScript library to:
+                <p>JavaScript library to:</p>
                 <ul>
                     <li>Manipulate a HTML page after it's displayed by the browser</li>
                     <li>Listen to and interact with the page</li>
                     <li>Do animations</li>
                     <li>Handle ajax calls the server</li>
                 </ul>
-                <p>
             </section>
 
             <section>
@@ -86,7 +85,7 @@
                 <br/>
 
                 <div class="fragment">
-                    <p>..becasue of the end of the jQuery library</p>
+                    <p>..because of the end of the jQuery library</p>
                     <pre><code>window.jQuery = window.$ = jQuery;</code></pre>
                 </div>
             </section>
@@ -102,12 +101,13 @@ $( document ).ready(function() {
             </section>
 
             <section>
-                <h1>Selectors</h1>
+                <h1>CSS Selectors</h1>
                 <pre><code>
-$( '#header' ); // select the element with an ID of 'header'
-$( 'li' );      // select all list items on the page
-$( 'ul li' );   // select list items that are in unordered lists
-$( '.person' ); // select all elements with a class of 'person'
+$( '#header' ); // The element with an ID of 'header'
+$( 'li' );      // All list items on the page
+$( 'ul li' );   // All descendent list items of ul
+$( 'ul > li' ); // Immediate descendent list items of ul
+$( '.person' ); // All elements with a class of 'person'
                 </code></pre>
                 <aside class="notes">
                     Selections will only contain the element that existed in the DOM when the query was executed.
@@ -115,6 +115,19 @@ $( '.person' ); // select all elements with a class of 'person'
                 </aside>
             </section>
 
+            <section>
+                <h1>jQuery Extended Selectors</h1>
+                <pre><code>
+$( ':header' ); // All headings h1, h2, ..., h6
+$( ':button' ); // Buttons, submit, button, reset
+$( ':even' );   // Even elements of the selection (0-based)
+$( ':gt(4)' );  // All elements after element 4 (0-based)
+                </code></pre>
+                <aside class="notes">
+                    Selections will only contain the element that existed in the DOM when the query was executed.
+                    Any additions later on will not be propagated
+                </aside>
+            </section>
             <section>
                 <h1>Querying the selection</h1>
                 <p>Working with the raw DOM element</p>
@@ -199,32 +212,226 @@ $( 'li' ).eq( 1 ).toggleClass( 'hidden' );
             </section>
 
             <section>
-                <h1>...continued</h1>
-                <p>Changing form values</p>
+                <h1>...attributes</h1>
+                <p>Getting attribute values</p>
                 <pre><code>
-$( 'input[type="text"]' ).val( 'new value' );
+$( 'a' ).attr( 'title' ); // returns value of title
                 </code></pre>
                 <br/>
-                <p>Changing attributes</p>
+                <p>Setting attribute values</p>
                 <pre><code>
 $( 'a' ).attr( 'title', 'Click me!' );
                 </code></pre>
             </section>
 
-            <section>
-                <h1>Traversal, basic</h1>
 
-                find, parent, ancestors?
+            <section>
+                <h1>...data attributes</h1>
+                <p>Getting data attribute values</p>
+                <pre><code>
+$( '.tapir' ).data( 'tapir-color' ); // value of data-tapir-color
+                </code></pre>
+                <br/>
+                <p>Setting attribute values</p>
+                <pre><code>
+$( '.tapir' ).data( 'tapir-color', 'black-and-white' );
+                </code></pre>
             </section>
 
             <section>
-                <h1>Events, basic</h1>
+                <h1>...form values</h1>
+                <p>Changing form values</p>
+                <pre><code>
+$( 'input:text' ).val(); // The value of the first text field
+                </code></pre>
+                <br/>
+                <p>Changing form values</p>
+                <pre><code>
+$( 'input:text' ).val( 'new value' );
+                </code></pre>
             </section>
 
             <section>
-                <h1>Ajax, basic</h1>
+                <h1>Traversal, down</h1>
+                <p>Finding descendants</p>
+                <pre><code>
+return $('#markup ul').find("li");
+                </code></pre>
+                <p>Finding direct descendants</p>
+                <pre><code>
+return $('#markup ul').children("li");
+                </code></pre>
             </section>
 
+            <section>
+                <h1>...Traversal, up</h1>
+                <p>parent</p>
+                <pre><code>
+return $('#markup ul').parent(); // The parent of the selected elements
+                </code></pre>
+                <p>parents</p>
+                <pre><code>
+return $('#tapir').parents('ul'); // All ul ancestors
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Events, click</h1>
+                <pre><code>
+// Click handler for all a's
+return $('a').click(function(event) {
+    event.preventDefault(); // Prevent default action
+    console.log(event.target.href); // Log the href
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Events, on</h1>
+                <p>click is a shortcut for on('click'...)</p>
+                <pre><code>
+// Click handler for all li's
+// One handler per li.
+return $('li').on('click', function(event) {
+    console.log($(this).data('id'));  // Log data-id attribute
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Events, on with selector</h1>
+                <pre><code>
+// One handler for all li's
+return $('ul').on('click', 'li', function(event) {
+    console.log($(this).data('id'));
+});
+                </code></pre>
+                <div class="fragment">
+                    <ul>
+                        <li>Better performance</li>
+                        <li>Handles adding of new items automatically</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h1>Ajax, get</h1>
+                <pre><code>
+$.get('http://google.com/', function(data, status, jqXHR) {
+   console.log(data); // log the data
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Ajax, post</h1>
+                <pre><code>
+// Query Google for tapir
+$.post('http://google.com/', {q: 'tapir'}, log);
+
+// Extract the callback
+function log(data) {
+    console.log(arguments);
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Ajax, ajax</h1>
+                <p>Same as before, but more flexible</p>
+                <pre><code>
+// Query Google for tapir
+$.ajax({
+    type: 'POST',
+    url: 'http://google.com/',
+    data: {q: 'tapir'},
+    success: log
+    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Ajax, error handling</h1>
+                <pre><code>
+// Query Google for tapir
+$.ajax({
+    type: 'POST',
+    url: 'http://google.com/',
+    data: {q: 'tapir'},
+    success: log,
+    error: error
+    });
+
+function error(jqXHR, textStatus, errorThrown) {
+    $('#error-panel').show().text(errorThrown);
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Ajax, complete (always)</h1>
+                <pre><code>
+// Query Google for tapir
+$.ajax({
+    type: 'POST',
+    url: 'http://google.com/',
+    data: {q: 'tapir'},
+    success: log,
+    error: error,
+    complete: complete
+    });
+
+function complete(jqXHR, textStatus) {
+    $('#spinner').hide();
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Ajax, deferred</h1>
+                <pre><code>
+
+// Ajax and friends return a deferred
+var deferred = $.ajax(...);
+deferred
+    .done(log)        // success is a deprecated alias
+    .fail(error)      // error is a deprecated alias
+    .alway(complete); // complete is a deprecated alias
+                </code></pre>
+                <div class="fragment">
+                    <ul>
+                        <li>As many callbacks as you like</li>
+                        <li>Called when added if call is complete</li>
+                        <li>Very flexible, and dangerous, and awesome!</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h1>$.when, Deferred</h1>
+                <p>Wait for many then do something</p>
+                <pre><code>
+
+// Ajax and friends return a deferred
+var call1 = $.ajax(...);
+var call2 = $.ajax(...);
+var all = $.when(call1, call2);
+all.
+    .done(allDone) // Called when all succeeds
+    .fail(error);  // Called if one fails
+
+function allDone(a1, a2) {
+    // a1 ~= [data. status, jqXhr]
+    // a2 ~= [data. status, jqXhr]
+                </code></pre>
+                <div class="fragment">
+                    <p>DON'T GO CRAYZY WITH DEFERREDS</p>
+                </div>
+            </section>
+            <section>
+                <h1>Finito</h1>
+                <h2>Lab Time</h2>
+                <p>web@jayway.com</p>
+            </section>
       </div>
 
             <!-- The navigational controls UI -->

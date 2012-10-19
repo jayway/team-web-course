@@ -11,7 +11,10 @@
 * 
 
 ### Manipulation
-* `addClass` / `removeClass`, `toggleClass`
+* `attr` / `data`, `toggleClass`
+
+### Form
+* `val` / `val()`
 
 ### Traversal, basic
 * `find`, `parent`, `parents`
