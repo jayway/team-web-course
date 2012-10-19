@@ -88,6 +88,16 @@ describe('Ajax', function() {
             });
         });
 
+        it('gets two facts from the server and returns the results', function(done) {
+            var id = 7;
+            var deferred = getTwoFacts(7, 9);
+            deferred.done(function(res1, res2) {
+                expect(res1[0].fact).to.equal('The tapir is very shy.');
+                expect(res2[0].fact).to.equal('A tapir weight between 150 and 400 kg.');
+                done();
+            });
+        });
+
     });
 
     afterEach(function() {

@@ -93,6 +93,18 @@ $(function(exports) {
         return $.get('http://tapirs.herokuapp.com/facts/' + id, callback);
     };
 
+    // $.get Request a fact by id, twice
+    // $.when to bundle up the requests
+    // Gets two existing fact from the server
+    // http://tapirs.herokuapp.com/facts/:id
+    // Call callback on success
+    // Returns the deferred object.
+    exports.getTwoFacts = function(id1, id2, callback) {
+        var deferred1 = $.get('http://tapirs.herokuapp.com/facts/' + id1);
+        var deferred2 = $.get('http://tapirs.herokuapp.com/facts/' + id2);
+        return $.when(deferred1, deferred2).then(callback);
+    };
+
 
 }(window));
 
