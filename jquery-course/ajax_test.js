@@ -75,10 +75,20 @@ describe('Ajax', function() {
             });
 
         });
-        it('calls a service with parameters');
     });
 
+    describe('Deferreds', function() {
+        it('calls the done function on the deferred object', function(done) {
+            var id = 7;
+            var deferred = getFact(id);
+            deferred.done(function(data) {
+                expect(data.id).to.equal(7);
+                expect(data.fact).to.equal('The tapir is very shy.');
+                done();
+            });
+        });
 
+    });
 
     afterEach(function() {
         $('#markup').html(markup);

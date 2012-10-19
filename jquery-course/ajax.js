@@ -83,6 +83,10 @@ $(function(exports) {
         });
     };
 
+    exports.getFact = function(id, callback) {
+        return $.get('http://tapirs.herokuapp.com/facts/' + id, callback);
+    };
+
 
 }(window));
 
