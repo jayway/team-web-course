@@ -30,6 +30,39 @@ describe('Manipulation', function() {
             var value = getSelectValue();
             expect(value).to.equal('aardvark');
         });
+
+        it('gets the select value', function() {
+            $(':selected').val('aardvark');
+            var value = getSelectValue();
+            expect(value).to.equal('aardvark');
+        });
+
+        describe('Form Submission', function() {
+            beforeEach(function() {
+                $(':text').val('platypus');
+                $(':password').val('dingo');
+                $(':selected').val('tapir');
+                $('textarea').val('okapi');
+            });
+
+            it('serializes the form as a query string', function() {
+                var queryString = getFormQueryString();
+                var expected = 'name=platypus&pwd=dingo&choice=tapir&area=okapi';
+                expect(queryString).to.equal(expected);
+            });
+
+            it('serializes the form as an array', function() {
+                var valueArray = getFormArray();
+                console.log(valueArray);
+                expect(valueArray).to.deep.equal(
+                    [
+                        { name: 'name', value: 'platypus'},
+                        { name: 'pwd', value: 'dingo'},
+                        { name: 'choice', value: 'tapir'},
+                        { name: 'area', value: 'okapi'}
+                ]);
+            });
+        });
     });
 
     afterEach(function() {
