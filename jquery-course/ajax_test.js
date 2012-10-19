@@ -88,9 +88,9 @@ describe('Ajax', function() {
             });
         });
 
-        it('gets two facts from the server and returns the results', function(done) {
-            var id = 7;
+        it('gets two facts from the server', function(done) {
             var deferred = getTwoFacts(7, 9);
+            // The done callback will get one success response per call
             deferred.done(function(res1, res2) {
                 expect(res1[0].fact).to.equal('The tapir is very shy.');
                 expect(res2[0].fact).to.equal('A tapir weight between 150 and 400 kg.');
@@ -98,6 +98,14 @@ describe('Ajax', function() {
             });
         });
 
+        it('gets one existing and one missing fact from the server', function(done) {
+            var deferred = getTwoFacts(7, 400);
+            // The fail callback will get the FIRST failure
+            deferred.fail(function(jqXhr, status, error) {
+                console.log(arguments);
+                done();
+            });
+        });
     });
 
     afterEach(function() {
