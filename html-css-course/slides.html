@@ -62,6 +62,8 @@
                     <li>paragraphs</li>
                     <li>divs</li>
                     <li>spans</li>
+                    <li>images</li>
+                    <li>links</li>
                 </ul>
             </section>
             <section>
@@ -101,9 +103,50 @@
 Just some free flying text separated by some line breaks</code></pre>
             </section>
             <section>
+                <h1>Divs</h1>
+                <p>Divs are used to group content for layouting and positioning with CSS. </p>
+                <pre><code>&lt;div&gt;
+    &lt;h3&gt;This is a heading&lt;/h3&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                <div class="fragment">
+                <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
+                <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;article&quot;&gt;Main content area&lt;/div&gt;
+    &lt;div class=&quot;aside&quot;&gt;Secondary content area&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+            </section>
+            <section>
+                <h1>Spans</h1>
+                <p>To make it possible to style and manipulate text or part of a text the &lt;span&gt; element is suitable.</p>
+                <pre><code>&lt;p&gt;A text which is unstyled &lt;span class=&quot;stand-out&quot;&gt;except from this part&lt;/span&gt;&lt;/p&gt;</code></pre>
+            </section>
+            <section>
+                <h1>Images</h1>
+                <p>Used to display an image on a web page.</p>
+                <pre><code>&lt;img src=&quot;../image.png&quot; alt=&quot;The Jayway logotype&quot;&gt;</code></pre>
+                <ul>
+                    <li>The src (source) attribute points out the URL to the image to display.</li>
+                    <li>The required alt (alternative) attribute specifies an alternate text for an image, if the image cannot be displayed.</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Links</h1>
+                <p>A link, when clicked (or tapped), takes you to another document or to a section within the current document.</p>
+                <pre><code>&lt;a href=&quot;http://www.jayway.com&quot;&gt;This is a link&lt;/a&gt;</code></pre>
+            </section>
+            <section>
+                <h1>Links</h1>
+                <p>The id attribute can be used to create a bookmark inside the HTML document.</p>
+                <pre><code>&lt;a id=&quot;detailed-info&quot;&gt;This is a document internal anchor&lt;/a&gt;</code></pre>
+                <p>And here are two ways of linking to the anchor.</p>
+                <pre><code>&lt;a href=&quot;#detailed-info&quot;&gt;Click to read more&lt;/a&gt;</code></pre>
+                <pre><code>&lt;a href=&quot;http://www.jayway.com/page-with-anchors.html#detailed-info&quot;&gt;Click to read more on jayway.com&lt;/a&gt;</code></pre>
+            </section>
+            <section>
                 <section>
                     <h1>Lab time!</h1>
-                    <p>Grab your laptops!</p>
+                    <p>Grab your laptops! We are going to take a dive into the pond of HTML.</p>
                 </section>
                 <section>
                     <h1>Lab 1</h1>
@@ -278,6 +321,66 @@ Just some free flying text separated by some line breaks</code></pre>
                 <section>
                     <h1>Finally, the submit button</h1>
                     <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre>
+                </section>
+                <section>
+                    <h1>Lab 5</h1>
+                    <p>Use ids and classes to prepare the HTML elements for styling and DOM manipulation. Use divs to improve the layouting of the form elements.</p>
+                    <img src="form2.png" alt="">
+                </section>
+                <section>
+                    <p>Ids are for unique elements, classes can be used multiple times per generated HTML document.</p>
+                    <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
+    &lt;h1&gt;A level 1 heading&lt;/h1&gt;
+    &lt;p&gt;Our first paragraph. Sed do et &lt;a href=&quot;http://jayway.com&quot;&gt;dolore magna&lt;/a&gt; aliqua. Ut enim ad minim, quis nostrud.&lt;/p&gt;
+    
+    &lt;img src=&quot;../image.png&quot; alt=&quot;Alternative text&quot;&gt;
+&lt;/div&gt;</code></pre>
+                    <p>Classify on what it is rather than what it should look like.</p>
+                    <pre><code>&lt;div class=&quot;text&quot;&gt;
+    &lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;
+&lt;/div&gt;</code></pre>
+                </section>
+            </section>
+            <section><h1>CSS</h1></section>
+            <section><h1>Basic Styling</h1></section>
+            <section><h1>Pseudo Classes</h1></section>
+            <section><h1>Basic Layout</h1></section>
+            <section><h1>Box Model</h1></section>
+            <section><h1>Positioning</h1></section>
+            <section><h1>The Cascade - Inheritance</h1></section>
+            <section><h1>The Cascade - Specificity</h1></section>
+            <section><h1>Styling of Forms</h1></section>
+            <section><h1>Media Queries</h1></section>
+            <section>
+                <section>
+                    <h1>Lab time!</h1>
+                    <p>Warm-up! It is time to get intimate with beautiful CSS stuff.</p>
+                </section>
+                <section>
+                    <h1>Pre lab</h1>
+                    <p>Get familiar with selectors, pseudo selectors and properties.</p>
+                    <p></p>
+                </section>
+                <section>
+                    <h1>Lab 6 - Tools</h1>
+                    <p></p>
+                </section>
+                <section>
+                    <h1>Lab 7 - Basic Layout</h1>
+                    <p></p>
+                </section>
+                <section>
+                    <h1>Lab 8 - The Cascade</h1>
+                    <p></p>
+                </section>
+                <section>
+                    <h1>Lab 9 - Styling of forms</h1>
+                    <p></p>
+                </section>
+                <section>
+                    <h1>Lab 10 - Media Queries</h1>
+                    <p></p>
                 </section>
             </section>
         </div>
