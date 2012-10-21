@@ -19,11 +19,66 @@
 
 		<!-- jw styles -->
 		<link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
+
+	<!-- Stylesheet -->
+	<link href="sandbox.css" rel="stylesheet"/>
 		
 		<script>
 			// If the query includes 'print-pdf' we'll use the PDF print sheet
 			document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
+
+
+	<!-- Templates -->
+	
+	<!-- The sandbox template: -->
+	<script type="text/template" id="tplSandbox">
+		<pre class="output"></pre>
+		<div class="input">
+			<textarea rows="1" placeholder="<%= placeholder %>"></textarea>
+		</div>
+	</script>
+
+	<!-- The command/result template (NB whitespace/line breaks matter inside <pre> tag): -->
+	<script type="text/template" id="tplCommand"><% if (! _hidden) { %><span class="command"><%= command %></span>
+<span class="prefix"><%= this.resultPrefix %></span><span class="<%= _class %>"><%= result %></span>
+<% } %></script>
+
+
+	<!-- Scripts -->
+
+	<!-- Underscore, Backbone, backbone-localStorage, jQuery -->
+	<script src="libs/underscore.min.js"></script>
+	<script src="libs/backbone.min.js"></script>
+	<script src="libs/backbone-localStorage.min.js"></script>
+	<script src="libs/jquery.min.js"></script>
+
+	<!-- The JS Sandbox Console script (requires underscore, backbone and jquery): -->
+	<script src="sandbox-console.js"></script>
+	
+	<!-- When ready, create the model and view -->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			// Create the sandbox:
+			window.sandbox = new Sandbox.View({
+				el : $('#sandbox1'),
+				model : new Sandbox.Model({
+					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					fallback : true // use global eval if iframe isn't available (default: true)
+				})
+			});
+
+			window.sandbox = new Sandbox.View({
+				el : $('#sandbox2'),
+				model : new Sandbox.Model({
+					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					fallback : true // use global eval if iframe isn't available (default: true)
+				})
+			});
+
+		});
+	</script>
+
 
 		<!--[if lt IE 9]>
 		<script src="../reveal.js/lib/js/html5shiv.js"></script>
@@ -190,6 +245,12 @@
                 equals( false, null === undefined, "BUT === does not" );
         </section>
 
+        <section>
+          <p>Excercise: "x" === new String('x') ?</p>
+
+     	  <div class="sandbox" id="sandbox1">sandbox console loading...</div>
+        </section>
+
         <section data-markdown>
             ### Objects
 
@@ -253,6 +314,12 @@
                 var f = function(a, b) { return a + b; }
                 f(1,2); # => 3
         </section>
+
+        <section>
+
+          <p>Write three different hello world functions</p>
+     	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
+       </section>
 
        <section data-markdown>
             ### Returning Functions
