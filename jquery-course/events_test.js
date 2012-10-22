@@ -25,6 +25,7 @@ describe('Events', function() {
             expect($('#markup h1:first')).to.have.class('highlight');
         });
         it('removes highlight from h1 on out', function() {
+            $('#markup h1:first').addClass('highlight');
             $('#markup h1:first').mouseout();
             expect($('#markup h1:first')).to.not.have.class('highlight');
         });
@@ -38,7 +39,7 @@ describe('Events', function() {
             expect($('#markup li:first')).to.have.class('highlight');
         });
 
-        it('highlights the li on click', function() {
+        it('highlights the li on click via ul', function() {
             addClickHandlerToUlForLiWithOn();
             $('#markup li:first').click();
             expect($('#markup li:first')).to.have.class('highlight');
