@@ -145,6 +145,19 @@
         </section>
 
         <section data-markdown>
+            ### Nine Types
+            * null
+            * undefined
+            * Strings, e.g. 'foo', "foo" (sometimes boxed)
+            * Numbers, e.g. 5
+            * Booleans, true false (sometims boxed)
+            * Arrays, e.g. [1,2,3] (always boxed)
+            * Object, e.g. {foo: 'bar'}, always boxed.
+            * Regular Expressions, e.g. /foo\s*([bar]+)/. Always boxed
+            * Functions
+        </section>
+
+        <section data-markdown>
             Values and Primitives
             ---------------------
 
@@ -218,9 +231,6 @@
         <section data-markdown>
             ### undefined and null
 
-            _Javascript declares both null and undefined which has subtle
-            differences._
-
             _Anything unassigned or not declared has the value 'undefined'._
 
             null is a special value meaning "no value".
@@ -233,67 +243,51 @@
             ### undefined and null
 
             _On the other hand, undefined means that the variable has not been declared, or has not been given a value._
-
-
-                equals( 'undefined', typeof i, "no 'i' anywhere yeilds 'undefined' ");
-                var i;
-                equals( 'undefined', typeof i, "no assignment to 'i' " +
-                    "still gives us 'undefined'");
-
-                //caveat:
-                equals( true, null == undefined, "== consider them equal" );
-                equals( false, null === undefined, "BUT === does not" );
         </section>
 
+        <section data-markdown>
+            Equality and Comparison
+            -----------------------
+
+            '==' can produce confusing results
+
+                equals( false, '' == '0' );
+                equals( true, 0 == '' );
+                equals( true, 0 == '0' );
+
+                equals( false, false == 'false' );
+                equals( true, false == '0' );
+
+                equals( false, false == undefined );
+                equals( false, false == null );
+                equals( true, null == undefined );
+
+                equals( true, ' \t\r\n ' == 0 );
+
+        </section>
+
+
+        <section data-markdown>
+          ### Excercise
+
+          * typeof null ?
+          * 'x' == new String('x') ? with === ?
+          * typeof unknownVariable ?
+          * null == undefined and null === undefined
+          * undefined || 'Hello'
+          * "Hello " + undefined + 2
+
+        </section>
         <section>
-          <p>Excercise: "x" === new String('x') ?</p>
+          <p>Excercise</p>
 
      	  <div class="sandbox" id="sandbox1">sandbox console loading...</div>
         </section>
 
         <section data-markdown>
-            ### Objects
-
-            An object is a container of keys and values, i.e. a map.
-
-                { name: 'John', age: function() {
-                    return differenceInYears( new Date(1973,3,5), new Date())
-                } }
-
-        </section>
-
-        <section data-markdown>
             ### Functions
 
-            A function is a first class citizen (unlike Java).
-
-            Invoked by using parenthesis.
-
-                //Example:
-                var greeter = function() { return 'hello'; }
-                
-                greeter // a reference to the function
-                greeter() // invocation of the function
-                equals( 'hello', greeter(), 'invocation')
-
-        </section>
-
-        <section data-markdown>
-            ### Functions
-
-            Functions being "first class citizen" means
-
-            * Functions can be arguments to functions
-            * Functions can be returned from functions
-
-        </section>
-
-        <section data-markdown>
-            ### Example
-
-                _f('whack')();
-
-            `_f` is a function returning a function
+            # First Class Citizen
 
         </section>
 
@@ -312,14 +306,57 @@
             ## Anonymous Functions
 
                 var f = function(a, b) { return a + b; }
-                f(1,2); # => 3
         </section>
 
-        <section>
+        <section data-markdown>
+            ### Invokation
 
-          <p>Write three different hello world functions</p>
-     	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
-       </section>
+            by parenthesis
+
+                //Example:
+                var greeter = function() { return 'hello'; }
+                
+                greeter // a reference to the function
+                greeter() // invocation of the function
+                equals( 'hello', greeter(), 'invocation')
+
+        </section>
+
+        <section data-markdown>
+            ### Arguments
+
+            Arguments bound if present, e.g:
+
+                (function (x, y) {return x + y}) (’foo’)  # => ’fooundefined’
+                
+        </section>
+
+        <section data-markdown>
+            ### Lazy Scoping
+
+               var bar = function () {return bar};
+               bar () === bar              // => true
+
+        </section>
+
+        <section data-markdown>
+            ### First Class Citizen
+
+            means
+
+            * Can be arguments to functions
+            * Can be returned from functions
+
+        </section>
+
+        <section data-markdown>
+            ### Example
+
+                _f('whack')();
+
+            `_f` is a function returning a function
+
+        </section>
 
        <section data-markdown>
             ### Returning Functions
@@ -332,52 +369,180 @@
         </section>
 
         <section data-markdown>
-            Statements
-            ----------
+            ### Excercise
 
-            * Declarations
-            * Conditionals
-            * Loops
-            * Exceptions
-            * Flow statments
-        </section>
-
-        <section data-markdown>
-            Equality and Comparison
-            -----------------------
-
-                /*In Javascript there are two kinds of comparison operators '=='
-                (equality) and '===' (identity). The difference is that '=='
-                will perform type conversion whereas '===' will not.
-                Performance wise '===' is faster if the types differ, but maybe
-                more importantly '==' can produce confusing results:*/
-
-                equals( false, '' == '0' );
-                equals( true, 0 == '' );
-                equals( true, 0 == '0' );
-
-                equals( false, false == 'false' );
-                equals( true, false == '0' );
-
-                equals( false, false == undefined );
-                equals( false, false == null );
-                equals( true, null == undefined );
-
-                equals( true, ' \t\r\n ' == 0 );
+            * An ananymous function returning your name.
+            * A function with one function arg that append "Hello" to the function argumentent's return value.
 
         </section>
 
+        <section>
+          <p>Excercies</p>
+     	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
+       </section>
+
         <section data-markdown>
-            Equality and Comparison
-            -----------------------
+            ### if else if else
 
-                // However, because of lack of type conversion,
-                // there can be WTF with '===':
+                if (a === b) {
+                   "a equals b";
+                } else if (a === c) {
+                   "a equals c";
+                } else {
+                   "a does not equal either b or c";
+                }
 
-                equals( true, "abc" == new String( "abc" ) );
-                equals( false, "abc" === new String( "abc" ) );
+            Or 
 
-                // The negated operators are called: '!=' and '!==' respectively.
+                a === b ? "a equal b" : "a not equal b"
+        </section>
+
+        <section data-markdown>
+            ### Boolean Operators && ||
+        </section>
+
+
+        <section data-markdown>
+            ### while
+
+                while (c < 10) {
+                   c += 1;
+                   // ...
+                }
+        </section>
+
+        <section data-markdown>
+            ### while
+
+                while (c < 10) {
+                   c += 1;
+                   // ...
+                }
+        </section>
+
+        <section data-markdown>
+            ### do... while
+
+                do {
+                   c += 1;
+                } while (c < 10)  
+
+        </section>
+
+
+        <section data-markdown>
+            ### switch
+
+                switch(i) {
+                  case 1:
+                     // ...
+                     break;
+                  case 2:
+                     // ...
+                    break;
+                  default:
+                    // ...
+                  break;
+                }
+
+        </section>
+
+        <section data-markdown>
+            ### for
+
+                var c;
+                for (c = 0; c < 10; c += 1) {
+                  // ...
+                }
+            Or
+
+                for (var number = 0; number <= 12; number = number + 2)
+                   show(number);
+
+        </section>
+
+        <section data-markdown>
+            ### break 
+
+                for (i=0;i<10;i++)
+                {
+                   if (i==3) break;
+                   x=x + "The number is " + i + "<br />";
+                }
+
+        </section>
+
+
+        <section data-markdown>
+            ### continue
+
+                for (i=0;i<=10;i++)
+                {
+                   if (i==3) continue;
+                   x=x + "The number is " + i + "<br />";
+                }
+        </section>
+
+
+        <section data-markdown>
+            ### try catch finally
+
+                try{
+                  undefinedfunction();
+                  alert('I guess you do exist');
+                }
+                catch(e){
+                  alert('An error has occurred: '+e.message);
+                }
+                finally{
+                  alert('I am alerted regardless of the outcome above');
+                }
+
+        </section>
+
+
+        <section data-markdown>
+            ### Throw
+
+                throw "Oops" // no stack trace
+
+                throw new Error("Ooops") // now with stack trace
+
+        </section>
+
+        <section data-markdown>
+            ## Arrays
+       
+            * Array inherits from object
+            * Indexes are converted to strings
+        </section>
+
+        <section data-markdown>
+            ## Arrays
+
+            * [ ]
+            * names =  [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
+            * typeof value == ‘object’
+            * value.constructor === Array
+        </section>
+
+        <section data-markdown>
+            ## Array Methods
+
+            * concat
+            * join
+            * pop
+            * push
+            * slice
+            * sort
+            * splice
+            * length
+        </section>
+
+        <section data-markdown>
+            ### Exerices
+             
+            Write function: sum([1,2,3]) # => 6
 
         </section>
 
@@ -391,6 +556,19 @@
             * Inheritance
 
         </section>
+
+
+        <section data-markdown>
+            ### Objects
+
+            An object is a container of keys and values, i.e. a map.
+
+                { name: 'John', age: function() {
+                    return differenceInYears( new Date(1973,3,5), new Date())
+                } }
+
+        </section>
+
 
 	<section>
 	    <p>Object Literal</p>
@@ -540,34 +718,6 @@ Douglas Crockford
 
         </section>
 
-        <section data-markdown>
-            ## Arrays
-       
-            * Array inherits from object
-            * Indexes are converted to strings
-        </section>
-
-        <section data-markdown>
-            ## Arrays
-
-            * [ ]
-            * names =  [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
-            * typeof value == ‘object’
-            * value.constructor === Array
-        </section>
-
-        <section data-markdown>
-            ## Array Methods
-
-            * concat
-            * join
-            * pop
-            * push
-            * slice
-            * sort
-            * splice
-        </section>
-
 
         <section data-markdown>
             ## Built-in Prototypes
@@ -587,6 +737,13 @@ Douglas Crockford
                };
 
                [1.2.3].last(); // => 3
+        </section>
+
+        <section data-markdown>
+            ### Excercise
+
+            TODO
+
         </section>
 
         <section data-markdown>
