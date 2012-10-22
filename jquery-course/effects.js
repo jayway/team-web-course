@@ -4,22 +4,18 @@ $(function(exports) {
 
     // Hides the ul containing animals
     exports.hideTheAnimals = function() {
-        $('#markup ul').hide();
     };
 
     // Shows the div with id 'surprise'
     exports.showTheSurprise = function() {
-        $('#surprise').show();
     };
 
     // Fades out the ul containing animals
     exports.fadeOutTheAnimals = function() {
-        $('#markup ul').fadeOut();
     };
 
     // Fades in the div with id 'surprise'
     exports.fadeInTheSurprise = function() {
-        $('#surprise').fadeIn();
     };
 
 
