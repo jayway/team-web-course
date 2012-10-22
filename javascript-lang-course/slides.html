@@ -138,28 +138,46 @@
         <section data-markdown>
           Language Syntax
           ---------------
-          * Numbers, Strings, Booleans
-          * Objects
-          * Functions
-          * Statements
+        </section>
+
+        <section data-markdown>
+            ### Whitespace
+
+            Use secimolons, example:
+                
+                a = b + c
+                (d + e).foo()
+ 
+                // Treated as:
+                //   a = b + c(d + e).foo();
+        </section>
+
+        <section data-markdown>
+            ### Variable
+               
+                var x;  // declared but not defined
+                var y = 0;
+                z = 1; // always global scope
+
         </section>
 
         <section data-markdown>
             ### Nine Types
+            * Numbers, e.g. 5
+            * Strings, e.g. 'foo', "foo" (sometimes boxed)
+            * Booleans, true false (sometims boxed)
             * null
             * undefined
-            * Strings, e.g. 'foo', "foo" (sometimes boxed)
-            * Numbers, e.g. 5
-            * Booleans, true false (sometims boxed)
             * Arrays, e.g. [1,2,3] (always boxed)
             * Object, e.g. {foo: 'bar'}, always boxed.
             * Regular Expressions, e.g. /foo\s*([bar]+)/. Always boxed
             * Functions
         </section>
 
+
         <section data-markdown>
-            Values and Primitives
-            ---------------------
+            Numbers
+            -------
 
             ### Numbers
             _Represents both integers and reals. 64 bit representation._
@@ -1000,6 +1018,86 @@ This is the DOM element clicked
                 }
         </section>
 
+
+        <section data-markdown>
+            ### javascript gotchas
+
+            Be aware of:
+ 
+                "1" == 1 // true
+
+            Advice:
+ 
+                Number("1") === 1
+
+        </section>
+
+        <section data-markdown>
+            ### parseInt doesn't assume base-10
+
+            Be aware of:
+ 
+                parseInt("8"); //8
+                parseInt("08"); //0
+
+            Advice:
+ 
+                parseInt("8", 10); //8
+                parseInt("08", 10); //8
+
+        </section>
+
+
+        <section data-markdown>
+            ### instanceof
+
+            Be aware of:
+
+                "hello" instanceof String; //false
+                new String("hello") instanceof String; //true
+
+        </section>
+
+
+        <section data-markdown>
+            ### instanceof
+
+            Be aware of:
+
+                typeof [1,2,3]  // 'object'
+                [1,2,3] instanceof Array // true
+
+        </section>
+
+        <section data-markdown>
+            ### Objects and Literals
+
+            Be aware of:
+
+                var a = new Object();
+                var b = new Boolean(true);
+                new Array("one", "two")
+                new Function("hello" "");
+
+            Advice, use literals
+
+                var a = {}
+                var b = false;
+
+
+        </section>
+
+        <section data-markdown>
+            ### Final Advice
+
+            Use JSLint !
+
+        </section>
+
+        <section data-markdown>
+            ### Example
+
+        </section>
 
         <section data-markdown>
             Learning Javascript
