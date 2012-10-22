@@ -1,9 +1,10 @@
-# Javascript Course
+# Web Courses by Team Web
 
-A Javascript course. Currently only the outline of the different parts but, it
-should be filled up with additional material such as:
+## [jQuery Course](html-css-course/README.md)
 
-* Presentations
-* Lab Assignments
-* Quick Reference Cards
+## [Javascript Course](javascrpt-lang-course/README.md)
+
+## [jQuery Course](jquery-course/README.md)
+
+
 
