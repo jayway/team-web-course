@@ -110,15 +110,16 @@ Just some free flying text separated by some line breaks</code></pre>
     &lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                 <div class="fragment">
-                <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
-                <pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;article&quot;&gt;Main content area&lt;/div&gt;
-    &lt;div class=&quot;aside&quot;&gt;Secondary content area&lt;/div&gt;
-&lt;/div&gt;</code></pre></div>
+                    <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
+                    <pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content-primary&quot;&gt;Main content area&lt;/div&gt;
+    &lt;div class=&quot;content-secondary&quot;&gt;Secondary content area&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
             </section>
             <section>
                 <h1>Spans</h1>
-                <p>To make it possible to style and manipulate text or part of a text the &lt;span&gt; element is suitable.</p>
+                <p><code>SPAN</code> carries no structural meaning itself, but it can be used to provide extra structure through its <code>LANG</code>, <code>DIR</code>, <code>CLASS</code>, and <code>ID</code> attributes.</p>
                 <pre><code>&lt;p&gt;A text which is unstyled &lt;span class=&quot;stand-out&quot;&gt;except from this part&lt;/span&gt;&lt;/p&gt;</code></pre>
             </section>
             <section>
@@ -324,18 +325,18 @@ Just some free flying text separated by some line breaks</code></pre>
                 </section>
                 <section>
                     <h1>Lab 5</h1>
-                    <p>Use ids and classes to prepare the HTML elements for styling and DOM manipulation. Use divs to improve the layouting of the form elements.</p>
+                    <p>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation. Use divs to logically group form elements.</p>
                     <img src="form2.png" alt="">
                 </section>
                 <section>
-                    <p>Ids are for unique elements, classes can be used multiple times per generated HTML document.</p>
+                    <p>ID's are for unique elements,<br> classes can be used multiple times.</p>
                     <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
     &lt;h1&gt;A level 1 heading&lt;/h1&gt;
     &lt;p&gt;Our first paragraph. Sed do et &lt;a href=&quot;http://jayway.com&quot;&gt;dolore magna&lt;/a&gt; aliqua. Ut enim ad minim, quis nostrud.&lt;/p&gt;
     
     &lt;img src=&quot;../image.png&quot; alt=&quot;Alternative text&quot;&gt;
 &lt;/div&gt;</code></pre>
-                    <p>Classify on what it is rather than what it should look like.</p>
+                    <p>Classify on what it is, rather than what it should look like.</p>
                     <pre><code>&lt;div class=&quot;text&quot;&gt;
     &lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
     &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;
