@@ -343,8 +343,56 @@ Just some free flying text separated by some line breaks</code></pre>
                 </section>
             </section>
             <section><h1>CSS</h1></section>
-            <section><h1>Basic Styling</h1></section>
-            <section><h1>Pseudo Classes</h1></section>
+            <section>
+                <h1>Basic Styling</h1>
+                <p>Selectors define the rule for what element(s) in your HTML document you want to target for styling.</p>
+                <p>There are different kinds of selectors. You can select by:</p> 
+                <p>id, type, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</p>
+                <p>You can also group your selectors.</p>
+            </section>
+            <section>
+                <h1>The ID Selector</h1>
+                <p>No two id attributes can have the same value, they are unique within the HTML document.</p>
+                <pre><code>&lt;h1 id=&quot;chapter1&quot;&gt;Having a Good Time!&lt;/h1&gt;</code></pre>
+                <p>Styling the element by id.</p>
+                <pre><code>#chapter1 { font-weight: bold; }</code></pre>
+            </section>
+            <section>
+                <h1>The Class Selector</h1>
+                <p>Classes are not unique and thus permits you to style multiple elements with the same properties.</p>
+                <pre><code>&lt;li class=&quot;menu-item&quot;&gt;Book Index&lt;/li&gt;</code></pre>
+                <p>Styling the element by class.</p>
+                <pre><code>.menu-item { padding: 5px; }</code></pre>
+            </section>
+            <section>
+                <h1>The Type Selector</h1>
+                <p>A type selector matches every instance of an element type in the document tree.</p>
+                <pre><code>h1 { font-family: sans-serif; } 
+ul { list-style-type: none; }</code></pre>
+            </section>
+            <section>
+                <h1>Pseudo Classes</h1>
+                <p>To style elements based on information that lies outside the document tree, pseudo classes can be used.</p>
+                <p>For example if a link has been visited or to style the first paragraph child of a div tag.</p>
+                <pre><code>a:visited { color: blue }
+div &gt; p:first-child { text-indent: 0 }</code></pre>
+            </section>
+            <section>
+                <h1>Chained Selectors</h1>
+                <p></p>
+                <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
+            </section>
+            <section>
+                <h1>Stacked Selectors</h1>
+                <p></p>
+                <pre><code>h1#title { text-decoration: underline; }</code></pre>
+            </section>
+            <section>
+                <h1>The Universal Selector</h1>
+                <p>The universal selector, written "*", matches the name of any element type.</p>
+                <pre><code>*.warning { background-color: yellow; }
+body * ul { background-color: gray; } </code></pre>
+            </section>
             <section><h1>Basic Layout</h1></section>
             <section><h1>Box Model</h1></section>
             <section><h1>Positioning</h1></section>
