@@ -59,8 +59,8 @@
 	<!-- When ready, create the model and view -->
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			// Create the sandbox:
-			window.sandbox = new Sandbox.View({
+			// Create the sandbox, TODO maybe DRY it up :)
+			new Sandbox.View({
 				el : $('#sandbox1'),
 				model : new Sandbox.Model({
 					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
@@ -68,8 +68,24 @@
 				})
 			});
 
-			window.sandbox = new Sandbox.View({
+			new Sandbox.View({
 				el : $('#sandbox2'),
+				model : new Sandbox.Model({
+					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					fallback : true // use global eval if iframe isn't available (default: true)
+				})
+			});
+
+			new Sandbox.View({
+				el : $('#sandbox3'),
+				model : new Sandbox.Model({
+					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					fallback : true // use global eval if iframe isn't available (default: true)
+				})
+			});
+
+			new Sandbox.View({
+				el : $('#sandbox4'),
 				model : new Sandbox.Model({
 					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
 					fallback : true // use global eval if iframe isn't available (default: true)
@@ -136,8 +152,50 @@
         </section>
 
         <section data-markdown>
-          Language Syntax
-          ---------------
+            ### ECMAScript and JavaScript
+
+            "JavaScript" is an ECMAScript variant managed by Mozilla. 
+            All non-Mozilla implementations using JavaScript are implementing ECMAScript, rather than Javascript. 
+
+        </section>
+
+
+        <section data-markdown>
+          Agenda
+          ------
+
+          * Basic Syntax and Variables
+          * Control structures
+          * Values: Numbers, Strings, Object, Functions ...
+          * Context and This
+          * Best Practices and Gotchas
+
+        </section>
+
+        <section data-markdown>
+            ### Excercises:
+
+            1. typeof, undefined, ==, ===, String
+            2. anonymous functions
+            3. higher-order functions and recursion
+            4. object, scope and this
+
+        </section>
+
+
+        <section data-markdown>
+            ### JavaScript Shells
+            
+            Example:
+
+            * The embedded one in this presentation
+            * Firefox scratchpad
+            * [http:www.jsconsole.com](http://www.jsconsole.com) 
+            * Mozialla SpiderMoney
+
+                   `brew install spidermonkey;
+                    js -i`
+
         </section>
 
         <section data-markdown>
@@ -157,21 +215,218 @@
                
                 var x;  // declared but not defined
                 var y = 0;
-                z = 1; // always global scope
+                z = 1; // always global scope DON'T !
 
         </section>
 
         <section data-markdown>
-            ### Nine Types
-            * Numbers, e.g. 5
-            * Strings, e.g. 'foo', "foo" (sometimes boxed)
-            * Booleans, true false (sometims boxed)
+            ### Function Scope
+
+                function a() { v1 = 42 }  // DON'T !
+                a(); 
+                v1 // => 42  GLOBAL
+                function b() { var v2 = 43 }
+                b();
+                v2 // => "ReferenceError: v2 is not defined"
+                var v3;
+                function c() { v3 = 44 }
+                c();
+                v3 // => 44
+
+        </section>
+
+        <section data-markdown>
+            ### No Block Scope
+
+                var z = 4;
+                if (true) {
+                    var z = 5;
+                }
+                z;  => 5
+
+        </section>
+
+        <section data-markdown>
+            ### equal: == and ===
+           
+            _operator == does type coercion_
+
+            _operator === does **NOT** do type coercion_
+
+                //because 'true' is converted to 1 and then compared
+                true == 1; // true
+
+                //because 2 is converted to "2" and then compared
+                "2" == 2; // true 
+    
+                // Using the === operator (Identity)
+                true === 1 //false
+                "2" === 2 // false
+
+        </section>
+
+        <section data-markdown>
+            ### if else if else
+
+                if (a === b) {
+                   "a equals b";
+                } else if (a === c) {
+                   "a equals c";
+                } else {
+                   "a does not equal either b or c";
+                }
+
+            Or 
+
+                a === b ? "a equal b" : "a not equal b"
+        </section>
+
+        <section data-markdown>
+            ### Boolean Operators && ||
+        </section>
+
+
+        <section data-markdown>
+            ### while
+
+                while (c < 10) {
+                   c += 1;
+                   // ...
+                }
+        </section>
+
+        <section data-markdown>
+            ### while
+
+                while (c < 10) {
+                   c += 1;
+                   // ...
+                }
+        </section>
+
+        <section data-markdown>
+            ### do... while
+
+                do {
+                   c += 1;
+                } while (c < 10)  
+
+        </section>
+
+
+        <section data-markdown>
+            ### switch
+
+                switch(i) {
+                  case 1:
+                     // ...
+                     break;
+                  case 2:
+                     // ...
+                    break;
+                  default:
+                    // ...
+                  break;
+                }
+
+        </section>
+
+        <section data-markdown>
+            ### for
+
+                var myStringArray = ["Hello","World"];
+                for (var i = 0; i < myStringArray.length; i++) {
+                   show(myStringArray[i]);
+                }
+
+
+        </section>
+
+        <section data-markdown>
+            ### break 
+
+                for (i=0;i<10;i++)
+                {
+                   if (i==3) break;
+                   x=x + "The number is " + i + "<br />";
+                }
+
+        </section>
+
+
+        <section data-markdown>
+            ### continue
+
+                for (i=0;i<=10;i++)
+                {
+                   if (i==3) continue;
+                   x=x + "The number is " + i + "<br />";
+                }
+        </section>
+
+
+        <section data-markdown>
+            ### try catch finally
+
+                try{
+                  undefinedfunction();
+                  alert('I guess you do exist');
+                }
+                catch(e){
+                  alert('An error has occurred: '+e.message);
+                }
+                finally{
+                  alert('I am alerted regardless of the outcome above');
+                }
+
+        </section>
+
+
+        <section data-markdown>
+            ### Throw
+
+                throw "Oops" // no stack trace
+
+                throw new Error("Ooops") // now with stack trace
+
+                throw { 
+                   name: exceptionName, 
+                   message: reason
+                }
+
+
+        </section>
+
+        <section data-markdown>
+            ### Values
+            * Numbers
+            * Strings
+            * Booleans
+            * Object
             * null
             * undefined
-            * Arrays, e.g. [1,2,3] (always boxed)
-            * Object, e.g. {foo: 'bar'}, always boxed.
-            * Regular Expressions, e.g. /foo\s*([bar]+)/. Always boxed
-            * Functions
+            * Arrays (object)
+            * Regular Expressions (object)
+            * Functions (object)
+        </section>
+
+
+        <section data-markdown>
+            ### Strings
+
+                //example:
+                var txt  = 'Hello World!';
+                var txt2 = "I'm happy" + " happy";
+
+            _Sequence of 16 bit elements interpreted as UTF-16._
+
+        </section>
+
+        <section data-markdown>
+            ### String Methods
+
+            charAt, concat, indexOf, lastIndexOf, match, replace, search, slice, split, substring, toLowerCase, toUpperCase
+
         </section>
 
 
@@ -179,9 +434,7 @@
             Numbers
             -------
 
-            ### Numbers
-            _Represents both integers and reals. 64 bit representation._
-            Integral values range: +/- 9007199254740992:
+            _Represents both integers and reals. 64 bit._
 
                 var a = 352661;
                 var b = 334.22;
@@ -212,30 +465,35 @@
         </section>
 
         <section data-markdown>
-            ### Strings
+            ### String to Number
 
-                //example:
-                var txt  = 'Hello World!';
-                var txt2 = "I'm happy" + " happy";
+            parseInt, parseFloat and Number:
 
-            _Sequence of 16 bit elements interpreted as UTF-16._
-
-            Useful operators:
-
-                //split
-                txt.split( ' ' );
-                //substring:
-                txt.substring( 5 );
-                txt.substring( 2, 5 );
                 parseInt(“1234blue”); //returns 1234
                 parseInt(“0xA”); //returns 10
                 parseInt(“22.5”); //returns 22
                 parseInt(“blue”); //returns NaN
+
                 parseFloat(“1234blue”); //returns 1234.0
                 parseFloat(“0xA”); //returns NaN
                 parseFloat(“22.5”); //returns 22.5
 
+                Number('42.0') // returns 42
         </section>
+
+        <section data-markdown>
+            ### Number to String
+
+                var num = 15;
+                num.toString();
+
+                // or
+                15 + "";
+
+                // or 
+                String(15);
+        </section>
+
 
         <section data-markdown>
             ### Booleans
@@ -247,13 +505,27 @@
         </section>
 
         <section data-markdown>
+            ### Falsy values
+
+            * false
+            * null
+            * undefined
+            * ""
+            * 0
+            * NaN
+
+            _All other values are truthy_
+
+        </section>
+
+        <section data-markdown>
             ### undefined and null
 
-            _Anything unassigned or not declared has the value 'undefined'._
+            _'undefined' - Anything unassigned or not declared._
 
             null is a special value meaning "no value".
 
-                equals( "object", typeof null, "type of null is 'object'");
+                equals("object", typeof null, "type of null is object");
 
         </section>
 
@@ -261,6 +533,14 @@
             ### undefined and null
 
             _On the other hand, undefined means that the variable has not been declared, or has not been given a value._
+
+                var input;
+                if(input === undefined) {
+                    doThis();
+                } else {
+                    doThat();
+                }
+
         </section>
 
         <section data-markdown>
@@ -352,8 +632,8 @@
         <section data-markdown>
             ### Lazy Scoping
 
-               var bar = function () {return bar};
-               bar () === bar              // => true
+                var bar = function () {return bar};
+                bar () === bar;  // => true
 
         </section>
 
@@ -389,8 +669,10 @@
         <section data-markdown>
             ### Excercise
 
-            * An ananymous function returning your name.
-            * A function with one function arg that append "Hello" to the function argumentent's return value.
+            * Write an ananymous function returning your name.
+
+                    var x = function()...
+                    x;  //  "Your Name"
 
         </section>
 
@@ -399,140 +681,13 @@
      	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
        </section>
 
-        <section data-markdown>
-            ### if else if else
-
-                if (a === b) {
-                   "a equals b";
-                } else if (a === c) {
-                   "a equals c";
-                } else {
-                   "a does not equal either b or c";
-                }
-
-            Or 
-
-                a === b ? "a equal b" : "a not equal b"
-        </section>
-
-        <section data-markdown>
-            ### Boolean Operators && ||
-        </section>
-
-
-        <section data-markdown>
-            ### while
-
-                while (c < 10) {
-                   c += 1;
-                   // ...
-                }
-        </section>
-
-        <section data-markdown>
-            ### while
-
-                while (c < 10) {
-                   c += 1;
-                   // ...
-                }
-        </section>
-
-        <section data-markdown>
-            ### do... while
-
-                do {
-                   c += 1;
-                } while (c < 10)  
-
-        </section>
-
-
-        <section data-markdown>
-            ### switch
-
-                switch(i) {
-                  case 1:
-                     // ...
-                     break;
-                  case 2:
-                     // ...
-                    break;
-                  default:
-                    // ...
-                  break;
-                }
-
-        </section>
-
-        <section data-markdown>
-            ### for
-
-                var c;
-                for (c = 0; c < 10; c += 1) {
-                  // ...
-                }
-            Or
-
-                for (var number = 0; number <= 12; number = number + 2)
-                   show(number);
-
-        </section>
-
-        <section data-markdown>
-            ### break 
-
-                for (i=0;i<10;i++)
-                {
-                   if (i==3) break;
-                   x=x + "The number is " + i + "<br />";
-                }
-
-        </section>
-
-
-        <section data-markdown>
-            ### continue
-
-                for (i=0;i<=10;i++)
-                {
-                   if (i==3) continue;
-                   x=x + "The number is " + i + "<br />";
-                }
-        </section>
-
-
-        <section data-markdown>
-            ### try catch finally
-
-                try{
-                  undefinedfunction();
-                  alert('I guess you do exist');
-                }
-                catch(e){
-                  alert('An error has occurred: '+e.message);
-                }
-                finally{
-                  alert('I am alerted regardless of the outcome above');
-                }
-
-        </section>
-
-
-        <section data-markdown>
-            ### Throw
-
-                throw "Oops" // no stack trace
-
-                throw new Error("Ooops") // now with stack trace
-
-        </section>
 
         <section data-markdown>
             ## Arrays
        
-            * Array inherits from object
+            * Array inherits from object !
             * Indexes are converted to strings
+            * The `length` property can be set !
         </section>
 
         <section data-markdown>
@@ -540,64 +695,64 @@
 
             * [ ]
             * names =  [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
-            * typeof value == ‘object’
+            * typeof value == ‘object’  !!!
             * value.constructor === Array
         </section>
 
         <section data-markdown>
             ## Array Methods
 
-            * concat
-            * join
-            * pop
-            * push
-            * slice
-            * sort
-            * splice
-            * length
+            * `concat`, `join`, `pop`, `push`, `slice` , `sort`, `splice`, `length`
+            * ECMAScript 5 (IE 9)
+               * `forEach`, `indexOf`, `lastIndexOf`, `filter`, `map`, `every`, `some`, `reduce`, `reduceRight`
         </section>
 
         <section data-markdown>
-            ### Exerices
+            ### Example
+
+                var v = ['foo', 42, false];
+                v.length = 2;
+                v.foo = 'bar'
+                v; // => ['foo', 42]
+                v[0]; // 'foo' 
+        </section>
+
+        <section data-markdown>
+            ### Exercise
              
-            Write function: sum([1,2,3]) # => 6
+            Impl. function 'sum' so that:
 
+                sum([1,2,3]) # => 6
+
+            Impl. function 'each' so that:
+
+                var total = 0;
+                each([1,2,3], function(q) { x += q})
+                total # => 6
+
+            Impl. 'times' with recursion:
+           
+                times(10, function(x) { s += 1 })
+                total // => 10
         </section>
 
-        <section data-markdown>
-            ## Objects
-
-            * Object literals
-            * Properties
-            * Methods
-            * Prototypes
-            * Inheritance
-
-        </section>
-
+        <section>
+          <p>Excercies</p>
+     	  <div class="sandbox" id="sandbox3">sandbox console loading...</div>
+       </section>
 
         <section data-markdown>
             ### Objects
 
-            An object is a container of keys and values, i.e. a map.
+            An object is a container of keys and values.
 
-                { name: 'John', age: function() {
-                    return differenceInYears( new Date(1973,3,5), new Date())
-                } }
+                var myObject = { 
+                   name: 'Andreas', 
+                   sayHello: function() {... }
+                }
 
         </section>
 
-
-	<section>
-	    <p>Object Literal</p>
-            <pre><code>
-var myObject = {
-  name: 'andreas',
-  sayHello: function() { alert("hello") }
-}
-myObject.sayHello();
-            </code></pre>
-        </section>
 
 	<section>
 	    <p>Retrieval</p>
@@ -613,6 +768,18 @@ var flight = {
 flight.departure.city;
 // Same as
 flight["departure"]["city"];            
+            </code></pre>
+        </section>
+
+	<section>
+	    <p>Object Methods</p>
+            <pre><code>
+var myObject = {
+  name: 'andreas',
+  sayHello: function() { alert("hello") }
+}
+myObject.sayHello // the function reference
+myObject.sayHello();
             </code></pre>
         </section>
 
@@ -662,83 +829,49 @@ bar.two // Resolves to 2
             </code></pre>
        </section>
                  
-	<section>
-	    <p>Object.create</p>
-            <pre><code>
-var foo = {name: "foo", one: 1, two: 2};
-var bar = Object.create(foo); // do this !
-bar.one // Resolves to 1.
-bar.two // Resolves to 'two'
-            </code></pre>
-        </section>
-
-       <section>
-	    <p>Prototypal Inheritance</p>
-            <pre><code>
-var foo = {
-    name: "foo",
-    sayHello: function() {
-        alert("hello from " + this.name);
-    }
-};
-foo.sayHello();
-            </code></pre>
-      </section>
-
-       <section>
-	    <p>Prototypal Inheritance</p>
-            <pre><code>
-var foo = {
-    name: "foo",
-    sayHello: function() {
-        alert("hello from " + this.name);
-    }
-};
-
-var bar = Object.create(foo);
-bar.sayGoodbye = function() {
-    alert("goodbye from " + this.name);
-}
-bar.sayHello();
-bar.sayGoodbye();
-            </code></pre>
-      </section>
 
         <section data-markdown>
-JavaScript does not have classes, but we can program as though it does.
+          <h3>Prototypal Inheritance</h3>
+          
+          Object inherits from objects !
+          
+          `new f()` produce a new object that inherits from `f.prototype` 
 
-### 
-
-### But is not needed !
 
         </section>
 
         <section data-markdown>
-### The Constructor Functions
+            ### The Constructor Functions
 
-        function Pet(species){
-           this.species = species;
-           this.sayHello = function() { 
-              return "Hello " + this.species;
-           }
-        }
-
-        var cat = new Pet('cat');
-        cat.sayHello(); 
+                function Pet(species) {
+                    this.species = species;
+                    this.sayHello = function() { 
+                      return "Hello " + this.species; 
+                    }
+                 }
+                 var cat = new Pet('cat');
+                 cat.sayHello(); 
         </section>
-        
+     
         <section data-markdown>
-### Classes and Inheritance
+            ### The prototype
 
-"I have never once found need to use an uber function. The super idea is fairly important in the classical pattern, but it appears to be unnecessary in the prototypal and functional patterns. I now see my early attempts to support the classical model in JavaScript as a mistake."
+            Only define sayHello once.
 
-Douglas Crockford
+                function Pet(species){
+                    this.species = species;
+                }
+
+                Pet.prototype.sayHello = function() { 
+                   return "Hello " + this.species;
+                }
 
         </section>
-
+   
 
         <section data-markdown>
             ## Built-in Prototypes
+            
             * Object.prototype
             * Array.prototype
             * Function.prototype
@@ -757,11 +890,58 @@ Douglas Crockford
                [1.2.3].last(); // => 3
         </section>
 
+	<section>
+	    <p>Object.create</p>
+            <pre><code>
+var foo = {name: "foo", one: 1, two: 2};
+var bar = Object.create(foo); // do this !
+bar.one // Resolves to 1.
+bar.two // Resolves to 'two'
+            </code></pre>
+        </section>
+
+       <section>
+	    <p>Prototypal Inheritance</p>
+          <pre><code>
+// define a base object
+var foo = {
+    name: "foo",
+    sayHello: function() {
+        alert("hello from " + this.name);
+    }
+};
+foo.sayHello();
+            </code></pre>
+      </section>
+
+       <section>
+	    <h3>Prototypal Inheritance</h3>
+            <pre><code>
+var foo = {
+    name: "foo",
+    sayHello: function() {
+        alert("hello from " + this.name);
+    }
+};
+
+// define a object 'inheriting' from object bar 
+var bar = Object.create(foo);
+bar.sayGoodbye = function() {
+    alert("goodbye from " + this.name);
+}
+bar.sayHello();
+bar.sayGoodbye();
+            </code></pre>
+      </section>
+
         <section data-markdown>
-            ### Excercise
+            ### Object.create Impl.
 
-            TODO
-
+                Object.create = function(o) {
+                    function F() {}
+                    F.prototype = o;
+                    return new F();
+                 }
         </section>
 
         <section data-markdown>
@@ -831,7 +1011,7 @@ Douglas Crockford
         </section>
 
         <section data-markdown>
-            ## Global Scope
+            ## Function Scope
 
                 var iAmGlobal = 42;
                 var x = function(){ 
@@ -925,12 +1105,58 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
+            ### Excerise 1
+
+            Impl. an object which translates a string like this:
+
+                var t = { ... }
+                t.hello = 'hej';
+                t.world = 'värld';
+                t.translate("hello world") # => "hej värld"
+
+            Use Array methods: `forEach`, `push`, `join`
+
+            Use String method: `split(' ')`
+
+        </section>
+
+        <section data-markdown>
+            ### Excerise 2
+
+            Prototypal Inheritance
+
+                var base = { foo: 'bla'};
+                var sub = Object.create(base);
+
+            What happens when 
+  
+                base.foo = 'changed'
+                sub.foo // ??
+
+        </section>
+
+        <section>
+          <p>Excercise</p>
+
+     	  <div class="sandbox" id="sandbox4">sandbox console loading...</div>
+        </section>
+
+
+        <section data-markdown>
             ## Dynamic Compilation
             * eval
                 * Evaluates a string and returns the result.
             * new Function(parameterArray, codeString)
                 * Creates and returns a function.
                 * var add=new Function("a", "b", "return a+b;");
+        </section>
+
+        <section data-markdown>
+            ### Regular Expressions
+
+                 var re5digit = /^\d{5}$/; or new RegExp("pattern")
+                 "12312".search(re5digit) // # => 0
+
         </section>
 
         <section data-markdown>
@@ -998,26 +1224,17 @@ This is the DOM element clicked
 
                 attachFormListener: function(form, object) {
                     var self = this;
-                    function populator(event) {
-                        self.populateFromForm(form, object);
-                        object.notify();
+                    function populator(event) { 
+                       self.populateFromForm(form, object);
+                       object.notify();
                     };
+
                     form.getElements().each(function(child) {
-                    child.observe('change', populator);
+                       child.observe('change', populator);
                     });
-                },
+                 }
+
         </section>
-
-        <section data-markdown>
-            ## Mixins
-
-                Object.mixin = function(destination, source) {
-                   for (property in source) 
-                        destination[property] = source[property];
-                   return destination;
-                }
-        </section>
-
 
         <section data-markdown>
             ### javascript gotchas
@@ -1088,30 +1305,46 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
-            ### Final Advice
-
-            Use JSLint !
-
-        </section>
-
-        <section data-markdown>
             ### Example
 
+            * JSLint
+            * Closure Compiler
+            * CoffeeScript
+            * Test Frameworks (of course !) 
         </section>
 
-        <section data-markdown>
-            Learning Javascript
-            ===================
+        <section>
+            <p>CoffeeScript Example</p>
 
-            * Online resources
-            * Standard library
-            * Common pitfalls
+<code><pre>
+            class Animal
+               constructor: (@name) ->
+
+               move: (meters) ->
+                  alert @name + " moved #{meters}."
+</pre></code>
         </section>
 
-        <section data-markdown>
-            Future of Javascript
-            ====================
+        <section>
+            <p>Compiles to</p>
+<code><pre>
+Animal = (function() {
+
+  function Animal(name) {
+    this.name = name;
+  }
+
+  Animal.prototype.move = function(meters) {
+    return alert(this.name + (" moved " + meters + "m."));
+  };
+
+  return Animal;
+
+})();
+</pre></code>
         </section>
+
+
       </div>
 
 			<!-- The navigational controls UI -->
