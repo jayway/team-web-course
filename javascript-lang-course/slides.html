@@ -729,6 +729,24 @@
         </section>
 
         <section data-markdown>
+          ### underscore.js library
+
+          Examples: `map`, `filter`, `once`
+
+              _.map([1, 2, 3], function(num){ return num * 3; });
+              // => [3, 6, 9]
+
+              var even = _.filter([1, 2, 3, 4, 5, 6], function(num){
+                  return num % 2 == 0;
+              });  // => [2, 4, 6]
+
+              var initialize = _.once(createApplication);
+              initialize();
+              initialize(); // Application is only created once.               
+        </section>
+
+
+        <section data-markdown>
             ### Exercise
              
             Impl. function 'sum' so that:
@@ -844,8 +862,8 @@ bar.two // Resolves to 2
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
           
-          Object inherits/shared properties from objects !
-          
+          Object can shared properties
+
           `new F()` creates new objects that inherits from `F.prototype` 
 
           `F` is a constructor function.
@@ -1245,9 +1263,16 @@ This is the DOM element clicked
         <section data-markdown>
             ### Regular Expressions
 
+            #### Methods:
+
+            `String.search`, `String.match`, `String.replace`, `String.split`, `RegExp.exec`, `RegExp.test`
+
+            #### Example:
+          
                  var re5digit = /^\d{5}$/; or new RegExp("pattern")
                  "12312".search(re5digit) // # => 0
 
+        
         </section>
 
         <section data-markdown>
@@ -1289,7 +1314,8 @@ This is the DOM element clicked
 
             Example of Third Party Libs:
 
-            * StealJS - Script Manager and Dependency System
+            * RequireJS - file and module loader
+            * StealJS - Script & Dependency System and more
             * CommonJS 
                * Stitch (for browser)
                * Browserify (for browser)
