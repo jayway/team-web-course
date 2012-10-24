@@ -816,7 +816,7 @@ flight.foo // undefined
        </section>
 
        <section>
-	    <p>Prototype Delegation</p>
+	    <p>The Prototype Chain</p>
              <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
 var bar = {two: 'two'};
@@ -833,10 +833,10 @@ bar.two // Resolves to 2
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
           
-          Object inherits from objects !
+          Object inherits (shared properties) from objects !
           
-          `new f()` produce a new object that inherits from `f.prototype` 
-
+          `new F()` produce a new object that inherits from `F.prototype` 
+          `F` is a constructor function.
 
         </section>
 
@@ -856,7 +856,7 @@ bar.two // Resolves to 2
         <section data-markdown>
             ### The prototype
 
-            Only define sayHello once.
+            Constructor functions has a property `prototype`
 
                 function Pet(species){
                     this.species = species;
@@ -865,6 +865,14 @@ bar.two // Resolves to 2
                 Pet.prototype.sayHello = function() { 
                    return "Hello " + this.species;
                 }
+
+        </section>
+
+        <section data-markdown>
+            ### The prototype property
+
+            * Is used to share properties
+            * Is used for inheritance
 
         </section>
    
@@ -883,6 +891,7 @@ bar.two // Resolves to 2
        <section data-markdown>
            ## Extending
 
+               // Avoid doing this !
                Array.prototype.last = function() {
                    return this[this.length - 1];
                };
@@ -1135,6 +1144,18 @@ This is the DOM element clicked
 
         </section>
 
+        <section data-markdown>
+            ### Exercise 3
+
+                function Bar() {}
+                var a = {name: "foo"};
+                // write one line here, so that :
+                b = new Bar();
+                b.name // => "foo"
+                a.name = 'bar';
+                b.name // => "bar"
+        </section>
+
         <section>
           <p>Excercise</p>
 
@@ -1237,6 +1258,24 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
+            ### JavaScript Strict Mode
+
+            * Available ECMAScript 5
+            * Throws errors for error prone code.
+            * Don't use globally - can break third party libs.
+        </section>
+
+        <section data-markdown>
+            ### Strict Usage
+
+                  function doSomething() {
+                     "use strict";
+                     // this runs in strict mode
+                  }
+
+        </section>
+
+        <section data-markdown>
             ### javascript gotchas
 
             Be aware of:
@@ -1287,28 +1326,29 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
-            ### Objects and Literals
+            ### Avoid new Object()
 
             Be aware of:
 
-                var a = new Object();
-                var b = new Boolean(true);
-                new Array("one", "two")
-                new Function("hello" "");
+                var q = new Object(42);
+                q instanceof Number  // => true
+                var w = new Object("42")
+                w instanceof Number  // => false
+                w instanceof String  // => true
 
-            Advice, use literals
+            Advice, use literals:
 
                 var a = {}
-                var b = false;
+                var b = "42";
 
 
         </section>
 
         <section data-markdown>
-            ### Example
+            ### Advices
 
-            * JSLint
-            * Closure Compiler
+            * Javascript strict mode
+            * JSLint, Closure Compiler
             * CoffeeScript
             * Test Frameworks (of course !) 
         </section>
