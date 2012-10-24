@@ -63,7 +63,7 @@
 			new Sandbox.View({
 				el : $('#sandbox1'),
 				model : new Sandbox.Model({
-					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
 					fallback : true // use global eval if iframe isn't available (default: true)
 				})
 			});
@@ -71,7 +71,7 @@
 			new Sandbox.View({
 				el : $('#sandbox2'),
 				model : new Sandbox.Model({
-					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
 					fallback : true // use global eval if iframe isn't available (default: true)
 				})
 			});
@@ -79,7 +79,7 @@
 			new Sandbox.View({
 				el : $('#sandbox3'),
 				model : new Sandbox.Model({
-					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
 					fallback : true // use global eval if iframe isn't available (default: true)
 				})
 			});
@@ -87,7 +87,7 @@
 			new Sandbox.View({
 				el : $('#sandbox4'),
 				model : new Sandbox.Model({
-					iframe : true,  // evaluate commands inside a hidden iframe (default: false)
+					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
 					fallback : true // use global eval if iframe isn't available (default: true)
 				})
 			});
@@ -164,10 +164,10 @@
           Agenda
           ------
 
-          * Basic Syntax and Variables
-          * Control structures
-          * Values: Numbers, Strings, Object, Functions ...
-          * Context and This
+          * Basics and `dyntax
+          * Control Structures
+          * Values and Types
+          * Prototype, Context and This
           * Best Practices and Gotchas
 
         </section>
@@ -179,12 +179,13 @@
             2. anonymous functions
             3. higher-order functions and recursion
             4. object, scope and this
+            5. mocha test framework
 
         </section>
 
 
         <section data-markdown>
-            ### JavaScript Shells
+            ### Shells for the Excercises
             
             Example:
 
@@ -201,7 +202,7 @@
         <section data-markdown>
             ### Whitespace
 
-            Use secimolons, example:
+            Use secimolons !
                 
                 a = b + c
                 (d + e).foo()
@@ -247,11 +248,23 @@
         </section>
 
         <section data-markdown>
-            ### equal: == and ===
-           
-            _operator == does type coercion_
+            ### Arithmetic Operators
+            +, -, *, / % ++ --
 
-            _operator === does **NOT** do type coercion_
+            ### Assignment Operators
+            =, +=, -=, *=, /=, %=
+
+            ### Comparsion Operators
+            ==, ===, !=, !==, <, >, >=, <=
+        </section>
+
+
+        <section data-markdown>
+            ### Equality and Identity
+           
+            == does type coercion
+
+            === does **NOT** do type coercion
 
                 //because 'true' is converted to 1 and then compared
                 true == 1; // true
@@ -280,11 +293,6 @@
 
                 a === b ? "a equal b" : "a not equal b"
         </section>
-
-        <section data-markdown>
-            ### Boolean Operators && ||
-        </section>
-
 
         <section data-markdown>
             ### while
@@ -566,7 +574,7 @@
 
 
         <section data-markdown>
-          ### Excercise
+          ### Exercise
 
           * typeof null ?
           * 'x' == new String('x') ? with === ?
@@ -577,7 +585,7 @@
 
         </section>
         <section>
-          <p>Excercise</p>
+          <p>Exercise</p>
 
      	  <div class="sandbox" id="sandbox1">sandbox console loading...</div>
         </section>
@@ -667,7 +675,7 @@
         </section>
 
         <section data-markdown>
-            ### Excercise
+            ### Exercise
 
             * Write an ananymous function returning your name.
 
@@ -687,16 +695,16 @@
        
             * Array inherits from object !
             * Indexes are converted to strings
+            * `length` = largest numeric index in the array.
             * The `length` property can be set !
         </section>
 
         <section data-markdown>
             ## Arrays
 
-            * [ ]
-            * names =  [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
-            * typeof value == ‘object’  !!!
-            * value.constructor === Array
+            * var names = [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
+            * typeof names == ‘object’  !!!
+            * names.constructor === Array
         </section>
 
         <section data-markdown>
@@ -833,9 +841,10 @@ bar.two // Resolves to 2
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
           
-          Object inherits (shared properties) from objects !
+          Object inherits/shared properties from objects !
           
-          `new F()` produce a new object that inherits from `F.prototype` 
+          `new F()` creates new objects that inherits from `F.prototype` 
+
           `F` is a constructor function.
 
         </section>
@@ -1157,7 +1166,7 @@ This is the DOM element clicked
         </section>
 
         <section>
-          <p>Excercise</p>
+          <p>Exercise</p>
 
      	  <div class="sandbox" id="sandbox4">sandbox console loading...</div>
         </section>
@@ -1185,13 +1194,6 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
-            ## Modules
-
-                var MyNamespace = {};
-                var MyNS = MyNS || {};
-        </section>
-
-        <section data-markdown>
             ## Cascade
 
                 setFirst: function(name) {
@@ -1212,17 +1214,26 @@ This is the DOM element clicked
                 Esperanto.Lab = function() {
                     var privVar = "example";
                     function privFunc() {
-                        return privVar;
+                       return privVar;
                     }
                     return {
-                        example: function() {
-                            return privFunc();
-                        }
+                       example: function() { return privFunc(); }
                     }
-                }()
+                 }()
 
         </section>
 
+        <section data-markdown>
+            ### Modules/Encapsulation
+
+            Example of Third Party Libs:
+
+            * StealJS - Script Manager and Dependency System
+            * CommonJS 
+               * Stitch (for browser)
+               * Browserify (for browser)
+
+        </section>
 
         <section data-markdown>
             ## Local Functions
@@ -1230,8 +1241,8 @@ This is the DOM element clicked
                 costData: function(current) {
                     var data = {};
                     function addEntry(name, cost) {
-                        data[name + "PerHour"] = model.withTwoDec(cost/hours);
-                        data[name] = model.noDecimalsWithSeparator(cost);
+                      data[name + "PerHour"] = model.withTwoDec(cost/hours);
+                      data[name] = model.noDecimalsWithSeparator(cost);
                     };
 
                     addEntry("interest", this.financialCost(current)),
@@ -1384,6 +1395,21 @@ Animal = (function() {
 </pre></code>
         </section>
 
+
+        <section data-markdown>
+            ### Mocha Example
+
+                describe('Array', function(){
+                  describe('#indexOf()', function(){
+                    it('returns -1 when the value is not present', function(){
+                       assert.equal(-1, [1,2,3].indexOf(5));
+                       assert.equal(-1, [1,2,3].indexOf(0));
+                     })
+                   })
+                })
+
+            Check also the Jasmine Test Framework
+        </section>
 
       </div>
 
