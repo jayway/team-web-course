@@ -437,11 +437,48 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <p>The above example matches any element inside another element with the class “warning”.</p>
             </section>
             
-            <section><h1>Basic Layout</h1></section>
+            <section>
+                <h1>The Box Model</h1>
+                <p>Every element in the web is a rectangular box.</p>
+                <p>This is how the size of the box and the space around it is calculated.</p>
+                <img src="boxmodel.png" alt="">
+            </section>
             
-            <section><h1>Box Model</h1></section>
+            <section>
+                <h1>Basic Layout</h1>
+                <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
+                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting width, margins and floating them.</p>
+            </section>
             
-            <section><h1>Positioning</h1></section>
+            <section>
+                <h1>Centering Content</h1>
+                <p>This box is horizontally centered by setting its right and left margin widths to "auto". </p>
+                <pre><code>#container { margin: 0px auto; }</code></pre>
+            </section>
+            
+            <section>
+                <h1>Creating Columns</h1>
+                <p>These content and sidebar boxes are distributed into two columns with a fixed width inside the container &lt;div&gt;.</p>
+                <pre><code>#container { margin: 0px auto; }
+#content { float: left; width: 500px; } 
+#sidebar { float: right; width: 300px; }</code></pre>
+
+                <pre><code>&lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+        &lt;div id=&quot;content&quot;&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;sidebar&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+            </section>
+                        
+            <section>
+                <h1>Positioning</h1>
+                <p>Static</p>
+                <p>Relative</p>
+                <p>Absolute</p>
+            </section>
             
             <section><h1>The Cascade - Inheritance</h1></section>
             
