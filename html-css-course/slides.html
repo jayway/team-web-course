@@ -422,12 +422,22 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>Chained Selectors</h1>
                 <p></p>
                 <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
+                <p>This selector targets all menu items in the list below.</p>
+                <pre><code>&lt;div id=&quot;header&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
             </section>
             
             <section>
                 <h1>Stacked Selectors</h1>
                 <p></p>
                 <pre><code>h1#title { text-decoration: underline; }</code></pre>
+                <p>This selector targets all &lt;h1&gt; elements with an id attribute value set to 'title'.</p>
+                <pre><code>&lt;h1 id=&quot;title&quot;&gt;This is the title header!&lt;/h1&gt;</code></pre>
             </section>
             
             <section>
