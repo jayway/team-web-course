@@ -125,7 +125,6 @@
         <section>
           <h2>Why JavaScript?</h2>
           <div>It's everywhere!</div>
-          <div>(placeholder)</div>
         </section>
 
         <section>
@@ -164,7 +163,7 @@
           Agenda
           ------
 
-          * Basics and `dyntax
+          * Basics an
           * Control Structures
           * Values and Types
           * Prototype, Context and This
@@ -173,26 +172,24 @@
         </section>
 
         <section data-markdown>
-            ### Excercises:
+            ### Agenda: Exercises
 
             1. typeof, undefined, ==, ===, String
             2. anonymous functions
             3. higher-order functions and recursion
             4. object, scope and this
             5. mocha test framework
-
         </section>
 
-
         <section data-markdown>
-            ### Shells for the Excercises
+            ### Shells for the Exercises
             
             Example:
 
             * The embedded one in this presentation
-            * Firefox scratchpad
+            * Firefox scratchpad 
             * [http:www.jsconsole.com](http://www.jsconsole.com) 
-            * Mozialla SpiderMoney
+            * Mozilla's Spidermonkey
 
                    `brew install spidermonkey;
                     js -i`
@@ -202,7 +199,7 @@
         <section data-markdown>
             ### Whitespace
 
-            Use secimolons !
+            Use semicolon !
                 
                 a = b + c
                 (d + e).foo()
@@ -254,7 +251,7 @@
             ### Assignment Operators
             =, +=, -=, *=, /=, %=
 
-            ### Comparsion Operators
+            ### Comparison Operators
             ==, ===, !=, !==, <, >, >=, <=
         </section>
 
@@ -422,7 +419,7 @@
         <section data-markdown>
             ### Strings
 
-                //example:
+                // example:
                 var txt  = 'Hello World!';
                 var txt2 = "I'm happy" + " happy";
 
@@ -574,16 +571,22 @@
 
 
         <section data-markdown>
-          ### Exercise
+           ### Exercise
 
-          * typeof null ?
-          * 'x' == new String('x') ? with === ?
-          * typeof unknownVariable ?
-          * null == undefined and null === undefined
-          * undefined || 'Hello'
-          * "Hello " + undefined + 2
-
+           * What type does null have ?
+               * hint: `typeof null`
+           * What type does an unknown variable have ?
+                * hint: `typeof notDeclaredVar`
+           * Explore the following statements:
+                * `'x' == new String('x')`
+                * `'x' === new String('x')` 
+                * `null == undefined` 
+                * `null === undefined` 
+                * `undefined || 'Hello'`
+                * `"Hello " + undefined + 2`
         </section>
+
+
         <section>
           <p>Exercise</p>
 
@@ -677,7 +680,7 @@
         <section data-markdown>
             ### Exercise
 
-            * Write an ananymous function returning your name.
+            * Write an anonymous function returning your name.
 
                     var x = function()...
                     x;  //  "Your Name"
@@ -685,7 +688,7 @@
         </section>
 
         <section>
-          <p>Excercies</p>
+          <p>Exercise</p>
      	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
        </section>
 
@@ -702,9 +705,9 @@
         <section data-markdown>
             ## Arrays
 
-            * var names = [ ‘Rudolph’, ‘Kjell’, ‘Torsten’]
-            * typeof names == ‘object’  !!!
-            * names.constructor === Array
+            * `var names = ['a', 42, false]`
+            * `typeof names == ‘object’`
+            * `names.constructor === Array`
         </section>
 
         <section data-markdown>
@@ -745,7 +748,7 @@
         </section>
 
         <section>
-          <p>Excercies</p>
+          <p>Exercise</p>
      	  <div class="sandbox" id="sandbox3">sandbox console loading...</div>
        </section>
 
@@ -953,8 +956,9 @@ bar.sayGoodbye();
       </section>
 
         <section data-markdown>
-            ### Object.create Impl.
+            Object.create
 
+                // Usually built in, but can be implemented like this:
                 Object.create = function(o) {
                     function F() {}
                     F.prototype = o;
@@ -1025,7 +1029,7 @@ bar.sayGoodbye();
         <section data-markdown>
             ## Scope
 
-            The function is the scope of the variables.
+            The function is the scope of variables.
         </section>
 
         <section data-markdown>
@@ -1044,7 +1048,7 @@ bar.sayGoodbye();
         <section data-markdown>
             ## This
 
-            Refers to: how we get into the neighborhood 
+            `this` depends on who's calling:
 
                 var x = { 
                   name: 'andreas',
@@ -1074,7 +1078,7 @@ bar.sayGoodbye();
         </section>
 
         <section>
-            Eventhandling
+            Event handling
 
             <pre><code>
   function click_handler() { 
@@ -1122,10 +1126,22 @@ This is the DOM element clicked
                 multiply.apply(second_object, [5]); // returns 24 * 5 
         </section>
 
-        <section data-markdown>
-            ### Excerise 1
 
-            Impl. an object which translates a string like this:
+        <section data-markdown>
+          ### JS Frameworks and bind
+
+          * ECMAScript5 - Function.prototype.bind
+          * backbone/underscore - `bind`, `bindAll`
+               * Example: `_bind(this.render, this)`
+          * CoffeeScript, use the `=>` operator
+
+        </section>
+
+        <section>
+        <section data-markdown>
+            ### Exercise 1
+
+            Impl. an object which translates strings like this:
 
                 var t = { ... }
                 t.hello = 'hej';
@@ -1136,10 +1152,32 @@ This is the DOM element clicked
 
             Use String method: `split(' ')`
 
+            (Solution Arrow down in this slide)
         </section>
 
         <section data-markdown>
-            ### Excerise 2
+          ### Solution
+
+              var t = {
+                 translate: function(s) {
+                   var self = this;
+                   var reply = [];
+                   s.split(' ').forEach(function(w){ reply.push(self[w])}); 
+                   return reply.join(' ');
+                 }
+              }  
+
+              t.hello='hej';
+              t.world='varld';
+
+        </section>
+
+
+        </section>
+
+        <section>
+           <section data-markdown>
+            ### Exercise 2
 
             Prototypal Inheritance
 
@@ -1151,18 +1189,41 @@ This is the DOM element clicked
                 base.foo = 'changed'
                 sub.foo // ??
 
-        </section>
+          </section>
 
         <section data-markdown>
+          ### Answer
+
+              base.foo = 'changed' // "changed"
+              sub.foo // "changed"
+        </section>
+
+        </section>
+
+        <section>
+
+         <section data-markdown>
             ### Exercise 3
 
                 function Bar() {}
                 var a = {name: "foo"};
                 // write one line here, so that :
-                b = new Bar();
+                var b = new Bar();
                 b.name // => "foo"
                 a.name = 'bar';
                 b.name // => "bar"
+
+            (solution arrow down in this slide).
+        </section>
+
+        <section data-markdown>
+          ### Solution
+
+          The line is:
+
+              Bar.prototype = a;
+        </section>
+
         </section>
 
         <section>
@@ -1411,6 +1472,12 @@ Animal = (function() {
             Check also the Jasmine Test Framework
         </section>
 
+        <section data-markdown>
+            ### Reading List
+
+            * The Good Part
+        </section>
+
       </div>
 
 			<!-- The navigational controls UI -->
@@ -1456,3 +1523,8 @@ Animal = (function() {
 
 	</body>
 </html>
+
+<!--  LocalWords:  Impl Ahh fooundefined mult RegExp privVar privFunc populator
+ -->
+<!--  LocalWords:  Browserify instanceof
+ -->
