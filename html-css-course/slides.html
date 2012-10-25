@@ -277,7 +277,7 @@ Your browser does not support the video tag.
     context.stroke();
 &lt;/script&gt;
 </code></pre>
-                    <img src="canvas.png" alt="">
+                    <img src="resources/canvas.png" alt="">
                 </section>
             
                 <section>
@@ -385,7 +385,7 @@ Your browser does not support the video tag.
                 <section>
                     <h1>Lab 3</h1>
                     <p>Create a table with 3 columns, a row of table headers and 2 rows with data cells.</p>
-                    <img src="table.png" alt="">
+                    <img src="resources/table.png" alt="">
                 </section>
             
                 <section>
@@ -416,7 +416,7 @@ Your browser does not support the video tag.
                 <section>
                     <h1>Lab 4</h1>
                     <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containting checkbox resp. radiobutton groups and a submit button.</p>
-                    <img src="form.png" alt="">
+                    <img src="resources/form.png" alt="">
                 </section>
             
                 <section>
@@ -489,7 +489,7 @@ Your browser does not support the video tag.
                 <section>
                     <h1>Lab 5</h1>
                     <p>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation. Use divs to logically group form elements.</p>
-                    <img src="form2.png" alt="">
+                    <img src="resources/form2.png" alt="">
                 </section>
             
                 <section>
@@ -573,6 +573,12 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
+                <h1>Grouping Selectors</h1>
+                <p>To reuse and have the same styling declaration for a group of selectors you simply separate these selectors with a comma ','.</p>
+                <pre><code>h1#title, a:hover { text-decoration: underline; }</code></pre>
+            </section>
+            
+            <section>
                 <h1>The Universal Selector</h1>
                 <p>The universal selector, written as an asterisk (*), matches the name of any element type.</p>
                 <pre><code>.warning * { background-color: yellow; }</code></pre>
@@ -583,13 +589,77 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>The Box Model</h1>
                 <p>Every element in the web is a rectangular box.</p>
                 <p>This is how the size of the box and the space around it is calculated.</p>
-                <img src="boxmodel.png" alt="">
+                <img src="resources/boxmodel.png" alt="">
             </section>
             
             <section>
                 <h1>Basic Layout</h1>
                 <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
-                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting width, margins and floating them.</p>
+                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting width, margins, floating them and using different positionings.</p>
+            </section>
+            
+            <section>
+                <h1>Positioning</h1>
+                <p>The position property enables you to place an element exactly where you want it on a webpage. There are four valid values:</p>
+                <ul>
+                    <li>Static (defalut value)</li>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h1>Static Positioning</h1>
+                <p>Using the 'static' value (which is default) the element is positioned exactly where it would be as without styling.</p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1 {
+   position:static;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-static.png"></div>
+            </section>
+            
+            <section>
+                <h1>Relative Positioning</h1>
+                <p>If you specify position:relative, then you can use top or bottom and left or right to move the element relative to where it would normally occur in the document.</p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1 {
+    position:relative;
+    top:20px;
+    left:-40px;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-rel.png"></div>
+            </section>
+            
+            <section>
+                <h1>Absolute Positioning</h1>
+                <p>When you specify position:absolute, the element is removed from the document and placed exactly where you tell it to go.</p>
+                <div style="float:left; width:50%;"><pre><code>#div-1 {
+    position:absolute;
+    top:0;
+    right:0;
+    width:200px;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-abs.png"></div>
+            </section>
+            
+            <section>
+                <h1>Combined Positioning</h1>
+                <p>If we set relative positioning on div-1, any elements within div-1 will be positioned relative to div-1. Then if we set absolute positioning on div-1a, we can move it to the top right of div-1.</p>
+                <div style="float:left; width:50%;"><pre><code>#div-1 {
+    position:relative;
+}
+#div-1a {
+    position:absolute;
+    top:0;
+    right:0;
+    width:200px;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-rel-abs.png"></div>
+            </section>
+            
+            <section>
+                <h1>Fixed Positioning</h1>
+                <p>Used to position an element on a fixed position relative to the browser window, even when scrolling.</p>
+                <pre><code>div#menu-bar { position: fixed; left: 0px; bottom: 0px; }</code></pre>
             </section>
             
             <section>
@@ -617,34 +687,6 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>Floating and Clearing</h1>
             </section>
                         
-            <section>
-                <h1>Positioning</h1>
-                <p>The position property enables you to place an element exactly where you want it on a webpage. There are four valid values:</p>
-                <ul>
-                    <li>Static (defalut value)</li>
-                    <li>Relative</li>
-                    <li>Absolute</li>
-                    <li>Fixed</li>
-                </ul>
-                <p>Using the 'static' value the element is positioned exactly where it would be as without styling.</p>
-            </section>
-            
-            <section>
-                <h1>Relative Positioning</h1>
-                <p></p>
-            </section>
-            
-            <section>
-                <h1>Absolute Positioning</h1>
-                <p></p>
-            </section>
-            
-            <section>
-                <h1>Fixed Positioning</h1>
-                <p>Used to position an element on a fixed position relative to the browser window, even when scrolling.</p>
-                <pre><code>div#menu-bar { position: fixed; left: 0px; bottom: 0px; }</code></pre>
-            </section>
-            
             <section><h1>The Cascade - Inheritance</h1></section>
             
             <section><h1>The Cascade - Specificity</h1></section>
@@ -734,7 +776,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <li>All headers should be blue</li>
                         <li>All paragraphs should be grey</li>
                     </ul>
-                    <img src="lab7-float.png" alt="">
+                    <img src="resources/lab7-float.png" alt="">
                 </section>
                 
                 <section>
@@ -744,7 +786,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <li>Group the entire form in another div</li>
                         <li>Both of these divs should be 45% wide and be positioned next to each other, one to the left, the other to the right</li>
                     </ul>
-                    <img src="lab7-layout.png" alt="">
+                    <img src="resources/lab7-layout.png" alt="">
                 </section>
             
                 <section>
@@ -776,7 +818,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 
                 <section>
                     <h1>Lab 8</h1>
-                    <img src="lab8.png" alt="">
+                    <img src="resources/lab8.png" alt="">
                 </section>
             
                 <section>
