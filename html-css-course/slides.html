@@ -158,6 +158,108 @@ Just some free flying text separated by some line breaks</code></pre>
             </section>
             
             <section>
+                <h1>HTML5 Structure Elements</h1>
+                <ul>
+                    <li>article</li>
+                    <li>aside</li>
+                    <li>footer</li>
+                    <li>header</li>
+                    <li>nav</li>
+                    <li>section</li>
+                    <li>time</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h1>A Structure Example</h1>
+                <pre><code>&lt;header&gt;
+    &lt;nav&gt;Main navigation&lt;/nav&gt;
+&lt;/header&gt;
+&lt;section&gt;
+    &lt;article&gt;
+        &lt;header&gt;
+	    &lt;h2&gt;Article title&lt;/h2&gt;
+	    &lt;p&gt;Posted on &lt;time datetime=&quot;2009-10-29T16:31:24+02:00&quot;&gt;October 29th 2012&lt;/time&gt;&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;section&gt;Article content&lt;/section&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;
+        &lt;nav&gt;Subpage navigation&lt;/nav&gt;
+    &lt;/aside&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+    &lt;nav&gt;Detailed navigation&lt;/nav&gt;
+&lt;/footer&gt;</code></pre>
+            </section>
+
+            <section>
+                <h1>Other HTML5 Elements</h1>
+                <ul>
+                    <li>audio</li>
+                    <li>video</li>
+                    <li>embed</li>
+                    <li>canvas</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h1>The Audio Element</h1>
+                <p>Used to easily output an audio track in a webpage.</p>
+                <pre><code>&lt;audio controls=&quot;controls&quot;&gt;
+  &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+  &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt;</code></pre>
+                <p>Results in:</p>
+                <audio controls="controls">
+                  <source src="horse.ogg" type="audio/ogg">
+                  <source src="horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+            </section>
+            
+            <section>
+                <h1>The Video Element</h1>
+                <p>Used to easily output a video in a webpage.</p>
+                <pre><code>&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
+  &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+                <p>Results in:</p>
+                <video width="320" height="240" controls="controls">
+                  <source src="movie.mp4" type="video/mp4">
+                  <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+                </video>
+            </section>
+            
+            <section>
+                <h1>The Embed Element</h1>
+                <p>The &lt;embed&gt; element represents non-HTML applications or interactive content.</p>
+                <pre><code>&lt;embed src=&quot;example.swf&quot; /&gt;</code></pre>
+                <p>Results in:</p>
+                <embed width="75%" height="13%" name="plugin" src="example.swf" type="application/x-shockwave-flash">
+            </section>
+            
+            <section>
+                <h1>The Canvas Element</h1>
+                <p>Used to draw graphics, on the fly, via scripting.</p>
+                <pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#x27;myCanvas&#x27;);
+  var context = canvas.getContext(&#x27;2d&#x27;);
+
+        context.beginPath();
+        context.moveTo(100, 150); 
+        context.lineTo(450, 50);
+        context.stroke();
+&lt;/script&gt;
+</code></pre>
+<img src="canvas.png" alt="">
+            </section>
+            
+            <section>
                 <section>
                     <h1>Lab time!</h1>
                     <p>Grab your laptops! We are going to take a dive into the pond of HTML.</p>
