@@ -259,7 +259,7 @@
         <section data-markdown>
             ### Equality and Identity
            
-            == does type coercion
+            == does type coercion (AVOID)
 
             === does **NOT** do type coercion
 
@@ -583,6 +583,7 @@
                 * `null == undefined` 
                 * `null === undefined` 
                 * `undefined || 'Hello'`
+                * `'' || 'Hello'`
                 * `"Hello " + undefined + 2`
         </section>
 
@@ -1317,9 +1318,6 @@ This is the DOM element clicked
             * RequireJS - file and module loader
             * StealJS - Script & Dependency System and more
             * CommonJS 
-               * Stitch (for browser)
-               * Browserify (for browser)
-
         </section>
 
         <section data-markdown>
