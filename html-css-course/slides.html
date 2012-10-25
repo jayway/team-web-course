@@ -603,9 +603,9 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <p>The position property enables you to place an element exactly where you want it on a webpage. There are four valid values:</p>
                 <ul>
                     <li>Static (defalut value)</li>
+                    <li>Fixed</li>
                     <li>Relative</li>
                     <li>Absolute</li>
-                    <li>Fixed</li>
                 </ul>
             </section>
             
@@ -616,6 +616,17 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
    position:static;
 }</code></pre></div>
                 <div style="float:left; width: 50%;"><img src="resources/pos-static.png"></div>
+            </section>
+            
+            <section>
+                <h1>Fixed Positioning</h1>
+                <p>Used to position an element on a fixed position relative to the browser window, even when scrolling. In this case the #div-1 block will be stuck at the bottom of the browser viewport.</p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1 { 
+    position: fixed; 
+    left: 0px; 
+    bottom: 0px; 
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-fixed.png"></div>
             </section>
             
             <section>
@@ -632,7 +643,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <section>
                 <h1>Absolute Positioning</h1>
                 <p>When you specify position:absolute, the element is removed from the document and placed exactly where you tell it to go.</p>
-                <div style="float:left; width:50%;"><pre><code>#div-1 {
+                <div style="float:left; width:50%;"><pre><code>#div-1a {
     position:absolute;
     top:0;
     right:0;
@@ -657,36 +668,46 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>Fixed Positioning</h1>
-                <p>Used to position an element on a fixed position relative to the browser window, even when scrolling.</p>
-                <pre><code>div#menu-bar { position: fixed; left: 0px; bottom: 0px; }</code></pre>
+                <h1>Floating Columns</h1>
+                <p>If we float one column to the left, then also float the second column to the left, they will push up against each other.</p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1a {
+    float:left;
+    width:150px;
+}
+#div-1b {
+    float:left;
+    width:150px;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-float-col.png"></div>
+            </section>
+            
+            <section>
+                <h1>Clearing Floats</h1>
+                <p>Then after the floating elements we can "clear" the floats to push down the rest of the content.</p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1a {
+    float:left;
+    width:190px;
+}
+#div-1b {
+    float:left;
+    width:190px;
+}
+#div-1c {
+    clear:both;
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-float-col-clear.png"></div>
             </section>
             
             <section>
                 <h1>Centering Content</h1>
-                <p>This box is horizontally centered by setting its right and left margin widths to "auto". </p>
-                <pre><code>#container { margin: 0px auto; }</code></pre>
+                <p>Now, if we want to center div-1a and div-1c horizontally this can be done by setting its right and left margin widths to "auto". </p>
+                <div style="float:left; width: 50%;"><pre><code>#div-1a, #div-1c { 
+    margin: 0px auto; 
+    width: 200px; 
+}</code></pre></div>
+                <div style="float:left; width: 50%;"><img src="resources/pos-centering.png"></div>
             </section>
             
-            <section>
-                <h1>Creating Columns</h1>
-                <p>These content and sidebar boxes are distributed into two columns with a fixed width inside the container &lt;div&gt;.</p>
-                <pre><code>#container { margin: 0px auto; }
-#content { float: left; width: 500px; } 
-#sidebar { float: right; width: 300px; }</code></pre>
-
-                <pre><code>&lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-        &lt;div id=&quot;content&quot;&gt;Here goes content!&lt;/div&gt;
-        &lt;div id=&quot;sidebar&quot;&gt;Here goes secondary content&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;</code></pre>
-            </section>
-            
-            <section>
-                <h1>Floating and Clearing</h1>
-            </section>
-                        
             <section><h1>The Cascade - Inheritance</h1></section>
             
             <section><h1>The Cascade - Specificity</h1></section>
