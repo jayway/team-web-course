@@ -612,32 +612,32 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <section>
                 <h1>Static Positioning</h1>
                 <p>Using the 'static' value (which is default) the element is positioned exactly where it would be as without styling.</p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1 {
+                <div class="side-by-side"><pre><code>#div-1 {
    position:static;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-static.png"></div>
+                <div class="side-by-side"><img src="resources/pos-static.png"></div>
             </section>
             
             <section>
                 <h1>Fixed Positioning</h1>
                 <p>Used to position an element on a fixed position relative to the browser window, even when scrolling. In this case the #div-1 block will be stuck at the bottom of the browser viewport.</p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1 { 
+                <div class="side-by-side"><pre><code>#div-1 { 
     position: fixed; 
     left: 0px; 
     bottom: 0px; 
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-fixed.png"></div>
+                <div class="side-by-side"><img src="resources/pos-fixed.png"></div>
             </section>
             
             <section>
                 <h1>Relative Positioning</h1>
                 <p>If you specify position:relative, then you can use top or bottom and left or right to move the element relative to where it would normally occur in the document.</p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1 {
+                <div class="side-by-side"><pre><code>#div-1 {
     position:relative;
     top:20px;
     left:-40px;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-rel.png"></div>
+                <div class="side-by-side"><img src="resources/pos-rel.png"></div>
             </section>
             
             <section>
@@ -649,7 +649,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
     right:0;
     width:200px;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-abs.png"></div>
+                <div class="side-by-side"><img src="resources/pos-abs.png"></div>
             </section>
             
             <section>
@@ -664,13 +664,13 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
     right:0;
     width:200px;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-rel-abs.png"></div>
+                <div class="side-by-side"><img src="resources/pos-rel-abs.png"></div>
             </section>
             
             <section>
                 <h1>Floating Columns</h1>
                 <p>If we float one column to the left, then also float the second column to the left, they will push up against each other.</p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1a {
+                <div class="side-by-side"><pre><code>#div-1a {
     float:left;
     width:150px;
 }
@@ -678,13 +678,13 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
     float:left;
     width:150px;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-float-col.png"></div>
+                <div class="side-by-side"><img src="resources/pos-float-col.png"></div>
             </section>
             
             <section>
                 <h1>Clearing Floats</h1>
                 <p>Then after the floating elements we can "clear" the floats to push down the rest of the content.</p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1a {
+                <div class="side-by-side"><pre><code>#div-1a {
     float:left;
     width:190px;
 }
@@ -695,17 +695,17 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
 #div-1c {
     clear:both;
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-float-col-clear.png"></div>
+                <div class="side-by-side"><img src="resources/pos-float-col-clear.png"></div>
             </section>
             
             <section>
                 <h1>Centering Content</h1>
                 <p>Now, if we want to center div-1a and div-1c horizontally this can be done by setting its right and left margin widths to "auto". </p>
-                <div style="float:left; width: 50%;"><pre><code>#div-1a, #div-1c { 
+                <div class="side-by-side"><pre><code>#div-1a, #div-1c { 
     margin: 0px auto; 
     width: 200px; 
 }</code></pre></div>
-                <div style="float:left; width: 50%;"><img src="resources/pos-centering.png"></div>
+                <div class="side-by-side"><img src="resources/pos-centering.png"></div>
             </section>
             
             <section>
@@ -714,14 +714,110 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
+                <h1>The Cascade - Inheritance</h1>
+                <p>Why is this a good thing? Consider the following code:</p>
+                <div class="side-by-side"><pre><code>div {
+  font-size: 20px;
+}</code></pre></div>
+                <div class="side-by-side"><pre><code>&lt;div&gt;
+  &lt;p&gt;
+    This &lt;em&gt;sentence&lt;/em&gt; will have a 20px
+    &lt;a href=&quot;#&quot;&gt;font-size&lt;/a&gt;.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre></div>
+                <p>If inheritance wasn’t at work in the above code, we’d have to specify a font-size declaration for each element in turn, to make sure that all the content in the sentence was rendered at 20px.</p>
+            </section>
+            
+            <section>
                 <h1>The Cascade - Specificity</h1>
-                <p>Specificity is a mechanism within the CSS cascade that aids conflict resolution.</p>
-                <ul>
+                <p>Specificity is a mechanism within the CSS cascade that aids conflict resolution. In order of importance:</p>
+                <ol>
                     <li>Existance of style attribute</li>
                     <li>Counting id selectors</li>
                     <li>Counting class, attribute and pseudo selectors</li>
                     <li>Counting element type selectors and pseudo-element</li>
-                </ul>
+                </ol>
+            </section>
+            
+            <section>
+                <h1>Specificity Example</h1>
+                <pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre>
+<table border="1" style="font-size: 0.5em;">
+    <caption>In order of importance, from left to right:</caption>
+    <thead>
+        <tr style="background-color: #eee;">
+            <th scope="col">Selector</th>
+            <th scope="col">Inline Style</th>
+            <th scope="col">IDs</th>
+            <th scope="col">Classes, Attributes and Pseudo-classes</th>
+            <th scope="col">Element Types and Pseudo-elements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="background-color: white; font-weight: bold;">
+            <td>Inline Style</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>body#home div#warning p.message {
+  color: blue;
+}</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>* body#home>div#warning p.message {
+  color: red;
+}</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>#home #warning p.message {
+  color: yellow;
+}</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>#warning p.message {
+  color: white;
+}</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr style="background-color: white;">
+            <td>p.message {
+  color: green;
+}</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>            
+            </section>
+            
+            <section>
+                <h1>Avoid Inline Styling</h1>
+                <p>Inline style rules always have the highest specificity, the only way to overwrite them within the CSS cascade is to use the <span style="font-weight: bold">!important</span> statement on the relevant declarations—an approach that creates a maintenance nightmare.</p>
+                <div class="side-by-side"><pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre></div>
+                <div class="side-by-side"><pre><code>p {
+  color: yellow !important;
+}</code></pre></div>
+            
             </section>
             
             <section><h1>Styling of Forms</h1></section>

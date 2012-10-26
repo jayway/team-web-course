@@ -118,6 +118,13 @@ ol li {margin-bottom: 0.5em;}
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
 }
 
+/*********************************************
+* ILLUSTRATIONS AND CODE
+*********************************************/
+
+.reveal section .side-by-side { 
+    float:left; width: 50%; 
+}
 
 /*********************************************
 * NAVIGATION CONTROLS
