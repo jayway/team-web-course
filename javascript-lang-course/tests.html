@@ -9,33 +9,15 @@
     <div id="mocha"></div>
     <script src="mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
+    <script> mocha.setup({ ui: 'bdd', ignoreLeaks: true }); </script>
+    <script src="string_calculator.js"></script>
+    <script src="string_calculator_spec.js"></script>
     <script>
       expect = chai.expect;
       mocha.run();
     </script>
     <hr/>
     <div id='markup'>
-        <ul>
-            <li>
-                <h1 class='title'>Funny Animals</h1>
-                <ul>
-                    <li>Aardvark</li>
-                    <li>Dingo</li>
-                    <li>Duckbill</li>
-                    <li>Sloth</li>
-                    <li>Tapir</li>
-                </ul>
-            </li>
-            <li>
-                <h2 class='title'>Tasty Animals</h2>
-                <ul>
-                    <li>Chicken</li>
-                    <li>Cow</li>
-                    <li>Kangaroo</li>
-                    <li>Zebra</li>
-                </ul>
-            </li>
-        </ul>
     </div>
   </body>
 </html>

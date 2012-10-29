@@ -1,0 +1,19 @@
+{
+  "name": "jquery-course",
+  "version": "0.0.1",
+  "description": "A course for learning jQuery.",
+  "main": "mocha.js",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "",
+    "chai": "",
+    "sinon-chai": "",
+    "chai-jquery": ""
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
