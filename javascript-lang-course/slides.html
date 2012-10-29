@@ -59,39 +59,15 @@
     <!-- When ready, create the model and view -->
     <script type="text/javascript">
         jQuery(document).ready(function($) {
-            // Create the sandbox, TODO maybe DRY it up :)
-            new Sandbox.View({
-                el : $('#sandbox1'),
-                model : new Sandbox.Model({
-                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-                    fallback : true // use global eval if iframe isn't available (default: true)
-                })
+            $('.sandbox').each(function(i, el) {
+                new Sandbox.View({
+                    el : $(el),
+                    model : new Sandbox.Model({
+                        iframe : false,  // evaluate commands inside a hidden iframe (default: false)
+                        fallback : true // use global eval if iframe isn't available (default: true)
+                    })
+                });
             });
-
-            new Sandbox.View({
-                el : $('#sandbox2'),
-                model : new Sandbox.Model({
-                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-                    fallback : true // use global eval if iframe isn't available (default: true)
-                })
-            });
-
-            new Sandbox.View({
-                el : $('#sandbox3'),
-                model : new Sandbox.Model({
-                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-                    fallback : true // use global eval if iframe isn't available (default: true)
-                })
-            });
-
-            new Sandbox.View({
-                el : $('#sandbox4'),
-                model : new Sandbox.Model({
-                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-                    fallback : true // use global eval if iframe isn't available (default: true)
-                })
-            });
-
         });
     </script>
 
@@ -591,7 +567,7 @@
         <section>
           <p>Exercise</p>
 
-           <div class="sandbox" id="sandbox1">sandbox console loading...</div>
+           <div class="sandbox">sandbox console loading...</div>
         </section>
 
         <section data-markdown>
@@ -690,7 +666,7 @@
 
         <section>
           <p>Exercise</p>
-           <div class="sandbox" id="sandbox2">sandbox console loading...</div>
+           <div class="sandbox">sandbox console loading...</div>
        </section>
 
 
@@ -768,7 +744,7 @@
 
         <section>
           <p>Exercise</p>
-           <div class="sandbox" id="sandbox3">sandbox console loading...</div>
+           <div class="sandbox">sandbox console loading...</div>
        </section>
 
         <section data-markdown>
@@ -1248,7 +1224,7 @@ This is the DOM element clicked
         <section>
           <p>Exercise</p>
 
-           <div class="sandbox" id="sandbox4">sandbox console loading...</div>
+           <div class="sandbox">sandbox console loading...</div>
         </section>
 
 
