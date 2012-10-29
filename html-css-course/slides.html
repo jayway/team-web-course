@@ -815,14 +815,31 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <p>Inline style rules always have the highest specificity, the only way to overwrite them within the CSS cascade is to use the <span style="font-weight: bold">!important</span> statement on the relevant declarations—an approach that creates a maintenance nightmare.</p>
                 <div class="side-by-side"><pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre></div>
                 <div class="side-by-side"><pre><code>p {
-  color: yellow !important;
+  color: blue !important;
 }</code></pre></div>
+                <p style="color:blue;">Red text</p>
             
             </section>
             
             <section><h1>Styling of Forms</h1></section>
             
-            <section><h1>Media Queries</h1></section>
+            <section>
+                <h1>Media Queries</h1>
+                <p>You can apply different styles depending on a number of so called media queries.</p>
+                <pre><code>/* Type */
+@media screen, projection { ... }
+
+/* Dimension */
+@media (min-device-width: 640px) { ... }
+
+/* Orientation */ 
+@media (orientation: portrait) { ... }
+
+/* Color */ 
+@media (color) { /* Screen is in color */ }
+@media (min-color-index: 256) { /* At least 256 colors */ }
+@media (monochrome) { /* Screen is monochrome */ }</code></pre>
+            </section>
             
             <section>
                 
