@@ -1345,18 +1345,17 @@ This is the DOM element clicked
 
             * Available ECMAScript 5
             * Throws errors for error prone code.
-            * Don't use globally - can break third party libs.
+            * Don't use globally - can break third party libs when concatenating files
+
+            <pre><code>
+            // Don't use strict globally
+            (function() {
+                "use strict";
+                // this runs in strict mode
+            }());
+            </code></pre>
         </section>
 
-        <section data-markdown>
-            ### Strict Usage
-
-                  function doSomething() {
-                     "use strict";
-                     // this runs in strict mode
-                  }
-
-        </section>
 
         <section data-markdown>
             ### javascript gotchas
