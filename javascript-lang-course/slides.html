@@ -608,7 +608,7 @@
         </section>
 
         <section data-markdown>
-            ### Invokation
+            ### Invocation
 
             by parenthesis
 
@@ -648,23 +648,20 @@
 
         </section>
 
-        <section data-markdown>
-            ### Example
-
-                _f('whack')();
-
-            `_f` is a function returning a function
-
-        </section>
-
        <section data-markdown>
             ### Returning Functions
 
                 var sayHello = function() {
                   return function() { return "Hello " + name; }
                 };
+
+                // Create a function
                 var helloMe = sayHello('andreas');
+                Invoke it
                 helloMe(); // => "Hello andreas"
+
+                // Direct invocation
+                sayHello('Tapir')(); //Hello Tapir
         </section>
 
         <section data-markdown>
