@@ -1045,9 +1045,9 @@ bar.sayGoodbye();
                 var x = function(){
                    var secret = 1;
                    return iAmGlobal + 1;
-                }(); # => 43
+                }(); // => 43
 
-                secret # => ReferenceError: secret not defined
+                secret // => ReferenceError: secret not defined
 
         </section>
 
@@ -1061,13 +1061,13 @@ bar.sayGoodbye();
                   me: function() { return this.andreas; }
                 };
 
-                # Calling an Object's Method:
-                x.me(); # => 'andreas'
+                // Calling an Object's Method:
+                x.me(); // => 'andreas'
 
                 var y = x.me
-                y(); # => ""  !!!
+                y(); // => undefined !!!
                 this.name = 'root';
-                y(); #=> 'root'
+                y(); // => 'root'
         </section>
 
         <section data-markdown>
