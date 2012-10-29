@@ -1,117 +1,117 @@
-<!doctype html>  
+<!doctype html>
 <html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>Javascript Basics</title>
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
-		<link rel="stylesheet" href="../reveal.js/css/main.css">
-		<link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
-		
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <head>
+        <meta charset="utf-8">
 
-		<!-- jw styles -->
-		<link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
+        <title>Javascript Basics</title>
 
-	<!-- Stylesheet -->
-	<link href="sandbox.css" rel="stylesheet"/>
-		
-		<script>
-			// If the query includes 'print-pdf' we'll use the PDF print sheet
-			document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="../reveal.js/css/main.css">
+        <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+        <!-- jw styles -->
+        <link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
+
+    <!-- Stylesheet -->
+    <link href="sandbox.css" rel="stylesheet"/>
+
+        <script>
+            // If the query includes 'print-pdf' we'll use the PDF print sheet
+            document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
 
-	<!-- Templates -->
-	
-	<!-- The sandbox template: -->
-	<script type="text/template" id="tplSandbox">
-		<pre class="output"></pre>
-		<div class="input">
-			<textarea rows="1" placeholder="<%= placeholder %>"></textarea>
-		</div>
-	</script>
+    <!-- Templates -->
 
-	<!-- The command/result template (NB whitespace/line breaks matter inside <pre> tag): -->
-	<script type="text/template" id="tplCommand"><% if (! _hidden) { %><span class="command"><%= command %></span>
+    <!-- The sandbox template: -->
+    <script type="text/template" id="tplSandbox">
+        <pre class="output"></pre>
+        <div class="input">
+            <textarea rows="1" placeholder="<%= placeholder %>"></textarea>
+        </div>
+    </script>
+
+    <!-- The command/result template (NB whitespace/line breaks matter inside <pre> tag): -->
+    <script type="text/template" id="tplCommand"><% if (! _hidden) { %><span class="command"><%= command %></span>
 <span class="prefix"><%= this.resultPrefix %></span><span class="<%= _class %>"><%= result %></span>
 <% } %></script>
 
 
-	<!-- Scripts -->
+    <!-- Scripts -->
 
-	<!-- Underscore, Backbone, backbone-localStorage, jQuery -->
-	<script src="libs/underscore.min.js"></script>
-	<script src="libs/backbone.min.js"></script>
-	<script src="libs/backbone-localStorage.min.js"></script>
-	<script src="libs/jquery.min.js"></script>
+    <!-- Underscore, Backbone, backbone-localStorage, jQuery -->
+    <script src="libs/underscore.min.js"></script>
+    <script src="libs/backbone.min.js"></script>
+    <script src="libs/backbone-localStorage.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
 
-	<!-- The JS Sandbox Console script (requires underscore, backbone and jquery): -->
-	<script src="sandbox-console.js"></script>
-	
-	<!-- When ready, create the model and view -->
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			// Create the sandbox, TODO maybe DRY it up :)
-			new Sandbox.View({
-				el : $('#sandbox1'),
-				model : new Sandbox.Model({
-					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-					fallback : true // use global eval if iframe isn't available (default: true)
-				})
-			});
+    <!-- The JS Sandbox Console script (requires underscore, backbone and jquery): -->
+    <script src="sandbox-console.js"></script>
 
-			new Sandbox.View({
-				el : $('#sandbox2'),
-				model : new Sandbox.Model({
-					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-					fallback : true // use global eval if iframe isn't available (default: true)
-				})
-			});
+    <!-- When ready, create the model and view -->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            // Create the sandbox, TODO maybe DRY it up :)
+            new Sandbox.View({
+                el : $('#sandbox1'),
+                model : new Sandbox.Model({
+                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
+                    fallback : true // use global eval if iframe isn't available (default: true)
+                })
+            });
 
-			new Sandbox.View({
-				el : $('#sandbox3'),
-				model : new Sandbox.Model({
-					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-					fallback : true // use global eval if iframe isn't available (default: true)
-				})
-			});
+            new Sandbox.View({
+                el : $('#sandbox2'),
+                model : new Sandbox.Model({
+                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
+                    fallback : true // use global eval if iframe isn't available (default: true)
+                })
+            });
 
-			new Sandbox.View({
-				el : $('#sandbox4'),
-				model : new Sandbox.Model({
-					iframe : false,  // evaluate commands inside a hidden iframe (default: false)
-					fallback : true // use global eval if iframe isn't available (default: true)
-				})
-			});
+            new Sandbox.View({
+                el : $('#sandbox3'),
+                model : new Sandbox.Model({
+                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
+                    fallback : true // use global eval if iframe isn't available (default: true)
+                })
+            });
 
-		});
-	</script>
+            new Sandbox.View({
+                el : $('#sandbox4'),
+                model : new Sandbox.Model({
+                    iframe : false,  // evaluate commands inside a hidden iframe (default: false)
+                    fallback : true // use global eval if iframe isn't available (default: true)
+                })
+            });
+
+        });
+    </script>
 
 
-		<!--[if lt IE 9]>
-		<script src="../reveal.js/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-	
-	<body>
-		
-		<div class="reveal">
+        <!--[if lt IE 9]>
+        <script src="../reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	   	<img src="../reveal.js/jayway-theme/img/jayway-logo.png" class="jayway-logo header">
+    <body>
 
-			<!-- Used to fade in a background when a specific slide state is reached -->
-			<div class="state-background"></div>
+        <div class="reveal">
 
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
+           <img src="../reveal.js/jayway-theme/img/jayway-logo.png" class="jayway-logo header">
+
+            <!-- Used to fade in a background when a specific slide state is reached -->
+            <div class="state-background"></div>
+
+
+            <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
         <section>
@@ -144,7 +144,7 @@
         <section>
           <h1>History, 2000-</h1>
           <p>ECMAScript goes up to revision 5</p>
-          <p>Browser vendors race for highest performance</p> 
+          <p>Browser vendors race for highest performance</p>
           <p>Google Chrome comes out in 2008 (V8)<p>
           <p>Enables high performance apps like node.js</p>
           <p>Many JavaScript engines still in heavy development today</p>
@@ -153,8 +153,8 @@
         <section data-markdown>
             ### ECMAScript and JavaScript
 
-            "JavaScript" is an ECMAScript variant managed by Mozilla. 
-            All non-Mozilla implementations using JavaScript are implementing ECMAScript, rather than Javascript. 
+            "JavaScript" is an ECMAScript variant managed by Mozilla.
+            All non-Mozilla implementations using JavaScript are implementing ECMAScript, rather than Javascript.
 
         </section>
 
@@ -183,12 +183,12 @@
 
         <section data-markdown>
             ### Shells for the Exercises
-            
+
             Example:
 
             * The embedded one in this presentation
-            * Firefox scratchpad 
-            * [http:www.jsconsole.com](http://www.jsconsole.com) 
+            * Firefox scratchpad
+            * [http:www.jsconsole.com](http://www.jsconsole.com)
             * Mozilla's Spidermonkey
 
                    `brew install spidermonkey;
@@ -200,17 +200,17 @@
             ### Whitespace
 
             Use semicolon !
-                
+
                 a = b + c
                 (d + e).foo()
- 
+
                 // Treated as:
                 //   a = b + c(d + e).foo();
         </section>
 
         <section data-markdown>
             ### Variable
-               
+
                 var x;  // declared but not defined
                 var y = 0;
                 z = 1; // always global scope DON'T !
@@ -221,7 +221,7 @@
             ### Function Scope
 
                 function a() { v1 = 42 }  // DON'T !
-                a(); 
+                a();
                 v1 // => 42  GLOBAL
                 function b() { var v2 = 43 }
                 b();
@@ -258,7 +258,7 @@
 
         <section data-markdown>
             ### Equality and Identity
-           
+
             == does type coercion (AVOID)
 
             === does **NOT** do type coercion
@@ -267,8 +267,8 @@
                 true == 1; // true
 
                 //because 2 is converted to "2" and then compared
-                "2" == 2; // true 
-    
+                "2" == 2; // true
+
                 // Using the === operator (Identity)
                 true === 1 //false
                 "2" === 2 // false
@@ -286,7 +286,7 @@
                    "a does not equal either b or c";
                 }
 
-            Or 
+            Or
 
                 a === b ? "a equal b" : "a not equal b"
         </section>
@@ -314,7 +314,7 @@
 
                 do {
                    c += 1;
-                } while (c < 10)  
+                } while (c < 10)
 
         </section>
 
@@ -348,7 +348,7 @@
         </section>
 
         <section data-markdown>
-            ### break 
+            ### break
 
                 for (i=0;i<10;i++)
                 {
@@ -394,8 +394,8 @@
 
                 throw new Error("Ooops") // now with stack trace
 
-                throw { 
-                   name: exceptionName, 
+                throw {
+                   name: exceptionName,
                    message: reason
                 }
 
@@ -495,7 +495,7 @@
                 // or
                 15 + "";
 
-                // or 
+                // or
                 String(15);
         </section>
 
@@ -579,9 +579,9 @@
                 * hint: `typeof notDeclaredVar`
            * Explore the following statements:
                 * `'x' == new String('x')`
-                * `'x' === new String('x')` 
-                * `null == undefined` 
-                * `null === undefined` 
+                * `'x' === new String('x')`
+                * `null == undefined`
+                * `null === undefined`
                 * `undefined || 'Hello'`
                 * `'' || 'Hello'`
                 * `"Hello " + undefined + 2`
@@ -591,7 +591,7 @@
         <section>
           <p>Exercise</p>
 
-     	  <div class="sandbox" id="sandbox1">sandbox console loading...</div>
+           <div class="sandbox" id="sandbox1">sandbox console loading...</div>
         </section>
 
         <section data-markdown>
@@ -625,7 +625,7 @@
 
                 //Example:
                 var greeter = function() { return 'hello'; }
-                
+
                 greeter // a reference to the function
                 greeter() // invocation of the function
                 equals( 'hello', greeter(), 'invocation')
@@ -638,7 +638,7 @@
             Arguments bound if present, e.g:
 
                 (function (x, y) {return x + y}) (’foo’)  # => ’fooundefined’
-                
+
         </section>
 
         <section data-markdown>
@@ -690,13 +690,13 @@
 
         <section>
           <p>Exercise</p>
-     	  <div class="sandbox" id="sandbox2">sandbox console loading...</div>
+           <div class="sandbox" id="sandbox2">sandbox console loading...</div>
        </section>
 
 
         <section data-markdown>
             ## Arrays
-       
+
             * Array inherits from object !
             * Indexes are converted to strings
             * `length` = largest numeric index in the array.
@@ -726,7 +726,7 @@
                 v.length = 2;
                 v.foo = 'bar'
                 v; // => ['foo', 42]
-                v[0]; // 'foo' 
+                v[0]; // 'foo'
         </section>
 
         <section data-markdown>
@@ -743,13 +743,13 @@
 
               var initialize = _.once(createApplication);
               initialize();
-              initialize(); // Application is only created once.               
+              initialize(); // Application is only created once.
         </section>
 
 
         <section data-markdown>
             ### Exercise
-             
+
             Impl. function 'sum' so that:
 
                 sum([1,2,3]) # => 6
@@ -761,14 +761,14 @@
                 total # => 6
 
             Impl. 'times' with recursion:
-           
+
                 times(10, function(x) { s += 1 })
                 total // => 10
         </section>
 
         <section>
           <p>Exercise</p>
-     	  <div class="sandbox" id="sandbox3">sandbox console loading...</div>
+           <div class="sandbox" id="sandbox3">sandbox console loading...</div>
        </section>
 
         <section data-markdown>
@@ -776,20 +776,20 @@
 
             An object is a container of keys and values.
 
-                var myObject = { 
-                   name: 'Andreas', 
+                var myObject = {
+                   name: 'Andreas',
                    sayHello: function() {... }
                 }
 
         </section>
 
 
-	<section>
-	    <p>Retrieval</p>
+    <section>
+        <p>Retrieval</p>
             <pre><code>
 var flight = {
   airline: "Oceanic",
-  departure : {       
+  departure : {
     IATA: "SYD",
     time: "2004-09-22 14:55",
     city: "Sydney"
@@ -797,12 +797,12 @@ var flight = {
 }
 flight.departure.city;
 // Same as
-flight["departure"]["city"];            
+flight["departure"]["city"];
             </code></pre>
         </section>
 
-	<section>
-	    <p>Object Methods</p>
+    <section>
+        <p>Object Methods</p>
             <pre><code>
 var myObject = {
   name: 'andreas',
@@ -813,8 +813,8 @@ myObject.sayHello();
             </code></pre>
         </section>
 
-	<section>
-	    <p>Non-existent properties</p>
+    <section>
+        <p>Non-existent properties</p>
             <pre><code>
 flight.foo // undefined
 flight['foo'] // undefined
@@ -822,15 +822,15 @@ flight.foo.city; // undefined
             </code></pre>
         </section>
 
-	<section>
-	    <p>Setting Non-existent properties</p>
+    <section>
+        <p>Setting Non-existent properties</p>
             <pre><code>
 flight.foo = 'bar';
 flight['baaz'] = 42
             </code></pre>
         </section>
 
-	<section>
+    <section>
             <pre><code>
 delete flight.foo
 flight.foo // undefined
@@ -846,7 +846,7 @@ flight.foo // undefined
        </section>
 
        <section>
-	    <p>The Prototype Chain</p>
+        <p>The Prototype Chain</p>
              <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
 var bar = {two: 'two'};
@@ -858,14 +858,14 @@ delete bar.two
 bar.two // Resolves to 2
             </code></pre>
        </section>
-                 
+
 
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
-          
+
           Object can shared properties
 
-          `new F()` creates new objects that inherits from `F.prototype` 
+          `new F()` creates new objects that inherits from `F.prototype`
 
           `F` is a constructor function.
 
@@ -876,14 +876,14 @@ bar.two // Resolves to 2
 
                 function Pet(species) {
                     this.species = species;
-                    this.sayHello = function() { 
-                      return "Hello " + this.species; 
+                    this.sayHello = function() {
+                      return "Hello " + this.species;
                     }
                  }
                  var cat = new Pet('cat');
-                 cat.sayHello(); 
+                 cat.sayHello();
         </section>
-     
+
         <section data-markdown>
             ### The prototype
 
@@ -893,7 +893,7 @@ bar.two // Resolves to 2
                     this.species = species;
                 }
 
-                Pet.prototype.sayHello = function() { 
+                Pet.prototype.sayHello = function() {
                    return "Hello " + this.species;
                 }
 
@@ -906,11 +906,11 @@ bar.two // Resolves to 2
             * Is used for inheritance
 
         </section>
-   
+
 
         <section data-markdown>
             ## Built-in Prototypes
-            
+
             * Object.prototype
             * Array.prototype
             * Function.prototype
@@ -930,8 +930,8 @@ bar.two // Resolves to 2
                [1.2.3].last(); // => 3
         </section>
 
-	<section>
-	    <p>Object.create</p>
+    <section>
+        <p>Object.create</p>
             <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
 var bar = Object.create(foo); // do this !
@@ -941,7 +941,7 @@ bar.two // Resolves to 'two'
         </section>
 
        <section>
-	    <p>Prototypal Inheritance</p>
+        <p>Prototypal Inheritance</p>
           <pre><code>
 // define a base object
 var foo = {
@@ -955,7 +955,7 @@ foo.sayHello();
       </section>
 
        <section>
-	    <h3>Prototypal Inheritance</h3>
+        <h3>Prototypal Inheritance</h3>
             <pre><code>
 var foo = {
     name: "foo",
@@ -964,7 +964,7 @@ var foo = {
     }
 };
 
-// define a object 'inheriting' from object bar 
+// define a object 'inheriting' from object bar
 var bar = Object.create(foo);
 bar.sayGoodbye = function() {
     alert("goodbye from " + this.name);
@@ -989,7 +989,7 @@ bar.sayGoodbye();
             ## JSON
 
             * A subset of javascript
-            * JavaScript Object Notation 
+            * JavaScript Object Notation
                 * objects
                 * arrays
                 * strings
@@ -1055,11 +1055,11 @@ bar.sayGoodbye();
             ## Function Scope
 
                 var iAmGlobal = 42;
-                var x = function(){ 
+                var x = function(){
                    var secret = 1;
                    return iAmGlobal + 1;
                 }(); # => 43
-               
+
                 secret # => ReferenceError: secret not defined
 
         </section>
@@ -1069,7 +1069,7 @@ bar.sayGoodbye();
 
             `this` depends on who's calling:
 
-                var x = { 
+                var x = {
                   name: 'andreas',
                   me: function() { return this.andreas; }
                 };
@@ -1086,10 +1086,10 @@ bar.sayGoodbye();
         <section data-markdown>
             ## Root Context
 
-                function test_this() { 
-                   return this; 
-                } 
-                var i_wonder_what_this_is = test_this(); 
+                function test_this() {
+                   return this;
+                }
+                var i_wonder_what_this_is = test_this();
 
             this reference the window object
 
@@ -1100,9 +1100,9 @@ bar.sayGoodbye();
             Event handling
 
             <pre><code>
-  function click_handler() { 
-   alert(this); // alerts the window object 
-  } 
+  function click_handler() {
+   alert(this); // alerts the window object
+  }
 
  button id='thebutton' onclick='click_handler()'>Click me!</button>
             </code></pre>
@@ -1121,19 +1121,19 @@ This is the DOM element clicked
         <section data-markdown>
             ## Call
 
-                 var first_object = { 
-                  num: 42 
-                 }; 
-                 var second_object = { 
-                  num: 24 
-                 }; 
-  
-                 function multiply(mult) { 
-                  return this.num * mult; 
-                 } 
-  
-                 multiply.call(first_object, 5); // returns 42 * 5 
-                 multiply.call(second_object, 5); // returns 24 * 5 
+                 var first_object = {
+                  num: 42
+                 };
+                 var second_object = {
+                  num: 24
+                 };
+
+                 function multiply(mult) {
+                  return this.num * mult;
+                 }
+
+                 multiply.call(first_object, 5); // returns 42 * 5
+                 multiply.call(second_object, 5); // returns 24 * 5
         </section>
 
         <section data-markdown>
@@ -1141,8 +1141,8 @@ This is the DOM element clicked
 
             Similar to call, but with args as an array:
 
-                multiply.apply(first_object, [5]); // returns 42 * 5 
-                multiply.apply(second_object, [5]); // returns 24 * 5 
+                multiply.apply(first_object, [5]); // returns 42 * 5
+                multiply.apply(second_object, [5]); // returns 24 * 5
         </section>
 
 
@@ -1181,10 +1181,10 @@ This is the DOM element clicked
                  translate: function(s) {
                    var self = this;
                    var reply = [];
-                   s.split(' ').forEach(function(w){ reply.push(self[w])}); 
+                   s.split(' ').forEach(function(w){ reply.push(self[w])});
                    return reply.join(' ');
                  }
-              }  
+              }
 
               t.hello='hej';
               t.world='varld';
@@ -1203,8 +1203,8 @@ This is the DOM element clicked
                 var base = { foo: 'bla'};
                 var sub = Object.create(base);
 
-            What happens when 
-  
+            What happens when
+
                 base.foo = 'changed'
                 sub.foo // ??
 
@@ -1248,7 +1248,7 @@ This is the DOM element clicked
         <section>
           <p>Exercise</p>
 
-     	  <div class="sandbox" id="sandbox4">sandbox console loading...</div>
+           <div class="sandbox" id="sandbox4">sandbox console loading...</div>
         </section>
 
 
@@ -1269,11 +1269,11 @@ This is the DOM element clicked
             `String.search`, `String.match`, `String.replace`, `String.split`, `RegExp.exec`, `RegExp.test`
 
             #### Example:
-          
+
                  var re5digit = /^\d{5}$/; or new RegExp("pattern")
                  "12312".search(re5digit) // # => 0
 
-        
+
         </section>
 
         <section data-markdown>
@@ -1286,7 +1286,7 @@ This is the DOM element clicked
                 setFirst: function(name) {
                   this.first = name;
                   return this;
-                } 
+                }
                 person
                 .setFirst(“Anders”)
                 .setLast(“Janmyr”)
@@ -1317,7 +1317,7 @@ This is the DOM element clicked
 
             * RequireJS - file and module loader
             * StealJS - Script & Dependency System and more
-            * CommonJS 
+            * CommonJS
         </section>
 
         <section data-markdown>
@@ -1341,7 +1341,7 @@ This is the DOM element clicked
 
                 attachFormListener: function(form, object) {
                     var self = this;
-                    function populator(event) { 
+                    function populator(event) {
                        self.populateFromForm(form, object);
                        object.notify();
                     };
@@ -1375,11 +1375,11 @@ This is the DOM element clicked
             ### javascript gotchas
 
             Be aware of:
- 
+
                 "1" == 1 // true
 
             Advice:
- 
+
                 Number("1") === 1
 
         </section>
@@ -1388,12 +1388,12 @@ This is the DOM element clicked
             ### parseInt doesn't assume base-10
 
             Be aware of:
- 
+
                 parseInt("8"); //8
                 parseInt("08"); //0
 
             Advice:
- 
+
                 parseInt("8", 10); //8
                 parseInt("08", 10); //8
 
@@ -1446,7 +1446,7 @@ This is the DOM element clicked
             * Javascript strict mode
             * JSLint, Closure Compiler
             * CoffeeScript
-            * Test Frameworks (of course !) 
+            * Test Frameworks (of course !)
         </section>
 
         <section>
@@ -1504,48 +1504,48 @@ Animal = (function() {
 
       </div>
 
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
+            <!-- The navigational controls UI -->
+            <aside class="controls">
+                <a class="left" href="#">&#x25C4;</a>
+                <a class="right" href="#">&#x25BA;</a>
+                <a class="up" href="#">&#x25B2;</a>
+                <a class="down" href="#">&#x25BC;</a>
+            </aside>
 
-			<!-- Presentation progress bar -->
-			<div class="progress"><span></span></div>
-			
-		</div>
+            <!-- Presentation progress bar -->
+            <div class="progress"><span></span></div>
 
-		<script src="../reveal.js/lib/js/head.min.js"></script>
-		<script src="../reveal.js/js/reveal.min.js"></script>
+        </div>
 
-		<script>
-			
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				
-				theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+        <script src="../reveal.js/lib/js/head.min.js"></script>
+        <script src="../reveal.js/js/reveal.min.js"></script>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-					{ src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-					{ src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-				]
-			});
-			
-		</script>
+        <script>
 
-	</body>
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+                    { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                ]
+            });
+
+        </script>
+
+    </body>
 </html>
 
 <!--  LocalWords:  Impl Ahh fooundefined mult RegExp privVar privFunc populator
