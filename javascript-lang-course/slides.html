@@ -187,14 +187,16 @@
                 (d + e).foo()
 
                 // Treated as:
-                //   a = b + c(d + e).foo();
+                a = b + c (d + e).foo();
         </section>
 
         <section data-markdown>
             ### Variable
 
                 var x;  // declared but not defined
+
                 var y = 0;
+
                 z = 1; // always global scope DON'T !
 
         </section>
@@ -205,9 +207,11 @@
                 function a() { v1 = 42 }  // DON'T !
                 a();
                 v1 // => 42  GLOBAL
+
                 function b() { var v2 = 43 }
                 b();
                 v2 // => "ReferenceError: v2 is not defined"
+
                 var v3;
                 function c() { v3 = 44 }
                 c();
@@ -219,10 +223,12 @@
             ### No Block Scope
 
                 var z = 4;
+
                 if (true) {
                     var z = 5;
                 }
-                z;  => 5
+
+                z; // => 5
 
         </section>
 
@@ -271,15 +277,6 @@
             Or
 
                 a === b ? "a equal b" : "a not equal b"
-        </section>
-
-        <section data-markdown>
-            ### while
-
-                while (c < 10) {
-                   c += 1;
-                   // ...
-                }
         </section>
 
         <section data-markdown>
@@ -1139,7 +1136,7 @@ This is the DOM element clicked
           * ECMAScript5 - Function.prototype.bind
           * backbone/underscore - `bind`, `bindAll`
                * Example: `_bind(this.render, this)`
-          * CoffeeScript, use the `=>` operator
+               * CoffeeScript, use the <code>=></code> operator
 
         </section>
 
