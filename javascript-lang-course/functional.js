@@ -36,7 +36,7 @@ var functional = {
 // The new function can then be called again with additional arguments
 // while the first argument are already set.
 Function.prototype.curry = function() {
-  var slice = Array.prototype.slice;
+    var slice = Array.prototype.slice;
     var fn = this;
     var args = slice.apply(arguments);
     return function() {
