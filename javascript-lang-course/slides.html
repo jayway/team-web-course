@@ -263,6 +263,18 @@
 
         </section>
 
+        <section>
+
+        <section data-markdown>
+            ### Control Statements, if, for ...
+
+            * C/Java Style:
+              * if, else if, else, while, do while, switch, case, for, continue, break
+            * Exceptions: try, catch, finally, throw
+             
+            _(see details, arrow down in this presenation)_
+        </section>
+        
         <section data-markdown>
             ### if else if else
 
@@ -381,6 +393,8 @@
 
         </section>
 
+        </section>
+
         <section data-markdown>
             ### Values
             * Numbers
@@ -414,6 +428,7 @@
         </section>
 
 
+        <section>
         <section data-markdown>
             Numbers
             -------
@@ -446,6 +461,8 @@
 
             _Caveat: some operators only work on 32 bit numbers. A silent conversion
             will be performed by the operator._
+        </section>
+
         </section>
 
         <section data-markdown>
@@ -565,15 +582,15 @@
         <section>
             <h3>Exercise Equality</h3>
             <div class='sandbox-notes'>
-                Explore the following statements:
+                Explore:
                 <ul>
-                    <li>`'x' == new String('x')`</li>
-                    <li>`'x' === new String('x')`</li>
-                    <li>`null == undefined`</li>
-                    <li>`null === undefined`</li>
-                    <li>`undefined || 'Hello'`</li>
-                    <li>`'' || 'Hello'`</li>
-                    <li>`"Hello " + undefined + 2`</li>
+                    <li><code>'x' == new String('x')</code></li>
+                    <li><code>'x' === new String('x')</code></li>
+                    <li><code>null == undefined</code></li>
+                    <li><code>null === undefined</code></li>
+                    <li><code>undefined || 'Hello'</code></li>
+                    <li><code>'' || 'Hello'</code></li>
+                    <li><code>"Hello " + undefined + 2</code></li>
                 </ul>
             </div>
 
@@ -613,9 +630,7 @@
                 var greeter = function() { return 'hello'; }
 
                 greeter // a reference to the function
-                greeter() // invocation of the function
-                equals( 'hello', greeter(), 'invocation')
-
+                greeter() // => 'hello'
         </section>
 
         <section data-markdown>
@@ -624,6 +639,11 @@
             Arguments bound if present, e.g:
 
                 (function (x, y) {return x + y}) (’foo’)  # => ’fooundefined’
+
+            varargs by `arguments`, e.g.:
+
+                function bar(){ return arguments;}
+                bar("hej", 42) // => {"0":"hej","1":42}
 
         </section>
 
@@ -661,21 +681,30 @@
                 sayHello('Tapir')(); //Hello Tapir
         </section>
 
-        <section data-markdown>
-            ### Exercise
+        <section>
+        <section>
+            <h3>Exercise</h3>
 
-            * Write an anonymous function returning your name.
+            <div class='sandbox-notes'>
+                Write an anonymous function so that:
+                <code><pre>
+var x = function()...
+x;  // => "Your Name"
+x(); // => "TypeError, ... not a function"
+               </pre></code>
+            </div>
 
-                    var x = function()...
-                    x;  //  "Your Name"
-
+           <div class="sandbox">sandbox console loading...</div>            
         </section>
 
         <section>
-          <h3>Exercise</h3>
-           <div class="sandbox">sandbox console loading...</div>
-       </section>
+           <h3>Answer</h3>
+                <code><pre>
+var x = function() { return "Andreas"; }()
 
+               </pre></code>          
+        </section>           
+        </section>
 
         <section data-markdown>
             ## Arrays
@@ -731,30 +760,62 @@
         </section>
 
 
-        <section data-markdown>
-            ### Exercise
-
+        <section>
+            <h3>Exercise</h3>
             Impl. function 'sum' so that:
+<code><pre>
+sum([1,2,3]) # => 6
+</pre></code>
 
-                sum([1,2,3]) # => 6
+           <div class="sandbox">sandbox console loading...</div>
 
-            Impl. function 'each' so that:
-
-                var total = 0;
-                each([1,2,3], function(q) { x += q})
-                total # => 6
-
-            Impl. 'times' with recursion:
-
-                times(10, function(x) { s += 1 })
-                total // => 10
         </section>
 
-        <section>
-          <h3>Exercise</h3>
-           <div class="sandbox">sandbox console loading...</div>
-       </section>
 
+        <section>
+            <h3>Exercise</h3>
+
+            Impl. function 'each' so that:
+<code><pre>
+var total = 0;
+each([1,2,3], function(q) { x += q})
+total # => 6
+</pre></code>
+
+           <div class="sandbox">sandbox console loading...</div>
+
+        </section>
+
+        <section>                      
+        <section>
+            <h3>Exercise</h3>
+            Impl. 'times' with recursion:
+
+           <code><pre>
+times(10, function(x) { s += 1 })
+total // => 10
+</pre></code>
+
+           <div class="sandbox">sandbox console loading...</div>
+
+        </section>
+
+       <section>
+           <h3>Answer</h3>
+<code><pre>           
+ function times(n,f) {
+if (n > 0) {
+   f();
+   times(n-1, f);
+}
+}
+total = 0;
+times(10, function(x){ total += 1})
+total // => 10
+</pre></code>
+        </section>
+        </section>
+           
         <section data-markdown>
             ### Objects (compare JSON)
 
