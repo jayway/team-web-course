@@ -1438,32 +1438,34 @@ This is the DOM element clicked
         <section>
             <h3>CoffeeScript Example</h3>
 
-<code><pre>
+            <pre><code>
             class Animal
                constructor: (@name) ->
 
                move: (meters) ->
                   alert @name + " moved #{meters}."
-</pre></code>
+            </code></pre>
         </section>
 
         <section>
             <h3>Compiles to</h3>
-<code><pre>
-Animal = (function() {
 
-  function Animal(name) {
-    this.name = name;
-  }
+            <pre><code>
+            Animal = (function() {
 
-  Animal.prototype.move = function(meters) {
-    return alert(this.name + (" moved " + meters + "m."));
-  };
+                function Animal(name) {
+                    this.name = name;
+                }
 
-  return Animal;
+                Animal.prototype.move = function(meters) {
+                    return alert(this.name +
+                        (" moved " + meters + "m."));
+                };
 
-})();
-</pre></code>
+                return Animal;
+
+            })();
+            </code></pre>
         </section>
 
 
