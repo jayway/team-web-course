@@ -1,18 +1,22 @@
 describe('Functional', function() {
     "use strict";
-    
+
     // 1. Implement the method remove(array, el) in functional.js
     // Hint: this.splice(i, 1) removes element at i.
     describe("#remove", function() {
-        it('removes the element from the array and returns a new array', function() {
+        it('removes the first element from the array', function() {
             expect(functional.remove(["a", "b", "c", "d"], "a")).to.deep.equal(["b", "c", "d"]);
+        });
+        it('removes a middle element from the array', function() {
             expect(functional.remove(["a", "b", "c", "d"], 'c')).to.deep.equal(["a", "b", "d"]);
+        });
+        it('removes the last element from the array', function() {
             expect(functional.remove(["a", "b", "c", "d"], 'd')).to.deep.equal(["a", "b", "c"]);
         });
     });
 
 
-    // 2. Add the method mixin(mixee, mixin) to functional.js 
+    // 2. Add the method mixin(mixee, mixin) to functional.js
     // The method should add all properties of the mixin to the
     // mixee object, EXCEPT the ones starting with _.
     // Hint: for (var key in mixin)
@@ -60,22 +64,30 @@ describe('Functional', function() {
     // The new function can then be called again with additional arguments
     // while the first argument are already set.
     describe("Function.prototype.curry", function() {
-        it('', function() {
+        // Helper function that adds all its arguments together
+        function sum(){
+            for(var s = 0, i = arguments.length; i > 0;s += arguments[--i]);
+            return s;
+        }
+
+        it('is a function', function() {
             expect(Function.prototype.curry).to.not.be.undefined;
             expect(Function.prototype.curry).to.be.a('function');
-            function sum(){
-                for(var s = 0, i = arguments.length; i > 0;s += arguments[--i]);
-                return s;
-            }
+        });
+
+        it('creates a new function which can add', function() {
             var addThree = sum.curry(3);
             expect(addThree).to.be.a('function');
             expect(addThree(4)).to.equal(7);
             expect(addThree(8)).to.equal(11);
+        });
 
+        it('creates a new function which can be curried', function() {
+            var addThree = sum.curry(3);
             var addSeven = addThree.curry(4);
             expect(addSeven).to.be.a('function');
             expect(addSeven(7)).to.equal(14);
-            expect(addSeven(-7)).to.equal(0);
+            expect(addSeven(-7, 8, 9)).to.equal(17);
         });
     });
 
