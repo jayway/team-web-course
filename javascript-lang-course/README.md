@@ -1,7 +1,7 @@
 # Javascript Course
 
 ## Slides
-[Javascript Course with embedded exercises](html-css-course/README.md)
+[Javascript Course with embedded exercises](slides.html)
 
 ## Mocha Labs
 
