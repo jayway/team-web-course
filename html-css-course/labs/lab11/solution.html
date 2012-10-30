@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>Our first web page</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch|Redressed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="solution-styles.css">
+</head>
+<body>
+    <div id="container" class="clearfix">
+    <div id="page-header" class="header">
+        <h1>A level 1 heading</h1>
+        <p>The first paragraph. Sed do et <a href="http://jayway.com">dolore magna</a> aliqua. Ut enim ad minim, quis nostrud.</p>
+        
+        <img src="../image.png" alt="Alternative text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
+    <div class="primary">
+        <h2>A level 2 heading</h2>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+        <ol>
+            <li>
+                List item 1
+                <ol>
+                    <li>List sub-item 1</li>
+                    <li>List sub-item 2</li>
+                </ol>
+            </li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ol>
+    
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+        </ul>
+    
+        <table>
+            <caption>A simple description of our table content</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Header 1</th>
+                    <th scope="col">Header 2</th>
+                    <th scope="col">Header 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+                <tr>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="secondary">
+        <form action="solution.html" method="post">
+        
+            <div class="text">
+                <label for="text-input">Text input 1</label>
+                <input type="text" name="text-input" value="" id="text-input">
+            </div>
+        
+            <div class="text">
+                <label for="text-input">Text input 2</label>
+                <input type="text" name="text-input" value="" id="text-input">
+            </div>
+                
+            <div class="select">
+                <label for="select-1">Single select</label>
+                <select name="select-1" id="select-1">
+                    <option value="option1">option1</option>
+                    <option value="option2">option2</option>
+                    <option value="option3">option3</option>
+                </select>
+            </div>
+        
+            <div class="select">
+                <label for="select-2">Multiple select</label>
+                <select name="select-2" id="select-2" multiple="multiple">
+                    <option value="option1">option1</option>
+                    <option value="option2">option2</option>
+                    <option value="option3">option3</option>
+                </select>
+            </div>
+        
+            <div class="textarea">
+                <label for="textarea">Textarea</label>
+                <textarea name="textarea" id="textarea" cols="20" rows="5"></textarea>
+            </div>
+        
+            <fieldset>
+                <legend class="wrap">Check boxes</legend>
+            
+                <input type="checkbox" value="one" name="checkboxgroup2" id="checkbox2-1" checkboxed="checkboxed">
+                <label for="checkbox2-1">one</label>
+            
+                <input type="checkbox" value="two" name="checkboxgroup2" id="checkbox2-2">
+                <label for="checkbox2-2">two</label>
+            </fieldset>
+        
+            <fieldset>
+                <legend class="wrap">Radio buttons</legend>
+            
+                <input type="radio" value="one" name="radiogroup2" id="radio2-1" checked="checked">
+                <label for="radio2-1">one</label>
+            
+                <input type="radio" value="two" name="radiogroup2" id="radio2-2">
+                <label for="radio2-2">two</label>
+            </fieldset>
+        
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>    
+</body>
+</html>
