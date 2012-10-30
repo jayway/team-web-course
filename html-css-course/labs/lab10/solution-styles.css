@@ -53,7 +53,6 @@ form div {
     }
 }
 
-
 form > div {
     clear: both;
 }
@@ -62,13 +61,7 @@ label {
     width: 100px;
     float: left;
     text-align: right;
-    padding-right: 5px;
-}
-
-label[for="text-input"] {
-    width: 100px;
-    text-align: right;
-    float: left;
+    padding-right: 10px;
 }
 
 fieldset {
@@ -87,5 +80,9 @@ input, input[type="text"], input[type="checkbox"], input[type="radio"], select, 
 input[type="submit"] {
     background-color: orange;
     float: right;
+}
+
+input[type="text"], select, textarea { 
+    width: 200px;
 }
 
