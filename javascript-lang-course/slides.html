@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
 
     <!-- Stylesheet -->
-    <link href="sandbox.css" rel="stylesheet"/>
+    <link href="libs/sandbox.css" rel="stylesheet"/>
 
         <script>
             // If the query includes 'print-pdf' we'll use the PDF print sheet
@@ -54,7 +54,7 @@
     <script src="libs/jquery.min.js"></script>
 
     <!-- The JS Sandbox Console script (requires underscore, backbone and jquery): -->
-    <script src="sandbox-console.js"></script>
+    <script src="libs/sandbox-console.js"></script>
 
     <!-- When ready, create the model and view -->
     <script type="text/javascript">
@@ -148,13 +148,15 @@
         </section>
 
         <section data-markdown>
-            ### Agenda: Exercises
+            ### Slides contains exercises for:
 
             1. typeof, undefined, ==, ===, String
             2. anonymous functions
             3. higher-order functions and recursion
             4. object, scope and this
             5. mocha test framework
+
+            Solutions can be found by using arrow down.
         </section>
 
         <section data-markdown>
@@ -272,7 +274,7 @@
               * if, else if, else, while, do while, switch, case, for, continue, break
             * Exceptions: try, catch, finally, throw
              
-            _(see details, arrow down in this presenation)_
+            _(see details, arrow down on this slide)_
         </section>
         
         <section data-markdown>
@@ -470,14 +472,15 @@
 
             parseInt, parseFloat and Number:
 
-                parseInt(“1234blue”); //returns 1234
-                parseInt(“0xA”); //returns 10
-                parseInt(“22.5”); //returns 22
-                parseInt(“blue”); //returns NaN
-
-                parseFloat(“1234blue”); //returns 1234.0
-                parseFloat(“0xA”); //returns NaN
-                parseFloat(“22.5”); //returns 22.5
+                parseInt("1234blue"); //returns 1234
+                parseInt("0xA"); //returns 10
+                parseInt("22.5"); //returns 22
+                parseInt("blue"); //returns NaN
+                parseInt("09"); // return 0 !!!
+                parseInt("09",10); // return 9 !!!
+                parseFloat("1234blue”); //returns 1234.0
+                parseFloat("0xA”); //returns NaN
+                parseFloat("22.5”); //returns 22.5
 
                 Number('42.0') // returns 42
         </section>
@@ -522,18 +525,16 @@
         <section data-markdown>
             ### undefined and null
 
-            _'undefined' - Anything unassigned or not declared._
+            `undefined` - Anything unassigned or not declared.
 
-            null is a special value meaning "no value".
-
-                equals("object", typeof null, "type of null is object");
+            `null` - meaning "no value".
 
         </section>
 
         <section data-markdown>
             ### undefined and null
 
-            _On the other hand, undefined means that the variable has not been declared, or has not been given a value._
+            `undefined` - variable has not been declared or has not been given a value.
 
                 var input;
                 if(input === undefined) {
@@ -612,6 +613,28 @@
             expands to
 
                 var foo = function foo() {};
+
+        </section>
+
+        <section>
+        <section>
+            <h3>Exercise <code>function</code></h3>
+
+            <div class='sandbox-notes'>
+                Write a function <code>add</code> that adds two string
+                values like this:
+<p><code>add("42", "3") // => 45</code></p>
+            </div>
+           <div class="sandbox">sandbox console loading...</div>
+        </section>
+
+        <section data-markdown>
+           ### Solution
+
+                  function add(val1, val2) {
+                     return parseInt(val1, 10) + parseInt(val2, 10);
+                  }
+        </section>
 
         </section>
 
@@ -698,7 +721,7 @@ x(); // => "TypeError, ... not a function"
         </section>
 
         <section>
-           <h3>Answer</h3>
+           <h3>Solution</h3>
                 <code><pre>
 var x = function() { return "Andreas"; }()
 
@@ -801,7 +824,7 @@ total // => 10
         </section>
 
        <section>
-           <h3>Answer</h3>
+           <h3>Solution</h3>
 <code><pre>           
  function times(n,f) {
 if (n > 0) {
@@ -817,7 +840,7 @@ total // => 10
         </section>
            
         <section data-markdown>
-            ### Objects (compare JSON)
+            ### Objects
 
             An object is a container of keys and values.
 
@@ -825,6 +848,9 @@ total // => 10
                    name: 'Andreas',
                    sayHello: function() {... }
                 }
+
+           
+            Similar to JSON
 
         </section>
 
@@ -883,6 +909,37 @@ flight.foo // undefined
         </section>
 
 
+        <section>           
+        <section>
+            <h3>Exercise: object method</h3>
+
+            <div class='sandbox-notes'>
+              Create an object <code>adder</code> with a method
+              <code>add</code> and a property <code>sum</code>
+
+              <p><code><pre>
+var adder = { add: function // write this line ...}
+typeof adder.sum // => "undefined"
+adder.add(42)
+adder.sum // => 42
+adder.add(3)
+adder.sum // => 45
+</pre></code></p>
+              Hint: setting property use <code>this.sum = ...</code> 
+            </div>
+           <div class="sandbox">sandbox console loading...</div>
+        </section>
+
+        <section data-markdown>
+            ### Solution
+
+                 var adder = { add: function(val) { this.sum = (this.sum || 0) + val; } }
+
+        </section>
+
+        </section>           
+
+           
         <section data-markdown>
             ### Prototype-based programming
 
@@ -928,6 +985,32 @@ bar.two // Resolves to 2
                  var cat = new Pet('cat');
                  cat.sayHello();
         </section>
+
+        <section>           
+          <section>
+            <h3>Exercise: Constructor Functions</h3>
+
+            <div class='sandbox-notes'>
+              Write a constructor function so that <code><pre>
+function Adder() { // write this... }
+var x = new Adder();
+x.sum // => 0
+x.add(42)
+x.add(3)
+x.sum // => 45
+</pre></code>
+              <p>Discuss: when should you use contructor functions ?
+              when should you use object literals ?</p>
+            </div>
+           <div class="sandbox">sandbox console loading...</div>
+          </section>
+          <section data-markdown>
+           ### Solution
+
+                function Adder(){ this.sum = 0; this.add = function(val) {this.sum += val}}
+          </section>
+        </section>           
+
 
         <section data-markdown>
             ### The prototype
@@ -979,7 +1062,7 @@ bar.two // Resolves to 2
         <h3>Object.create</h3>
             <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
-var bar = Object.create(foo); // do this !
+var bar = Object.create(foo); 
 bar.one // Resolves to 1.
 bar.two // Resolves to 'two'
             </code></pre>
@@ -1030,6 +1113,38 @@ bar.sayGoodbye();
                  }
         </section>
 
+        <section>
+        <section>
+            <h3>Exercise <code>Object.create</code></h3>
+
+            <div class='sandbox-notes'>
+              Use : <p><code>var adder = { add: function(val) {
+              this.sum = (this.sum || 0) + val; } }</code></p>
+
+              Inherit from <code>adder</code> so that:
+              <p>
+<code><pre>
+var x = // write this line
+x.sub = // write this line, so that:
+x.add(5);
+x.sum // => 5
+x.sub(3)
+x.sum // => 2
+</pre></code>
+              </p>
+            </div>
+            
+           <div class="sandbox">sandbox console loading...</div>
+        </section>
+
+        <section data-markdown>
+           ### Solution
+
+               var adder = { add: function(val) { this.sum = (this.sum || 0) + val; } }
+               var y = Object.create(adder);
+               y.sub = function(value) { this.add(-value) }
+        </section>
+        </section>           
         <section data-markdown>
             ## JSON
 
@@ -1202,21 +1317,23 @@ This is the DOM element clicked
         </section>
 
         <section>
-        <section data-markdown>
-            ### Exercise 1
+        <section>
+           <h3>Exercise: this, string, arrays</h3>
 
-            Impl. an object which translates strings like this:
-
-                var t = { ... }
-                t.hello = 'hej';
-                t.world = 'värld';
-                t.translate("hello world") # => "hej värld"
-
-            Use Array methods: `forEach`, `push`, `join`
-
-            Use String method: `split(' ')`
-
-            (Solution Arrow down in this slide)
+           <div class='sandbox-notes'>
+            Impl. <code>t</code> which translates strings:
+            <code><pre>
+var t = { ... }
+t.hello = 'hej';
+t.world = 'värld';
+t.translate("hello world") # => "hej värld"
+            </pre></code>
+             <p>Use Array methods: <code>forEach</code>, <code>push</code>, <code>join</code></p>
+             <p>Use String method: <code>split(' ')</code></p>
+             <p>spidermonkey: <code>brew install spidermonkey; js -f myfile.js
+            </code>(use print instead of console.log)</p>  
+          </div>
+          <div class="sandbox">sandbox console loading...</div>
         </section>
 
         <section data-markdown>
@@ -1240,23 +1357,25 @@ This is the DOM element clicked
         </section>
 
         <section>
-           <section data-markdown>
-            ### Exercise 2
+           <section>
+            <h3>Exercise: Inheritance</h3>
 
-            Prototypal Inheritance
-
-                var base = { foo: 'bla'};
-                var sub = Object.create(base);
-
+            <div class='sandbox-notes'>
+              <code><pre>
+var base = { foo: 'bla'};
+var sub = Object.create(base);
+              </pre></code>
             What happens when
-
-                base.foo = 'changed'
-                sub.foo // ??
-
+              <code><pre>
+base.foo = 'changed'
+sub.foo // ??
+              </pre></code>
+              </div>
+          <div class="sandbox">sandbox console loading...</div>              
           </section>
 
         <section data-markdown>
-          ### Answer
+          ### Solution
 
               base.foo = 'changed' // "changed"
               sub.foo // "changed"
@@ -1266,18 +1385,21 @@ This is the DOM element clicked
 
         <section>
 
-         <section data-markdown>
-            ### Exercise 3
+         <section>
+            <h3>Exercise Prototype</h3>
 
-                function Bar() {}
-                var a = {name: "foo"};
-                // write one line here, so that :
-                var b = new Bar();
-                b.name // => "foo"
-                a.name = 'bar';
-                b.name // => "bar"
-
-            (solution arrow down in this slide).
+            <div class='sandbox-notes'>
+              <code><pre>              
+function Bar() {}
+var a = {name: "foo"};
+// write one line here, so that :
+var b = new Bar();
+b.name // => "foo"
+a.name = 'bar';
+b.name // => "bar"
+              </pre></code>
+              </div>
+          <div class="sandbox">sandbox console loading...</div>                            
         </section>
 
         <section data-markdown>
@@ -1289,13 +1411,6 @@ This is the DOM element clicked
         </section>
 
         </section>
-
-        <section>
-          <h3>Exercise</h3>
-
-           <div class="sandbox">sandbox console loading...</div>
-        </section>
-
 
         <section data-markdown>
             ## Dynamic Compilation
@@ -1540,6 +1655,14 @@ This is the DOM element clicked
                 })
 
             Check also the Jasmine Test Framework
+        </section>
+
+        <section data-markdown>
+            ### Exercise
+
+            * See the lab/functional and lab/strings folders
+            * Open browser for the tests.html file
+            * Impl the .js file to get the tests to pass.
         </section>
 
         <section data-markdown>

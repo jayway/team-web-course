@@ -9,6 +9,13 @@ describe("jscourse.StringCalculator", function() {
     });
   });
 
+  describe("when nothing is passed in", function() {
+    it("returns 0", function() {
+      var result = StringCalculator.add();
+      expect(result).to.equal(0);
+    });
+  });
+
   describe("when a number is passed in", function() {
     it("returns the number", function() {
       var result = StringCalculator.add("2");
@@ -16,7 +23,7 @@ describe("jscourse.StringCalculator", function() {
     });
   });
 
-  describe("when string is passed in", function() {
+  describe("when a not a number string is passed in", function() {
     it("returns NaN", function() {
       var result = StringCalculator.add("a");
       console.log(result);
