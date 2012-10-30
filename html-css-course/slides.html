@@ -226,14 +226,14 @@ Just some free flying text separated by some line breaks</code></pre>
                 <h1>The Audio Element</h1>
                 <p>Used to easily output an audio track in a webpage.</p>
                 <pre><code>&lt;audio controls=&quot;controls&quot;&gt;
-  &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
-  &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  &lt;source src=&quot;resources/horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+  &lt;source src=&quot;resources/horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
 &lt;/audio&gt;</code></pre>
                 <p>Results in:</p>
                 <audio controls="controls">
-                  <source src="horse.ogg" type="audio/ogg">
-                  <source src="horse.mp3" type="audio/mpeg">
+                  <source src="resources/horse.ogg" type="audio/ogg">
+                  <source src="resources/horse.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
                 </audio>
             </section>
@@ -242,14 +242,14 @@ Your browser does not support the audio element.
                 <h1>The Video Element</h1>
                 <p>Used to easily output a video in a webpage.</p>
                 <pre><code>&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
-  &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
-  &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;resources/movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;resources/movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
 Your browser does not support the video tag.
 &lt;/video&gt;</code></pre>
                 <p>Results in:</p>
                 <video width="320" height="240" controls="controls">
-                  <source src="movie.mp4" type="video/mp4">
-                  <source src="movie.ogg" type="video/ogg">
+                  <source src="resources/movie.mp4" type="video/mp4">
+                  <source src="resources/movie.ogg" type="video/ogg">
                 Your browser does not support the video tag.
                 </video>
             </section>
@@ -257,7 +257,7 @@ Your browser does not support the video tag.
             <section>
                 <h1>The Embed Element</h1>
                 <p>The &lt;embed&gt; element represents non-HTML applications or interactive content.</p>
-                <pre><code>&lt;embed src=&quot;example.swf&quot; /&gt;</code></pre>
+                <pre><code>&lt;embed src=&quot;resources/example.swf&quot; /&gt;</code></pre>
                 <p>Results in:</p>
                 <embed width="75%" height="15%" name="plugin" src="resources/example.swf" type="application/x-shockwave-flash">
             </section>
@@ -827,9 +827,10 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>Media Queries</h1>
-                <p>You can apply different styles depending on a number of so called media queries.</p>
-                <pre><code>/* Type */
+                <section>
+                    <h1>Media Queries</h1>
+                    <p>You can apply different styles depending on a number of so called media queries.</p>
+                    <pre><code>/* Type */
 @media screen, projection { ... }
 
 /* Dimension */
@@ -843,6 +844,17 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
 @media (color) { /* Screen is in color */ }
 @media (min-color-index: 256) { /* At least 256 colors */ }
 @media (monochrome) { /* Screen is monochrome */ }</code></pre>
+
+                </section>
+                
+                <section> 
+                    <h1>Links and Resources</h1>
+                    <ul>
+                        <li><a href="http://easy-readers.net/books/adaptive-web-design/">Adaptive Web Design</a></li>
+                        <li><a href="http://stuffandnonsense.co.uk/projects/320andup/">320 and Up</a></li>
+                    </ul>
+                </section>
+            
             </section>
             
             <section>
