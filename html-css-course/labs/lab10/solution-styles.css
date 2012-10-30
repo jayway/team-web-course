@@ -39,16 +39,53 @@ form div {
     width: 45%;
 }
 
-    .secondary {
-        background-color: pink;
-        float: left;
-        width: 45%;
-    }
+.secondary {
+    background-color: pink;
+    float: left;
+    width: 95%;
+}
 
-@media only screen and (min-width: 900px) { 
+@media only screen and (min-width: 775px) { 
     .secondary {
         background-color: #e1e1e1;
         float: right;
         width: 45%;
     }
 }
+
+
+form > div {
+    clear: both;
+}
+
+label {
+    width: 100px;
+    float: left;
+    text-align: right;
+    padding-right: 5px;
+}
+
+label[for="text-input"] {
+    width: 100px;
+    text-align: right;
+    float: left;
+}
+
+fieldset {
+    border: 1px solid orange;
+}
+    
+fieldset * {
+    float: none;
+}
+
+input, input[type="text"], input[type="checkbox"], input[type="radio"], select, textarea {
+    border: 1px solid orange;
+    background-color: white;
+}
+
+input[type="submit"] {
+    background-color: orange;
+    float: right;
+}
+

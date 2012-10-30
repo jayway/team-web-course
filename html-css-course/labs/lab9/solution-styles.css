@@ -44,3 +44,37 @@ form div {
     float: right;
     width: 45%;
 }
+
+form > div {
+    clear: both;
+}
+
+label {
+    width: 100px;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+}
+
+fieldset {
+    border: 1px solid orange;
+}
+    
+fieldset * {
+    float: none;
+}
+
+input, input[type="text"], input[type="checkbox"], input[type="radio"], select, textarea {
+    border: 1px solid orange;
+    background-color: white;
+}
+
+input[type="submit"] {
+    background-color: orange;
+    float: right;
+}
+
+input[type="text"], select, textarea { 
+    width: 200px;
+}
+
