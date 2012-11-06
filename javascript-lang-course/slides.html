@@ -686,6 +686,45 @@
 
         </section>
 
+        <section>           
+          <section>
+            <h3>Function Arguments</h3>
+
+            <div class='sandbox-notes'>
+Task 1:
+<code><pre>
+// define this function:
+y = "hoj";
+function things(x,y,z) {
+  return x + y + z;
+}
+// What does the following
+// line return ?
+things("one")
+</pre></code>
+Task 2:
+Create a varargs version of the things method above.               
+<code><pre>
+function things() { ... }
+things("one"); 
+</pre></code>
+              
+              </div>
+           <div class="sandbox">sandbox console loading...</div>
+        </section>
+           <section>
+           <h3>Task 1</h3>
+           <code>=> "oneundefinedundefined"</code> <br/>
+
+           <h3>Task 2</h3>
+           <code class="javascript"><pre>
+function things() {
+  return arguments[0] + arguments{1] + arguments[2];
+}
+</pre></code>
+           </section>
+       </section>
+
         <section data-markdown>
             ### Lazy Scoping
 
@@ -713,7 +752,7 @@
 
                 // Create a function
                 var helloMe = sayHello('andreas');
-                Invoke it
+                // Invoke it
                 helloMe(); // => "Hello andreas"
 
                 // Direct invocation
@@ -956,37 +995,54 @@ adder.sum // => 45
         </section>           
 
            
-        <section data-markdown>
-            ### Prototype-based programming
+        <section>
+           <h3>Constructor Functions</h3>
+           <ul>
+             <li>function which should be used together with <code>new</code></li>
+             <li>by convention first character upper case</li>
+           </ul>
 
-            * OO without classes !
-            * Inheritance by object delegation
-       </section>
+                      <pre><code>
+function MyFunc() {
+  this.name = 'me'
+}
+new MyFunc();
+</code></pre>
+        </section>
 
-       <section>
-        <h3>The Prototype Chain</h3>
-             <pre><code>
-var foo = {name: "foo", one: 1, two: 2};
-var bar = {two: 'two'};
-// Make bar delegate method calls the prototype foo:
-bar.__proto__ = foo;  // don't do this !
-bar.one // Resolves to 1.
-bar.two // Resolves to 'two'
-delete bar.two
-bar.two // Resolves to 2
-            </code></pre>
-       </section>
+        <section>           
+          <section>
+            <h3>Exercise 1: Constructor Functions</h3>
+           
+            <div class='sandbox-notes'>
+Define <br>
+ <code>function f42() { return 42;}</code><br/>
+Question 1: what does <code>f42()</code> return ?<br/>
+              
+Question 2: what does <code>new f42()</code> return ?<br/>           
+            </div>
+           <div class="sandbox">sandbox console loading...</div>
+         </section>
 
+         <section data-markdown>
+           * Answer 1: 42
+           * Answer 2: a new object 
+          </section>
+        </section>
 
-        <section data-markdown>
-          <h3>Prototypal Inheritance</h3>
+        <section>
+           <h3>Constructor and This</h3>
 
-          Objects can share properties
+           <code>this</code> is set to the new object, example:
 
-          `new F()` creates new objects that inherits from `F.prototype`
+           <pre><code>
+function MyFunc() {
+  this.name = 'me'
+}
 
-          `F` is a constructor function.
-
+var myObj = new MyFunc();
+myObj.name; // => 'me'
+           </code></pre>
         </section>
 
         <section data-markdown>
@@ -1004,7 +1060,7 @@ bar.two // Resolves to 2
 
         <section>           
           <section>
-            <h3>Exercise: Constructor Functions</h3>
+            <h3>Exercise 2: Constructor Functions</h3>
 
             <div class='sandbox-notes'>
               Write a constructor function so that <code><pre>
@@ -1027,20 +1083,86 @@ x.sum // => 45
           </section>
         </section>           
 
+        <section data-markdown>
+            ### Prototype-based programming
+
+            #### This is actually a very beautiful thing
+           
+            * OO without classes !
+            * Inheritance by object delegation
+
+       </section>
+           
+       <section>
+        <h3>The Prototype Chain</h3>
+           Example: bar share foo's properties:
+             <pre><code>
+var foo = {name: "foo", one: 1, two: 2};
+var bar = {two: 'two'};
+// Make bar delegate method calls the prototype foo:
+bar.__proto__ = foo;  // don't - not standard !
+bar.one // Resolves to 1.
+bar.two // Resolves to 'two'
+delete bar.two
+bar.two // Resolves to 2
+            </code></pre>
+       </section>
+
+
+       <section>
+         <h3>The prototype property</h3>
+         All functions have a 'magic' property: <code>prototype</code>
+
+<pre><code>
+var myFunc = function() {};
+myFunc.prototype; // what does this do ?
+</code></pre>
+       </section>
+
+           
+        <section data-markdown>
+          <h3>Prototypal Inheritance</h3>
+
+          Objects can share properties
+
+          Let F be a function, e.g. `function F() {}`
+           
+          `new F()` creates new objects that inherits from `F.prototype`
+
+          `F` is a constructor function.
+
+        </section>
+
 
         <section data-markdown>
             ### The prototype
 
-            Constructor functions has a property `prototype`
+            Object's can share properties/functions:
 
                 function Pet(species){
                     this.species = species;
                 }
 
+                // all objects created by the Pet constructor
+                // will share the sayHello method
                 Pet.prototype.sayHello = function() {
                    return "Hello " + this.species;
                 }
 
+        </section>
+
+        <section>
+            <h3>Exercise: Constructor Functions</h3>
+
+              Why should I use the prototype instead in the following example
+<br/>
+and why should I not do this:
+<pre><code>
+function Pet(species) {
+ this.species = species;
+ this.sayHello = function() { return "Hello " + this.species; }
+}              
+</code></pre>
         </section>
 
         <section data-markdown>
@@ -1073,6 +1195,36 @@ x.sum // => 45
 
                [1.2.3].last(); // => 3
         </section>
+
+        <section>           
+          <section>
+            <h3>Exercise: The Prototype</h3>
+
+            <div class='sandbox-notes'>
+<pre><code>
+function WhoAmI() {
+   this.me = 'not sure';
+   this.foo = 42;
+}
+WhoAmI.prototype = {
+  me: "",
+  bar: 43
+}
+var x = new WhoAmI();
+// What is x.me, x.foo and x.bar ?
+</code></pre>
+            </div>
+            
+           <div class="sandbox">sandbox console loading...</div>
+            </section>
+           <section data-markdown>
+           ### Notice
+
+           There is also a magic `prototype.constructor` property
+           which can be used for setting up constructor inheritance,
+           see [this](http://phrogz.net/JS/classes/OOPinJS2.html)
+          </section>                         
+          </section>              
 
     <section>
         <h3>Object.create</h3>
@@ -1108,7 +1260,7 @@ var foo = {
     }
 };
 
-// define a object 'inheriting' from object bar
+// define an object 'inheriting' from object bar
 var bar = Object.create(foo);
 bar.sayGoodbye = function() {
     alert("goodbye from " + this.name);
@@ -1287,7 +1439,9 @@ This is the DOM element clicked
         </section>
 
         <section data-markdown>
-            ## Manipulating Context/this
+            ## Manipulating 'this'
+
+            `this` can be set by using:
 
             * apply
             * call
@@ -1305,10 +1459,13 @@ This is the DOM element clicked
                  };
 
                  function multiply(mult) {
+                  // 'this' can be changed by using 'call'
                   return this.num * mult;
                  }
 
+                 // set the this reference to first_object
                  multiply.call(first_object, 5); // returns 42 * 5
+                 // set the this reference to second_object
                  multiply.call(second_object, 5); // returns 24 * 5
         </section>
 
@@ -1469,19 +1626,25 @@ b.name // => "bar"
 
         <section data-markdown>
             ## Encapsulation
-
+                // define unless not already defined
                 var Esperanto = Esperanto || {};
 
+                // Hide private things in functions
                 Esperanto.Lab = function() {
                     var privVar = "example";
                     function privFunc() {
                        return privVar;
                     }
+                    // Return the public API 
                     return {
+                       // Notice, access private function
                        example: function() { return privFunc(); }
                     }
                  }()
 
+                // Usage:
+                Esperanto.Lab.example();
+                // we can't access privVar or privFunc !
         </section>
 
         <section data-markdown>
