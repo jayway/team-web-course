@@ -670,6 +670,10 @@
 
                 greeter // a reference to the function
                 greeter() // => 'hello'
+
+            also possible, direct invokation
+
+                function() { return "hello";}();
         </section>
 
         <section data-markdown>
@@ -677,6 +681,8 @@
 
             Arguments bound if present, e.g:
 
+                // no need to pass in all arguments
+                // missing arguments will be undefined
                 (function (x, y) {return x + y}) (’foo’)  # => ’fooundefined’
 
             varargs by `arguments`, e.g.:
