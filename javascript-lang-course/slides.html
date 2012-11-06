@@ -413,6 +413,44 @@
 
         </section>
 
+        <section>
+           <section>
+            <h3>Exercise</h3>
+            <div class='sandbox-notes'>
+              <h5>for loop</h5>
+            Impl. function 'sum' using a <code>for</code> loop so that:
+<code><pre>
+sum([1,2,3]) # => 6
+sum([]) #=> 0
+</pre></code>
+              Hint: <code><pre>
+function sum(v) {
+  var total = 0;
+  // for ...;
+  //  total += v[i];
+  return total;
+}
+</pre></code>
+              
+</div>
+           <div class="sandbox">sandbox console loading...</div>
+
+        </section>
+        <section>
+                      <h3>Solution</h3>
+
+<code><pre>
+function sum(v) {
+  var total = 0;
+  for (var i=0; i < v.length; i++) {
+      total += v[i];
+  }
+  return total;
+}
+</pre></code>
+</section>
+           </section>
+
         <section data-markdown>
             ### Values
             * Numbers
@@ -588,8 +626,8 @@
 
             <div class='sandbox-notes'>
                 <ul>
-                    <li>What type does null have ? hint: `typeof null`</li>
-                <li> What type does an unknown variable have?  hint: `typeof notDeclaredVar`</li>
+                    <li>What type does null have ? hint: <code>typeof null</code></li>
+                <li> What type does an unknown variable have?<br/>hint: <code>typeof notDeclaredVar</code></li>
                 </ul>
             </div>
            <div class="sandbox">sandbox console loading...</div>
@@ -634,12 +672,12 @@
 
         <section>
         <section>
-            <h3>Exercise <code>function</code></h3>
+            <h3>Exercise</h3>
 
             <div class='sandbox-notes'>
-                Write a function <code>add</code> that adds two string
-                values like this:
-<p><code>add("42", "3") // => 45</code></p>
+              <h5>Function and parseInt</h5>
+<div class="text">Write a function <code>add</code> that adds two string values like this:</div>
+<p class="text"><code>add("42", "3") // => 45</code></p>
             </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
@@ -694,35 +732,54 @@
 
         <section>           
           <section>
-            <h3>Function Arguments</h3>
+            <h3>Excercise</h3>
 
             <div class='sandbox-notes'>
-Task 1:
+<h4>Undefined arguments</h4>
 <code><pre>
 // define this function:
 y = "hoj";
 function things(x,y,z) {
   return x + y + z;
 }
-// What does the following
-// line return ?
-things("one")
+
 </pre></code>
-Task 2:
-Create a varargs version of the things method above.               
+What does the following statement return ?
+<ul>
+<li><code>things("one")</code> </li>
+<li><code>things("one", "two", "three", "four")</code> </li>
+</ul>  
+              </div>
+           <div class="sandbox">sandbox console loading...</div>
+        </section>
+           <section>
+           <p>things("one")<p>
+           <code>=> "oneundefinedundefined"</code> <br/>
+
+           <p>things("one", "two", "three", "four")</p>
+           <code>=> "onetwothree"</code> <br/>           
+           </section>
+       </section>
+           
+        <section>           
+          <section>
+            <h3>Exercise</h3>
+
+            <div class='sandbox-notes'>
+<h4>Variable Arguments</h4>
+Create a varargs version of the <code>things</code> method from
+previous exercise. It should allow to append three string values.
 <code><pre>
 function things() { ... }
-things("one"); 
+things("one"); // => // "oneundefinedundefined"
+things("one", "two"); // => "onetwoundefined" 
+things("one", "two", "three"); "onetwothree"
 </pre></code>
               
               </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
            <section>
-           <h3>Task 1</h3>
-           <code>=> "oneundefinedundefined"</code> <br/>
-
-           <h3>Task 2</h3>
            <code class="javascript"><pre>
 function things() {
   return arguments[0] + arguments{1] + arguments[2];
@@ -845,53 +902,96 @@ var x = function() { return "Andreas"; }()
 
 
         <section>
+           <section>
             <h3>Exercise</h3>
-            Impl. function 'sum' so that:
+            <div class='sandbox-notes'>
+              <h5>Array's reduce method</h5>
+            Impl. function 'sum' using the Array <code>reduce</code> method so that:
 <code><pre>
 sum([1,2,3]) # => 6
+sum([]) #=> 0
 </pre></code>
-
+Hint <code>[].reduce(function(prev, curr),firstVal){...}</code>
+              
+</div>
            <div class="sandbox">sandbox console loading...</div>
 
         </section>
+           
+        <section>
+                      <h3>Solution</h3>
+<code><pre>
+function sum(v) {
+  return v.reduce(function(prevValue, currValue) {
+     return prevValue + currValue;
+  }, 0)
+}
 
+// Much nicer than using a loop, isn't it !
+// Notice, only available in ECMAScript 5
+// underscore.js has similar method:
+// _.reduce(list, iterator, memo, context)
+</pre></code>
 
+</section>
+           </section>
+
+           <section>
         <section>
             <h3>Exercise</h3>
 
-            Impl. function 'each' so that:
+            <div class='sandbox-notes'>
+            <h5>Function arguments</h5>              
+            Impl. function <code>each</code> so that:
 <code><pre>
 var total = 0;
-each([1,2,3], function(q) { x += q})
+each([1,2,3], function(q) { total += q})
 total # => 6
 </pre></code>
 
+Hint: use a <code>for</code> loop. <br/>
+              
+</div>
            <div class="sandbox">sandbox console loading...</div>
 
         </section>
-
+           
+        <section>
+           <h3>Solution</h4>
+<code><pre>
+function each(v,f) {
+    for (var i=0; i < v.length; i++) {
+        f(v[i]);
+    }
+}
+</pre></code>
+        </section>
+        </section>
+           
         <section>                      
         <section>
             <h3>Exercise</h3>
-            Impl. 'times' with recursion:
+            <div class='sandbox-notes'>
+            <h5>Recursion</h5>              
+            Impl. function <code>times</code> with recursion so that:
 
            <code><pre>
 times(10, function(x) { s += 1 })
 total // => 10
 </pre></code>
-
+</div>
            <div class="sandbox">sandbox console loading...</div>
 
         </section>
 
        <section>
            <h3>Solution</h3>
-<code><pre>           
- function times(n,f) {
-if (n > 0) {
-   f();
-   times(n-1, f);
-}
+<code class="javascript"><pre>           
+function times(n,f) {
+  if (n > 0) {
+     f();
+     times(n-1, f);
+  }
 }
 total = 0;
 times(10, function(x){ total += 1})
@@ -991,11 +1091,16 @@ adder.sum // => 45
            <div class="sandbox">sandbox console loading...</div>
         </section>
 
-        <section data-markdown>
-            ### Solution
+        <section>
+           <h4>Solution</h4>
 
-                 var adder = { add: function(val) { this.sum = (this.sum || 0) + val; } }
-
+<pre><code>
+var adder = {
+  add: function(val) {
+     this.sum = (this.sum || 0) + val;
+  }
+}
+</code></pre>
         </section>
 
         </section>           
@@ -1077,15 +1182,21 @@ x.add(42)
 x.add(3)
 x.sum // => 45
 </pre></code>
-              <p>Discuss: when should you use contructor functions ?
-              when should you use object literals ?</p>
+              <p/>
+              Discuss: when should you use contructor functions ?
+              when should you use object literals ?
             </div>
            <div class="sandbox">sandbox console loading...</div>
           </section>
-          <section data-markdown>
-           ### Solution
+          <section>
+           <h4>Solution</h4>
 
-                function Adder(){ this.sum = 0; this.add = function(val) {this.sum += val}}
+<pre><code>           
+function Adder() {
+   this.sum = 0;
+   this.add = function(val) {this.sum += val}
+}
+</code></pre>
           </section>
         </section>           
 
@@ -1117,7 +1228,7 @@ bar.two // Resolves to 2
 
        <section>
          <h3>The prototype property</h3>
-         All functions have a 'magic' property: <code>prototype</code>
+         All functions has a 'magic' property: <code>prototype</code>
 
 <pre><code>
 var myFunc = function() {};
@@ -1309,12 +1420,17 @@ x.sum // => 2
            <div class="sandbox">sandbox console loading...</div>
         </section>
 
-        <section data-markdown>
-           ### Solution
-
-               var adder = { add: function(val) { this.sum = (this.sum || 0) + val; } }
-               var y = Object.create(adder);
-               y.sub = function(value) { this.add(-value) }
+        <section>
+           <h3>Solution</h3>
+<pre><code>
+var adder = {
+  add: function(val) {
+    this.sum = (this.sum || 0) + val;
+  }
+}
+var x = Object.create(adder);
+x.sub = function(value) { this.add(-value) }
+</code></pre>
         </section>
         </section>           
         <section data-markdown>
@@ -1436,9 +1552,9 @@ x.sum // => 2
    alert(this); // alerts the window object
   }
 
- button id='thebutton' onclick='click_handler()'>Click me!</button>
+ &lt;button id='thebutton' onclick='click_handler()'>Click me!</button>
             </code></pre>
-This is the DOM element clicked
+<code>this</code> is the DOM element clicked
 
         </section>
 

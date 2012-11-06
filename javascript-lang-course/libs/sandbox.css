@@ -4,6 +4,8 @@
  * http://josscrowcroft.github.com/javascript-sandbox-console/
  */
 
+
+
 .sandbox,
 .sandbox pre.output,
 .sandbox pre.output span,
@@ -23,6 +25,7 @@
     font-size: 24px;
     float: left;
     width: 45%;
+    text-align: left;
 }
 .sandbox {
 	background:#333;
