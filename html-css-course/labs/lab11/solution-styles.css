@@ -23,8 +23,8 @@ h1 {
 }
 
 div {
-    padding: 10px;
-    margin: 10px;
+/*    padding: 10px;
+    margin: 10px;*/
 }
 
 #container {
@@ -39,7 +39,12 @@ div {
     background: linear-gradient(to bottom, rgba(221,221,221,1) 0%,rgba(221,221,221,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#00dddddd',GradientType=0 ); /* IE6-9 */    
 }
-    
+   
+.content {
+  padding: 20px;
+  margin-top: 20px;
+}
+ 
 form div {
     border: none;
     margin: 0;
@@ -53,17 +58,14 @@ form div {
 .primary {
     background-color: #fefefe;
     float: left;
-    width: 440px;
 }
 
 .secondary {
     background-color: #fefefe;
     float: left;
-    width: 440px;
 }
 
 table { 
-    width: 100%;
 }
 
 table th {
@@ -91,12 +93,22 @@ label {
     padding-right: 15px;
 }
 
+@media (max-width: 767px) {
+  label {
+      text-align: left;
+  }
+}
+
 fieldset {
-    border: 1px solid #ccc;
+    margin-top: 20px;
 }
     
 fieldset * {
     float: none;
+}
+
+fieldset label {
+  display: inline;
 }
 
 input, input[type="text"], input[type="checkbox"], input[type="radio"], select, textarea {
