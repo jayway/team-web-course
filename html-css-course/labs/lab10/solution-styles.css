@@ -72,7 +72,12 @@ fieldset * {
     float: none;
 }
 
-input, input[type="text"], input[type="checkbox"], input[type="radio"], select, textarea {
+input,
+input[type="text"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea {
     border: 1px solid orange;
     background-color: white;
 }
