@@ -162,13 +162,13 @@ Just some free flying text separated by some line breaks</code></pre>
                 <section>
                     <h1>HTML5 Structure Elements</h1>
                     <ul>
-                        <li>article</li>
-                        <li>aside</li>
-                        <li>footer</li>
-                        <li>header</li>
-                        <li>nav</li>
-                        <li>section</li>
-                        <li>time</li>
+                      <li>article</li>
+                      <li>section</li>
+                      <li>header</li>
+                      <li>nav</li>
+                      <li>aside</li>
+                      <li>footer</li>
+                      <li>time</li>
                     </ul>
                 </section>
             
@@ -302,7 +302,8 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
-                    <h1>Does it look something like this?</h1>
+                  <h1>Lab 1</h1>
+                    <p>Does it look something like this?</p>
                     <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;sv&quot;&gt;
 &lt;head&gt;
@@ -316,7 +317,8 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
-                    <h1>Add some content</h1>
+                    <h1>Lab 1</h1>
+                    <p>Add some content</p>
                     <ul>
                         <li>A header</li>
                         <li>Some paragraphs</li>
@@ -350,6 +352,7 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
+                  <h1>Lab 2</h1>
                     <pre><code>&lt;ol&gt;
     &lt;li&gt;List item 1&lt;/li&gt;
     &lt;li&gt;List item 2&lt;/li&gt;
@@ -369,6 +372,7 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
+                  <h1>Lab 2</h1>
                     <pre><code>&lt;ol&gt;
     &lt;li&gt;
         List item 1
@@ -420,14 +424,15 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
-                    <h1>The form element</h1>
+                    <h1>Lab 4</h1>
+                    <p>The form element</p>
                     <pre><code>&lt;form action=&quot;solution.html&quot; method=&quot;post&quot;&gt;
-...
+...Put your input fields here...
 &lt;/form&gt;</code></pre>
                 </section>
             
                 <section>
-                    <h1>Simple input fields</h1>
+                    <h1>Lab 4</h1>
                     <p>Separated label and input field</p>
                     <pre><code>&lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
 &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;</code></pre>
@@ -439,7 +444,8 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
-                    <h1>Single and multiple select</h1>
+                  <h1>Lab 4</h1>
+                    <p>Single and multiple select</p>
                     <pre><code>&lt;label for=&quot;select-1&quot;&gt;Single select&lt;/label&gt;
 &lt;select name=&quot;select-1&quot; id=&quot;select-1&quot;&gt;
     &lt;option value=&quot;option1&quot;&gt;option1&lt;/option&gt;
@@ -456,7 +462,8 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
-                    <h1>Fieldset with checkbox group</h1>
+                  <h1>Lab 4</h1>
+                    <p>Fieldset with checkbox group</p>
                     <pre><code>&lt;fieldset&gt;
     &lt;legend class=&quot;wrap&quot;&gt;Check boxes&lt;/legend&gt;
     
@@ -465,11 +472,12 @@ Your browser does not support the video tag.
     
     &lt;input type=&quot;checkbox&quot; value=&quot;two&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-2&quot;&gt;
     &lt;label for=&quot;checkbox2-2&quot;&gt;two&lt;/label&gt;
-&lt;fieldset&gt;</code></pre>
+&lt;/fieldset&gt;</code></pre>
                 </section>
                   
                 <section>
-                    <h1>Fieldset with radiobutton group</h1>
+                  <h1>Lab 4</h1>
+                    <p>Fieldset with radiobutton group</p>
                     <pre><code>&lt;fieldset&gt;
     &lt;legend class=&quot;wrap&quot;&gt;Radio buttons&lt;/legend&gt;
     
@@ -482,7 +490,8 @@ Your browser does not support the video tag.
                 </section>
                   
                 <section>
-                    <h1>Finally, the submit button</h1>
+                  <h1>Lab 4</h1>
+                    <p>Finally, the submit button</p>
                     <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre>
                 </section>
             
@@ -493,6 +502,7 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
+                  <h1>Lab 5</h1>
                     <p>ID's are for unique elements,<br> classes can be used multiple times.</p>
                     <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
     &lt;h1&gt;A level 1 heading&lt;/h1&gt;
@@ -510,6 +520,22 @@ Your browser does not support the video tag.
             </section>
             
             <section><h1>CSS</h1></section>
+            
+            <section>
+              <h1>Where is it defined?</h1>
+              <p>You can have your CSS:</p>
+              <ul>
+                <li>inline in your tags (not good practice)</li>
+                <pre><code>&lt;p style=&quot;color: blue&quot;&gt;Inline example&lt;/p&gt;</code></pre>
+                <li>within a style tag in your HTML</li>
+                <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+  .banner { border: 1px solid #aaa; }
+  .header { padding: 1em; }
+&lt;/style&gt;</code></pre>
+                <li>or in a separate CSS file (best practice)</li>
+                <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre>
+              </ul>
+            </section>
             
             <section>
                 <h1>Basic Styling</h1>
@@ -537,7 +563,11 @@ ul { list-style-type: none; }</code></pre>
             <section>
                 <h1>The Class Selector</h1>
                 <p>Classes are not unique and thus permits you to style multiple elements with the same properties.</p>
-                <pre><code>&lt;li class=&quot;menu-item&quot;&gt;Book Index&lt;/li&gt;</code></pre>
+                <pre><code>&lt;li class=&quot;menu-item&quot;&gt;Book Index&lt;/li&gt;
+&lt;li class=&quot;menu-item&quot;&gt;Chapter 1&lt;/li&gt;
+&lt;li class=&quot;menu-item&quot;&gt;Chapter 2&lt;/li&gt;
+&lt;li class=&quot;menu-item&quot;&gt;Chapter 3&lt;/li&gt;
+&lt;li class=&quot;menu-item&quot;&gt;Chapter 4&lt;/li&gt;</code></pre>
                 <p>Styling the element by class.</p>
                 <pre><code>.menu-item { padding: 5px; }</code></pre>
             </section>
@@ -938,7 +968,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <li>All headers should be blue</li>
                         <li>All paragraphs should be grey</li>
                     </ul>
-                    <img src="resources/lab7-float.png" alt="">
+                    <img src="resources/lab7-float.png" alt="" width="400px">
                 </section>
                 
                 <section>
@@ -948,6 +978,10 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <li>Group the entire form in another div</li>
                         <li>Both of these divs should be 45% wide and be positioned next to each other, one to the left, the other to the right</li>
                     </ul>
+                </section>
+            
+                <section>
+                    <h1>Lab 7</h1>
                     <img src="resources/lab7-layout.png" alt="">
                 </section>
             
@@ -985,7 +1019,8 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             
                 <section>
                     <h1>Lab 9</h1>
-                    <img src="resources/lab9.png" alt="">
+                    <p>Style the form so that every input field (except checkbox and radio buttons) has an orange colored 1px solid border. The submit button should also be orange.</p>
+                    <img src="resources/lab9.png" alt="" width="500px">
                 </section>
             
                 <section>
@@ -998,11 +1033,12 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                             <li>set its' background to pink</li>
                         </ul>
                     </ul>
+                    <img src="resources/lab10.png" alt="" width="350px">
                 </section>
                 
                 <section>
                     <h1>Lab 11 - Freeride</h1>
-                    <img src="resources/lab11.png" alt="">
+                    <img src="resources/lab11.png" alt="" width="600px">
                 </section>
             
             </section>
