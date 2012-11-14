@@ -1211,6 +1211,7 @@ function Adder() {
        </section>
            
        <section>
+        <section>
         <h3>The Prototype Chain</h3>
            Example: bar share foo's properties:
              <pre><code>
@@ -1223,8 +1224,38 @@ bar.two // Resolves to 'two'
 delete bar.two
 bar.two // Resolves to 2
             </code></pre>
+           (more ? see arrow down)
        </section>
+           <section>
+             <h3>hasOwnProperty</h3>
+           Where is the property defined ?
+<pre><code>
+var base = { hello: function() { return "hello"}}
+var sub = { world: "world" }
+sub.__proto__ = base; // Don't do this !
+sub.hasOwnProperty('world') // => true
+sub.hasOwnProperty('hello') // => false
+base.hasOwnProperty('hello') // => true
+</code></pre>
+           </section>
 
+           <section>
+           <h3>Getting all props</h3>
+           <code>hasOwnProperty</code> can be used together with <code>for (var key in object)</code>
+<pre><code>
+// see definition of sub and base in previous slide
+for (var key in sub) {
+  console.log(key); // prints world and hello
+} 
+
+for (var key in base) {
+  console.log(key); // prints hello
+} 
+</code></pre>
+           
+           </section>
+      </section>
+           
 
        <section>
          <h3>The prototype property</h3>
