@@ -1943,11 +1943,9 @@ b.name // => "bar"
             <h3>CoffeeScript Example</h3>
 
             <pre><code>
-            class Animal
-               constructor: (@name) ->
-
-               move: (meters) ->
-                  alert @name + " moved #{meters}."
+class Animal
+  constructor: (@name) ->
+  move: (meters) -> alert "#{@name} move #{meters}"
             </code></pre>
         </section>
 
@@ -1955,20 +1953,24 @@ b.name // => "bar"
             <h3>Compiles to</h3>
 
             <pre><code>
-            Animal = (function() {
+(function() {
+  var Animal;
 
-                function Animal(name) {
-                    this.name = name;
-                }
+  Animal = (function() {
 
-                Animal.prototype.move = function(meters) {
-                    return alert(this.name +
-                        (" moved " + meters + "m."));
-                };
+    function Animal(name) {
+      this.name = name;
+    }
 
-                return Animal;
+    Animal.prototype.move = function(meters) {
+      return alert("" + this.name + " move " + meters);
+    };
 
-            })();
+    return Animal;
+
+  })();
+
+}).call(this)
             </code></pre>
         </section>
 
