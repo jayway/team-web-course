@@ -527,7 +527,7 @@ Your browser does not support the video tag.
               <ul>
                 <li>inline in your tags (not good practice)</li>
                 <pre><code>&lt;p style=&quot;color: blue&quot;&gt;Inline example&lt;/p&gt;</code></pre>
-                <li>within a style tag in your HTML</li>
+                <li>within a style element in your HTML</li>
                 <pre><code>&lt;style type=&quot;text/css&quot;&gt;
   .banner { border: 1px solid #aaa; }
   .header { padding: 1em; }
@@ -626,6 +626,12 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>Basic Layout</h1>
                 <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
                 <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting width, margins, floating them and using different positionings.</p>
+            </section>
+            
+            <section>
+              <h1>Inline vs block display</h1>
+              <p>For so called <strong>phrase content</strong> (what makes up a paragraph) the default display type is <strong>'inline'</strong>. For <strong>flow content</strong> it is <strong>'block'</strong>. The difference is that block displayal automatically (by default) has a width of 100%, that is, it stretches horizontally within its' container.</p>
+              <div><img src="resources/inline-vs-block.png"></div>
             </section>
             
             <section>
