@@ -38,6 +38,8 @@
         <div class="slides">
             <section>
                 <h1>HTML and CSS</h1>
+                <p><a href="https://github.com/jayway/team-web-course" alt="">Kursmaterial på Github</a></p>
+                <p>Labbar - antingen lokalt eller på <a href="http://jsfiddle.net" alt="">jsfiddle.net</a></p>
             </section>
             
             <section>
@@ -67,6 +69,7 @@
                     <li>spans</li>
                     <li>images</li>
                     <li>links</li>
+                    <li>forms</li>
                 </ul>
             </section>
             
@@ -155,6 +158,22 @@ Just some free flying text separated by some line breaks</code></pre>
                 <p>And here are two ways of linking to the anchor.</p>
                 <pre><code>&lt;a href=&quot;#detailed-info&quot;&gt;Click to read more&lt;/a&gt;</code></pre>
                 <pre><code>&lt;a href=&quot;http://www.jayway.com/page-with-anchors.html#detailed-info&quot;&gt;Click to read more on jayway.com&lt;/a&gt;</code></pre>
+            </section>
+            
+            <section>
+              <h1>Forms</h1>
+              <p>Forms are used in HTML to group and capture user input and possibly submitting this data to some resource / destination for processing.</p>
+              <div class="side-by-side"><pre><code>&lt;form&gt;...
+&lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
+&lt;input type=&quot;password&quot; id=&quot;pwd&quot;&gt;
+&lt;label for=&quot;sex&quot;&gt;Sex:&lt;/label&gt;
+&lt;select&gt;
+&lt;option&gt;Male&lt;/option&gt;
+&lt;option&gt;Female&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;</code></pre></div>
+              <div class="side-by-side"><img src="resources/html-form.png"></div>
             </section>
             
             <section>
@@ -538,10 +557,10 @@ Your browser does not support the video tag.
             </section>
             
             <section>
-                <h1>Basic Styling</h1>
+                <h1>Styling</h1>
                 <p>Selectors define the rule for what element(s) in your HTML document you want to target for styling.</p>
                 <p>There are different kinds of selectors. You can select by:</p> 
-                <p>id, type, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</p>
+                <p><strong>id, type, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</strong></p>
                 <p>You can also group your selectors.</p>
             </section>
             
@@ -581,11 +600,18 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>Chained Selectors</h1>
+                <h1>visited Selectors</h1>
                 <p></p>
                 <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
-                <p>This selector targets all menu items in the list below.</p>
+                <p>This selector targets all menu items in the header list below but not those in the footer list.</p>
                 <pre><code>&lt;div id=&quot;header&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
+        &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;
     &lt;ul&gt;
         &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
         &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
@@ -598,8 +624,10 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>Stacked Selectors</h1>
                 <p></p>
                 <pre><code>h1#title { text-decoration: underline; }</code></pre>
-                <p>This selector targets all &lt;h1&gt; elements with an id attribute value set to 'title'.</p>
-                <pre><code>&lt;h1 id=&quot;title&quot;&gt;This is the title header!&lt;/h1&gt;</code></pre>
+                <p>This selector targets the &lt;h1&gt; element with an id attribute value set to 'title'.</p>
+                <pre><code>&lt;h1 id=&quot;title&quot;&gt;This is the title header!&lt;/h1&gt;
+...[and within another page]...
+&lt;h1&gt;This &lt;span id=&quot;title&quot;&gt;title text.&lt;/span&gt; remains unstyled.&lt;/h1&gt;</code></pre>
             </section>
             
             <section>
@@ -611,8 +639,16 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <section>
                 <h1>The Universal Selector</h1>
                 <p>The universal selector, written as an asterisk (*), matches the name of any element type.</p>
-                <pre><code>.warning * { background-color: yellow; }</code></pre>
-                <p>The above example matches any element inside another element with the class “warning”.</p>
+                <pre><code>.warning * { 
+  border: 1px solid yellow; 
+  background-color: #eecc00; 
+}</code></pre>
+                <p>The above example matches any element inside an element with the class “warning”.</p>
+                <div class="side-by-side"><pre><code>&lt;div class=&quot;warning&quot;&gt;
+  &lt;p&gt;Hey, watch out!&lt;/p&gt;
+  &lt;div&gt;Outside paragraph.&lt;p&gt;Another story...&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+<div class="side-by-side"><img src="resources/universal-selector.png" alt=""></div>
             </section>
             
             <section>
@@ -625,12 +661,12 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <section>
                 <h1>Basic Layout</h1>
                 <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
-                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting width, margins, floating them and using different positionings.</p>
+                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting <strong>width, margins, floating, using different positionings and display styles.</strong></p>
             </section>
             
             <section>
               <h1>Inline vs block display</h1>
-              <p>For so called <strong>phrase content</strong> (what makes up a paragraph) the default display type is <strong>'inline'</strong>. For <strong>flow content</strong> it is <strong>'block'</strong>. The difference is that block displayal automatically (by default) has a width of 100%, that is, it stretches horizontally within its' container.</p>
+              <p>For so called <strong>phrase content</strong> (what makes up a paragraph) the default display type is <strong>'inline'</strong>. For <strong>flow content</strong> it is <strong>'block'</strong>. The difference is that block displayal (by default) has a width of 100%, that is, it automatically stretches horizontally within its' container.</p>
               <div><img src="resources/inline-vs-block.png"></div>
             </section>
             
@@ -765,6 +801,16 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
+              <h1>The Cascade - Inheritance</h1>
+              <p>Some properties are automatically inherited to an element from its' parent. Example of these are:</p>
+              <p><strong>font-family, font-size, color, background-color.</strong></p>
+              <p>Though, if you want to manually inherit, for example, a parent elements' border, this is how to do it:</p>
+              <div class="side-by-side"><pre><code>.parent { border: 5px solid #666; padding: 10px; }
+.child { border: inherit; }</code></pre></div>
+<div class="side-by-side"><img src="resources/inherit-border.png" /></div>
+            </section>
+            
+            <section>
                 <h1>The Cascade - Specificity</h1>
                 <p>Specificity is a mechanism within the CSS cascade that aids conflict resolution. In order of importance:</p>
                 <ol>
@@ -777,7 +823,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             
             <section>
                 <h1>Specificity Example</h1>
-                <pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre>
+                <pre><code>&lt;p class="message" style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre>
 <table border="1" style="font-size: 0.5em;">
     <caption>In order of importance, from left to right:</caption>
     <thead>
@@ -807,13 +853,13 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <td>3</td>
         </tr>
         <tr style="background-color: white;">
-            <td>* body#home>div#warning p.message {
+            <td>* body#home>div#warning .message {
   color: red;
 }</td>
             <td>0</td>
             <td>2</td>
             <td>1</td>
-            <td>3</td>
+            <td>2</td>
         </tr>
         <tr style="background-color: white;">
             <td>#home #warning p.message {
