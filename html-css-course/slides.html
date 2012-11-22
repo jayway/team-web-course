@@ -9,8 +9,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
+    <style type="text/css"> 
+      @font-face {
+        font-family: "Lato";
+        src: url(resources/Lato/Lato-Regular.ttf) format("truetype");
+      }
+    </style>
     <link rel="stylesheet" href="../reveal.js/css/main.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
 
@@ -44,6 +48,7 @@
             
             <section>
                 <h1>HTML</h1>
+                <p>Hypertext Markup Language</p>
             </section>
             
             <section>
@@ -58,6 +63,15 @@
 
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+            </section>
+            
+            <section>
+              <h1>Phrasing vs Flow</h1>
+              <p>There are two types of content - phrasing and flow. </p>
+              <ul>
+                <li>The <strong>phrasing</strong> content is the content at the lower level that consists of text and HTML elements that mark up the text within paragraphs.</li>
+                <li><strong>Flow</strong> content is the content at the higher level, such as divs, paragraphs and lists, that is typically made up of HTML block elements.</li>
+              </ul>
             </section>
             
             <section>
@@ -89,7 +103,7 @@
                 <ul>
                     <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels</li>
                     <li>The title of the document’s main content should be a level 1 heading</li>
-                    <li>There should be only one level 1 heading in each document</li>
+                    <li>There should be only one level 1 heading in each <del>document</del> section (HTML5)</li>
                 </ul>
             </section>
             
@@ -120,7 +134,7 @@ Just some free flying text separated by some line breaks</code></pre>
     &lt;h3&gt;This is a heading&lt;/h3&gt;
     &lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-                <div class="fragment">
+                <div>
                     <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
                     <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;content-primary&quot;&gt;Main content area&lt;/div&gt;
@@ -148,7 +162,7 @@ Just some free flying text separated by some line breaks</code></pre>
             <section>
                 <h1>Links</h1>
                 <p>A link, when clicked (or tapped), takes you to another document or to a section within the current document.</p>
-                <pre><code>&lt;a href=&quot;http://www.jayway.com&quot;&gt;This is a link&lt;/a&gt;</code></pre>
+                <pre><code>&lt;a href=&quot;http://www.jayway.com&quot; rel=&quot;start&quot;&gt;This is a link&lt;/a&gt;</code></pre>
             </section>
             
             <section>
@@ -163,17 +177,32 @@ Just some free flying text separated by some line breaks</code></pre>
             <section>
               <h1>Forms</h1>
               <p>Forms are used in HTML to group and capture user input and possibly submitting this data to some resource / destination for processing.</p>
-              <div class="side-by-side"><pre><code>&lt;form&gt;...
-&lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
-&lt;input type=&quot;password&quot; id=&quot;pwd&quot;&gt;
-&lt;label for=&quot;sex&quot;&gt;Sex:&lt;/label&gt;
-&lt;select&gt;
-&lt;option&gt;Male&lt;/option&gt;
-&lt;option&gt;Female&lt;/option&gt;
-&lt;/select&gt;
-&lt;input type=&quot;submit&quot;&gt;
+              <div class="side-by-side"><pre><code>&lt;form action=&quot;dest.php&quot;&gt;...
+  &lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;pwd&quot;&gt;
+  &lt;label for=&quot;sex&quot;&gt;Sex:&lt;/label&gt;
+  &lt;select&gt;
+  &lt;option&gt;Male&lt;/option&gt;
+  &lt;option&gt;Female&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type=&quot;submit&quot;&gt;
 &lt;/form&gt;</code></pre></div>
               <div class="side-by-side"><img src="resources/html-form.png"></div>
+            </section>
+            
+            <section>
+              <h1>Input fields</h1>
+              <p>Input is capture through input fields. These comes in a number of different types.</p>
+              <ul>
+                <li>&lt;input type=&quot;text&quot;&gt;</li>
+                <li>&lt;input type=&quot;password&quot;&gt;</li>
+                <li>&lt;input type=&quot;hidden&quot;&gt;</li>
+                <li>&lt;input type=&quot;checkbox&quot;&gt;</li>
+                <li>&lt;input type=&quot;radio&quot;&gt;</li>
+                <li>&lt;input type=&quot;submit&quot;&gt;</li>
+                <li>&lt;select multiple="multiple"&gt;</li>
+                <li>&lt;textarea rows=&quot;10&quot;&gt;</li>
+              </ul>
             </section>
             
             <section>
@@ -538,7 +567,10 @@ Your browser does not support the video tag.
             
             </section>
             
-            <section><h1>CSS</h1></section>
+            <section>
+              <h1>CSS</h1>
+              <p>Cascading Style Sheet</p>
+            </section>
             
             <section>
               <h1>Where is it defined?</h1>
@@ -560,7 +592,7 @@ Your browser does not support the video tag.
                 <h1>Styling</h1>
                 <p>Selectors define the rule for what element(s) in your HTML document you want to target for styling.</p>
                 <p>There are different kinds of selectors. You can select by:</p> 
-                <p><strong>id, type, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</strong></p>
+                <p><strong>type, id, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</strong></p>
                 <p>You can also group your selectors.</p>
             </section>
             
@@ -981,6 +1013,8 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <section>
                     <h1>Pre lab</h1>
                     <p>Get familiar with selectors, pseudo selectors and properties.</p>
+
+                    <p>Study the positioning styling in the pre lab material.</p>
                 </section>
             
                 <section>
@@ -992,25 +1026,25 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <section>
                     <h1>Google Chrome Inspector</h1>
                     <ul>
-                        <li class="fragment">You can edit your stylesheets and see the results right in you browser</li>
-                        <li class="fragment">You can see how stylesheet rules applies to your document</li>
-                        <li class="fragment">You can also edit the HTML of the webpage</li>
-                        <li class="fragment">JavaScript can be manipulated as well (but we'll hold off on that for now…)</li>
+                        <li>You can edit your stylesheets and see the results right in you browser</li>
+                        <li>You can see how stylesheet rules applies to your document</li>
+                        <li>You can also edit the HTML of the webpage</li>
+                        <li>JavaScript can be manipulated as well (but we'll hold off on that for now…)</li>
                     </ul>
                 </section>
                 
                 <section>
                     <h1>Try for yourself!</h1>
                     <ul>
-                        <li class="fragment">Disable a style property on a selected element</li>
-                        <li class="fragment">Change the color of your paragraph text</li>
-                        <li class="fragment">Add a new style rule (both on a single element and globally)</li>
+                        <li>Disable a style property on a selected element</li>
+                        <li>Change the color of your paragraph text</li>
+                        <li>Add a new style rule (both on a single element and globally)</li>
                     </ul>
                 </section>
                 
                 <section>
                     <h1>Other browser tools available</h1>
-                    <p>Both Firefox and Safari has similar tools. Try them out and compare!</p>
+                    <p>Firefox, Safari and IE has similar tools. Try them out and compare!</p>
                 </section>
             
                 <section>
@@ -1092,7 +1126,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                     <h1>Lab 11 - Freeride</h1>
                     <img src="resources/lab11.png" alt="" width="600px">
                 </section>
-            
+                            
             </section>
             
         </div>
