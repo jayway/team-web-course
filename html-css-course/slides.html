@@ -625,14 +625,14 @@ ul { list-style-type: none; }</code></pre>
             
             <section>
                 <h1>Pseudo Classes</h1>
-                <p>To style elements based on information that lies outside the document tree, pseudo classes can be used.</p>
+                <p>To style elements based on user interaction or information that lies outside the document tree, pseudo classes can be used.</p>
                 <p>For example if a link has been visited or to style the first paragraph child of a div tag.</p>
                 <pre><code>a:visited { color: blue }
 div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>visited Selectors</h1>
+                <h1>Chained Selectors</h1>
                 <p></p>
                 <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
                 <p>This selector targets all menu items in the header list below but not those in the footer list.</p>
@@ -691,7 +691,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>Basic Layout</h1>
+                <h1>Layouting</h1>
                 <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
                 <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting <strong>width, margins, floating, using different positionings and display styles.</strong></p>
             </section>
@@ -833,13 +833,19 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-              <h1>The Cascade - Inheritance</h1>
-              <p>Some properties are automatically inherited to an element from its' parent. Example of these are:</p>
-              <p><strong>font-family, font-size, color, background-color.</strong></p>
-              <p>Though, if you want to manually inherit, for example, a parent elements' border, this is how to do it:</p>
-              <div class="side-by-side"><pre><code>.parent { border: 5px solid #666; padding: 10px; }
-.child { border: inherit; }</code></pre></div>
-<div class="side-by-side"><img src="resources/inherit-border.png" /></div>
+              <section>
+                <h1>The Cascade - Inheritance</h1>
+                <p>Some properties are automatically inherited to an element from its' parent. Example of these are:</p>
+                <p><strong>font-family, font-size, color, background-color.</strong></p>
+                <p>Though, if you want to manually inherit, for example, a parent elements' border, this is how to do it:</p>
+                <div class="side-by-side"><pre><code>.parent { border: 5px solid #666; padding: 10px; }
+.child { bor    der: inherit; }</code></pre></div>
+<div class="    side-by-side"><img src="resources/inherit-border.png" /></div>
+              </section>      
+              <section>
+                <h1>Links and Resources</h1>
+                <p><a href="http://www.w3.org/TR/CSS21/propidx.html">Is the property inherited?</a></p>
+              </section>
             </section>
             
             <section>

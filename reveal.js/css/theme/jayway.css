@@ -94,9 +94,9 @@ ol li {margin-bottom: 0.5em;}
 *********************************************/
 
 .reveal section img {
-    margin: 10px 0 0 0;
+    margin: 10px 0  0 0;
     background: rgba(255,255,255,0.12);
-    border: 4px solid #eee;
+    border: 4px solid #EEE;
 
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
