@@ -40,6 +40,12 @@ table {
   background-color: #ddd;
 }
   
+.container, .header, .primary, .secondary, .footer {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */  
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 .header, .primary, .secondary, .footer {
     background-color: #fefefe;
 }
@@ -64,57 +70,8 @@ table {
 .secondary {
   float: left;
   width: 320px;
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */  
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
-  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .footer {
   clear: both;
 }
-
-form > div {
-  clear: both;
-}
-
-label {
-  width: 95px;
-  float: left;
-  text-align: right;
-  padding-right: 10px;
-}
-
-fieldset {
-  border: 1px solid #999;
-  border-radius: 5px;
-}
-    
-fieldset * {
-  float: none;
-}
-
-input, select, textarea {
-  border: 1px solid #999;
-  background-color: white;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 0.75em;
-}
-
-input[type="submit"] {
-  background-color: #999; 
-  color: #fefefe;   
-  border-radius: 5px;
-  float: right;
-  margin: 10px 0;
-}
-
-input[type="text"], select, textarea { 
-  border-radius: 5px;
-  width: 170px;
-}
-
-select {
-  width: 190px;
-}
-

@@ -1,36 +1,33 @@
 body {
-    background: url(billie_holiday_@2X.png);
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
+  background-image: url('../bg_image_1.png');
+  font-size: 1.2em;
+  font-family: "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  line-height: 1.4em;
 }
-
+  
 img {
-    float: left;
+  width: 100%;
 }
 
 h1,
 h2,
 h3 {
-    color: #111;
-    text-transform: uppercase;
+  color: #444;
 }
 
-h1 {
-    font-size: 3em;
-    margin-top: 0.2em;
-    font-family: 'Cabin Sketch', cursive;
+p {
+  color: #666;
 }
 
-div {
-/*    padding: 10px;
-    margin: 10px;*/
+.content {
+  margin: 15px 0px 0px 10px;
+  padding: 15px;
 }
-
+  
 .container {
-  margin-top: 20px;
-  padding: 0 20px 20px 20px;
-  background-color: #ededed;
+  padding: 0px 15px 15px 15px;
+  margin-top: 15px;
+  background-color: #ddd;
   background: -moz-linear-gradient(top, rgba(221,221,221,1) 0%, rgba(221,221,221,0) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(221,221,221,1)), color-stop(100%,rgba(221,221,221,0))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(221,221,221,1) 0%,rgba(221,221,221,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -39,120 +36,71 @@ div {
   background: linear-gradient(to bottom, rgba(221,221,221,1) 0%,rgba(221,221,221,0) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#00dddddd',GradientType=0 ); /* IE6-9 */    
 }
-   
-.content {
-  padding: 20px;
-  margin-top: 20px;
-}
- 
-form div {
-    border: none;
-    margin: 0;
-    padding: 0;
+  
+.container, .header, .primary, .secondary, .footer {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */  
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.header {
+.header, .primary, .secondary, .footer {
     background-color: #fefefe;
 }
 
-.primary {
-    background-color: #fefefe;
-    float: left;
+.header ul {
+  padding-start: 0px;
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
 }
-
-.secondary {
-    background-color: #fefefe;
-    float: left;
-}
-
-table { 
-}
-
-table th {
-    background-color: #aaa;
-}
-
-tr:nth-child(odd)    
-{ 
-    background-color:#fff; 
-}
-
-tr:nth-child(even)    
-{ 
-    background-color:#eee; 
+  
+.header li {
+  display: inline;
+  margin: 0 5px;
 }
 
 form > div {
-    clear: both;
+  clear: both;
 }
 
 label {
-    width: 110px;
-    float: left;
-    text-align: right;
-    padding-right: 15px;
-}
-
-@media (max-width: 767px) {
-  label {
-      text-align: left;
-  }
-}
-
-fieldset {
-    margin-top: 20px;
-}
-    
-fieldset * {
-    float: none;
-}
-
-fieldset label {
+  width: 95px;
+  float: left;
+  text-align: right;
+  padding-right: 10px;
   display: inline;
 }
 
-input, input[type="text"], input[type="checkbox"], input[type="radio"], select, textarea {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background-color: #fff;
-    padding: 5px;
+fieldset {
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+    
+fieldset * {
+  float: none;
+}
+
+input, select, textarea {
+  border: 1px solid #999;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.75em;
 }
 
 input[type="submit"] {
-    background-color: #ccc;
-    border-radius: 5px;
-    float: right;
-    margin-top: 1em;
-    padding: 7px 15px;
-    font-size: 1em;
+  background-color: #999; 
+  color: #fefefe;   
+  border-radius: 5px;
+  float: right;
+  margin: 10px 0;
 }
 
-input[type="text"], textarea { 
-    width: 300px;
+input[type="text"], select, textarea { 
+  border-radius: 5px;
+  width: 170px;
 }
 
-select { 
-    width: 312px;
+select {
+  width: 190px;
 }
 
-
-/* Clearfix */
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
- 
-.clearfix {
-}
- 
-html[xmlns] .clearfix {
-	display: block;
-}
- 
-* html .clearfix {
-	height: 1%;
-}

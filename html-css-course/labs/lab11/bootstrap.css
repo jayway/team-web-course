@@ -798,7 +798,7 @@ textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 label {
-  display: block;
+  display: inline;
   margin-bottom: 5px;
 }
 select,

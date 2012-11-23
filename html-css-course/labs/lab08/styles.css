@@ -1,0 +1,59 @@
+body {
+  background-image: url('../bg_image_1.png');
+}
+  
+img {
+  float: left;
+}
+
+h1,
+h2,
+h3 {
+  color: #444;
+}
+
+p {
+  color: #666;
+}
+
+.container {
+  width: 980px;
+  margin: 0px auto;
+  background-color: #ddd;
+}
+
+.container, .header, .primary, .secondary, .footer {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */  
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */  
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.header, .primary, .secondary, .footer {
+  background-color: #fefefe;
+}
+    
+.header ul {
+  padding-start: 0px;
+  -webkit-padding-start: 0px;
+  -moz-padding-start: 0px;
+}
+  
+.header li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.primary {
+  float: left;
+  width: 600px;
+  clear: both;
+}
+
+.secondary {
+  float: left;
+  width: 320px;
+}
+
+.footer {
+  clear: both;
+}
