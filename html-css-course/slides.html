@@ -56,27 +56,15 @@
 &lt;html lang=&quot;sv&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Free Web tutorials&quot;&gt;
+    &lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,XML,JavaScript&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;St&aring;le Refsnes&quot;&gt;
     &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </section>
-            
-            <section>
-              <section>
-                <h1>Phrasing vs Flow</h1>
-                <p>There are two types of content - phrasing and flow. </p>
-                <ul>
-                    <li>The <strong>phrasing</strong> content is the content at the lower level that consists of text and HTML elements that mark up the text within paragraphs.</li>
-                    <li><strong>Flow</strong> content is the content at the higher level, such as divs, paragraphs and lists, that is typically made up of HTML block elements.</li>
-                  </ul>
-              </section>
-              <section>
-                <h1>Links and Resources</h1>
-                <p><a href="http://dev.w3.org/html5/spec/content-models.html">W3C Content Models</a></p>
-              </section>
             </section>
             
             <section>
@@ -113,9 +101,9 @@
             <section>
                 <h1>Headlines</h1>
                 <ul>
-                    <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels</li>
-                    <li>The title of the document’s main content should be a level 1 heading</li>
-                    <li>There should be only one level 1 heading in each <del>document</del> section (HTML5)</li>
+                    <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels.</li>
+                    <li>The title of the document’s main content should be a level 1 heading.</li>
+                    <li>There should be only one level 1 heading in each <del>document</del> section (HTML5).</li>
                 </ul>
             </section>
             
@@ -125,14 +113,14 @@
                     
 &lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
                 <ul>
-                    <li>You are able to control paragraph margins consistently with CSS</li>
-                    <li>It semantically describes the text as what it is – a paragraph</li>
+                    <li>You are able to control paragraph margins consistently with CSS.</li>
+                    <li>It semantically describes the text as what it is – a paragraph.</li>
                 </ul>
             </section>
             
             <section>
                 <h1>Paragraphs</h1>
-                <p>An example of how to NOT do it</p>
+                <p>An example of how to NOT do it.</p>
                 <pre><code>This isn&#x27;t really a paragraph
 &lt;br&gt;
 &lt;br&gt;
@@ -212,9 +200,40 @@ Just some free flying text separated by some line breaks</code></pre>
                 <li>&lt;input type=&quot;checkbox&quot;&gt;</li>
                 <li>&lt;input type=&quot;radio&quot;&gt;</li>
                 <li>&lt;input type=&quot;submit&quot;&gt;</li>
-                <li>&lt;select multiple="multiple"&gt;</li>
                 <li>&lt;textarea rows=&quot;10&quot;&gt;</li>
               </ul>
+            </section>
+            
+            <section>
+              <h1>ID and class</h1>
+              <p>Core concept of HTML for hooking into specific content.</p>
+              <ul><strong>ID's:</strong>
+                <li>are unique</li>
+                <li>have browser specific functionality (# link anchors)</li>
+                <li>are used a lot for DOM manipulation</li>
+              </ul>
+              <ul><strong>Classes:</strong>
+                <li>are NOT unique</li>
+                <li>are used a lot for styling</li>
+                <li>often maps to your domain model</li>
+              </ul>
+            </section>
+            
+            <section>
+              <h1>HTML5 - Why?</h1>
+              <div class="side-by-side">
+                <ul>
+                  <li>Semantics</li>
+                  <li>New elements</li>
+                  <li>Form validation</li>
+                  <li>Local Storage</li>
+                  <li>CSS3</li>
+                  <li>SEO - maybe</li>
+                </ul>
+              </div>
+              <div class="side-by-side">
+                <img src="resources/html5.png" alt="">
+              </div>
             </section>
             
             <section>
@@ -243,6 +262,7 @@ Just some free flying text separated by some line breaks</code></pre>
             <section>
                 <h1>A Structure Example</h1>
                 <pre><code>&lt;header&gt;
+    &lt;h1&gt;Main title&lt;/h1&gt;
     &lt;nav&gt;Main navigation&lt;/nav&gt;
 &lt;/header&gt;
 &lt;section&gt;
@@ -251,7 +271,9 @@ Just some free flying text separated by some line breaks</code></pre>
 	    &lt;h2&gt;Article title&lt;/h2&gt;
 	    &lt;p&gt;Posted on &lt;time datetime=&quot;2009-10-29T16:31:24+02:00&quot;&gt;October 29th 2012&lt;/time&gt;&lt;/p&gt;
         &lt;/header&gt;
-        &lt;section&gt;Article content&lt;/section&gt;
+        &lt;section&gt;&lt;h1&gt;Section title&lt;/h1&gt;
+          Article content
+        &lt;/section&gt;
     &lt;/article&gt;
     &lt;aside&gt;
         &lt;nav&gt;Subpage navigation&lt;/nav&gt;
@@ -390,7 +412,7 @@ Your browser does not support the video tag.
                 <section>
                   <h1>Lab 1</h1>
                     <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;sv&quot;&gt;
+&lt;html lang=&quot;la&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;title&gt;Our first web page&lt;/title&gt;
@@ -465,7 +487,7 @@ Your browser does not support the video tag.
             
                 <section>
                     <h1>Lab 4</h1>
-                    <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containting checkbox resp. radiobutton groups and a submit button.</p>
+                    <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containing checkbox resp. radiobutton groups and a submit button.</p>
                     <img src="resources/form.png" alt="">
                 </section>
             
@@ -592,6 +614,11 @@ Your browser does not support the video tag.
                 <p>There are different kinds of selectors. You can select by:</p> 
                 <p><strong>type, id, class, universal, descendant, child, adjecent sibling, pseudo elements and pseudo classes.</strong></p>
                 <p>You can also group your selectors.</p>
+                <pre><code>p span.highlight { font-weight: bold; color: red; }
+h1, a:hover { text-decoration: underline; }
+li a { text-decoration: none; }
+body > p { margin: 0 10px; }
+h1 + h2 { margin-top: -5mm }</code></pre>
             </section>
             
             <section>
@@ -653,11 +680,10 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             <section>
                 <h1>Stacked Selectors</h1>
                 <p></p>
-                <pre><code>h1#title { text-decoration: underline; }</code></pre>
-                <p>This selector targets the &lt;h1&gt; element with an id attribute value set to 'title'.</p>
-                <pre><code>&lt;h1 id=&quot;title&quot;&gt;This is the title header!&lt;/h1&gt;
-...[and within another page]...
-&lt;h1&gt;This &lt;span id=&quot;title&quot;&gt;title text.&lt;/span&gt; remains unstyled.&lt;/h1&gt;</code></pre>
+                <pre><code>p.highlight { background-color: #eaeaae; }</code></pre>
+                <p>This selector targets the &lt;p&gt; element with a class attribute value set to 'highlight'.</p>
+                <pre><code>&lt;p class=&quot;highlight&quot;&gt;This paragraph is highlighted!&lt;/p&gt;
+&lt;p&gt;This &lt;span class=&quot;highlight&quot;&gt;This&lt;/span&gt; remains unstyled.&lt;/p&gt;</code></pre>
             </section>
             
             <section>
@@ -685,7 +711,13 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <h1>The Box Model</h1>
                 <p>Every element in the web is a rectangular box.</p>
                 <p>This is how the size of the box and the space around it is calculated.</p>
-                <img src="resources/boxmodel.png" alt="">
+                <div class="side-by-side"><pre><code>the_box {
+  width: 300px; 
+  padding: 20px; 
+  border: 20px solid green; 
+  margin: 20px 30px 30px 20px; 
+}</code></pre></div>
+                <div class="side-by-side"><img src="resources/boxmodel.png" alt=""></div>
             </section>
             
             <section>
@@ -940,11 +972,6 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
             </section>
             
             <section>
-                <h1>Styling of Forms</h1>
-                <p>Use borders, border-radius, box-shadow, gradients and more to make your forms beautiful.</p>
-            </section>
-            
-            <section>
                 <section>
                     <h1>Media Queries</h1>
                     <p>You can apply different styles depending on a number of so called media queries.</p>
@@ -1015,15 +1042,8 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 </section>
             
                 <section>
-                    <h1>Pre lab</h1>
-                    <p>Get familiar with selectors, pseudo selectors and properties.</p>
-
-                    <p>Study the positioning styling in the pre lab material.</p>
-                </section>
-            
-                <section>
                     <h1>Lab 6 - Tools</h1>
-                    <p>Besides an editor, your browser is your primary tool. We'll be focussing on <em>Google Chrome</em> since it has an excellent inspector tool that comes free with the browser.</p>
+                    <p>Besides an editor, your browser is your primary tool. We'll be focusing on <em>Google Chrome</em> since it has an excellent inspector tool that comes free with the browser.</p>
                     <p>Check out <strong>http://goo.gl/4NMEA</strong> for more info.</p>
                 </section>
                 
@@ -1040,9 +1060,11 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <section>
                     <h1>Try for yourself!</h1>
                     <ul>
-                        <li>Disable a style property on a selected element</li>
-                        <li>Change the color of your paragraph text</li>
-                        <li>Add a new style rule (both on a single element and globally)</li>
+                      <li>Study the positioning styling in the lab material.</li>
+                      <li>Get familiar with selectors, pseudo-selectors and properties.</li>
+                      <li>Disable a style property on a selected element.</li>
+                      <li>Change the color of your paragraph text.</li>
+                      <li>Add a new style rule (both on a single element and globally).</li>
                     </ul>
                 </section>
                 
@@ -1054,9 +1076,9 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                 <section>
                     <h1>Lab 7 - Layout &amp; styling</h1>
                     <ul>
-                        <li>Make text wrap around the images</li>
-                        <li>All headers should use the color code #444.</li>
-                        <li>All paragraphs should use the color code #666.</li>
+                        <li>Make text wrap around the images.</li>
+                        <li><strong>All</strong> headers should use the color code #444.</li>
+                        <li><strong>All</strong> paragraphs should use the color code #666.</li>
                         <li>The list in the header should be distributed horizontally.</li>
                     </ul>
                 </section>
@@ -1094,9 +1116,9 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <li>
                             <strong>ALL</strong> text should:
                             <ul>
-                                <li>have a line height of 1.5 (<em>hint: line-height</em>).</li>
-                                <li>have an increased font size to 1.2em. (<em>hint: font-size</em>)</li>
-                                <li>use the font family "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif. (<em>hint: font-family</em>)</li>
+                                <li>have a line height of 1.5.</li>
+                                <li>have an increased font size to 1.2em.</li>
+                                <li>use the font family "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif.</li>
                             </ul>
                         </li>
                         <li>
@@ -1136,7 +1158,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                         <ul>
                             <li>set image widths to 100% and no margins.</li>
                             <li>set no margins for all divs.</li>
-                            <li>wet the primary and secondary div widths to 50%.</li>
+                            <li>set the primary and secondary div widths to 50%.</li>
                             <li>set the containers width to 100%, no margins, 10px padding and a #fefefe background color.</li>
                         </ul>
                         <li>For widths less than 768px:</li>
@@ -1157,8 +1179,8 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                     <ul>
                       <li>Fix the nested form input field within the label.</li>
                       <li>Make the container background color fade to transparent downwards.</li>
-                      <li>Use Twitter Bootstrap for styling and responsiveness. This requires HTML adaptation.</li>
                       <li>Use a nice webfont. <a href="http://www.google.com/webfonts">Google Web Fonts</a></li>
+                      <li>Use Twitter Bootstrap for styling and responsiveness. This requires HTML adaptation.</li>
                     </ul>
                 </section>
                 
