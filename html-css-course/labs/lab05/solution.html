@@ -3,103 +3,113 @@
 <head>
     <meta charset="utf-8">
     <title>Bacon ipsum</title>
+    
+    <link rel="stylesheet" href="solution-styles.css">
 </head>
 <body>
-  <div id="page-header" class="header">
-    <h1>Bacon ipsum</h1>
-    <ul>
-      <li><a href="" alt="">Tri-tip shoulder</a></li>
-      <li><a href="" alt="">Frankfurter doner</a></li>
-      <li><a href="" alt="">Meatloaf rump</a></li>
-    </ul>
-  </div>
-  <p>Tri-tip leberkas turkey pork belly shankle beef ribs.</p>
-  <img src="../image_1.png" alt="Jerky sirloin flank">
-  <p>Bacon ipsum dolor sit amet beef ribs swine pastrami corned beef, tail pork ham hock pork loin tri-tip fatback sausage jerky rump. Turducken filet mignon jowl, leberkas pork loin doner brisket meatball biltong tri-tip. <a href="http://baconipsum.com">Pork belly beef</a> jowl salami. Pig corned beef fatback cow.</p>
-  <h2>Doner bacon prosciutto</h2>
-  <p>Tri-tip shoulder doner boudin capicola bacon cow prosciutto beef ground round ham hock. Pork belly boudin cow filet mignon rump ground round, <a href="http://www.webplatform.org/" alt="">flank beef ribs short ribs venison</a> bacon. Frankfurter doner short ribs sausage pancetta cow prosciutto salami meatball capicola pork belly filet mignon rump strip steak. Meatloaf rump sirloin, cow andouille capicola salami ham hock flank pork belly shank corned beef chuck tail frankfurter. Ground round filet mignon ham hock, venison pork loin rump short ribs swine chicken t-bone salami beef ribs brisket ham. Boudin tail pork chop, short loin frankfurter spare ribs beef turkey chuck kielbasa.</p>
-  <img src="../image_2.png" alt="Beef ribs biltong ham hock">
-  <p>Pork belly cow salami, jowl pork chop capicola leberkas. Venison sirloin fatback kielbasa flank. Meatball corned beef pork chop leberkas tenderloin, boudin pig chuck venison pastrami. Flank tenderloin ham shank, fatback biltong bresaola sausage pork loin.</p>
-  <p>Hamburger venison ham hock andouille swine kielbasa. Corned beef ground round meatloaf chicken. Shankle andouille t-bone, pork chop cow salami bacon tri-tip. Short loin boudin filet mignon ham.</p>
-  <ol>
-    <li>
-      Bacon ipsum
+  <div class="container">
+    <div id="page-header" class="header">
+      <h1>Bacon ipsum</h1>
+      <ul>
+        <li><a href="" alt="">Tri-tip shoulder</a></li>
+        <li><a href="" alt="">Frankfurter doner</a></li>
+        <li><a href="" alt="">Meatloaf rump</a></li>
+      </ul>
+    </div>
+    <div class="primary">
+      <p>Tri-tip leberkas turkey pork belly shankle beef ribs.</p>
+      <img src="../image_1.png" alt="Jerky sirloin flank">
+      <p>Bacon ipsum dolor sit amet beef ribs swine pastrami corned beef, tail pork ham hock pork loin tri-tip fatback sausage jerky rump. Turducken filet mignon jowl, leberkas pork loin doner brisket meatball biltong tri-tip. <a href="http://baconipsum.com">Pork belly beef</a> jowl salami. Pig corned beef fatback cow.</p>
+      <h2>Doner bacon prosciutto</h2>
+      <p>Tri-tip shoulder doner boudin capicola bacon cow prosciutto beef ground round ham hock. Pork belly boudin cow filet mignon rump ground round, <a href="http://www.webplatform.org/" alt="">flank beef ribs short ribs venison</a> bacon. Frankfurter doner short ribs sausage pancetta cow prosciutto salami meatball capicola pork belly filet mignon rump strip steak. Meatloaf rump sirloin, cow andouille capicola salami ham hock flank pork belly shank corned beef chuck tail frankfurter. Ground round filet mignon ham hock, venison pork loin rump short ribs swine chicken t-bone salami beef ribs brisket ham. Boudin tail pork chop, short loin frankfurter spare ribs beef turkey chuck kielbasa.</p>
+      <img src="../image_2.png" alt="Beef ribs biltong ham hock">
+      <p>Pork belly cow salami, jowl pork chop capicola leberkas. Venison sirloin fatback kielbasa flank. Meatball corned beef pork chop leberkas tenderloin, boudin pig chuck venison pastrami. Flank tenderloin ham shank, fatback biltong bresaola sausage pork loin.</p>
+      <p>Hamburger venison ham hock andouille swine kielbasa. Corned beef ground round meatloaf chicken. Shankle andouille t-bone, pork chop cow salami bacon tri-tip. Short loin boudin filet mignon ham.</p>
+      <table border="1">
+        <caption>Hamburger ground round venison, turkey short loin ham shankle.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Chuck bresaola pork</th>
+            <th scope="col">Filet mignon ham</th>
+            <th scope="col">Boudin cow filet </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Fatback ham hock</td>
+              <td>Tail pancetta</td>
+              <td>Prosciutto meatball</td>
+            </tr>
+            <tr>
+              <td>Swine pastrami</td>
+              <td>Brisket meatball</td>
+              <td>Rump short ribs</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="secondary">
+      <form action="solution.html" method="post">
+        <div class="text">
+          <label for="text-input">Bacon</label>
+          <input type="text" name="text-input" value="" id="text-input" placeholder="bacon hint value">
+        </div>
+    
+        <label>Ipsum<input type="text" name="text-input" value="" placeholder="ipsum hint value"></label>
+    
+        <div class="select">
+          <label for="select-1">Hamburger</label>
+          <select name="select-1" id="select-1">
+            <option value="option1">Ground</option>
+            <option value="option2">Round</option>
+            <option value="option3">Venison</option>
+          </select>
+        </div>
+    
+        <div class="select">
+          <label for="select-2">Chuck</label>
+          <select name="select-2" id="select-2" multiple="multiple">
+            <option value="option1">Bresaola</option>
+            <option value="option2">Pork</option>
+            <option value="option3">Pastrami</option>
+          </select> 
+        </div>
+    
+        <div class="textarea">
+          <label for="textarea">Mignon</label>
+          <textarea name="textarea" id="textarea" cols="30" rows="5" placeholder="mignon hint value"></textarea>
+        </div>
+    
+        <fieldset>
+          <legend class="wrap">Fatback</legend>
+          <input type="checkbox" value="one" name="checkboxgroup2" id="checkbox2-1" checkboxed="checkboxed">
+          <label for="checkbox2-1">Ham</label>
+          <input type="checkbox" value="two" name="checkboxgroup2" id="checkbox2-2">
+          <label for="checkbox2-2">Ribs</label>
+        </fieldset>
+        <fieldset>
+          <legend class="wrap">Pancetta</legend>
+          <input type="radio" value="one" name="radiogroup2" id="radio2-1" checked="checked">
+          <label for="radio2-1">Doner</label>
+          <input type="radio" value="two" name="radiogroup2" id="radio2-2">
+          <label for="radio2-2">Turkey</label>
+        </fieldset>
+        <input type="submit" value="Submit Beef">
+      </form>
+    </div>
+    <div id="page-footer" class="footer">
       <ol>
-        <li>Rump tri-tip</li>
-        <li>Doner bacon prosciutto ground</li>
+        <li>
+          Bacon ipsum
+          <ol>
+            <li>Rump tri-tip</li>
+            <li>Doner bacon prosciutto ground</li>
+          </ol>
+        </li>
+        <li>Pig strip steak ham cow kielbasa</li>
+        <li>Ribeye turducken</li>
       </ol>
-    </li>
-    <li>Pig strip steak ham cow kielbasa</li>
-    <li>Ribeye turducken</li>
-  </ol>
-  <table border="1">
-    <caption>Hamburger ground round venison, turkey short loin ham shankle.</caption>
-    <thead>
-      <tr>
-        <th scope="col">Chuck bresaola pork</th>
-        <th scope="col">Filet mignon ham</th>
-        <th scope="col">Boudin cow filet </th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>Fatback ham hock</td>
-          <td>Tail pancetta</td>
-          <td>Prosciutto meatball</td>
-        </tr>
-        <tr>
-          <td>Swine pastrami</td>
-          <td>Brisket meatball</td>
-          <td>Rump short ribs</td>
-        </tr>
-      </tbody>
-  </table>
-  <form action="solution.html" method="post">
-    <div class="text">
-      <label for="text-input">Bacon</label>
-      <input type="text" name="text-input" value="" id="text-input" placeholder="bacon hint value">
     </div>
-    
-    <label>Ipsum<input type="text" name="text-input" value="" placeholder="ipsum hint value"></label>
-    
-    <div class="select">
-      <label for="select-1">Hamburger</label>
-      <select name="select-1" id="select-1">
-        <option value="option1">Ground</option>
-        <option value="option2">Round</option>
-        <option value="option3">Venison</option>
-      </select>
-    </div>
-    
-    <div class="select">
-      <label for="select-2">Chuck</label>
-      <select name="select-2" id="select-2" multiple="multiple">
-        <option value="option1">Bresaola</option>
-        <option value="option2">Pork</option>
-        <option value="option3">Pastrami</option>
-      </select> 
-    </div>
-    
-    <div class="textarea">
-      <label for="textarea">Mignon</label>
-      <textarea name="textarea" id="textarea" cols="30" rows="5" placeholder="mignon hint value"></textarea>
-    </div>
-    
-    <fieldset>
-      <legend class="wrap">Fatback</legend>
-      <input type="checkbox" value="one" name="checkboxgroup2" id="checkbox2-1" checkboxed="checkboxed">
-      <label for="checkbox2-1">Ham</label>
-      <input type="checkbox" value="two" name="checkboxgroup2" id="checkbox2-2">
-      <label for="checkbox2-2">Ribs</label>
-    </fieldset>
-    <fieldset>
-      <legend class="wrap">Pancetta</legend>
-      <input type="radio" value="one" name="radiogroup2" id="radio2-1" checked="checked">
-      <label for="radio2-1">Doner</label>
-      <input type="radio" value="two" name="radiogroup2" id="radio2-2">
-      <label for="radio2-2">Turkey</label>
-    </fieldset>
-    <input type="submit" value="Submit Beef">
-  </form>
+  </div>
 </body>
 </html>

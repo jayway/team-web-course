@@ -417,7 +417,7 @@ Your browser does not support the video tag.
                   <h1>Lab 1</h1>
                     <p>Does it look something like this?</p>
                     <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;sv&quot;&gt;
+&lt;html lang=&quot;la&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
     &lt;title&gt;&lt;/title&gt;
@@ -445,16 +445,18 @@ Your browser does not support the video tag.
 &lt;html lang=&quot;la&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Our first web page&lt;/title&gt;
+    &lt;title&gt;Bacon ipsum&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;A level 1 heading&lt;/h1&gt;
-    &lt;p&gt;Our first paragraph. Sed do et &lt;a href=&quot;http://jayway.com&quot;&gt;dolore magna&lt;/a&gt; aliqua. Ut enim ad minim, quis nostrud.&lt;/p&gt;
-    
-    &lt;img src=&quot;../image.png&quot; alt=&quot;Alternative text&quot;&gt;
-    
-    &lt;h2&gt;A level 2 heading&lt;/h2&gt;
-    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt labore dolore magna aliqua.&lt;/p&gt;
+  &lt;h1&gt;Bacon ipsum&lt;/h1&gt;
+  &lt;p&gt;Tri-tip leberkas turkey pork belly shankle beef ribs.&lt;/p&gt;
+  &lt;img src=&quot;../image_1.png&quot; alt=&quot;Jerky sirloin flank&quot;&gt;
+  &lt;p&gt;Bacon ipsum dolor sit amet beef ribs swine ... biltong tri-tip. &lt;a href=&quot;http://baconipsum.com&quot;&gt;Pork belly beef&lt;/a&gt; jowl salami. Pig corned beef fatback cow.&lt;/p&gt;
+    &lt;h2&gt;Doner bacon prosciutto&lt;/h2&gt;
+    &lt;p&gt;Tri-tip shoulder doner boudin capicola bacon cow prosciutto beef ... spare ribs beef turkey chuck kielbasa.&lt;/p&gt;
+    &lt;img src=&quot;../image_2.png&quot; alt=&quot;Beef ribs biltong ham hock&quot;&gt;
+    &lt;p&gt;Pork belly cow salami, jowl pork chop capicola ... Flank tenderloin ham shank, fatback biltong bresaola sausage pork loin.&lt;/p&gt;
+    &lt;p&gt;Hamburger venison ham hock andouille swine kielbasa. Corned beef ground round meatloaf chicken. Shankle andouille t-bone, pork chop cow salami bacon tri-tip. Short loin boudin filet mignon ham.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
                 </section>
@@ -465,22 +467,28 @@ Your browser does not support the video tag.
                       <li>Add two lists; one ordered and one unordered.</li>
                       <li>Add a nested list inside one of the previous lists.</li>
                       <li>Surround every item in the unnested list with links.</li>
+                      <li>Move the simple/shallow list to just below the h1 element.</li>
                     </ul>
                     <img src="resources/lab02.png" alt="">
                 </section>
             
                 <section>
                   <h1>Lab 2</h1>
-                    <pre><code>&lt;ol&gt;
-    &lt;li&gt;
-        List item 1
-        &lt;ol&gt;
-            &lt;li&gt;List sub-item 1&lt;/li&gt;
-            &lt;li&gt;List sub-item 2&lt;/li&gt;
-        &lt;/ol&gt;
-    &lt;/li&gt;
-    &lt;li&gt;List item 2&lt;/li&gt;
-    &lt;li&gt;List item 3&lt;/li&gt;
+                  <pre><code>&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Tri-tip shoulder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Frankfurter doner&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Meatloaf rump&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                  <pre><code>&lt;ol&gt;
+  &lt;li&gt;
+    Bacon ipsum
+    &lt;ol&gt;
+      &lt;li&gt;Rump tri-tip&lt;/li&gt;
+      &lt;li&gt;Doner bacon prosciutto ground&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Pig strip steak ham cow kielbasa&lt;/li&gt;
+  &lt;li&gt;Ribeye turducken&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
                 </section>
             
@@ -491,26 +499,27 @@ Your browser does not support the video tag.
                 </section>
             
                 <section>
+                  <h1>Lab 3</h1>
                     <pre><code>&lt;table border=&quot;1&quot;&gt;
-    &lt;caption&gt;A simple description of our table content&lt;/caption&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th scope=&quot;col&quot;&gt;Header 1&lt;/th&gt;
-            &lt;th scope=&quot;col&quot;&gt;Header 2&lt;/th&gt;
-            &lt;th scope=&quot;col&quot;&gt;Header 3&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Data 1&lt;/td&gt;
-            &lt;td&gt;Data 2&lt;/td&gt;
-            &lt;td&gt;Data 3&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;Data 4&lt;/td&gt;
-            &lt;td&gt;Data 5&lt;/td&gt;
-            &lt;td&gt;Data 6&lt;/td&gt;
-        &lt;/tr&gt;
+  &lt;caption&gt;Hamburger ground round venison, turkey short loin ham shankle.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Chuck bresaola pork&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Filet mignon ham&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Boudin cow filet &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Fatback ham hock&lt;/td&gt;
+        &lt;td&gt;Tail pancetta&lt;/td&gt;
+        &lt;td&gt;Prosciutto meatball&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Swine pastrami&lt;/td&gt;
+        &lt;td&gt;Brisket meatball&lt;/td&gt;
+        &lt;td&gt;Rump short ribs&lt;/td&gt;
+      &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
                 </section>
@@ -532,30 +541,29 @@ Your browser does not support the video tag.
                 <section>
                     <h1>Lab 4</h1>
                     <p>Separated label and input field</p>
-                    <pre><code>&lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
-&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;</code></pre>
+                    <pre><code>&lt;label for=&quot;text-input&quot;&gt;Bacon&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot; placeholder=&quot;bacon hint value&quot;&gt;</code></pre>
                     <p>Nested input field within label</p>
-                    <pre><code>&lt;label&gt;Text input 2 &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot;&gt;&lt;/label&gt;</code></pre>
+                    <pre><code>&lt;label&gt;Ipsum&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; placeholder=&quot;ipsum hint value&quot;&gt;&lt;/label&gt;</code></pre>
                     <p>And here is a textarea</p>
-                    <pre><code>&lt;label for=&quot;textarea&quot;&gt;Textarea&lt;/label&gt;
-&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot; cols=&quot;30&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;</code></pre>       
+                    <pre><code>&lt;label for=&quot;textarea&quot;&gt;Mignon&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot; cols=&quot;30&quot; rows=&quot;5&quot; placeholder=&quot;mignon hint value&quot;&gt;&lt;/textarea&gt;</code></pre>       
                 </section>
             
                 <section>
                   <h1>Lab 4</h1>
                     <p>Single and multiple select</p>
-                    <pre><code>&lt;label for=&quot;select-1&quot;&gt;Single select&lt;/label&gt;
+                    <pre><code>&lt;label for=&quot;select-1&quot;&gt;Hamburger&lt;/label&gt;
 &lt;select name=&quot;select-1&quot; id=&quot;select-1&quot;&gt;
-    &lt;option value=&quot;option1&quot;&gt;option1&lt;/option&gt;
-    &lt;option value=&quot;option2&quot;&gt;option2&lt;/option&gt;
-    &lt;option value=&quot;option3&quot;&gt;option3&lt;/option&gt;
+  &lt;option value=&quot;option1&quot;&gt;Ground&lt;/option&gt;
+  &lt;option value=&quot;option2&quot;&gt;Round&lt;/option&gt;
+  &lt;option value=&quot;option3&quot;&gt;Venison&lt;/option&gt;
 &lt;/select&gt;
-        
-&lt;label for=&quot;select-2&quot;&gt;Multiple select&lt;/label&gt;
+&lt;label for=&quot;select-2&quot;&gt;Chuck&lt;/label&gt;
 &lt;select name=&quot;select-2&quot; id=&quot;select-2&quot; multiple=&quot;multiple&quot;&gt;
-    &lt;option value=&quot;option1&quot;&gt;option1&lt;/option&gt;
-    &lt;option value=&quot;option2&quot;&gt;option2&lt;/option&gt;
-    &lt;option value=&quot;option3&quot;&gt;option3&lt;/option&gt;
+  &lt;option value=&quot;option1&quot;&gt;Bresaola&lt;/option&gt;
+  &lt;option value=&quot;option2&quot;&gt;Pork&lt;/option&gt;
+  &lt;option value=&quot;option3&quot;&gt;Pastrami&lt;/option&gt;
 &lt;/select&gt;</code></pre>
                 </section>
             
@@ -563,13 +571,11 @@ Your browser does not support the video tag.
                   <h1>Lab 4</h1>
                     <p>Fieldset with checkbox group</p>
                     <pre><code>&lt;fieldset&gt;
-    &lt;legend class=&quot;wrap&quot;&gt;Check boxes&lt;/legend&gt;
-    
-    &lt;input type=&quot;checkbox&quot; value=&quot;one&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-1&quot; checkboxed=&quot;checkboxed&quot;&gt;
-    &lt;label for=&quot;checkbox2-1&quot;&gt;one&lt;/label&gt;
-    
-    &lt;input type=&quot;checkbox&quot; value=&quot;two&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-2&quot;&gt;
-    &lt;label for=&quot;checkbox2-2&quot;&gt;two&lt;/label&gt;
+  &lt;legend class=&quot;wrap&quot;&gt;Fatback&lt;/legend&gt;
+  &lt;input type=&quot;checkbox&quot; value=&quot;one&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-1&quot; checkboxed=&quot;checkboxed&quot;&gt;
+  &lt;label for=&quot;checkbox2-1&quot;&gt;Ham&lt;/label&gt;
+  &lt;input type=&quot;checkbox&quot; value=&quot;two&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-2&quot;&gt;
+  &lt;label for=&quot;checkbox2-2&quot;&gt;Ribs&lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
                 </section>
                   
@@ -577,42 +583,55 @@ Your browser does not support the video tag.
                   <h1>Lab 4</h1>
                     <p>Fieldset with radiobutton group</p>
                     <pre><code>&lt;fieldset&gt;
-    &lt;legend class=&quot;wrap&quot;&gt;Radio buttons&lt;/legend&gt;
-    
-    &lt;input type=&quot;radio&quot; value=&quot;one&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-1&quot; checked=&quot;checked&quot;&gt;
-    &lt;label for=&quot;radio2-1&quot;&gt;one&lt;/label&gt;
-    
-    &lt;input type=&quot;radio&quot; value=&quot;two&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-2&quot;&gt;
-    &lt;label for=&quot;radio2-2&quot;&gt;two&lt;/label&gt;
+  &lt;legend class=&quot;wrap&quot;&gt;Pancetta&lt;/legend&gt;
+  &lt;input type=&quot;radio&quot; value=&quot;one&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-1&quot; checked=&quot;checked&quot;&gt;
+  &lt;label for=&quot;radio2-1&quot;&gt;Doner&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; value=&quot;two&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-2&quot;&gt;
+  &lt;label for=&quot;radio2-2&quot;&gt;Turkey&lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
                 </section>
                   
                 <section>
                   <h1>Lab 4</h1>
                     <p>Finally, the submit button</p>
-                    <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre>
+                    <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit Beef&quot;&gt;</code></pre>
                 </section>
             
                 <section>
                     <h1>Lab 5</h1>
-                    <p>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation. Use divs to logically group form elements.</p>
+                    <ul>
+                      <li>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation.</li>
+                      <li>Use divs to logically group form elements.</li>
+                    </ul>
                     <img src="resources/form2.png" alt="">
                 </section>
             
                 <section>
-                  <h1>Lab 5</h1>
+                  <h1>Lab 5B</h1>
                     <p>ID's are for unique elements,<br> classes can be used multiple times.</p>
                     <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
-    &lt;h1&gt;A level 1 heading&lt;/h1&gt;
-    &lt;p&gt;Our first paragraph. Sed do et &lt;a href=&quot;http://jayway.com&quot;&gt;dolore magna&lt;/a&gt; aliqua. Ut enim ad minim, quis nostrud.&lt;/p&gt;
-    
-    &lt;img src=&quot;../image.png&quot; alt=&quot;Alternative text&quot;&gt;
+  &lt;h1&gt;Bacon ipsum&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Tri-tip shoulder&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Frankfurter doner&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; alt=&quot;&quot;&gt;Meatloaf rump&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
                     <p>Classify on what it is, rather than what it should look like.</p>
                     <pre><code>&lt;div class=&quot;text&quot;&gt;
-    &lt;label for=&quot;text-input&quot;&gt;Text input 1&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot;&gt;
+  &lt;label for=&quot;text-input&quot;&gt;Bacon&lt;/label&gt;
+  &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot; placeholder=&quot;bacon hint value&quot;&gt;
 &lt;/div&gt;</code></pre>
+                </section>
+                
+                <section>
+                  <h1>Lab 5C</h1>
+                  <ul>
+                    <li>Group everything within the body tag in a container div.</li>
+                    <li>Group everything from underneath the page-header div down to and including the table in one primary div.</li>
+                    <li>Group the entire form in another, secondary div.</li>
+                    <li>Move the nested list down to its' own footer div below the secondary div. Use this div to clear floating.</li>
+                  </ul>
                 </section>
             
             </section>
@@ -1117,21 +1136,11 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                     <h1>Lab 7b</h1>
                     <ul>
                       <li>Set a background image on the body element.</li>
-                      <li>Group everything within the body tag in a container div.</li>
                       <li>Set the width of the container div to 980px.</li>
                       <li>Set the background of the container div to #ddd.</li>
                       <li>Center the container div in the browser window.</li>
-                    </ul>
-                </section>
-            
-                <section>
-                    <h1>Lab 7c</h1>
-                    <ul>
-                      <li>Group everything from underneath the page-header div down to and including the table in one primary div.</li>
-                      <li>Group the entire form in another, secondary div.</li>
-                      <li>Move the nested list down to its' own footer div below the secondary div. Use this div to clear floating.</li>
-                      <li>The primary div should be 600px and the secondary 320px wide. Both of these divs should be positioned next to each other, to the left.</li>
-                      <li>Set background-color on all these divs to #fefefe.</li>
+                      <li>The primary div should be 600px and the secondary 320px wide. Both of these divs should be positioned (floated) next to each other, to the left.</li>
+                      <li>Set background-color on the header, primary, secondary and footer divs to #fefefe.</li>
                     </ul>
                 </section>
             
@@ -1208,6 +1217,7 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
                     <p>For example, you can:</p>
                     <ul>
                       <li>Fix the nested form input field within the label.</li>
+                      <li>Style the images differently.</li>
                       <li>Make the container background color fade to transparent downwards.</li>
                       <li>Use a nice webfont. <a href="http://www.google.com/webfonts">Google Web Fonts</a></li>
                       <li>Use Twitter Bootstrap for styling and responsiveness. This requires HTML adaptation.</li>
