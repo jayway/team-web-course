@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Javascript Basics</title>
+        <title>Javascript</title>
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -91,7 +91,7 @@
       <div class="slides">
 
         <section>
-          <h1>JavaScript Basics</h1>
+          <h1>JavaScript</h1>
           <p>Jayway Course</p>
           <p>
           <br>
@@ -714,7 +714,7 @@ function sum(v) {
 
         <section>
           <section>
-            <h3>Excercise</h3>
+            <h3>Exercise</h3>
 
             <div class='sandbox-notes'>
 <h4>Undefined arguments</h4>
@@ -918,7 +918,8 @@ function sum(v) {
 
             <div class='sandbox-notes'>
             <h5>Function arguments</h5>
-            Impl. function <code>each</code> so that:
+            Impl. function <code>each(array, f)</code> the function should call
+            function f for every element of the array.
 <pre><code>
 var total = 0;
 each([1,2,3], function(q) {
@@ -951,7 +952,8 @@ function each(v,f) {
             <h3>Exercise</h3>
             <div class='sandbox-notes'>
             <h5>Recursion</h5>
-            Impl. function <code>times</code> with recursion so that:
+            Impl. function <code>times(n, f)</code> it should call f n times.
+            Bonus points for using recursion.
 
            <pre><code>
 var total = 0;
@@ -1631,7 +1633,7 @@ t.hello = 'hej';
 t.world = 'värld';
 t.translate("hello world") # => "hej värld"
             </code></pre>
-             <p>Use Array methods: <code>forEach</code>, <code>push</code>, <code>join</code></p>
+             <p>Use Array methods: <code>map</code>, <code>join</code></p>
              <p>Use String method: <code>split(' ')</code></p>
           </div>
           <div class="sandbox">sandbox console loading...</div>
@@ -1655,14 +1657,17 @@ t.translate("hello world") # => "hej värld"
         <section data-markdown>
           ### Solution
 
-              var t = {
-                 translate: function(s) {
-                   var self = this;
-                   var reply = [];
-                   s.split(' ').forEach(function(w){ reply.push(self[w])});
-                   return reply.join(' ');
-                 }
-              }
+          <pre><code>
+            var t = {
+                translate: function(s) {
+                var self = this;
+                var reply = [];
+                return s.split(' ').map(function(w) {
+                   return self[w];
+                }).join(' ');
+                }
+            }
+          </code></pre>
 
               t.hello='hej';
               t.world='varld';
@@ -1941,7 +1946,7 @@ class Animal
         </section>
 
         <section data-markdown>
-            ### Exercise
+            ### More Exercises
 
             * See the lab/functional and lab/strings folders
             * Open browser for the tests.html file
