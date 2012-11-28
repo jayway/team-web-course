@@ -168,7 +168,7 @@
 
         <section data-markdown>
             ### Chrome Dev Tools
-            
+
             * Open Chrome Browser (new version)
             * Type chrome://flags/ as an URL
             * Enable Developer Tools experiments
@@ -176,7 +176,7 @@
             * Open Developer Tool (View->Developer)
             * Press the Settings button at the right bottom
             * Open Source tag/ Snippet tag
-         
+
             You can now edit and run javascript snippets !
             More on [youtube](https://www.youtube.com/watch?feature=player_embedded&v=ktwJ-EDiZoU)
         </section>
@@ -289,10 +289,10 @@
             * C/Java Style:
               * if, else if, else, while, do while, switch, case, for, continue, break
             * Exceptions: try, catch, finally, throw
-             
+
             _(see details, arrow down on this slide)_
         </section>
-        
+
         <section data-markdown>
             ### if else if else
 
@@ -431,7 +431,7 @@ function sum(v) {
   return total;
 }
 </pre></code>
-              
+
 </div>
            <div class="sandbox">sandbox console loading...</div>
 
@@ -730,7 +730,7 @@ function sum(v) {
 
         </section>
 
-        <section>           
+        <section>
           <section>
             <h3>Excercise</h3>
 
@@ -748,7 +748,7 @@ What does the following statement return ?
 <ul>
 <li><code>things("one")</code> </li>
 <li><code>things("one", "two", "three", "four")</code> </li>
-</ul>  
+</ul>
               </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
@@ -757,11 +757,11 @@ What does the following statement return ?
            <code>=> "oneundefinedundefined"</code> <br/>
 
            <p>things("one", "two", "three", "four")</p>
-           <code>=> "onetwothree"</code> <br/>           
+           <code>=> "onetwothree"</code> <br/>
            </section>
        </section>
-           
-        <section>           
+
+        <section>
           <section>
             <h3>Exercise</h3>
 
@@ -772,10 +772,10 @@ previous exercise. It should allow to append three string values.
 <code><pre>
 function things() { ... }
 things("one"); // => // "oneundefinedundefined"
-things("one", "two"); // => "onetwoundefined" 
+things("one", "two"); // => "onetwoundefined"
 things("one", "two", "three"); "onetwothree"
 </pre></code>
-              
+
               </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
@@ -835,7 +835,7 @@ x(); // => "TypeError, ... not a function"
                </pre></code>
             </div>
 
-           <div class="sandbox">sandbox console loading...</div>            
+           <div class="sandbox">sandbox console loading...</div>
         </section>
 
         <section>
@@ -843,8 +843,8 @@ x(); // => "TypeError, ... not a function"
                 <code><pre>
 var x = function() { return "Andreas"; }()
 
-               </pre></code>          
-        </section>           
+               </pre></code>
+        </section>
         </section>
 
         <section data-markdown>
@@ -912,12 +912,12 @@ sum([1,2,3]) # => 6
 sum([]) #=> 0
 </pre></code>
 Hint <code>[].reduce(function(prev, curr),firstVal){...}</code>
-              
+
 </div>
            <div class="sandbox">sandbox console loading...</div>
 
         </section>
-           
+
         <section>
                       <h3>Solution</h3>
 <code><pre>
@@ -941,7 +941,7 @@ function sum(v) {
             <h3>Exercise</h3>
 
             <div class='sandbox-notes'>
-            <h5>Function arguments</h5>              
+            <h5>Function arguments</h5>
             Impl. function <code>each</code> so that:
 <code><pre>
 var total = 0;
@@ -950,12 +950,12 @@ total # => 6
 </pre></code>
 
 Hint: use a <code>for</code> loop. <br/>
-              
+
 </div>
            <div class="sandbox">sandbox console loading...</div>
 
         </section>
-           
+
         <section>
            <h3>Solution</h4>
 <code><pre>
@@ -967,12 +967,12 @@ function each(v,f) {
 </pre></code>
         </section>
         </section>
-           
-        <section>                      
+
+        <section>
         <section>
             <h3>Exercise</h3>
             <div class='sandbox-notes'>
-            <h5>Recursion</h5>              
+            <h5>Recursion</h5>
             Impl. function <code>times</code> with recursion so that:
 
            <code><pre>
@@ -986,7 +986,7 @@ total // => 10
 
        <section>
            <h3>Solution</h3>
-<code class="javascript"><pre>           
+<code class="javascript"><pre>
 function times(n,f) {
   if (n > 0) {
      f();
@@ -999,7 +999,7 @@ total // => 10
 </pre></code>
         </section>
         </section>
-           
+
         <section data-markdown>
             ### Objects
 
@@ -1010,7 +1010,7 @@ total // => 10
                    sayHello: function() {... }
                 }
 
-           
+
             Similar to JSON
 
         </section>
@@ -1070,7 +1070,7 @@ flight.foo // undefined
         </section>
 
 
-        <section>           
+        <section>
         <section>
             <h3>Exercise: object method</h3>
 
@@ -1086,7 +1086,7 @@ adder.sum // => 42
 adder.add(3)
 adder.sum // => 45
 </pre></code></p>
-              Hint: setting property use <code>this.sum = ...</code> 
+              Hint: setting property use <code>this.sum = ...</code>
             </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
@@ -1103,9 +1103,9 @@ var adder = {
 </code></pre>
         </section>
 
-        </section>           
+        </section>
 
-           
+
         <section>
            <h3>Constructor Functions</h3>
            <ul>
@@ -1121,23 +1121,23 @@ new MyFunc();
 </code></pre>
         </section>
 
-        <section>           
+        <section>
           <section>
             <h3>Exercise 1: Constructor Functions</h3>
-           
+
             <div class='sandbox-notes'>
 Define <br>
  <code>function f42() { return 42;}</code><br/>
 Question 1: what does <code>f42()</code> return ?<br/>
-              
-Question 2: what does <code>new f42()</code> return ?<br/>           
+
+Question 2: what does <code>new f42()</code> return ?<br/>
             </div>
            <div class="sandbox">sandbox console loading...</div>
          </section>
 
          <section data-markdown>
            * Answer 1: 42
-           * Answer 2: a new object 
+           * Answer 2: a new object
           </section>
         </section>
 
@@ -1169,7 +1169,7 @@ myObj.name; // => 'me'
                  cat.sayHello();
         </section>
 
-        <section>           
+        <section>
           <section>
             <h3>Exercise 2: Constructor Functions</h3>
 
@@ -1191,25 +1191,25 @@ x.sum // => 45
           <section>
            <h4>Solution</h4>
 
-<pre><code>           
+<pre><code>
 function Adder() {
    this.sum = 0;
    this.add = function(val) {this.sum += val}
 }
 </code></pre>
           </section>
-        </section>           
+        </section>
 
         <section data-markdown>
             ### Prototype-based programming
 
             #### This is actually a very beautiful thing
-           
+
             * OO without classes !
             * Inheritance by object delegation
 
        </section>
-           
+
        <section>
         <section>
         <h3>The Prototype Chain</h3>
@@ -1246,16 +1246,16 @@ base.hasOwnProperty('hello') // => true
 // see definition of sub and base in previous slide
 for (var key in sub) {
   console.log(key); // prints world and hello
-} 
+}
 
 for (var key in base) {
   console.log(key); // prints hello
-} 
+}
 </code></pre>
-           
+
            </section>
       </section>
-           
+
 
        <section>
          <h3>The prototype property</h3>
@@ -1267,14 +1267,14 @@ myFunc.prototype; // what does this do ?
 </code></pre>
        </section>
 
-           
+
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
 
           Objects can share properties
 
           Let F be a function, e.g. `function F() {}`
-           
+
           `new F()` creates new objects that inherits from `F.prototype`
 
           `F` is a constructor function.
@@ -1307,7 +1307,7 @@ myFunc.prototype; // what does this do ?
 function Pet(species) {
  this.species = species;
  this.sayHello = function() { return "Hello " + this.species; }
-}              
+}
 </code></pre>
         </section>
 
@@ -1342,7 +1342,7 @@ function Pet(species) {
                [1.2.3].last(); // => 3
         </section>
 
-        <section>           
+        <section>
           <section>
             <h3>Exercise: The Prototype</h3>
 
@@ -1360,7 +1360,7 @@ var x = new WhoAmI();
 // What is x.me, x.foo and x.bar ?
 </code></pre>
             </div>
-            
+
            <div class="sandbox">sandbox console loading...</div>
             </section>
            <section data-markdown>
@@ -1369,14 +1369,14 @@ var x = new WhoAmI();
            There is also a magic `prototype.constructor` property
            which can be used for setting up constructor inheritance,
            see [this](http://phrogz.net/JS/classes/OOPinJS2.html)
-          </section>                         
-          </section>              
+          </section>
+          </section>
 
     <section>
         <h3>Object.create</h3>
             <pre><code>
 var foo = {name: "foo", one: 1, two: 2};
-var bar = Object.create(foo); 
+var bar = Object.create(foo);
 bar.one // Resolves to 1.
 bar.two // Resolves to 'two'
             </code></pre>
@@ -1447,7 +1447,7 @@ x.sum // => 2
 </pre></code>
               </p>
             </div>
-            
+
            <div class="sandbox">sandbox console loading...</div>
         </section>
 
@@ -1463,7 +1463,7 @@ var x = Object.create(adder);
 x.sub = function(value) { this.add(-value) }
 </code></pre>
         </section>
-        </section>           
+        </section>
         <section data-markdown>
             ## JSON
 
@@ -1693,7 +1693,7 @@ base.foo = 'changed'
 sub.foo // ??
               </pre></code>
               </div>
-          <div class="sandbox">sandbox console loading...</div>              
+          <div class="sandbox">sandbox console loading...</div>
           </section>
 
         <section data-markdown>
@@ -1711,7 +1711,7 @@ sub.foo // ??
             <h3>Exercise Prototype</h3>
 
             <div class='sandbox-notes'>
-              <code><pre>              
+              <code><pre>
 function Bar() {}
 var a = {name: "foo"};
 // write one line here, so that :
@@ -1721,7 +1721,7 @@ a.name = 'bar';
 b.name // => "bar"
               </pre></code>
               </div>
-          <div class="sandbox">sandbox console loading...</div>                            
+          <div class="sandbox">sandbox console loading...</div>
         </section>
 
         <section data-markdown>
@@ -1786,7 +1786,7 @@ b.name // => "bar"
                     function privFunc() {
                        return privVar;
                     }
-                    // Return the public API 
+                    // Return the public API
                     return {
                        // Notice, access private function
                        example: function() { return privFunc(); }
@@ -1930,7 +1930,7 @@ b.name // => "bar"
         <section data-markdown>
             ### Some Random Advices
 
-            * Javascript strict mode, 
+            * Javascript strict mode,
             * JSLint, JSHint, <a
             * href="http://jsshaper.org/">jsshaper</a>, Closure Compiler
             * Consider CoffeeScript
