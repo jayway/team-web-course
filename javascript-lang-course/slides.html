@@ -793,6 +793,7 @@ function things() {
 
             means
 
+            * Can be stored in variables and properties
             * Can be arguments to functions
             * Can be returned from functions
 
@@ -801,17 +802,18 @@ function things() {
        <section data-markdown>
             ### Returning Functions
 
-                var sayHello = function() {
-                  return function() { return "Hello " + name; }
+                var greeter = function(greeting) {
+                  return function(name) { return greeting + " " + name; }
                 };
 
                 // Create a function
-                var helloMe = sayHello('andreas');
+                var howdy = greeter('Howdy');
+
                 // Invoke it
-                helloMe(); // => "Hello andreas"
+                howdy('Andreas'); // => "Howdy Andreas"
 
                 // Direct invocation
-                sayHello('Tapir')(); //Hello Tapir
+                greeter('How')('Tapir'); //How Tapir
         </section>
 
         <section>
@@ -832,20 +834,20 @@ x(); // => "TypeError, ... not a function"
 
         <section>
            <h3>Solution</h3>
-                <code><pre>
+                <pre><code>
 var x = function() { return "Andreas"; }()
 
-               </pre></code>
+               </code></pre>
         </section>
         </section>
 
         <section data-markdown>
             ## Arrays
 
-            * Array inherits from object !
+            * Array inherits from object!
             * Indexes are converted to strings
-            * `length` = largest numeric index in the array.
-            * The `length` property can be set !
+            * `length` = One more than the largest numeric index.
+            * The `length` property can be set!
             * When you add a new element, `push()`, length is increased by one.
         </section>
 
