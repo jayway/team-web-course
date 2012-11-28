@@ -1484,17 +1484,17 @@ x.sub = function(value) { this.add(-value) }
             <h3>JSON</h3>
             <pre><code>
             var flight = {
-                airline: "Oceanic",   // string
-                number: 815,          // number
-                departure : {          // object
-                    IATA: "SYD",
-                    time: "2004-09-22 14:55",
-                    city: "Sydney"
+                "airline": "Oceanic",   // string
+                "number": 815,          // number
+                "departure" : {          // object
+                    "IATA": "SYD",
+                    "time": "2004-09-22 14:55",
+                    "city": "Sydney"
                 },
-                arrival : {            // object
-                    IATA : "LAX",
-                    time : "2004-09-23 10:42",
-                    city : "Los Angeles"
+                "arrival" : {            // object
+                    "IATA" : "LAX",
+                    "time" : "2004-09-23 10:42",
+                    "city" : "Los Angeles"
                 }
             };
             </code></pre>
@@ -1506,22 +1506,16 @@ x.sub = function(value) { this.add(-value) }
                 // array of objects
                 var array = [
                     {
-                        firstName : "John",
-                        lastName  : "Doe",
-                        mobile    : 2353,
-                        loggedin  : true
+                        "firstName" : "John",
+                        "lastName"  : "Doe",
+                        "mobile"    : 2353,
+                        "loggedin"  : true
                     },
                     {
-                        firstName : "Mary",
-                        lastName  : "Smith",
-                        mobile    : 3243,
-                        loggedin  : false
-                    },
-                    {
-                        firstName : "Fax",
-                        lastName  : "",
-                        mobile    : 1234,
-                        loggedin  : null
+                        "firstName" : "Mary",
+                        "lastName"  : "Smith",
+                        "mobile"    : 3243,
+                        "loggedin"  : false
                     }
                 ];
             </code></pre>
