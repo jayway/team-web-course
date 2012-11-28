@@ -909,6 +909,12 @@ body {
 	display: none;
 }
 
-.reveal pre {
-    font-size: 18px;
+.reveal pre code {
+    font-size: 24px;
+    line-height: 28px;
 }
+.reveal .sandbox-notes pre code {
+    font-size: 18px;
+    line-height: 20px;
+}
+
