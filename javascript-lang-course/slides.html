@@ -1878,25 +1878,6 @@ sub.foo // ??
         </section>
 
         <section data-markdown>
-            ### Avoid new Object()
-
-            Be aware of:
-
-                var q = new Object(42);
-                q instanceof Number  // => true
-                var w = new Object("42")
-                w instanceof Number  // => false
-                w instanceof String  // => true
-
-            Advice, use literals:
-
-                var a = {}
-                var b = "42";
-
-
-        </section>
-
-        <section data-markdown>
             ### Some Random Advices
 
             * Javascript strict mode,
