@@ -1081,8 +1081,10 @@ flight.foo // undefined
               <code>add</code> and a property <code>sum</code>
 
               <p><pre><code>
-var adder = { add: function // write this line ...}
-typeof adder.sum // => "undefined"
+var adder = { add: function() {
+    // TODO
+}
+typeof adder.sum // "undefined"
 adder.add(42)
 adder.sum // => 42
 adder.add(3)
@@ -1129,7 +1131,9 @@ new MyFunc();
 
             <div class='sandbox-notes'>
 Define <br>
- <code>function f42() { return 42;}</code><br/>
+<pre><code>function f42() {
+    return 42;
+}</code></pre><br/>
 Question 1: what does <code>f42()</code> return ?<br/>
 
 Question 2: what does <code>new f42()</code> return ?<br/>
@@ -1185,8 +1189,9 @@ x.add(3)
 x.sum // => 45
 </code></pre>
               <p/>
-              Discuss: when should you use contructor functions ?
-              when should you use object literals ?
+              Discuss:<br/>
+              When should you use contructor functions?<br/>
+              When should you use object literals?
             </div>
            <div class="sandbox">sandbox console loading...</div>
           </section>
@@ -1205,9 +1210,9 @@ function Adder() {
         <section data-markdown>
             ### Prototype-based programming
 
-            #### This is actually a very beautiful thing
+            #### A beautiful thing
 
-            * OO without classes !
+            * OO without classes!
             * Inheritance by object delegation
 
        </section>
@@ -1261,7 +1266,7 @@ for (var key in base) {
 
        <section>
          <h3>The prototype property</h3>
-         All functions has a 'magic' property: <code>prototype</code>
+         All functions have a 'magic' property: <code>prototype</code>
 
 <pre><code>
 var myFunc = function() {};
@@ -1273,14 +1278,10 @@ myFunc.prototype; // what does this do ?
         <section data-markdown>
           <h3>Prototypal Inheritance</h3>
 
-          Objects can share properties
-
-          Let F be a function, e.g. `function F() {}`
-
-          `new F()` creates new objects that inherits from `F.prototype`
-
-          `F` is a constructor function.
-
+          * Objects can share properties
+          * Let F be a function, e.g. `function F() {}`
+          * `new F()` creates new objects that inherits from `F.prototype`
+          * `F` is a constructor function.
         </section>
 
 
@@ -1813,17 +1814,21 @@ b.name // => "bar"
         <section data-markdown>
             ## Local Functions
 
-                costData: function(current) {
-                    var data = {};
-                    function addEntry(name, cost) {
-                      data[name + "PerHour"] = model.withTwoDec(cost/hours);
-                      data[name] = model.noDecimalsWithSeparator(cost);
-                    };
+            <pre><code>
+            costData: function(cur) {
+                var data = {};
+                function addEntry(name, cost) {
+                    data[name + "PerHour"] =
+                    model.withTwoDec(cost/hours);
+                    data[name] =
+                    model.noDecimalsWithSeparator(cost);
+                };
 
-                    addEntry("interest", this.financialCost(current)),
-                    addEntry("depreciation", this.depreciationCost(current)),
-                    return data;
-                },
+                addEntry("interest", this.financialCost(cur)),
+                addEntry("depreciation", this.depCost(cur)),
+                return data;
+            },
+            </code></pre>
         </section>
 
         <section data-markdown>
@@ -1965,7 +1970,7 @@ class Animal
     }
 
     Animal.prototype.move = function(meters) {
-      return alert("" + this.name + " move " + meters);
+      return alert(this.name + " move " + meters);
     };
 
     return Animal;
@@ -1982,7 +1987,7 @@ class Animal
 
                 describe('Array', function(){
                   describe('#indexOf()', function(){
-                    it('returns -1 when the value is not present', function(){
+                    it('returns -1 when value missing', function(){
                        assert.equal(-1, [1,2,3].indexOf(5));
                        assert.equal(-1, [1,2,3].indexOf(0));
                      })
