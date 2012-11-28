@@ -909,3 +909,6 @@ body {
 	display: none;
 }
 
+.reveal pre {
+    font-size: 18px;
+}

@@ -419,18 +419,18 @@ do {
             <div class='sandbox-notes'>
               <h5>for loop</h5>
             Impl. function 'sum' using a <code>for</code> loop so that:
-<code><pre>
+<pre><code>
 sum([1,2,3]) # => 6
 sum([]) #=> 0
-</pre></code>
-              Hint: <code><pre>
+</code></pre>
+              Hint: <pre><code>
 function sum(v) {
   var total = 0;
   // for ...;
   //  total += v[i];
   return total;
 }
-</pre></code>
+</code></pre>
 
 </div>
            <div class="sandbox">sandbox console loading...</div>
@@ -439,7 +439,7 @@ function sum(v) {
         <section>
                       <h3>Solution</h3>
 
-<code><pre>
+<pre><code>
 function sum(v) {
   var total = 0;
   for (var i=0; i < v.length; i++) {
@@ -447,7 +447,7 @@ function sum(v) {
   }
   return total;
 }
-</pre></code>
+</code></pre>
 </section>
            </section>
 
@@ -736,14 +736,14 @@ function sum(v) {
 
             <div class='sandbox-notes'>
 <h4>Undefined arguments</h4>
-<code><pre>
+<pre><code>
 // define this function:
 y = "hoj";
 function things(x,y,z) {
   return x + y + z;
 }
 
-</pre></code>
+</code></pre>
 What does the following statement return ?
 <ul>
 <li><code>things("one")</code> </li>
@@ -769,12 +769,12 @@ What does the following statement return ?
 <h4>Variable Arguments</h4>
 Create a varargs version of the <code>things</code> method from
 previous exercise. It should allow to append three string values.
-<code><pre>
+<pre><code>
 function things() { ... }
 things("one"); // => // "oneundefinedundefined"
 things("one", "two"); // => "onetwoundefined"
 things("one", "two", "three"); "onetwothree"
-</pre></code>
+</code></pre>
 
               </div>
            <div class="sandbox">sandbox console loading...</div>
@@ -784,7 +784,7 @@ things("one", "two", "three"); "onetwothree"
 function things() {
   return arguments[0] + arguments{1] + arguments[2];
 }
-</pre></code>
+</code></pre>
            </section>
        </section>
 
@@ -820,11 +820,11 @@ function things() {
 
             <div class='sandbox-notes'>
                 Write an anonymous function so that:
-                <code><pre>
+                <pre><code>
 var x = function()...
 x;  // => "Your Name"
 x(); // => "TypeError, ... not a function"
-               </pre></code>
+               </code></pre>
             </div>
 
            <div class="sandbox">sandbox console loading...</div>
@@ -899,10 +899,10 @@ var x = function() { return "Andreas"; }()
             <div class='sandbox-notes'>
               <h5>Array's reduce method</h5>
             Impl. function 'sum' using the Array <code>reduce</code> method so that:
-<code><pre>
+<pre><code>
 sum([1,2,3]) # => 6
 sum([]) #=> 0
-</pre></code>
+</code></pre>
 Hint <code>[].reduce(function(prev, curr),firstVal){...}</code>
 
 </div>
@@ -912,7 +912,7 @@ Hint <code>[].reduce(function(prev, curr),firstVal){...}</code>
 
         <section>
                       <h3>Solution</h3>
-<code><pre>
+<pre><code>
 function sum(v) {
   return v.reduce(function(prevValue, currValue) {
      return prevValue + currValue;
@@ -923,7 +923,7 @@ function sum(v) {
 // Notice, only available in ECMAScript 5
 // underscore.js has similar method:
 // _.reduce(list, iterator, memo, context)
-</pre></code>
+</code></pre>
 
 </section>
            </section>
@@ -935,11 +935,13 @@ function sum(v) {
             <div class='sandbox-notes'>
             <h5>Function arguments</h5>
             Impl. function <code>each</code> so that:
-<code><pre>
+<pre><code>
 var total = 0;
-each([1,2,3], function(q) { total += q})
+each([1,2,3], function(q) {
+    total += q;
+});
 total # => 6
-</pre></code>
+</code></pre>
 
 Hint: use a <code>for</code> loop. <br/>
 
@@ -950,13 +952,13 @@ Hint: use a <code>for</code> loop. <br/>
 
         <section>
            <h3>Solution</h4>
-<code><pre>
+<pre><code>
 function each(v,f) {
     for (var i=0; i < v.length; i++) {
         f(v[i]);
     }
 }
-</pre></code>
+</code></pre>
         </section>
         </section>
 
@@ -967,10 +969,13 @@ function each(v,f) {
             <h5>Recursion</h5>
             Impl. function <code>times</code> with recursion so that:
 
-           <code><pre>
-times(10, function(x) { s += 1 })
+           <pre><code>
+var total = 0;
+times(10, function() {
+    total += 1;
+})
 total // => 10
-</pre></code>
+</code></pre>
 </div>
            <div class="sandbox">sandbox console loading...</div>
 
@@ -986,9 +991,11 @@ function times(n,f) {
   }
 }
 total = 0;
-times(10, function(x){ total += 1})
+times(10, function(x) {
+    total += 1;
+})
 total // => 10
-</pre></code>
+</code></pre>
         </section>
         </section>
 
@@ -1070,14 +1077,14 @@ flight.foo // undefined
               Create an object <code>adder</code> with a method
               <code>add</code> and a property <code>sum</code>
 
-              <p><code><pre>
+              <p><pre><code>
 var adder = { add: function // write this line ...}
 typeof adder.sum // => "undefined"
 adder.add(42)
 adder.sum // => 42
 adder.add(3)
 adder.sum // => 45
-</pre></code></p>
+</code></pre></p>
               Hint: setting property use <code>this.sum = ...</code>
             </div>
            <div class="sandbox">sandbox console loading...</div>
@@ -1166,14 +1173,14 @@ myObj.name; // => 'me'
             <h3>Exercise 2: Constructor Functions</h3>
 
             <div class='sandbox-notes'>
-              Write a constructor function so that <code><pre>
+              Write a constructor function so that <pre><code>
 function Adder() { // write this... }
 var x = new Adder();
 x.sum // => 0
 x.add(42)
 x.add(3)
 x.sum // => 45
-</pre></code>
+</code></pre>
               <p/>
               Discuss: when should you use contructor functions ?
               when should you use object literals ?
@@ -1429,14 +1436,14 @@ bar.sayGoodbye();
 
               Inherit from <code>adder</code> so that:
               <p>
-<code><pre>
+<pre><code>
 var x = // write this line
 x.sub = // write this line, so that:
 x.add(5);
 x.sum // => 5
 x.sub(3)
 x.sum // => 2
-</pre></code>
+</code></pre>
               </p>
             </div>
 
@@ -1638,12 +1645,12 @@ x.sub = function(value) { this.add(-value) }
 
            <div class='sandbox-notes'>
             Impl. <code>t</code> which translates strings:
-            <code><pre>
+            <pre><code>
 var t = { ... }
 t.hello = 'hej';
 t.world = 'värld';
 t.translate("hello world") # => "hej värld"
-            </pre></code>
+            </code></pre>
              <p>Use Array methods: <code>forEach</code>, <code>push</code>, <code>join</code></p>
              <p>Use String method: <code>split(' ')</code></p>
           </div>
@@ -1675,15 +1682,15 @@ t.translate("hello world") # => "hej värld"
             <h3>Exercise: Inheritance</h3>
 
             <div class='sandbox-notes'>
-              <code><pre>
+              <pre><code>
 var base = { foo: 'bla'};
 var sub = Object.create(base);
-              </pre></code>
+              </code></pre>
             What happens when
-              <code><pre>
+              <pre><code>
 base.foo = 'changed'
 sub.foo // ??
-              </pre></code>
+              </code></pre>
               </div>
           <div class="sandbox">sandbox console loading...</div>
           </section>
@@ -1703,7 +1710,7 @@ sub.foo // ??
             <h3>Exercise Prototype</h3>
 
             <div class='sandbox-notes'>
-              <code><pre>
+              <pre><code>
 function Bar() {}
 var a = {name: "foo"};
 // write one line here, so that :
@@ -1711,7 +1718,7 @@ var b = new Bar();
 b.name // => "foo"
 a.name = 'bar';
 b.name // => "bar"
-              </pre></code>
+              </code></pre>
               </div>
           <div class="sandbox">sandbox console loading...</div>
         </section>
