@@ -9,16 +9,18 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
+    <style type="text/css">
+      @font-face {
+        font-family: "Lato";
+        src: url(resources/Lato/Lato-Regular.ttf) format("truetype");
+      }
+    </style>
         <link rel="stylesheet" href="../reveal.js/css/main.css">
-        <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
+        <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
 
-        <!-- jw styles -->
-        <link rel="stylesheet" href="../reveal.js/jayway-theme/css/style.css" id="jayway-theme">
 
     <!-- Stylesheet -->
     <link href="libs/sandbox.css" rel="stylesheet"/>
@@ -80,8 +82,6 @@
     <body>
 
         <div class="reveal">
-
-           <img src="../reveal.js/jayway-theme/img/jayway-logo.png" class="jayway-logo header">
 
             <!-- Used to fade in a background when a specific slide state is reached -->
             <div class="state-background"></div>
@@ -2036,7 +2036,7 @@ class Animal
                 progress: true,
                 history: true,
 
-                theme: Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+                theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
 
                 // Optional libraries used to extend on reveal.js
