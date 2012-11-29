@@ -158,3 +158,5 @@ ol li {margin-bottom: 0.5em;}
 }
 
 
+table#specificity { border: none; }
+#specificity td { border: none; }
