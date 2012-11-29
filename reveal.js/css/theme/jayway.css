@@ -158,5 +158,8 @@ ol li {margin-bottom: 0.5em;}
 }
 
 
+/*
+* Fix for removal of borders on css specificity slide table.
+*/
 table#specificity { border: none; }
 #specificity td { border: none; }
