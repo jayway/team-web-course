@@ -699,15 +699,30 @@ function sum(v) {
         <section data-markdown>
             ### Arguments
 
-            Arguments bound if present, e.g:
+            * `arguments` is a magic property, like `this`.
+            * The `arguments` of the invocation.
+            * An array *like* structure.
+                * Not a real array
 
-                // no need to pass in all arguments
+                <pre><code class='javascript'>// To use array methods arguments, use apply
+                Array.prototype.join.apply(arguments, '-');</code></pre>
+
+            `apply` will be explained later.
+
+        </section>
+
+        <section data-markdown>
+            ### Arguments
+
+            Arguments are optional
+
                 // missing arguments will be undefined
-                (function (x, y) {return x + y}) (’foo’)  # => ’fooundefined’
+                function foo(x, y) { return x + y }
+                foo('COOL')  # => ’COOLundefined’
 
-            varargs by `arguments`, e.g.:
+            `arguments` are always present.
 
-                function bar(){ return arguments;}
+                function bar(x, y){ return arguments;}
                 bar("hej", 42) // => [ "hej", 42 ]
 
         </section>
