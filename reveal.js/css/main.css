@@ -918,3 +918,20 @@ body {
     line-height: 20px;
 }
 
+table {
+    margin-left: 1em;
+    border: thin solid black;
+}
+th {
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+td {
+    border-top: thin solid black;
+    border-right: thin solid black;
+}
+
+td:first-child {
+    width: 60%;
+}

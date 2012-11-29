@@ -1544,16 +1544,41 @@ x.sub = function(value) { this.add(-value) }
         </section>
 
         <section data-markdown>
-            ## Root Context
+            ## What is this?
 
-                function test_this() {
-                   return this;
-                }
-                var i_wonder_what_this_is = test_this();
+                function test_this() { return this; }
 
-            this reference the window object
-
-            (for browsers)
+            <table style=''>
+                <thead>
+                    <tr>
+                        <th>Call</th>
+                        <th><code>this</code></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><pre><code>test_this(a)</code></pre></td>
+                        <td><code>window</code> (the global object)</td>
+                    </tr>
+                    <tr>
+                        <td><pre><code>tapir.test_this(a)</code></pre></td>
+                        <td><code>tapir</code></td>
+                    </tr>
+                    <tr>
+                        <td><pre><code>new test_this(a)</code></pre></td>
+                        <td><code>{}</code> (a new object)</td>
+                    </tr>
+                    <tr>
+                        <td><pre><code>test_this.call(dingo, a)</code></pre></td>
+                        <td><code>dingo</code></td>
+                    </tr>
+                    <tr>
+                        <td><pre><code>test_this.apply(dingo, [a])</code></pre></td>
+                        <td><code>dingo</code></td>
+                    </tr>
+                </tbody>
+            </table>
+                
         </section>
 
         <section>
@@ -1561,22 +1586,12 @@ x.sub = function(value) { this.add(-value) }
 
             <pre><code>
   function click_handler() {
-   alert(this); // alerts the window object
+   alert(this); // the DOM element clicked
   }
 
  &lt;button id='thebutton' onclick='click_handler()'>Click me!</button>
             </code></pre>
 <code>this</code> is the DOM element clicked
-
-        </section>
-
-        <section data-markdown>
-            ## Manipulating 'this'
-
-            `this` can be set by using:
-
-            * apply
-            * call
 
         </section>
 
