@@ -162,12 +162,27 @@
             * Chrome Dev Tools (CMD-ALT-I)
         </section>
 
+        <section data-markdown>
+            ### Chrome Dev Tools
+
+            * Open Chrome Browser (new version)
+            * Type chrome://flags/ as an URL
+            * Enable Developer Tools experiments
+            * Restart Chrome
+            * Open Developer Tool (View->Developer)
+            * Press the Settings button at the right bottom
+            * Open Source tag/ Snippet tag
+
+            You can now edit and run javascript snippets !
+            More on [youtube](https://www.youtube.com/watch?feature=player_embedded&v=ktwJ-EDiZoU)
+        </section>
+
 
         <section data-markdown>
             ### Alternatives
             * The browser console
             * Firefox scratchpad
-            * [http:www.jsconsole.com](http://www.jsconsole.com)
+            * [http://www.jsconsole.com](http://www.jsconsole.com)
             * Mozilla's Spidermonkey
 
                    `brew install spidermonkey;
@@ -781,7 +796,7 @@ things("one", "two", "three"); "onetwothree"
 function things() {
   return arguments[0] + arguments[1] + arguments[2];
 }
-</code></pre>
+</pre></code>
            </section>
        </section>
 
@@ -857,16 +872,7 @@ var x = function() { return "Andreas"; }()
         </section>
 
         <section data-markdown>
-            ## Array Methods
-
-            * `concat`, `join`, `pop`, `push`, `slice` , `sort`, `splice`, `length`
-            * ECMAScript 5 (IE 9)
-               * `forEach`, `indexOf`, `lastIndexOf`, `filter`, `map`, `every`, `some`, `reduce`, `reduceRight`
-        </section>
-
-        <section data-markdown>
             ### Example
-
                 var v = ['foo', 42, false];
                 v.length = 2;
                 v.foo = 'bar'
@@ -875,20 +881,68 @@ var x = function() { return "Andreas"; }()
         </section>
 
         <section data-markdown>
-          ### underscore.js library
+            ## Array Methods
 
-          Examples: `map`, `filter`, `once`
+            * `concat`, `join`, `pop`, `push`, `slice` , `sort`, `splice`, `length`
+            * ECMAScript 5 (IE 9)
+               * `forEach`, `indexOf`, `lastIndexOf`, `filter`, `map`, `every`, `some`, `reduce`, `reduceRight`
+        </section>
 
-              _.map([1, 2, 3], function(num){ return num * 3; });
-              // => [3, 6, 9]
+        <section data-markdown>
+            ## Array map
+            Syntax: `array.map(callback[, thisArg])`
+            Example:
 
-              var even = _.filter([1, 2, 3, 4, 5, 6], function(num){
-                  return num % 2 == 0;
-              });  // => [2, 4, 6]
+                 // ECMAScript 5
+                 var numbers = [1, 4, 9];
+                 var roots = numbers.map(Math.sqrt);
+                 /* roots is now [1, 2, 3], numbers is still [1, 4, 9] */
+        </section>
 
-              var initialize = _.once(createApplication);
-              initialize();
-              initialize(); // Application is only created once.
+        <section>
+            <section>
+                <h3>Exercise</h3>
+                <div class='sandbox-notes'>
+                    <h5>Array's map method</h5>
+                    a) Finish the line so that:
+<pre><code>
+"1,2,3".split(',').map(...)
+</code></pre>
+                    returns [2,4,6]<br>
+
+                    b) Write a line so it returns it as a string "2,4,6" (hint use <code>join</code>)
+
+                </div>
+                <div class="sandbox">sandbox console loading...</div>
+
+            </section>
+
+            <section>
+                <h3>Solution</h3>
+<pre><code>
+"1,2,3".split(',').map(function(x){return 2*parseInt(x,10)}).join();
+</code></pre>
+
+            </section>
+        </section>
+
+        <section data-markdown>
+          ### Array Reduce
+
+          #### Syntax
+          array.reduce(callback[, initialValue])
+
+          #### Callback Arguments
+          previousValue, currentValue, index, array
+
+          #### Example:
+
+              ['cat', 'elephant', 'tapir'].reduce(function(prev, curr) {
+                 return (prev.length > curr.length) ? prev : curr;
+              });
+
+          What does it return ?
+
         </section>
 
 
@@ -927,6 +981,23 @@ function sum(v) {
 </section>
            </section>
 
+        <section data-markdown>
+            ### underscore.js library
+
+            Examples: `map`, `filter`, `once`
+
+                _.map([1, 2, 3], function(num){ return num * 3; });
+                // => [3, 6, 9]
+
+                var even = _.filter([1, 2, 3, 4, 5, 6], function(num){
+                  return num % 2 == 0;
+                });  // => [2, 4, 6]
+
+                var initialize = _.once(createApplication);
+                initialize();
+                initialize(); // Application is only created once.
+        </section>
+
            <section>
         <section>
             <h3>Exercise</h3>
@@ -951,7 +1022,7 @@ Hint: use a <code>for</code> loop. <br/>
         </section>
 
         <section>
-           <h3>Solution</h4>
+           <h3>Solution</h3>
 <pre><code>
 function each(v,f) {
     for (var i=0; i < v.length; i++) {
@@ -992,11 +1063,10 @@ function times(n,f) {
   }
 }
 total = 0;
-times(10, function(x) {
     total += 1;
 })
 total // => 10
-</code></pre>
+</pre></code>
         </section>
         </section>
 
@@ -1670,21 +1740,6 @@ t.translate("hello world") # => "hej värld"
         </section>
 
         <section data-markdown>
-            ### Chrome Dev Tools
-
-            * Open Chrome Browser (new version)
-            * Type chrome://flags/ as an URL
-            * Enable Developer Tools experiments
-            * Restart Chrome
-            * Open Developer Tool (View->Developer)
-            * Press the Settings button at the right bottom
-            * Open Source tag/ Snippet tag
-
-            You can now edit and run javascript snippets !
-            More on [youtube](https://www.youtube.com/watch?feature=player_embedded&v=ktwJ-EDiZoU)
-        </section>
-
-        <section data-markdown>
           ### Solution
 
           <pre><code>
@@ -1916,8 +1971,7 @@ sub.foo // ??
             ### Some Random Advices
 
             * Javascript strict mode,
-            * JSLint, JSHint, <a
-            * href="http://jsshaper.org/">jsshaper</a>, Closure Compiler
+            * JSLint, JSHint, <a href="http://jsshaper.org/">jsshaper</a>, Closure Compiler
             * Consider CoffeeScript
             * UglifyJS as preprocessor
             * Learn the Chrome Developer Tool box
@@ -2031,7 +2085,7 @@ class Animal
                     { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-                    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } }
                 ]
             });
 
