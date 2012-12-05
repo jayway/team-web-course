@@ -147,12 +147,18 @@
           Agenda
           ------
 
+          * Installation
           * Basics
           * Control Structures
           * Values and Types
           * Prototype, Context and This
           * Good Practices and Gotchas
 
+        </section>
+
+        <section>
+        <section data-markdown>
+            ## Installation
         </section>
 
         <section data-markdown>
@@ -191,6 +197,12 @@
 
                    `brew install node;
                    node`
+        </section>
+        </section>
+
+        <section>
+        <section data-markdown>
+            ## Basics
         </section>
 
         <section data-markdown>
@@ -277,9 +289,13 @@
                 "2" === 2 // false
 
         </section>
+        </section>
 
         <section>
 
+        <section data-markdown>
+            ## Control Statements
+        <section>
         <section data-markdown>
             ### Control Statements, if, for ...
 
@@ -343,12 +359,21 @@ do {
         </section>
 
         <section data-markdown>
+            ### for in
+
+                var tapir = { kind: 'Baird', name: 'Vlasek' };
+                for (var key in tapir)
+                   console.log(key + ' ' + tapir[key])
+
+
+        </section>
+
+        <section data-markdown>
             ### for
 
                 var myStringArray = ["Hello","World"];
-                for (var i = 0; i < myStringArray.length; i++) {
+                for (var i = 0; i < myStringArray.length; i++)
                    show(myStringArray[i]);
-                }
 
 
         </section>
@@ -356,8 +381,7 @@ do {
         <section data-markdown>
             ### break
 
-                for (i=0;i<10;i++)
-                {
+                for (i=0;i<10;i++) {
                    if (i==3) break;
                    x=x + "The number is " + i + "<br />";
                 }
@@ -368,8 +392,7 @@ do {
         <section data-markdown>
             ### continue
 
-                for (i=0;i<=10;i++)
-                {
+                for (i=0;i<=10;i++) {
                    if (i==3) continue;
                    x=x + "The number is " + i + "<br />";
                 }
