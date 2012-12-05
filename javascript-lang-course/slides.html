@@ -295,7 +295,7 @@
 
         <section data-markdown>
             ## Control Statements
-        <section>
+        </section>
         <section data-markdown>
             ### Control Statements, if, for ...
 
@@ -431,9 +431,6 @@ do {
 
         </section>
 
-        </section>
-
-        <section>
            <section>
             <h3>Exercise</h3>
             <div class='sandbox-notes'>
@@ -470,6 +467,12 @@ function sum(v) {
 </code></pre>
 </section>
            </section>
+
+           <section>
+
+        <section data-markdown>
+            ## Values
+        </section>
 
         <section data-markdown>
             ### Values
@@ -671,13 +674,25 @@ function sum(v) {
 
            <div class="sandbox">sandbox console loading...</div>
         </section>
+        </section>
 
+        <section>
         <section data-markdown>
-            ### Functions
+            ## Functions
 
-            # First Class Citizen
 
         </section>
+        <section data-markdown>
+            ### First Class Object
+
+            means
+
+            * Can be stored in variables and properties
+            * Can be arguments to functions
+            * Can be returned from functions
+
+        </section>
+
 
         <section data-markdown>
             ### Function Statement
@@ -690,7 +705,6 @@ function sum(v) {
 
         </section>
 
-        <section>
         <section>
             <h3>Exercise</h3>
 
@@ -708,8 +722,6 @@ function sum(v) {
                   function add(val1, val2) {
                      return parseInt(val1, 10) + parseInt(val2, 10);
                   }
-        </section>
-
         </section>
 
         <section data-markdown>
@@ -765,7 +777,6 @@ function sum(v) {
 
         </section>
 
-        <section>
           <section>
             <h3>Exercise</h3>
 
@@ -787,16 +798,16 @@ What does the following statement return ?
               </div>
            <div class="sandbox">sandbox console loading...</div>
         </section>
-           <section data-markdown>
+
+        <section data-markdown>
+           ## Solution
            * things("one")
            <code>=> "oneundefinedundefined"</code>
 
            * things("one", "two", "three", "four")</br>
            <code>=> "onetwothree"</code>
            </section>
-       </section>
 
-        <section>
           <section>
             <h3>Exercise</h3>
 
@@ -815,24 +826,13 @@ things("one", "two", "three"); "onetwothree"
            <div class="sandbox">sandbox console loading...</div>
         </section>
            <section>
-           <code class="javascript"><pre>
+            <h3>Solution</h3>
+               <pre><code class="javascript">
 function things() {
   return arguments[0] + arguments[1] + arguments[2];
 }
-</pre></code>
+</code></pre>
            </section>
-       </section>
-
-        <section data-markdown>
-            ### First Class Citizen
-
-            means
-
-            * Can be stored in variables and properties
-            * Can be arguments to functions
-            * Can be returned from functions
-
-        </section>
 
        <section data-markdown>
             ### Returning Functions
@@ -851,7 +851,6 @@ function things() {
                 greeter('How')('Tapir'); //How Tapir
         </section>
 
-        <section>
         <section>
             <h3>Exercise</h3>
 
@@ -874,8 +873,12 @@ var x = function() { return "Andreas"; }()
 
                </code></pre>
         </section>
-        </section>
+    </section>
 
+        <section>
+        <section data-markdown>
+            ## Arrays
+        </section>
         <section data-markdown>
             ## Arrays
 
@@ -922,7 +925,6 @@ var x = function() { return "Andreas"; }()
                  /* roots is now [1, 2, 3], numbers is still [1, 4, 9] */
         </section>
 
-        <section>
             <section>
                 <h3>Exercise</h3>
                 <div class='sandbox-notes'>
@@ -947,7 +949,6 @@ var x = function() { return "Andreas"; }()
 </code></pre>
 
             </section>
-        </section>
 
         <section data-markdown>
           ### Array Reduce
@@ -979,7 +980,6 @@ var x = function() { return "Andreas"; }()
             <div class="sandbox">sandbox console loading...</div>
         </section>
 
-        <section>
            <section>
             <h3>Exercise</h3>
             <div class='sandbox-notes'>
@@ -1012,7 +1012,6 @@ function sum(v) {
 </code></pre>
 
 </section>
-           </section>
 
         <section data-markdown>
             ### underscore.js library
@@ -1031,7 +1030,6 @@ function sum(v) {
                 initialize(); // Application is only created once.
         </section>
 
-           <section>
         <section>
             <h3>Exercise</h3>
 
@@ -1064,9 +1062,7 @@ function each(v,f) {
 }
 </code></pre>
         </section>
-        </section>
 
-        <section>
         <section>
             <h3>Exercise</h3>
             <div class='sandbox-notes'>
@@ -1088,7 +1084,7 @@ total // => 10
 
        <section>
            <h3>Solution</h3>
-<code class="javascript"><pre>
+<pre><code class="javascript">
 function times(n,f) {
   if (n > 0) {
      f();
@@ -1099,8 +1095,13 @@ total = 0;
     total += 1;
 })
 total // => 10
-</pre></code>
+</code></pre>
         </section>
+        </section>
+
+        <section>
+        <section data-markdown>
+            ## Objects
         </section>
 
         <section data-markdown>
@@ -1115,7 +1116,6 @@ total // => 10
 
 
             Similar to JSON
-
         </section>
 
 
@@ -1175,7 +1175,6 @@ flight.foo // undefined
 
 
         <section>
-        <section>
             <h3>Exercise: object method</h3>
 
             <div class='sandbox-notes'>
@@ -1209,7 +1208,6 @@ var adder = {
 </code></pre>
         </section>
 
-        </section>
 
 
         <section>
@@ -1277,7 +1275,6 @@ myObj.name; // => 'me'
                  cat.sayHello();
         </section>
 
-        <section>
           <section>
             <h3>Exercise: Constructor Functions</h3>
 
@@ -1297,6 +1294,7 @@ x.sum // => 45
             </div>
            <div class="sandbox">sandbox console loading...</div>
           </section>
+
           <section>
            <h4>Solution</h4>
 
@@ -1307,37 +1305,13 @@ function Adder() {
 }
 </code></pre>
           </section>
+
+
         </section>
 
         <section>
-            <section>
-                <h3>Exercise: Mock Date</h3>
-
-                <div class='sandbox-notes'>
-                    Reimplement the JavaScript Date function so that:
-              <pre><code>
-new Date();
-// => "2008-04-14T12:04:34.220Z"
-
-new Date('2012-03-10T12:04:34.220Z');
-// => "2012-03-10T12:04:34.220Z"
-              </code></pre>
-                </div>
-                <div class="sandbox">sandbox console loading...</div>
-            </section>
-
-            <section data-markdown>
-                ### Solution
-
-                    // Store the original date
-                    window.origDate = window.origDate || Date;
-
-                    Date = function ()
-                    {
-                      return (arguments.length === 0) ? new origDate('2008-04-14T12:04:34.220Z') : new origDate(arguments[0]);
-                    }
-            </section>
-
+        <section data-markdown>
+            ## Prototypes
         </section>
 
         <section data-markdown>
@@ -1350,7 +1324,6 @@ new Date('2012-03-10T12:04:34.220Z');
 
        </section>
 
-       <section>
         <section>
         <h3>The Prototype Chain</h3>
            Example: bar share foo's properties:
@@ -1394,7 +1367,6 @@ for (var key in base) {
 </code></pre>
 
            </section>
-      </section>
 
 
        <section>
@@ -1478,7 +1450,6 @@ function Pet(species) {
                [1.2.3].last(); // => 3
         </section>
 
-        <section>
           <section>
             <h3>Exercise: The Prototype</h3>
 
@@ -1505,7 +1476,6 @@ var x = new WhoAmI();
            There is also a magic `prototype.constructor` property
            which can be used for setting up constructor inheritance,
            see [this](http://phrogz.net/JS/classes/OOPinJS2.html)
-          </section>
           </section>
 
     <section>
@@ -1564,7 +1534,6 @@ bar.sayGoodbye();
         </section>
 
         <section>
-        <section>
             <h3>Exercise <code>Object.create</code></h3>
 
             <div class='sandbox-notes'>
@@ -1599,7 +1568,13 @@ var x = Object.create(adder);
 x.sub = function(value) { this.add(-value) }
 </code></pre>
         </section>
+    </section>
+
+    <section>
+        <section data-markdown>
+            ## JSON
         </section>
+
         <section data-markdown>
             ## JSON
 
@@ -1653,7 +1628,9 @@ x.sub = function(value) { this.add(-value) }
                 ];
             </code></pre>
         </section>
+        </section>
 
+        <section>
         <section data-markdown>
             ## Scope
 
@@ -1786,7 +1763,6 @@ x.sub = function(value) { this.add(-value) }
         </section>
 
         <section>
-        <section>
            <h3>Exercise: this, string, arrays</h3>
 
            <div class='sandbox-notes'>
@@ -1824,9 +1800,7 @@ t.translate("hello world") # => "hej värld"
         </section>
 
 
-        </section>
 
-        <section>
            <section>
             <h3>Exercise: Inheritance</h3>
 
@@ -1854,6 +1828,10 @@ sub.foo // ??
         </section>
 
 
+        <section>
+            <section data-markdown>
+                ## Eval and Regex
+            </section>
 
         <section data-markdown>
             ## Dynamic Compilation
@@ -1878,7 +1856,9 @@ sub.foo // ??
 
 
         </section>
+        </section>
 
+        <section>
         <section data-markdown>
             ## Good Practices
         </section>
@@ -1981,10 +1961,15 @@ sub.foo // ??
             }());
             </code></pre>
         </section>
+        </section>
 
 
+        <section>
         <section data-markdown>
-            ### javascript gotchas
+            ## javascript gotchas
+        </section>
+        <section data-markdown>
+            ### Equality
 
             Be aware of:
 
@@ -2033,8 +2018,14 @@ sub.foo // ??
 
         </section>
 
+        </section>
+
+        <section>
         <section data-markdown>
-            ### Some Random Advices
+            ## Other stuff
+        </section>
+        <section data-markdown>
+            ### Some Random Advice
 
             * Javascript strict mode,
             * JSLint, JSHint, <a href="http://jsshaper.org/">jsshaper</a>, Closure Compiler
@@ -2112,6 +2103,7 @@ class Animal
             * JavaScript: The Definitive Guide
             * CoffeeScript: http://coffeescript.codeschool.com
             * [Chrome Dev Tools](https://developers.google.com/live/shows/ahNzfmdvb2dsZS1kZXZlbG9wZXJzcg4LEgVFdmVudBiv6NcCDA/)
+        </section>
         </section>
 
       </div>
