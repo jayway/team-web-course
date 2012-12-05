@@ -1256,7 +1256,7 @@ myObj.name; // => 'me'
 
         <section>
           <section>
-            <h3>Exercise 2: Constructor Functions</h3>
+            <h3>Exercise: Constructor Functions</h3>
 
             <div class='sandbox-notes'>
               Write a constructor function so that <pre><code>
@@ -1284,6 +1284,37 @@ function Adder() {
 }
 </code></pre>
           </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Exercise: Mock Date</h3>
+
+                <div class='sandbox-notes'>
+                    Reimplement the JavaScript Date function so that:
+              <pre><code>
+new Date();
+// => "2008-04-14T12:04:34.220Z"
+
+new Date('2012-03-10T12:04:34.220Z');
+// => "2012-03-10T12:04:34.220Z"
+              </code></pre>
+                </div>
+                <div class="sandbox">sandbox console loading...</div>
+            </section>
+
+            <section data-markdown>
+                ### Solution
+
+                    // Store the original date
+                    window.origDate = window.origDate || Date;
+
+                    Date = function ()
+                    {
+                      return (arguments.length === 0) ? new origDate('2008-04-14T12:04:34.220Z') : new origDate(arguments[0]);
+                    }
+            </section>
+
         </section>
 
         <section data-markdown>
@@ -1798,6 +1829,8 @@ sub.foo // ??
         </section>
 
         </section>
+
+
 
         <section data-markdown>
             ## Dynamic Compilation
