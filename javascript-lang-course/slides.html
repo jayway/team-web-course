@@ -929,22 +929,32 @@ var x = function() { return "Andreas"; }()
         <section data-markdown>
           ### Array Reduce
 
-          #### Syntax
-          array.reduce(callback[, initialValue])
+          **Syntax**: array.reduce(callback[, initialValue])
 
-          #### Callback Arguments
-          previousValue, currentValue, index, array
+          **Callback Args**: ack, curr, index, array
 
-          #### Example:
+          #### Description
 
-              ['cat', 'elephant', 'tapir'].reduce(function(prev, curr) {
-                 return (prev.length > curr.length) ? prev : curr;
-              });
-
-          What does it return ?
-
+          * Executes the callback function once for each element
+          * `ack` - the initial value or the return value from previous callback
+          * `curr` - the current value in the array
+          * `index`, `array` - optional
         </section>
 
+        <section>
+            <h3>Exercise</h3>
+            <div class='sandbox-notes'>
+                <h5>Array's reduce method</h5>
+                What does the following line return and why ?
+
+<pre><code>
+['cat', 'elephant', 'tapir'].reduce(function(ack, curr) {
+  return (ack.length > curr.length) ? ack : curr;
+});
+</code></pre>
+            </div>
+            <div class="sandbox">sandbox console loading...</div>
+        </section>
 
         <section>
            <section>
