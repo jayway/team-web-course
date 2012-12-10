@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	
+</head>
+
+<body>
+
+<h1>Write snippets in Firefox</h1> 
+
+<h3>1. Install the Mozilla Firefox.</h3>
+<h3>2. Open the Scratchpad from the Firefox menu: Tools\Web Developer\Scratchpad OR Shift+F4</h3>
+
+<h3>Firefox has no console.log method by default. You have a few option here.</h3>
+	
+	<ul>
+		<li>Use the window.console.log instead of console.log</li>
+		<li>Install the Firebug plugin and that will give you console.log</li>
+		<li>Write a console.log method 
+		<code>
+		<p>var console = console || {};	
+			</br>
+			console.log = console.log || function(msg) {window.console.log("" + msg);};</p>
+		</code>
+		</li>
+	</ul>
+	<h3>View the output</h3>
+	To see the output from the console.log / window.console.log you will have to turn on Logging in the browser: Tools\Web Developer\Web Console
+	</br> In the Logging dropdown menu select Log.
+	<p> <img src="firefoxlogging.png" alt=""/> </p>
+	<h3>Write code in scratchpad and view the result in Firefox console.</h3>
+	<img src="scratchpadoutput.PNG" alt=""/>
+	
+</p>
+	
+</ul>
+	
+
+</body>
+
+</html>
