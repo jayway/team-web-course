@@ -1332,7 +1332,6 @@ bar.two // Resolves to 'two'
 delete bar.two
 bar.two // Resolves to 2
             </code></pre>
-           (more ? see arrow down)
        </section>
            <section>
              <h3>hasOwnProperty</h3>
@@ -1349,7 +1348,7 @@ base.hasOwnProperty('hello') // => true
 
            <section>
            <h3>Getting all props</h3>
-           <code>hasOwnProperty</code> can be used together with <code>for (var key in object)</code>
+
 <pre><code>
 // see definition of sub and base in previous slide
 for (var key in sub) {
@@ -1361,6 +1360,7 @@ for (var key in base) {
 }
 </code></pre>
 
+           <code>hasOwnProperty</code> can be useful here
            </section>
 
 
@@ -1391,13 +1391,13 @@ myFunc.prototype; // what does this do ?
             Object's can share properties/functions:
 
                 function Pet(species){
-                    this.species = species;
+                  this.species = species;
                 }
 
                 // all objects created by the Pet constructor
                 // will share the sayHello method
                 Pet.prototype.sayHello = function() {
-                   return "Hello " + this.species;
+                  return "Hello " + this.species;
                 }
 
         </section>
@@ -1465,13 +1465,6 @@ var x = new WhoAmI();
 
            <div class="sandbox">sandbox console loading...</div>
             </section>
-           <section data-markdown>
-           ### Notice
-
-           There is also a magic `prototype.constructor` property
-           which can be used for setting up constructor inheritance,
-           see [this](http://phrogz.net/JS/classes/OOPinJS2.html)
-          </section>
 
     <section>
         <h3>Object.create</h3>
@@ -1507,7 +1500,7 @@ var foo = {
     }
 };
 
-// define an object 'inheriting' from object bar
+// define an object 'inheriting' from object foo
 var bar = Object.create(foo);
 bar.sayGoodbye = function() {
     alert("goodbye from " + this.name);
@@ -1528,6 +1521,22 @@ bar.sayGoodbye();
                  }
         </section>
 
+        <section>
+        <h3>Object.create and Prototype</h3>
+
+<pre><code>
+function People() {}
+People.prototype = Object.create(Array.prototype)
+People.prototype.last = function() { return this[this.length - 1] }
+
+p = new People();
+p.push("kalle")
+p.push("Sune")
+p.last(); // => "Sune"
+</code></pre>
+
+
+        </section>
         <section>
             <h3>Exercise <code>Object.create</code></h3>
 
@@ -1956,6 +1965,24 @@ sub.foo // ??
             }());
             </code></pre>
         </section>
+
+        <section>
+       <h3>Avoid Callback Spaghetti</h3>
+
+            <pre><code>
+step1(function (value1) {
+  step2(value1, function(value2) {
+    step3(value2, function(value3) {
+      step4(value3, function(value4) {
+        // Do something with value4
+      });
+    });
+  });
+});
+            </code></pre>
+Use a promise library, e.g. <code>Q.fcall(step1).then(step2).then(step3)</code>
+
+       </section>
         </section>
 
 
