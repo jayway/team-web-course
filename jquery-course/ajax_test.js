@@ -1,12 +1,17 @@
 describe('Ajax', function() {
     "use strict";
-    
+
     var markup;
     beforeEach(function() {
         markup = $('#markup').html();
     });
 
     describe('GET', function() {
+        var spy;
+        beforeEach(function() {
+            spy = sinon.spy($, 'get');
+        });
+
         it('Gets the root resource of the tapirs site with $.get', function(done) {
             getRootFromTapirs(function(text) {
                 expect(text).to.equal('Tapirs Rule!');
@@ -15,22 +20,18 @@ describe('Ajax', function() {
         });
 
         it('calls a service with parameters with $.get', function(done) {
-            var getSpy = sinon.spy($, 'get');
             getFacts('swim', function(list) {
-                expect(getSpy).to.have.been.called;
-                getSpy.restore();
+                expect(spy).to.have.been.called;
                 expect(list).to.have.length(4);
                 done();
             });
         });
 
         it('calls a service with parameters with $.ajax', function(done) {
-            var getSpy = sinon.spy($, 'get');
             getFactsAjax('mate', function(list) {
                 expect(list).to.have.length(2);
-                expect(getSpy).to.not.have.been.called;
+                expect(spy).to.not.have.been.called;
                 done();
-                getSpy.restore();
             });
         });
 
@@ -41,27 +42,37 @@ describe('Ajax', function() {
                 done();
             });
         });
+
+        afterEach(function() {
+            spy.restore();
+        });
     });
 
     describe('POST', function() {
+        var spy;
+
+        beforeEach(function() {
+            spy = sinon.spy($, 'post');
+        });
+
         it('creates a new fact on with $.post', function(done) {
-            var spy = sinon.spy($, 'post');
             addFact('A tapir can out manouver a dog', function(id) {
                 expect(id).to.be.a.number;
                 expect(spy).to.have.been.called;
                 done();
-                spy.restore();
             });
         });
 
         it('creates a new fact on with $.ajax', function(done) {
-            var spy = sinon.spy($, 'post');
             addFactAjax('A tapir can out manouver a dog', function(id) {
                 expect(id).to.be.a.number;
                 expect(spy).to.not.have.been.called;
                 done();
-                spy.restore();
             });
+        });
+
+        afterEach(function() {
+            spy.restore();
         });
     });
 
@@ -102,7 +113,8 @@ describe('Ajax', function() {
             var deferred = getTwoFacts(7, 400);
             // The fail callback will get the FIRST failure
             deferred.fail(function(jqXhr, status, error) {
-                console.log(arguments);
+                expect(status).to.equal('error');
+                expect(error).to.equal('Not Found');
                 done();
             });
         });
