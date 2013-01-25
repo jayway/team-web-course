@@ -17,10 +17,10 @@ describe('Ajax', function() {
         it('calls a service with parameters with $.get', function(done) {
             var getSpy = sinon.spy($, 'get');
             getFacts('swim', function(list) {
-                expect(list).to.have.length(1);
                 expect(getSpy).to.have.been.called;
-                done();
                 getSpy.restore();
+                expect(list).to.have.length(4);
+                done();
             });
         });
 
