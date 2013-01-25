@@ -11,7 +11,8 @@ tests. The object of this lab is to get all the tests to pass.
 * Detailed instructions are in the source files.
 
 * When you come to the last part, *Ajax*, make sure that the `tests.html` file is
-  served by a server and *not from the filesystem*.
+  served by a server and *not from the filesystem*. If you serve the files from
+  the filesystem you will get crappy error messages, such as `Script Error...`
 
 
 
