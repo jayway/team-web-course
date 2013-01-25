@@ -3,6 +3,7 @@ $(function(exports) {
     // add a breakpoint in afterEach in the test.
 
     // Hides the ul containing animals
+    // Hides the ul's beneath the div with id 'markup
     exports.hideTheAnimals = function() {
     };
 
