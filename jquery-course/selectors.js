@@ -25,8 +25,8 @@ $(function(exports) {
     };
 
     // Child selection
-    // Find all li elements below the markup id
-    // and add class animal-group
+    // Find all grandchild li elements below the markup id
+    // and add class animal
     exports.findChildLisAndAddClassAnimal= function() {
     };
 
