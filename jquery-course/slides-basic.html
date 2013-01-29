@@ -92,6 +92,7 @@
                 <h1>Wait!</h1>
                 <p>Make sure the page is ready before manipulating it</p>
                 <pre><code>
+// DOM is loaded and can be manipulated safely
 $(document).ready(function() {
   console.log('ready!');
 });
@@ -99,6 +100,7 @@ $(document).ready(function() {
                 <div class="fragment">
                 <p>There is a shorter way...</p>
                 <pre><code>
+// If $ is given a function, works as above
 $(function() {
   console.log('ready!');
 });
@@ -138,16 +140,22 @@ $(':gt(4)');  // Elements after element 4 (0-based)
                 <h2>Querying the selection</h2>
                 <p>Working with the raw DOM element</p>
                 <pre><code class='javascript'>
+// All list items
 var listItems = $('li');
+// A raw DOM element
 var rawListItem = listItems[0]; // or listItems.get(0)
+// Property of the element
 var html = rawListItem.innerHTML;
                 </code></pre>
                 <br/>
                 <div class="fragment">
                     <p>Using jQuery functions</p>
                     <pre><code class='javascript'>
+// All list items
 var listItems = $('li');
+// This is still wrapped with jQuery
 var secondListItem = listItems.eq(1);
+// Get the inner html
 secondListItem.html();
                     </code></pre>
                 </div>
@@ -173,15 +181,17 @@ if ($('#nonexistent').length > 0) {
                 <h1>Effects</h1>
                 <p>Select an item and hide/show it<p/>
                 <pre><code>
+// Hide all elements with class secret
 $('.secret').hide();
-...
+// Show all .important elements
 $('.important').show();
                 </code></pre>
                 <br/>
                 Control the speed
                 <pre><code>
+// Hide all .important elements, slowly
 $('.important').show('slow');
-...
+// Show all .important elements, slowly
 $('.important').show('300');
                 </code></pre>
             </section>
@@ -189,12 +199,12 @@ $('.important').show('300');
             <section>
                 <h1>More effects</h1>
                 <pre><code>
-.toogle()
-.fadeIn()
-.fadeOut()
-.slideDown()
-.slideUp()
-.slideToggle()
+.toggle()      // Show if hidden, hide if visible
+.fadeIn()      // Show by fading
+.fadeOut()     // Hide by fading
+.slideDown()   // Show by sliding
+.slideUp()     // Hide by sliding
+.slideToggle() // Show if hidden, hide if visible
 ...
                 </code></pre>
             </section>
@@ -202,14 +212,18 @@ $('.important').show('300');
             <section>
                 <h1>Manipulation</h1>
                 <p>Use jQuery to alter classes on elements in the DOM</p>
-                <pre><code>
+                <pre><code class='javascript'>
+// Add class 'hidden' to all li
 $('li').addClass('hidden');
+// Remove class from second li (0-based)
 $('li').eq(1).removeClass('hidden');
                 </code></pre>
                 <br/>
                 <div class="fragment">
-                    <p>Use Toogle to add/remove the desired class depending on if it already exists or not</p>
-                    <pre><code>
+                    <p>Use Toogle to add/remove the desired class</p>
+                    <pre><code class='javascript'>
+// Add class if it is missing
+// Remove it, otherwise
 $('li').eq(1).toggleClass('hidden');
                     </code></pre>
                 </div>
@@ -222,11 +236,13 @@ $('li').eq(1).toggleClass('hidden');
                 <h1>...attributes</h1>
                 <p>Getting attribute values</p>
                 <pre><code>
-$('a').attr('title'); // returns value of title
+// Get value of title
+$('a').attr('title');
                 </code></pre>
                 <br/>
                 <p>Setting attribute values</p>
                 <pre><code>
+// Set title value
 $('a').attr('title', 'Click me!');
                 </code></pre>
             </section>
@@ -236,12 +252,13 @@ $('a').attr('title', 'Click me!');
                 <h1>...data attributes</h1>
                 <p>Getting data attribute values</p>
                 <pre><code>
-// value of data-tapir-color
+// Get value of data-tapir-color
 $('.tapir').data('tapir-color');
                 </code></pre>
                 <br/>
                 <p>Setting data attribute values</p>
                 <pre><code>
+// Set value of data-tapir-color
 $('.tapir').data('tapir-color', 'black-and-white');
                 </code></pre>
             </section>
@@ -256,6 +273,7 @@ $('input:text').val();
                 <br/>
                 <p>Changing form values</p>
                 <pre><code>
+// Set the value of ALL text fields
 $('input:text').val('new value');
                 </code></pre>
             </section>
@@ -264,10 +282,12 @@ $('input:text').val('new value');
                 <h1>Traversal, down</h1>
                 <p>Finding descendants</p>
                 <pre><code>
+// Find all descendant li
 return $('#markup ul').find("li");
                 </code></pre>
                 <p>Finding direct descendants</p>
                 <pre><code>
+// Find all direct descendant li
 return $('#markup ul').children("li");
                 </code></pre>
             </section>
@@ -330,6 +350,7 @@ return $('ul').on('click', 'li', function(event) {
             <section>
                 <h1>Ajax, get</h1>
                 <pre><code>
+// Basic get request
 $.get('http://goo.gl/', function(data, status, jqXHR) {
    console.log(data); // log the data
 });
