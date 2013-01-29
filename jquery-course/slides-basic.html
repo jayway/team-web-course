@@ -55,7 +55,8 @@
             </section>
 
             <section>
-                <p>Examples from http://jqfundamentals.com/</p>
+                <h1>Credits</h1>
+                <p>Some examples come from http://jqfundamentals.com/</p>
             </section>
 
             <section>
@@ -92,12 +93,20 @@
 
             <section>
                 <h1>Wait!</h1>
-                <p>Make sure that the page is ready before manipulating it</p>
+                <p>Make sure the page is ready before manipulating it</p>
                 <pre><code>
 $( document ).ready(function() {
   console.log( 'ready!' );
 });
                 </code></pre>
+                <div class="fragment">
+                <p>There is a shorter way...</p>
+                <pre><code>
+$(function() {
+  console.log( 'ready!' );
+});
+                </code></pre>
+                </div>
             </section>
 
             <section>
@@ -120,8 +129,8 @@ $( '.person' ); // All elements with a class of 'person'
                 <pre><code>
 $( ':header' ); // All headings h1, h2, ..., h6
 $( ':button' ); // Buttons, submit, button, reset
-$( ':even' );   // Even elements of the selection (0-based)
-$( ':gt(4)' );  // All elements after element 4 (0-based)
+$( ':even' );   // Even elements (0-based)
+$( ':gt(4)' );  // Elements after element 4 (0-based)
                 </code></pre>
                 <aside class="notes">
                     Selections will only contain the element that existed in the DOM when the query was executed.
@@ -129,7 +138,7 @@ $( ':gt(4)' );  // All elements after element 4 (0-based)
                 </aside>
             </section>
             <section>
-                <h1>Querying the selection</h1>
+                <h2>Querying the selection</h2>
                 <p>Working with the raw DOM element</p>
                 <pre><code>
 var listItems = $( 'li' );
@@ -229,7 +238,8 @@ $( 'a' ).attr( 'title', 'Click me!' );
                 <h1>...data attributes</h1>
                 <p>Getting data attribute values</p>
                 <pre><code>
-$( '.tapir' ).data( 'tapir-color' ); // value of data-tapir-color
+// value of data-tapir-color
+$( '.tapir' ).data( 'tapir-color' );
                 </code></pre>
                 <br/>
                 <p>Setting attribute values</p>
@@ -240,9 +250,10 @@ $( '.tapir' ).data( 'tapir-color', 'black-and-white' );
 
             <section>
                 <h1>...form values</h1>
-                <p>Changing form values</p>
+                <p>Getting form values</p>
                 <pre><code>
-$( 'input:text' ).val(); // The value of the first text field
+// The value of the first text field
+$( 'input:text' ).val();
                 </code></pre>
                 <br/>
                 <p>Changing form values</p>
