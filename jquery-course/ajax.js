@@ -29,7 +29,7 @@ $(function(exports) {
 
     // $.ajax Request to a failing service
     // Tries to get a missing resource
-    // http://tapirs.herokuapp.com/facts
+    // http://tapirs.herokuapp.com/missing
     // Call callback on error
     exports.getMissing = function(callback) {
     };
