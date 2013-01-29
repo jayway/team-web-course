@@ -14,7 +14,7 @@ $(function(exports) {
     };
 
     // Find by class title below the markup id
-    // and remove the the class
+    // and remove the class
     exports.findByClassTitleAndRemoveIt = function() {
     };
 
@@ -25,7 +25,7 @@ $(function(exports) {
     };
 
     // Child selection
-    // Find the top level li elements below the markup id
+    // Find all li elements below the markup id
     // and add class animal-group
     exports.findChildLisAndAddClassAnimal= function() {
     };
