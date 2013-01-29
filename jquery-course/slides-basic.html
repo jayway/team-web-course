@@ -111,7 +111,7 @@ $(function() {
 
             <section>
                 <h1>CSS Selectors</h1>
-                <pre><code>
+                <pre><code class='javascript'>
 $( '#header' ); // The element with an ID of 'header'
 $( 'li' );      // All list items on the page
 $( 'ul li' );   // All descendent list items of ul
@@ -126,7 +126,7 @@ $( '.person' ); // All elements with a class of 'person'
 
             <section>
                 <h1>jQuery Extended Selectors</h1>
-                <pre><code>
+                <pre><code class='javascript'>
 $( ':header' ); // All headings h1, h2, ..., h6
 $( ':button' ); // Buttons, submit, button, reset
 $( ':even' );   // Even elements (0-based)
@@ -140,7 +140,7 @@ $( ':gt(4)' );  // Elements after element 4 (0-based)
             <section>
                 <h2>Querying the selection</h2>
                 <p>Working with the raw DOM element</p>
-                <pre><code>
+                <pre><code class='javascript'>
 var listItems = $( 'li' );
 var rawListItem = listItems[0]; // or listItems.get( 0 )
 var html = rawListItem.innerHTML;
@@ -148,7 +148,7 @@ var html = rawListItem.innerHTML;
                 <br/>
                 <div class="fragment">
                     <p>Using jQuery functions</p>
-                    <pre><code>
+                    <pre><code class='javascript'>
 var listItems = $( 'li' );
 var secondListItem = listItems.eq( 1 );
 secondListItem.html();
@@ -165,8 +165,9 @@ if ( $( '#nonexistent' ) ) {
 }
 
 if ( $( '#nonexistent' ).length > 0 ) {
-  // Correct! This code will only run if there's an element
-  // in your page with an ID of 'nonexistent'
+  // Correct! This code will only run if
+  // there's an element in your page with
+  // an ID of 'nonexistent'
 }
                 </code></pre>
             </section>
@@ -242,7 +243,7 @@ $( 'a' ).attr( 'title', 'Click me!' );
 $( '.tapir' ).data( 'tapir-color' );
                 </code></pre>
                 <br/>
-                <p>Setting attribute values</p>
+                <p>Setting data attribute values</p>
                 <pre><code>
 $( '.tapir' ).data( 'tapir-color', 'black-and-white' );
                 </code></pre>
@@ -278,11 +279,13 @@ return $('#markup ul').children("li");
                 <h1>...Traversal, up</h1>
                 <p>parent</p>
                 <pre><code>
-return $('#markup ul').parent(); // The parent of the selected elements
+// The parent of the selected elements
+return $('#markup ul').parent();
                 </code></pre>
                 <p>parents</p>
                 <pre><code>
-return $('#tapir').parents('ul'); // All ul ancestors
+// All ul ancestors
+return $('#tapir').parents('ul');
                 </code></pre>
             </section>
 
@@ -304,7 +307,8 @@ return $('a').click(function(event) {
 // Click handler for all li's
 // One handler per li.
 return $('li').on('click', function(event) {
-    console.log($(this).data('id'));  // Log data-id attribute
+    // Log data-id attribute
+    console.log($(this).data('id'));
 });
                 </code></pre>
             </section>
@@ -314,6 +318,7 @@ return $('li').on('click', function(event) {
                 <pre><code>
 // One handler for all li's
 return $('ul').on('click', 'li', function(event) {
+    // Log data-id attribute
     console.log($(this).data('id'));
 });
                 </code></pre>
@@ -328,7 +333,7 @@ return $('ul').on('click', 'li', function(event) {
             <section>
                 <h1>Ajax, get</h1>
                 <pre><code>
-$.get('http://google.com/', function(data, status, jqXHR) {
+$.get('http://goo.gl/', function(data, status, jqXHR) {
    console.log(data); // log the data
 });
                 </code></pre>
@@ -350,7 +355,7 @@ function log(data) {
             <section>
                 <h1>Ajax, ajax</h1>
                 <p>Same as before, but more flexible</p>
-                <pre><code>
+                <pre><code class='javascript'>
 // Query Google for tapir
 $.ajax({
     type: 'POST',
@@ -401,13 +406,12 @@ function complete(jqXHR, textStatus) {
             <section>
                 <h1>Ajax, deferred</h1>
                 <pre><code>
-
 // Ajax and friends return a deferred
 var deferred = $.ajax(...);
 deferred
-    .done(log)        // success is a deprecated alias
-    .fail(error)      // error is a deprecated alias
-    .alway(complete); // complete is a deprecated alias
+    .done(log)         // success is a deprecated alias
+    .fail(error)       // error is a deprecated alias
+    .always(complete); // complete is a deprecated alias
                 </code></pre>
                 <div class="fragment">
                     <ul>
