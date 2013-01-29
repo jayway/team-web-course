@@ -68,7 +68,7 @@ $(function(exports) {
     // Find all buttons
     // and add class highlight
     exports.findAllButtonsAndAddClassHighlight = function() {
-        $('#markup :button, input[type="submit"]').addClass('highlight');
+        $('#markup :button, #markup :submit').addClass('highlight');
     };
 }(window));
 
