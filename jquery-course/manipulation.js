@@ -16,7 +16,7 @@ $(function(exports) {
     exports.getDataAttributeOfImage = function(attribute) {
     };
 
-    // Gets a data attribute of image
+    // Sets a data attribute of image
     exports.setDataAttributeOfImage = function(attribute, value) {
     };
 
