@@ -55,6 +55,6 @@ describe('Traversal', function() {
     });
 
     afterEach(function() {
-        $('#markup').empty();
+        $('#markup').html(markup);
     });
 });

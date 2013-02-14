@@ -49,6 +49,6 @@ describe('Effects', function() {
     });
 
     afterEach(function() {
-        $('#markup').empty();
+        $('#markup').html(markup);
     });
 });

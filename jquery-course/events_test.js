@@ -50,6 +50,6 @@ describe('Events', function() {
     });
 
     afterEach(function() {
-        $('#markup').empty();
+        $('#markup').html(markup);
     });
 });

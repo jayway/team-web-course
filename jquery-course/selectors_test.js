@@ -84,6 +84,6 @@ describe('Selectors', function() {
     });
 
     afterEach(function() {
-        $('#markup').empty();
+        $('#markup').html(markup);
     });
 });
