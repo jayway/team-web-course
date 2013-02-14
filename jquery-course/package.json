@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A course for learning jQuery.",
   "main": "mocha.js",
-  "dependencies": {},
+  "dependencies": {
+    "express":""
+  },
   "devDependencies": {
     "mocha": "",
     "chai": "",
