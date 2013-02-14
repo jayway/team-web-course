@@ -2,6 +2,9 @@ describe('Events', function() {
     var markup;
     beforeEach(function() {
         markup = $('#markup').html();
+        $('#markup button, #markup li').click(function(event) {
+          event.preventDefault();
+        });
     });
 
     describe('click', function () {
