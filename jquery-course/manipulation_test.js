@@ -58,6 +58,6 @@ describe('Manipulation', function() {
     });
 
     afterEach(function() {
-        $('#markup').html(markup);
+        $('#markup').empty();
     });
 });
