@@ -1,9 +1,6 @@
 $(function(exports) {
     "use strict";
 
-    // If you want to see what happens to the DOM
-    // add a breakpoint in afterEach in the test.
-
     // $.get Request
     // Gets the root resource of the tapir site
     // Call callback on success
@@ -63,7 +60,6 @@ $(function(exports) {
     // $.get Request a fact by id
     // Gets an existing fact from the server
     // http://tapirs.herokuapp.com/facts/:id
-    // Call callback on success
     // Returns the deferred object.
     exports.getFact = function(id, callback) {
     };
@@ -72,7 +68,6 @@ $(function(exports) {
     // $.when to bundle up the requests
     // Gets two existing fact from the server
     // http://tapirs.herokuapp.com/facts/:id
-    // Call callback on success
     // Returns the deferred object.
     exports.getTwoFacts = function(id1, id2, callback) {
     };
