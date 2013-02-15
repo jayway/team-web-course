@@ -61,7 +61,7 @@ $(function(exports) {
     // Gets an existing fact from the server
     // http://tapirs.herokuapp.com/facts/:id
     // Returns the deferred object.
-    exports.getFact = function(id, callback) {
+    exports.getFact = function(id) {
     };
 
     // $.get Request a fact by id, twice
@@ -69,7 +69,7 @@ $(function(exports) {
     // Gets two existing fact from the server
     // http://tapirs.herokuapp.com/facts/:id
     // Returns the deferred object.
-    exports.getTwoFacts = function(id1, id2, callback) {
+    exports.getTwoFacts = function(id1, id2) {
     };
 
 
