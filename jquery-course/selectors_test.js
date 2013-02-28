@@ -69,7 +69,7 @@ describe('Selectors', function() {
         });
     });
 
-    describe('Form Selection', function() {
+    describe('Input Selection', function() {
         it("finds all input elements and adds class highlight", function() {
             findAllInputElementsAndAddClassHighlight();
             var actual = $('#markup .highlight');

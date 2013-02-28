@@ -42,15 +42,15 @@ $(function(exports) {
 
     // $.ajax Request with parameters
     // Adds a new fact to the service
-    // http://tapirs.herokuapp.com/facts
+    // POST http://tapirs.herokuapp.com/facts
     // Parameter: fact
     // Call callback on success
     exports.addFactAjax = function(fact, callback) {
     };
 
-    // $.ajax Request with parameters
+    // $.ajax request with parameters
     // Updates an existing fact on the server
-    // http://tapirs.herokuapp.com/facts
+    // PUT http://tapirs.herokuapp.com/facts/:id
     // Parameter: id, fact
     // Call callback on success
     exports.updateFact = function(id, fact, callback) {
@@ -68,7 +68,7 @@ $(function(exports) {
     // $.when to bundle up the requests
     // Gets two existing fact from the server
     // http://tapirs.herokuapp.com/facts/:id
-    // Returns the deferred object.
+    // Returns the deferred object for both requests.
     exports.getTwoFacts = function(id1, id2) {
     };
 

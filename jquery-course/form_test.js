@@ -11,7 +11,7 @@ describe('Form', function() {
             expect(value).to.equal('tapir');
         });
 
-    
+
         it('gets the text field value', function() {
             $('input:text').val('aardvark');
             var value = getTextFieldValue();
@@ -24,7 +24,7 @@ describe('Form', function() {
             expect(value).to.equal('sloth');
         });
 
-    
+
         it('gets the select value', function() {
             $(':selected').val('aardvark');
             var value = getSelectValue();
