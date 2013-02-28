@@ -137,6 +137,18 @@ $(':gt(4)');  // Elements after element 4 (0-based)
                 </aside>
             </section>
             <section>
+                <h1>jQuery More Selectors</h1>
+                <pre><code class='javascript'>
+$('li:first-child'); // List items that are the first child of their parents
+$('ul,ol'); // ul OR ol elements
+$('input[type="checkbox"]'); // All inputs with attribute 'checkbox'
+                </code></pre>
+                <aside class="notes">
+                    Selections will only contain the element that existed in the DOM when the query was executed.
+                    Any additions later on will not be propagated
+                </aside>
+            </section>
+            <section>
                 <h2>Querying the selection</h2>
                 <p>Working with the raw DOM element</p>
                 <pre><code class='javascript'>
@@ -190,7 +202,7 @@ $('.important').show();
                 Control the speed
                 <pre><code>
 // Hide all .important elements, slowly
-$('.important').show('slow');
+$('.important').hide('slow');
 // Show all .important elements, slowly
 $('.important').show('300');
                 </code></pre>
@@ -264,7 +276,41 @@ $('.tapir').data('tapir-color', 'black-and-white');
             </section>
 
             <section>
-                <h1>...form values</h1>
+                <h1>Text and Html</h1>
+                <pre><code>
+// Get the text of the element.
+$('.tapir').text();
+// Set the text of the element.
+$('.tapir').text('tapirs are lovely');
+                </code></pre>
+                <br/>
+                <pre><code>
+// Get the html of the element.
+$('.tapir').html();
+// Set the html of the element.
+$('.tapir').text('&lt;li&gt;Tapirs Rule&lt;/li&gt;');
+                </code></pre>
+            </section>
+            <section>
+                <h1>Adding and removing</h1>
+                <p>Adding</p>
+                <pre><code>
+// Append Last of .tapir's children
+$('.tapir').append('&lt;li&gt;Last&lt;/li&gt;');
+// Prepend First of .tapir's children
+$('.tapir').prepend('&lt;li&gt;First&lt;/li&gt;');
+                </code></pre>
+                <br/>
+                <p>Removing</p>
+                <pre><code>
+// Remove element
+$('.tapir').remove();
+// Remove all children
+$('.tapir').empty();
+                </code></pre>
+            </section>
+            <section>
+                <h1>Form values</h1>
                 <p>Getting form values</p>
                 <pre><code>
 // The value of the first text field
@@ -275,6 +321,21 @@ $('input:text').val();
                 <pre><code>
 // Set the value of ALL text fields
 $('input:text').val('new value');
+                </code></pre>
+            </section>
+
+            <section>
+                <h1>Form value collections</h1>
+                <pre><code class='javascript'>
+// Get the form values as a query string
+// 'name=platypus&pwd=dingo&choice=tapir&area=okapi';
+$('form').serialize();
+
+// Get the form values as an array of pairs
+// [ { name: 'name', value: 'platypus'}, ... ]
+$('form').serializeArray();
+
+
                 </code></pre>
             </section>
 

@@ -10,6 +10,7 @@ $(function(exports) {
     // Sub selection
     // Find the li elements below the markup id
     // and add class animal
+    // use .addClass to add a new class
     exports.findLisAndAddClassAnimal = function() {
     };
 
