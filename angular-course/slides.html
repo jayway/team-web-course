@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>AngularJS</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+
+    <link rel="stylesheet" href="../reveal.js/css/main.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <script>
+        // If the query includes 'print-pdf' we'll use the PDF print sheet
+        document.write('<link rel="stylesheet" href="../reveal.js/css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Used to fade in a background when a specific slide state is reached -->
+    <div class="state-background"></div>
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <br/>
+            <br/>
+            <h1>AngularJS</h1>
+            <q>HTML enhanced for web apps!</q>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p>require(["html","javascript"]);</p>
+        </section>
+
+        <section>
+            <h1>What AngularJS is</h1>
+
+            <h2>JavaScript library</h2>
+            <pre><code>&lt;script src="angular.js">&lt;/script></code></pre>
+            <ul>
+                <li>Looks for <code>@ng-app</code> in the DOM.</li>
+                <li>Takes over that part of the DOM.
+                    <br/>
+                    <br/>
+                    For example
+                    <pre><code>&lt;html ng-app>...&lt;/html></code></pre>
+                    or
+                    <pre><code>&lt;div ng-app>...&lt;/div></code></pre>
+                </li>
+            </ul>
+            <aside class="notes">
+                <p>
+                    When the script loads, it register with the browser to receive a callback when the DOM has been parsed.
+                </p>
+                <p>
+                    When it receives that callback, it checks for <code>@ng-app</code>, and compiles that part of the DOM,
+                    looking for directives, registering them. Then it just waits for browser events such as clicks and AJAX
+                    requests finishing.
+                </p>
+                <p>
+                    There is also a manual way to trigger bootstrapping AngularJS, if the automatic <code>@ng-app</code>
+                    way doesn't suit you. For example if you need to load something from the server before starting the
+                    AngularJS app at all.
+                </p>
+            </aside>
+        </section>
+
+        <section>
+            <h1>What AngularJS is</h1>
+
+            <h2>Highly opinionated<br/>in certain areas</h2>
+            <ul>
+                <li>Within an AngularJS app
+                    <ul>
+                        <li>do things the Angular way.</li>
+                        <li>let AngularJS handle the DOM.</li>
+                        </ul>
+                    </li>
+                <li>Can use for part of an app.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>What AngularJS is</h1>
+
+            <q>Extends HTML<br/>for single page webapps</q>
+            <br/>
+            <br/>
+            <ul>
+                <li>The DOM is the view template
+                    <ul>
+                        <li>is LIVE</li>
+                        <li>bi-directional binding to data</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>What AngularJS is</h1>
+
+            <q>Extends HTML<br/>for single page webapps</q>
+            <br/>
+            <br/>
+            <ul>
+                <li>Separation of concerns
+                    <ul>
+                        <li>Views</li>
+                        <li>Controllers</li>
+                        <li>Services (via Dependency Injection)</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>The Angular way</h1>
+            <h3>DOM / Controller / Service</h3>
+            <ul>
+                <li class="fragment">DOM declares view
+                    <pre><code class="html">&lt;p>{{name}}&lt;/p></code></pre>
+                </li>
+                <li class="fragment">Controller connects data to DOM view
+                    <pre><code class="javascript">$scope.name = "You";</code></pre>
+                </li>
+                <li class="fragment">Services injectable into controllers, services
+                    <pre><code class="javascript">$http.get("/api/names/123").success(function(name) {
+    $scope.name = name;
+});
+// or...
+$scope.name = NameService.fetchName();</code></pre>
+                </li>
+            </ul>
+            <p class="fragment"><em>Refactor code from Controller to Services, to keep it clean</em></p>
+        </section>
+
+        <section>
+            <h1>The Angular way is NOT</h1>
+            <ul>
+                <li>Locate a DOM node
+                    <pre><code class="javascript">var el = $("#card");</code></pre>
+                </li>
+                <li>manipulate it
+                        <pre><code class="javascript">if ($scope.person) {
+    el.show();
+}</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>The Angular way</h1>
+
+            <h2>Declare in the DOM...</h2>
+            <ul>
+                <li>when things should be displayed
+                    <pre><code class="html">&lt;div id="card" ng-show="person">...&lt;div></code></pre>
+                </li>
+                <li class="fragment">to what data it should be connected (Data-binding)
+                        <pre><code class="html">&lt;p>{{name}}&lt;/p>
+&lt;input ng-model="name"/></code></pre>
+                </li>
+                <li class="fragment">Then in the Controller:
+                        <pre><code class="javascript">$scope.person = {...}; // view shows when truthy
+$scope.person = null;  // view hides when falsy</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>The Angular way</h1>
+
+            <h2>Plain object models</h2>
+            <pre><code class="javascript">$scope.langs = [
+    {name: "Ada"},
+    {name: "Bash"},
+    {name: "C"}
+];</code></pre>
+            <pre><code class="html">&lt;ul>
+    &lt;li ng-repeat="lang in langs">{{lang.name}}&lt;/li>
+&lt;/ul></code></pre>
+
+        </section>
+
+        <section>
+            <h1>The Angular way is NOT</h1>
+            <ul>
+                <li>Given
+                    <pre><code class="html">&lt;ul id="items"/></code></pre>
+                </li>
+                <li>Fetch data via AJAX
+                    <pre><code class="javascript">var jqXHR = $.ajax("langs.json");</code></pre>
+                </li>
+                <li>manipulate DOM
+                    <pre><code class="javascript">jqXHR.done(function(data) {
+    $("#items").html("");
+    _.each(data, function(item) {
+        var li = $("&lt;li>" + item.name + "&lt;/li>");
+        $("#items").append( li );
+    });
+});</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>The Angular way</h1>
+            <ul>
+                <li>Given
+            <pre><code class="html">&lt;ul>
+    &lt;li ng-repeat="lang in langs">{{lang.name}}&lt;/li>
+&lt;/ul></code></pre>
+                </li>
+                <li>Fetch data via AJAX
+                    <pre><code class="javascript">var promise = $http.ajax({
+    method:"get",
+    url:"langs.json"
+});</code></pre>
+                </li>
+                <li>give data to view via <code>$scope</code>
+                    <pre><code class="javascript">promise.then(function(response) {
+    $scope.langs = response.data;
+});
+                    </code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Lab time!</h1>
+            <br/>
+            <h3>Lab == <nobr>Official AngularJS Tutorial</nobr></h3>
+        </section>
+
+        <section>
+            <ol start="0">
+                <li>Demo: Bootstrapping</li>
+                <li>Demo: Static Template</li>
+                <li><strong>Do: Angular Templates</strong></li>
+                <li><strong>Do: Filtering Repeaters</strong></li>
+                <li>Demo: Two-way Data Binding</li>
+                <li>(Optional: XHRs &amp; Dependency Injection)</li>
+                <li>Demo: Templating Links &amp; Images</li>
+                <li>Demo: Routing &amp; Multiple Views</li>
+                <li><strong>Do: More Templating</strong></li>
+                <li><strong>Do: Filters</strong></li>
+                <li><strong>Do: Event Handlers</strong></li>
+                <li>(Optional: REST and Custom Services)</li>
+            </ol>
+        </section>
+
+        <section>
+            <h1>Lab time</h1>
+            <br/>
+            <h3>Go ahead!</h3>
+            <p><a href="https://github.com/jayway/team-web-course/tree/master/angular-course#lab">github.com/jayway/<strong>team-web-course</strong> /tree/master/<strong>angular-course</strong>#lab</a></p>
+        </section>
+
+        <section>
+            <h1>Thank you</h1>
+            <hr/>
+            <p>web@jayway.com</p>
+        </section>
+    </div>
+
+    <!-- The navigational controls UI -->
+    <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+    </aside>
+
+    <!-- Presentation progress bar -->
+    <div class="progress"><span></span></div>
+
+</div>
+
+<script src="../reveal.js/lib/js/head.min.js"></script>
+<script src="../reveal.js/js/reveal.min.js"></script>
+
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function () {
+                window.hljs.initHighlightingOnLoad();
+            } },
+            { src: '../reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: '../reveal.js/lib/js/showdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '../reveal.js/lib/js/data-markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            } },
+            { src: '/socket.io/socket.io.js', async: true, condition: function () {
+                return window.location.host === 'localhost:1947';
+            } },
+            { src: 'plugin/speakernotes/client.js', async: true, condition: function () {
+                return window.location.host === 'localhost:1947';
+            } },
+        ]
+    });
+
+</script>
+
+</body>
+</html>
