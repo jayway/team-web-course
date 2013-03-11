@@ -23,3 +23,8 @@
     1. Test installation with `node --version`
   * Install [Testacular](http://testacular.github.com/) for running tests in the exercises
     1. `npm install -g testacular`
+
+### Optionally install
+
+  * AngularJS visual debugging plugin for Chrome: [AngularJS Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)
+    _It will help you understand how stuff works!_
