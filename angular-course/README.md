@@ -49,3 +49,11 @@
 </ol>
 
 ### Go ahead --> [docs.angularjs.org/tutorial](http://docs.angularjs.org/tutorial/)
+
+## Resources
+
+  * [AngularJS Homepage](http://angularjs.org/)
+  * [AngularJS Tutorial](http://docs.angularjs.org/tutorial/) (our lab!)
+  * [AngularJS API Reference documentation](http://docs.angularjs.org/)
+  * [Yeoman](http://yeoman.io/)
+
