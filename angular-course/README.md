@@ -13,7 +13,9 @@
   * Don't make the examples/labs over-architectured.
   * Emphazise differences between the jQuery way and the AngularJS way.
 
-## Prerequisites
+## Lab
+
+### Prerequisites
 
   * Install git
   * Install NodeJS v0.8, recommended to [install via nvm](https://github.com/creationix/nvm/tree/master#readme):
@@ -28,3 +30,22 @@
 
   * Chrome plugin for visual debugging: [AngularJS Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)
     _It will help you understand how stuff works!_
+
+### Which steps to do
+
+<ol start="0">
+  <li>Demo: Bootstrapping</li>
+  <li>Demo: Static Template</li>
+  <li><strong>Do: Angular Templates</strong></li>
+  <li><strong>Do: Filtering Repeaters</strong></li>
+  <li>Demo: Two-way Data Binding</li>
+  <li>(Optional: XHRs &amp; Dependency Injection)</li>
+  <li>Demo: Templating Links &amp; Images</li>
+  <li>Demo: Routing &amp; Multiple Views</li>
+  <li><strong>Do: More Templating</strong></li>
+  <li><strong>Do: Filters</strong></li>
+  <li><strong>Do: Event Handlers</strong></li>
+  <li>(Optional: REST and Custom Services)</li>
+</ol>
+
+### Go ahead --> [docs.angularjs.org/tutorial](http://docs.angularjs.org/tutorial/)
