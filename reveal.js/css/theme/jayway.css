@@ -165,6 +165,5 @@ table#specificity { border: none; }
 #specificity td { border: none; }
 
 .reveal .slides {
-  top: 40%;
   margin-top: -360px;
 }
