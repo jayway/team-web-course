@@ -26,5 +26,5 @@
 
 ### Optionally install
 
-  * AngularJS visual debugging plugin for Chrome: [AngularJS Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)
+  * Chrome plugin for visual debugging: [AngularJS Batarang](https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk)
     _It will help you understand how stuff works!_
