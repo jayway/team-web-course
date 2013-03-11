@@ -50,6 +50,26 @@
 
 ### Go ahead --> [docs.angularjs.org/tutorial](http://docs.angularjs.org/tutorial/)
 
+## Also
+
+When you need to create an AngularJS project (for fun or profit), we recommend Yeoman.
+
+### How to get started with Yeoman and AngularJS
+
+These instructions are valid for a clean Ubuntu 12.10.
+
+  1. Install prerequisites as specified above (git, nodejs, testacular).
+  1. `sudo apt-get install aptitude`
+  1. `sudo aptitude install ruby-compass`
+  1. Follow instructions on front page of [yeoman.io](http://yeoman.io/) for setting up and running an AngularJS project.
+
+### Optionally customize project configuration
+
+  * Edit `testacular.conf`:
+    * Change browser(s) to run end-2-end tests on, for example `browsers = ['Chrome'];` to `browsers = ['Firefox'];`
+  * Edit `Gruntfile.js`:
+    * Change `hostname: 'localhost'` to `hostname: '0.0.0.0'` if you want to access the local server from another computer.
+
 ## Resources
 
   * [AngularJS Homepage](http://angularjs.org/)
