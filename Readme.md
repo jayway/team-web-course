@@ -1,10 +1,7 @@
 # Web Courses by Team Web
 
-## [HTML and CSS Course](html-css-course/README.md)
+## [HTML and CSS Course](html-css-course#readme)
 
-## [Javascript Course](javascrpt-lang-course/README.md)
+## [Javascript Course](javascript-lang-course#readme)
 
-## [jQuery Course](jquery-course/README.md)
-
-
-
+## [jQuery Course](jquery-course#readme)
