@@ -5,3 +5,5 @@
 ## [Javascript Course](javascript-lang-course#readme)
 
 ## [jQuery Course](jquery-course#readme)
+
+## [AngularJS Course](angular-course#readme)
