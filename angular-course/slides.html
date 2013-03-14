@@ -104,16 +104,13 @@
         <section>
             <h1>What AngularJS is</h1>
 
-            <q>Extends HTML<br/>for single page webapps</q>
+            <q>Separation of concerns</q>
             <br/>
             <br/>
             <ul>
-                <li>The DOM is the view template
-                    <ul>
-                        <li>is LIVE</li>
-                        <li>bi-directional binding to data</li>
-                    </ul>
-                </li>
+                <li>Views (DOM)</li>
+                <li>Controllers (JS, put stuff in <code>$scope</code> for view)</li>
+                <li>Services (JS, via Dependency Injection)</li>
             </ul>
         </section>
 
@@ -124,12 +121,32 @@
             <br/>
             <br/>
             <ul>
-                <li>Separation of concerns
+                <li>The DOM is the view template
                     <ul>
-                        <li>Views</li>
-                        <li>Controllers</li>
-                        <li>Services (via Dependency Injection)</li>
+                        <li>is LIVE</li>
+                        <li>bi-directional binding to data</li>
+                        <li>bound to data/functions in <code>$scope</code></li>
                     </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>The Angular way</h1>
+            <h3>DOM / Controller</h3>
+            <ul>
+                <li class="fragment">DOM declares view
+                    <pre><code class="html">&lt;p>{{name}}&lt;/p>
+&lt;button ng-click="changeName()">
+    Change name via function in $scope&lt;/button>
+&lt;button ng-click="name = 'Me'">
+    Change name via JS-like expression&lt;/button></code></pre>
+                </li>
+                <li class="fragment">Controller connects data and functions to DOM view
+                    <pre><code class="javascript">$scope.name = "Initial name";
+$scope.changeName = function () {
+    $scope.name = "You";
+};</code></pre>
                 </li>
             </ul>
         </section>
@@ -141,10 +158,7 @@
                 <li class="fragment">DOM declares view
                     <pre><code class="html">&lt;p>{{name}}&lt;/p></code></pre>
                 </li>
-                <li class="fragment">Controller connects data to DOM view
-                    <pre><code class="javascript">$scope.name = "You";</code></pre>
-                </li>
-                <li class="fragment">Services injectable into controllers, services
+                <li class="fragment">Controller connects data from services to DOM view
                     <pre><code class="javascript">$http.get("/api/names/123").success(function(name) {
     $scope.name = name;
 });
@@ -175,11 +189,12 @@ $scope.name = NameService.fetchName();</code></pre>
             <h2>Declare in the DOM...</h2>
             <ul>
                 <li>when things should be displayed
-                    <pre><code class="html">&lt;div id="card" ng-show="person">...&lt;div></code></pre>
+                    <pre><code class="html">&lt;div id="card" ng-show="person"></code></pre>
                 </li>
                 <li class="fragment">to what data it should be connected (Data-binding)
-                        <pre><code class="html">&lt;p>{{name}}&lt;/p>
-&lt;input ng-model="name"/></code></pre>
+                        <pre><code class="html">    &lt;p>{{person.name}}&lt;/p>
+    &lt;input ng-model="person.name"/>
+&lt;div></code></pre>
                 </li>
                 <li class="fragment">Then in the Controller:
                         <pre><code class="javascript">$scope.person = {...}; // view shows when truthy
