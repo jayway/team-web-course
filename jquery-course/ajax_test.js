@@ -12,7 +12,7 @@ describe('Ajax', function() {
             spy = sinon.spy($, 'get');
         });
 
-        it('Gets the root resource of the tapirs site with $.get', function(done) {
+        it('Gets the status of the tapirs site with $.get', function(done) {
             getRootFromTapirs(function(text) {
                 expect(text).to.equal('Tapirs Rule!');
                 done();

@@ -2,9 +2,9 @@ $(function(exports) {
     "use strict";
 
     // $.get Request
-    // Gets the root resource of the tapir site
+    // Gets the status of the tapir site
     // Call callback on success
-    // http://tapirs.herokuapp.com/
+    // http://tapirs.herokuapp.com/status
     exports.getRootFromTapirs = function(callback) {
     };
 
