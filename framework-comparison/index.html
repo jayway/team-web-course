@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Framework Comparison</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="../reveal.js/css/main.css">
+        <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="local.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+        <script>
+            // If the query includes 'print-pdf' we'll use the PDF print sheet
+            document.write('<link rel="stylesheet" href="../reveal.js/css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="../reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Used to fade in a background when a specific slide state is reached -->
+            <div class="state-background"></div>
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+          <section>
+              <section>
+                  <h1>Framework Overview</h1>
+                  <p>Jayway Course</p>
+                  <p>
+                  <br>
+                  </p>
+              </section>
+              <section data-markdown>
+                  # Todo MVC
+
+                  ![](todomvc.png)
+
+              </section>
+              <section data-markdown>
+                  # Frameworks
+
+                  * Backbone
+                  * Knockout
+                  * Angular
+                  * Ember
+              </section>
+              <section>
+                  <h1>Overview</h1>
+                  <table class="gridtable">
+                      <tbody>
+                      <tr>
+                          <td valign="top"></td>
+                          <td valign="top">
+                              <p><strong>Views</strong></p>
+                          </td>
+                          <td valign="top">
+                              <p><strong>URL routing</strong></p>
+                          </td>
+                          <td>
+                              <p><strong>Data storage</strong></p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><strong>AngularJS</strong></p>
+                          </td>
+                          <td>
+                              <p>Built-in DOM-based templates</p>
+                          </td>
+                          <td>
+                              <p>Built-in</p>
+                          </td>
+                          <td>
+                              <p>Built-in system</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><strong>Backbone</strong></p>
+                          </td>
+                          <td>
+                              <p>Choose your own</p>
+                          </td>
+                          <td>
+                              <p>Built-in</p>
+                          </td>
+                          <td>
+                              <p>Built-in</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><strong>Ember</strong></p>
+                          </td>
+                          <td>
+                              <p>Built-in string-based templates</p>
+                          </td>
+                          <td>
+                              <p>Built-in</p>
+                          </td>
+                          <td>
+                              <p>Built-in</p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+                              <p><strong>Knockout</strong></p>
+                          </td>
+                          <td>
+                              <p>Built-in DOM-based templates</p>
+                          </td>
+                          <td>
+                              <p>Choose your own (most use sammy.js or history.js)</p>
+                          </td>
+                          <td>
+                              <p>Choose your own (most use knockout.mapping or just $.ajax)</p>
+                          </td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </section>
+          </section>
+          <section>
+              <section data-markdown>
+                  # Backbone
+                  ![](backbone.png)
+              </section>
+              <section data-markdown>
+                  # View
+                  <pre><code>var DocumentRow = Backbone.View.extend({
+  tagName: "li",
+  className: "document-row",
+
+  events: {
+    "click .icon":          "open",
+    "click .button.delete": "destroy"
+  },
+
+  initialize: function() {
+    this.listenTo(this.model, "change", this.render);
+  },
+
+  render: function() {
+  }
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Model
+
+                  <pre><code>var Meal = Backbone.Model.extend({
+  defaults: {
+    "appetizer":  "caesar salad",
+    "entree":     "ravioli",
+    "dessert":    "cheesecake"
+  },
+  allowedToEdit: function(account) {
+    return true;
+  }
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Model Usage
+
+                  <pre><code>var dinner = new Meal({
+    appetizer: 'Carpaccio',
+    entree: 'Pulled Pork'
+  }
+});
+
+dinner.on('change:appetizer', function(model, appetizer) {
+  updatePrice();
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Collection
+                  <pre><code>
+var Library = Backbone.Collection.extend({
+  model: Book,
+  comparator: 'name'
+});
+
+var books = new Library();
+
+
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Collection Usage
+                  <pre><code>// Supported events "add", "remove", "change"
+books.on("add", function(book) {
+  console.log("Added " + book.get("name") + "!");
+});
+
+var titles = books.map(function(book) {
+  return book.get("title");
+});
+
+var publishedBooks = books.filter(function(book) {
+  return book.get("published") === true;
+});                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Router
+                  <pre><code>var Workspace = Backbone.Router.extend({
+  routes: {
+    "help":                 "help",    // #help
+    "search/:query":        "search",  // #search/kiwis
+    "search/:query/p:page": "search"   // #search/kiwis/p7
+  },
+
+  help: function() {
+  },
+
+  search: function(query, page) {
+  }
+});    </code></pre>
+              </section>
+              <section data-markdown>
+                  # Sync
+                  <pre><code class='javascript'>
+// method – the CRUD method ("create", "read", "update", or "delete")
+// model – the model to be saved (or collection to be read)
+// options – success and error callbacks, and all other jQuery request options
+Backbone.sync(method, model, [options])
+// create → POST   /collection
+// read → GET   /collection[/id]
+// update → PUT   /collection/id
+// delete → DELETE   /collection/id
+                  </code></pre>
+              </section>
+          </section>
+          <section>
+              <section data-markdown>
+                  # Knockout
+                  ![](knockout.png)
+              </section>
+              <section data-markdown>
+                  # Bindings
+                  <pre><code>
+There are &lt;span data-bind=&quot;text: myItems().count&quot;&gt;&lt;/span&gt; items
+
+&lt;div&gt;
+    You've clicked &lt;span data-bind=&quot;text: numberOfClicks&quot;&gt;&lt;/span&gt; times
+    &lt;button data-bind=&quot;click: incrementClickCounter&quot;&gt;Click me&lt;/button&gt;
+&lt;/div&gt;
+                  </code></pre>
+                  </section>
+              <section data-markdown>
+                  # View Model
+                  <pre><code>
+    var viewModel = {
+        myItems = ko.observableCollection(),
+        numberOfClicks : ko.observable(0),
+        incrementClickCounter : function() {
+            var previousCount = this.numberOfClicks();
+            this.numberOfClicks(previousCount + 1);
+        }
+    };
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Control Flow
+                  <pre><code>
+&lt;tbody data-bind=&quot;foreach: people&quot;&gt;
+        &lt;tr&gt;
+            &lt;td data-bind=&quot;text: firstName&quot;&gt;&lt;/td&gt;
+            &lt;td data-bind=&quot;text: lastName&quot;&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # ko.applyBindings
+                  <pre><code class='javascript'>
+    ko.applyBindings({
+        people: [
+            { firstName: 'Bert', lastName: 'Bertington' },
+            { firstName: 'Charles', lastName: 'Charlesforth' },
+            { firstName: 'Denise', lastName: 'Dentiste' }
+        ]
+    });                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Mappings
+                  <pre><code class='javascript'>//JSON from server
+{
+    serverTime: '2010-01-07',
+    numUsers: 3
+}
+// Every time data is received from the server:
+viewModel.serverTime(data.serverTime);
+viewModel.numUsers(data.numUsers);
+
+// Auto create the mapping
+var viewModel = ko.mapping.fromJS(data);
+// Every time data is received from the server:
+ko.mapping.fromJS(data, viewModel);
+                  </code></pre>
+              </section>
+          </section>
+          <section>
+              <section data-markdown>
+                  # Angular
+                  ![](angular.png)
+              </section>
+              <section data-markdown>
+                  # Data Bindings
+                  <pre><code>&lt;html ng-app&gt;
+    &lt;div ng-controller=&quot;TodoCtrl&quot;&gt;
+      &lt;span&gt;{{remaining()}} of {{todos.length}} remaining&lt;/span&gt;
+      [ &lt;a href=&quot;&quot; ng-click=&quot;archive()&quot;&gt;archive&lt;/a&gt; ]
+      &lt;ul class=&quot;unstyled&quot;&gt;
+        &lt;li ng-repeat=&quot;todo in todos&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; ng-model=&quot;todo.done&quot;&gt;
+          &lt;span class=&quot;done-{{todo.done}}&quot;&gt;{{todo.text}}&lt;/span&gt; &lt;/li&gt; &lt;/ul&gt;
+      &lt;form ng-submit=&quot;addTodo()&quot;&gt;
+        &lt;input type=&quot;text&quot; ng-model=&quot;todoText&quot;  size=&quot;30&quot;
+               placeholder=&quot;add new todo here&quot;&gt;
+        &lt;input class=&quot;btn-primary&quot; type=&quot;submit&quot; value=&quot;add&quot;&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </section>
+              <section data-markdown>
+                  # Controllers
+                  <pre><code>
+function TodoCtrl($scope) {
+  $scope.todos = [
+    {text:'learn angular', done:true},
+    {text:'build an angular app', done:false}];
+
+  $scope.addTodo = function() {
+    $scope.todos.push({text:$scope.todoText, done:false});
+    $scope.todoText = '';
+  };
+
+  $scope.remaining = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo) {
+      count += todo.done ? 0 : 1;
+    });
+    return count;
+  };
+}
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Routing
+                  <pre><code>
+angular.module('project', ['ngRoute']).
+  config(function($routeProvider) {
+    $routeProvider.
+      when('/', {controller:ListCtrl, templateUrl:'list.html'}).
+      when('/edit/:projectId', {controller:EditCtrl, templateUrl:'detail.html'}).
+      when('/new', {controller:CreateCtrl, templateUrl:'detail.html'}).
+      otherwise({redirectTo:'/'});
+  });
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # $http (Ajax)
+                  <pre><code>
+phonecatApp.controller('PhoneListCtrl',
+    function ($scope, $http) {
+        $http.get('phones/phones.json')
+            .success(function(data) {
+                $scope.phones = data;
+        });
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Directives
+                  <pre><code> &lt;body&gt;
+    &lt;tabs&gt;
+      &lt;pane title=&quot;Localization&quot;&gt;
+        Date: {{ '2012-04-01' | date:'fullDate' }} &lt;br&gt;
+        Currency: {{ 123456 | currency }} &lt;br&gt;
+        Number: {{ 98765.4321 | number }} &lt;br&gt;
+      &lt;/pane&gt;
+      &lt;pane title=&quot;Pluralization&quot;&gt;
+        &lt;div ng-controller=&quot;BeerCounter&quot;&gt;
+          &lt;div ng-repeat=&quot;beerCount in beers&quot;&gt;
+            &lt;ng-pluralize count=&quot;beerCount&quot; when=&quot;beerForms&quot;&gt;&lt;/ng-pluralize&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/pane&gt;
+    &lt;/tabs&gt;
+  &lt;/body&gt;
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Directives Code
+                  <pre><code class='javascript'> directive('pane', function() {
+    return {
+      require: '^tabs',
+      restrict: 'E',
+      transclude: true,
+      scope: { title: '@' },
+      link: function(scope, element, attrs, tabsCtrl) {
+        tabsCtrl.addPane(scope);
+      },
+      template:
+'&lt;div class=&quot;tab-pane&quot; ng-class=&quot;{active: selected}&quot; ng-transclude&gt;' +
+        '&lt;/div&gt;'
+      replace: true
+    };
+  })</code></pre>
+              </section>
+          </section>
+          <section>
+              <section data-markdown>
+                  # Ember
+                  ![](ember.png)
+              </section>
+              <section data-markdown>
+                  # View (Handlebars)
+                  <pre><code>
+&lt;h3&gt;Last 3 Pull Requests to Ember.js&lt;/h3&gt;
+&lt;ul&gt;
+{{#each}}
+  &lt;li&gt;
+    &lt;div class=&quot;issue-number&quot;&gt;#{{number}}&lt;/div&gt;
+    &lt;div class=&quot;issue-title&quot;&gt;
+      &lt;a {{bindAttr href=html_url}}&gt;{{title}}&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;author-name&quot;&gt;
+      Opened by &lt;a {{bindAttr href=head.user.html_url}}&gt;&lt;strong&gt;@{{head.user.login}}&lt;/strong&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+{{/each}}
+&lt;/ul&gt;
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Ember Data (Ajax)
+                  <pre><code>
+App.ApplicationRoute = Ember.Route.extend({
+  model: function() {
+    return Ember.$.getJSON('https://api.github.com/repos/emberjs/ember.js/pulls').then(function(data) {
+      return data.splice(0, 3);
+    });
+  }
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Routes
+                  <pre><code>
+App.Router.map(function() {
+  this.resource('mailbox', { path: '/:mailbox_id' }, function() {
+    this.resource('mail', { path: '/:message_id' });
+  });
+});
+
+App.ApplicationRoute = Em.Route.extend({
+  model: function() {
+    return App.Mailbox.find();
+  }
+});
+
+App.MailRoute = Em.Route.extend({
+  model: function(params) {
+    return this.modelFor('mailbox').messages.findBy('id', params.message_id);
+  }
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Model
+                  <pre><code class='javascript'>
+// Model
+App.Mailbox = Em.Object.extend();
+
+App.Mailbox.reopenClass({
+  find: function(id) {
+    if (id) {
+      return App.FIXTURES.findBy('id', id);
+    } else {
+      return App.FIXTURES;
+    }
+  }
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Component, view
+                  <pre><code>
+&lt;img {{bind-attr src=gravatarUrl}}&gt;
+&lt;div class=&quot;email-input&quot;&gt;
+  {{input type=&quot;email&quot; value=email placeholder=&quot;Enter your Gravatar e-mail&quot;}}
+&lt;/div&gt;
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Component, code
+                  <pre><code>
+App.GravatarImageComponent = Ember.Component.extend({
+  size: 200,
+  email: '',
+
+  gravatarUrl: function() {
+    var email = this.get('email'),
+        size = this.get('size');
+
+    return 'http://www.gravatar.com/avatar/' + hex_md5(email) + '?s=' + size;
+  }.property('email', 'size')
+});
+                  </code></pre>
+              </section>
+              <section data-markdown>
+                  # Component, usage
+                  <pre><code>
+                  &lt;ul class=&quot;example-gravatar&quot;&gt;
+  &lt;li&gt;{{gravatar-image email=&quot;tomster@emberjs.com&quot; size=&quot;200&quot;}}&lt;/li&gt;
+  &lt;li&gt;{{gravatar-image size=&quot;200&quot;}}&lt;/li&gt;
+&lt;/ul&gt;
+                  </code></pre>
+              </section>
+          </section>
+          <section>
+              <h1>Finito</h1>
+              <p>web@jayway.com</p>
+          </section>
+      </div>
+
+            <!-- The navigational controls UI -->
+            <aside class="controls">
+                <a class="left" href="#">&#x25C4;</a>
+                <a class="right" href="#">&#x25BA;</a>
+                <a class="up" href="#">&#x25B2;</a>
+                <a class="down" href="#">&#x25BC;</a>
+            </aside>
+
+            <!-- Presentation progress bar -->
+            <div class="progress"><span></span></div>
+
+        </div>
+
+        <script src="../reveal.js/lib/js/head.min.js"></script>
+        <script src="../reveal.js/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+                    { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+                    { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+                    { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
