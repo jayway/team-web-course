@@ -22,7 +22,7 @@ $(function(exports) {
     // Child selection
     // Find the top level li elements below the markup id
     // and add class animal-group
-    exports.findTopLevelLisAndAddClassAnimalGroup = function() {
+    exports.findTopLevelListAndAddClassAnimalGroup = function() {
     };
 
     // Child selection
