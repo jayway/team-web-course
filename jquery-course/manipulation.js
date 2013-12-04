@@ -31,12 +31,10 @@ $(function(exports) {
     };
 
     // Removes all elements
-    // The value sent in must be wrapped in an li.
     exports.removeElements = function(list) {
     };
 
     // Removes the first element of the list
-    // The value sent in must be wrapped in an li.
     exports.removeFirst = function(list) {
     };
 
