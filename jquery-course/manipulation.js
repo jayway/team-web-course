@@ -4,19 +4,19 @@ $(function(exports) {
     // If you want to see what happens to the DOM
     // add a breakpoint in afterEach in the test.
 
-    // changes the src attribute of the image
+    // Sets the src attribute of the img element to image
     exports.changeSrcAttributeOfImage = function(image) {
     };
 
-    // Gets a named attribute of image
+    // Gets a named attribute of img
     exports.getAttributeOfImage = function(attribute) {
     };
 
-    // Gets a data attribute of image
+    // Gets a data attribute of img
     exports.getDataAttributeOfImage = function(attribute) {
     };
 
-    // Sets a data attribute of image
+    // Sets a data attribute of img
     exports.setDataAttributeOfImage = function(attribute, value) {
     };
 
@@ -25,7 +25,7 @@ $(function(exports) {
     exports.appendElementToList = function(list, value) {
     };
 
-    // Inserts an element first in the list
+    // Inserts an element first in the list, list is a selector
     // The value sent in must be wrapped in an li.
     exports.insertElementFirst = function(list, value) {
     };
