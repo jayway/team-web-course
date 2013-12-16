@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>JavaScript labs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../lib/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="../lib/mocha.js"></script>
+    <script src="../lib/chai.js"></script>
+    <script>
+    mocha.setup({ ui: 'bdd', ignoreLeaks: true });
+    chai.expect();
+    </script>
+    <script src="async.js"></script>
+    <script src="async_spec.js"></script>
+    <script>
+      expect = chai.expect;
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); };
+    </script>
+      mocha.run();
+    <hr/>
+    <div id='markup'>
+    </div>
+  </body>
+</html>
