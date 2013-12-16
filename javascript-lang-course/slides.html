@@ -10,9 +10,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <style type="text/css">
-      .present {
-        margin-top: 50px;
-      }
       @font-face {
         font-family: "Lato";
         src: url(../html-css-course/resources/Lato/Lato-Regular.ttf) format("truetype");
@@ -753,9 +750,9 @@ function sum(v) {
                 function foo(x, y) { return x + y }
                 foo('COOL')  # => ’COOLundefined’
 
-            `arguments` are always present.
+            `arguments` is always present.
 
-                function bar(x, y){ return arguments;}
+                function bar(x, y) { return arguments;}
                 bar("hej", 42) // => [ "hej", 42 ]
 
         </section>
@@ -834,28 +831,6 @@ function things() {
                 greeter('How')('Tapir'); //How Tapir
         </section>
 
-        <section>
-            <h3>Exercise</h3>
-
-            <div class='sandbox-notes'>
-                Write an anonymous function so that:
-                <pre><code>
-var x = function()...
-x;  // => "Your Name"
-x(); // => "TypeError, ... not a function"
-               </code></pre>
-            </div>
-
-           <div class="sandbox">sandbox console loading...</div>
-        </section>
-
-        <section>
-           <h3>Solution</h3>
-                <pre><code>
-var x = function() { return "Andreas"; }()
-
-               </code></pre>
-        </section>
     </section>
 
         <section>
