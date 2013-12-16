@@ -58,12 +58,11 @@ describe('Functional', function() {
         });
     });
 
-    // Add the method curry to the Function.prototype
-    // Curry is the same as partial application.
-    // If not all elements of the function are given a new function is returned.
+    // Partial applies arguments to a function and returns a new function
     // The new function can then be called again with additional arguments
-    // while the first argument are already set.
-    describe("Function.prototype.curry", function() {
+    // and the first arguments are already set.
+    // Add the method partial to the Function.prototype
+    describe("Function.prototype.partial", function() {
         // Helper function that adds all its arguments together
         function sum(){
             for(var s = 0, i = arguments.length; i > 0;s += arguments[--i]);
@@ -71,20 +70,20 @@ describe('Functional', function() {
         }
 
         it('is a function', function() {
-            expect(Function.prototype.curry).to.not.be.undefined;
-            expect(Function.prototype.curry).to.be.a('function');
+            expect(Function.prototype.partial).to.not.be.undefined;
+            expect(Function.prototype.partial).to.be.a('function');
         });
 
         it('creates a new function which can add', function() {
-            var addThree = sum.curry(3);
+            var addThree = sum.partial(3);
             expect(addThree).to.be.a('function');
             expect(addThree(4)).to.equal(7);
             expect(addThree(8)).to.equal(11);
         });
 
-        it('creates a new function which can be curried', function() {
-            var addThree = sum.curry(3);
-            var addSeven = addThree.curry(4);
+        it('creates a new function which can be partial', function() {
+            var addThree = sum.partial(3);
+            var addSeven = addThree.partial(4);
             expect(addSeven).to.be.a('function');
             expect(addSeven(7)).to.equal(14);
             expect(addSeven(-7, 8, 9)).to.equal(17);

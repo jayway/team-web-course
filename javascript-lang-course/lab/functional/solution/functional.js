@@ -31,11 +31,12 @@ var functional = {
     }
 };
 
-// 4. Curry is the same as partial application.
-// If not all elements of the function are given a new function is returned.
+// 4. Partial applies arguments to a function and returns a new function
 // The new function can then be called again with additional arguments
-// while the first argument are already set.
-Function.prototype.curry = function() {
+// and the first arguments are already set.
+//
+// Add the method partial to the Function.prototype
+Function.prototype.partial = function() {
     var slice = Array.prototype.slice;
     var fn = this;
     var args = slice.apply(arguments);

@@ -16,7 +16,8 @@
     <script src="string_calculator_spec.js"></script>
     <script>
       expect = chai.expect;
-      mocha.run();
+      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+      else { mocha.run(); };
     </script>
     <hr/>
     <div id='markup'>
