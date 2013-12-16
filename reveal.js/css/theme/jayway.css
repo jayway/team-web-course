@@ -74,9 +74,11 @@ body {
     text-shadow: none;
     border: none;
     border-radius: 2px;
+    color: white;
+    background: darkblue;
 }
 
-.reveal .roll span:after {
+.reveal .roll:hover span {
     color: #fff;
     background: darkblue;
 }
