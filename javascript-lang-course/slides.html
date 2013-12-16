@@ -1073,7 +1073,7 @@ total // => 10
                 }
 
 
-            Similar to JSON
+            JSON is based on this.
         </section>
 
 
@@ -1132,6 +1132,23 @@ flight.foo // undefined
         </section>
 
 
+           <section>
+           <h3>Iterating properties</h3>
+
+<pre><code>
+var object = {
+  name: 'andreas',
+  sayHello: function() { alert("hello") } }
+
+for (var key in object) {
+  console.log(key, object[key]);
+}
+// prints name, andreas,
+// sayHello, function src
+</code></pre>
+
+           <code>hasOwnProperty</code> can be useful here
+           </section>
         <section>
             <h3>Exercise: object method</h3>
 
@@ -1282,51 +1299,6 @@ function Adder() {
 
        </section>
 
-        <section>
-        <h3>The Prototype Chain</h3>
-           Example: bar share foo's properties:
-             <pre><code>
-var foo = {name: "foo", one: 1, two: 2};
-var bar = {two: 'two'};
-// Make bar delegate method calls the prototype foo:
-bar.__proto__ = foo;  // don't - not standard !
-bar.one // Resolves to 1.
-bar.two // Resolves to 'two'
-delete bar.two
-bar.two // Resolves to 2
-            </code></pre>
-       </section>
-           <section>
-             <h3>hasOwnProperty</h3>
-           Where is the property defined ?
-<pre><code>
-var base = { hello: function() { return "hello"}}
-var sub = { world: "world" }
-sub.__proto__ = base; // Don't do this !
-sub.hasOwnProperty('world') // => true
-sub.hasOwnProperty('hello') // => false
-base.hasOwnProperty('hello') // => true
-</code></pre>
-           </section>
-
-           <section>
-           <h3>Getting all props</h3>
-
-<pre><code>
-// see definition of sub and base in previous slide
-for (var key in sub) {
-  console.log(key); // prints world and hello
-}
-
-for (var key in base) {
-  console.log(key); // prints hello
-}
-</code></pre>
-
-           <code>hasOwnProperty</code> can be useful here
-           </section>
-
-
        <section>
          <h3>The prototype property</h3>
          All functions have a 'magic' property: <code>prototype</code>
@@ -1336,6 +1308,13 @@ var myFunc = function() {};
 myFunc.prototype; // what does this do ?
 </code></pre>
        </section>
+
+        <section>
+        <h3>The Prototype Chain</h3>
+        <img src='./js-prototypes.png'>
+       </section>
+
+
 
 
         <section data-markdown>
@@ -1508,7 +1487,7 @@ p.last(); // => "Sune"
               this.sum = (this.sum || 0) + val; } }</code></p>
 
               Inherit from <code>adder</code> so that:
-              <p>
+
 <pre><code>
 var x = // write this line
 x.sub = // write this line, so that:
@@ -1517,7 +1496,7 @@ x.sum // => 5
 x.sub(3)
 x.sum // => 2
 </code></pre>
-              </p>
+
             </div>
 
            <div class="sandbox">sandbox console loading...</div>
@@ -1535,6 +1514,21 @@ var x = Object.create(adder);
 x.sub = function(value) { this.add(-value) }
 </code></pre>
         </section>
+           <section>
+             <h3>hasOwnProperty</h3>
+           Where is the property defined ?
+<pre><code>
+var parent = { hello: function() { return "hello"}}
+var child = Object.create(parent);
+child.world: "world"
+parent.hasOwnProperty('world') // => true
+parent.hasOwnProperty('hello') // => false
+
+child.hasOwnProperty('world') // => false
+child.hasOwnProperty('hello') // => true
+</code></pre>
+           </section>
+
     </section>
 
     <section>
@@ -1682,7 +1676,7 @@ x.sub = function(value) { this.add(-value) }
    alert(this); // the DOM element clicked
   }
 
- &lt;button id='thebutton' onclick='click_handler()'>Click me!</button>
+ &lt;button id='thebutton' onclick='click_handler()'>Click me!&lt;/button>
             </code></pre>
 <code>this</code> is the DOM element clicked
 
@@ -1723,8 +1717,8 @@ x.sub = function(value) { this.add(-value) }
           ### JS Frameworks and bind
 
           * ECMAScript5 - Function.prototype.bind
-          * backbone/underscore - `bind`, `bindAll`
-               * Example: `_bind(this.render, this)`
+          * Underscore - `bind`, `bindAll`
+               * Example: `_.bind(this.render, this)`
                * CoffeeScript, use the <code>=></code> operator
 
         </section>
@@ -1872,7 +1866,6 @@ sub.foo // ??
             Example of Third Party Libs:
 
             * RequireJS - file and module loader
-            * StealJS - Script & Dependency System and more
             * CommonJS
         </section>
 
@@ -1948,62 +1941,6 @@ Use a promise library, e.g. <code>Q.fcall(step1).then(step2).then(step3)</code>
        </section>
         </section>
 
-
-        <section>
-        <section data-markdown>
-            ## javascript gotchas
-        </section>
-        <section data-markdown>
-            ### Equality
-
-            Be aware of:
-
-                "1" == 1 // true
-
-            Advice:
-
-                Number("1") === 1
-
-        </section>
-
-        <section data-markdown>
-            ### `parseInt` doesn't assume base-10
-
-            Be aware of:
-
-                parseInt("8"); //8
-                parseInt("08"); //0
-
-            Advice:
-
-                parseInt("8", 10); //8
-                parseInt("08", 10); //8
-
-        </section>
-
-
-        <section data-markdown>
-            ### instanceof
-
-            Be aware of:
-
-                "hello" instanceof String; //false
-                new String("hello") instanceof String; //true
-
-        </section>
-
-
-        <section data-markdown>
-            ### instanceof
-
-            Be aware of:
-
-                typeof [1,2,3]  // 'object'
-                [1,2,3] instanceof Array // true
-
-        </section>
-
-        </section>
 
         <section>
         <section data-markdown>
