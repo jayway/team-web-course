@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>JavaScript labs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="lib/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="lib/mocha.js"></script>
+    <script src="lib/chai.js"></script>
+    <script>
+    mocha.setup({ ui: 'bdd', ignoreLeaks: true });
+    chai.expect();
+    </script>
+    <script src="lab.js"></script>
+    <script src="lab_spec.js"></script>
+    <script>
+      expect = chai.expect;
+      mocha.run();
+    </script>
+    <hr/>
+    <div id='markup'>
+    </div>
+  </body>
+</html>
