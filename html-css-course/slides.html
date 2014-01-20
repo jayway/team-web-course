@@ -1,268 +1,276 @@
 <!doctype html>  
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-
-    <title>HTML and CSS</title>
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <style type="text/css"> 
-      @font-face {
-        font-family: "Lato";
-        src: url(resources/Lato/Lato-Regular.ttf) format("truetype");
-      }
-    </style>
-    <link rel="stylesheet" href="../reveal.js/css/main.css">
-    <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
-
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
-
-    <script>
-    // If the query includes 'print-pdf' we'll use the PDF print sheet
-    document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="../reveal.js/lib/js/html5shiv.js"></script>
-    <![endif]-->
+  <meta charset="utf-8">
+  
+  <title>HTML and CSS</title>
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <style>
+    @font-face {
+      font-family: "Lato";
+      src: url(resources/Lato/Lato-Regular.ttf) format("truetype");
+    }
+  </style>
+  
+  <link rel="stylesheet" href="../reveal.js/css/main.css">
+  <link rel="stylesheet" href="../reveal.js/css/theme/default.css" id="theme">
+  
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+  
+  <script>
+  // If the query includes 'print-pdf' we'll use the PDF print sheet
+  document.write( '<link rel="stylesheet" href="../reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+  </script>
+  
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
-
 <body>
-
-    <div class="reveal">
-
-        <!-- Used to fade in a background when a specific slide state is reached -->
-        <div class="state-background"></div>
-
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section>
-                <h1>HTML and CSS</h1>
-                <p>Kursmaterial på Github - <a href="https://github.com/jayway/team-web-course" alt="">https://github.com/jayway/team-web-course</a></p>
-            </section>
-            
-            <section>
-                <h1>HTML</h1>
-                <p>Hypertext Markup Language</p>
-            </section>
-            
-            <section>
-              <h1>The basic structure</h1>
-              <pre><code>&lt;!DOCTYPE html&gt;
+  <div class="reveal">
+    
+    <!-- Used to fade in a background when a specific slide state is reached -->
+    <div class="state-background"></div>
+    
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>HTML and CSS</h1>
+        <p>Kursmaterial på Github - <a href="https://github.com/jayway/team-web-course" alt="">https://github.com/jayway/team-web-course</a></p>
+      </section>
+      
+      <section>
+        <h1>Course outline</h1>
+        <ul>
+          <li><strong>HTML walkthrough</strong> <em>(about 30 minutes)</em></li>
+          <li><strong>HTML labs</strong> <em>(about 1 hour)</em></li>
+          <li><strong>CSS walkthrough</strong> <em>(about 1 hour)</em></li>
+          <li><strong>CSS labs</strong> <em>(about 1 hour 30 minutes)</em></li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>HTML</h1>
+        <p>Hypertext Markup Language</p>
+      </section>
+      
+      <section>
+        <h1>The basic structure</h1>
+        <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;meta name=&quot;description&quot; content=&quot;Free Web tutorials&quot;&gt;
-    &lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,XML,JavaScript&quot;&gt;
-    &lt;meta name=&quot;author&quot; content=&quot;St&aring;le Refsnes&quot;&gt;
-    &lt;meta name=&quot;robots&quot; content=&quot;noindex,follow&quot;&gt;
-    &lt;title&gt;The HTML Document Structure&lt;/title&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Free Web tutorials&quot;&gt;
+  &lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,XML,JavaScript&quot;&gt;
+  &lt;meta name=&quot;author&quot; content=&quot;St&aring;le Refsnes&quot;&gt;
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex,follow&quot;&gt;
+  &lt;title&gt;The HTML Document Structure&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-              <p>Metadata is useful for SEO, device support, automation and usability.</p>
-            </section>
-            
-            <section>
-              <h1>HTML is...</h1>
-              <ul>
-                <li>Sections</li>
-                <li>Elements / Tags</li>
-                <li>Attributes</li>
-                <li>Content</li>
-                <li>Parent / Child / Sibling</li>
-              </ul>
-              <pre><code>&lt;head&gt;
+        <p>Metadata is useful for SEO, device support, automation and usability.</p>
+      </section>
+      
+      <section>
+        <h1>HTML is...</h1>
+        <ul>
+        <li>Sections</li>
+        <li>Elements / Tags</li>
+        <li>Attributes</li>
+        <li>Content</li>
+        <li>Parent / Child / Sibling</li>
+        </ul>
+        <pre><code>&lt;head&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
-    &lt;h1&gt;Lorem Ipsum&lt;/h1&gt;
-    &lt;a href=&quot;index.html&quot; rel=&quot;home&quot;&gt;
-      &lt;img src=&quot;logo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-      &lt;p&gt;Bacon ipsum dolor sit amet.&lt;/p&gt;
-    &lt;/a&gt;
+  &lt;h1&gt;Lorem Ipsum&lt;/h1&gt;
+  &lt;a href=&quot;index.html&quot; rel=&quot;home&quot;&gt;
+    &lt;img src=&quot;logo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    &lt;p&gt;Bacon ipsum dolor sit amet.&lt;/p&gt;
+  &lt;/a&gt;
   &lt;/div&gt;
 &lt;/body&gt;</code></pre>
-            </section>
-            
-            <section>
-              <section>
-                <h1>Some basic elements</h1>
-                <ul>
-                  <li>headlines</li>
-                  <li>paragraphs</li>
-                  <li>divs</li>
-                  <li>spans</li>
-                  <li>images</li>
-                  <li>links</li>
-                  <li>lists</li>
-                  <li>tables</li>
-                  <li>forms</li>
-                </ul>
-              </section>
-            
-              <section>
-                <h1>Links and Resources</h1>
-                <p><a href="http://www.w3.org/TR/html-markup/elements.html">W3C HTML (5) elements</a></p>
-              </section>
-            </section>
-            
-            <section>
-                <h1>Headlines</h1>
-                <pre><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;
-    &lt;h2&gt;Heading level 2&lt;/h2&gt;
-        &lt;h3&gt;Heading level 3&lt;/h3&gt;
-            &lt;h4&gt;Heading level 4&lt;/h4&gt;
-                &lt;h5&gt;Heading level 5&lt;/h5&gt;
-                    &lt;h6&gt;Heading level 6&lt;/h6&gt;</code></pre>
-                <p>There are no more levels!</p>
-            </section>
-            
-            <section>
-                <h1>Headlines</h1>
-                <ul>
-                    <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels.</li>
-                    <li>The title of the document’s main content should be a level 1 heading.</li>
-                    <li>There should be only one level 1 heading in each <del>document</del> section (HTML5).</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h1>Paragraphs</h1>
-                <pre><code>&lt;p&gt;A paragraph. Its use is fairly self-explanatory.&lt;/p&gt;
-                    
+      </section>
+      
+      <section>
+        <section>
+        <h1>Some basic elements</h1>
+        <ul>
+          <li>headlines</li>
+          <li>paragraphs</li>
+          <li>divs</li>
+          <li>spans</li>
+          <li>images</li>
+          <li>links</li>
+          <li>lists</li>
+          <li>tables</li>
+          <li>forms</li>
+        </ul>
+        </section>
+        
+        <section>
+        <h1>Links and Resources</h1>
+        <p><a href="http://www.w3.org/TR/html-markup/elements.html">W3C HTML (5) elements</a></p>
+        </section>
+      </section>
+      
+      <section>
+        <h1>Headlines</h1>
+        <pre><code>&lt;h1&gt;Heading level 1&lt;/h1&gt;
+  &lt;h2&gt;Heading level 2&lt;/h2&gt;
+    &lt;h3&gt;Heading level 3&lt;/h3&gt;
+      &lt;h4&gt;Heading level 4&lt;/h4&gt;
+        &lt;h5&gt;Heading level 5&lt;/h5&gt;
+          &lt;h6&gt;Heading level 6&lt;/h6&gt;</code></pre>
+        <p>There are no more levels!</p>
+      </section>
+      
+      <section>
+        <h1>Headlines</h1>
+        <ul>
+          <li>Each document should have a logical heading structure that starts at level 1 and doesn’t skip any levels.</li>
+          <li>The title of the document’s main content should be a level 1 heading.</li>
+          <li>There should be only one level 1 heading in each document (or &lt;section&gt; if you're using those elements)</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Paragraphs</h1>
+        <pre><code>&lt;p&gt;A paragraph. Its use is fairly self-explanatory.&lt;/p&gt;
+          
 &lt;p&gt;This is another paragraph.&lt;/p&gt;</code></pre>
-                <ul>
-                    <li>You are able to control paragraph margins consistently with CSS.</li>
-                    <li>It semantically describes the text as what it is – a paragraph.</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h1>Paragraphs</h1>
-                <p>An example of how to NOT do it.</p>
-                <pre><code>This isn&#x27;t really a paragraph
+        <ul>
+          <li>You are able to control paragraph margins consistently with CSS.</li>
+          <li>It semantically describes the text as what it is – a paragraph.</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Paragraphs</h1>
+        <p>An example of how to NOT do it.</p>
+        <pre><code>This isn&#x27;t really a paragraph
 &lt;br&gt;
 &lt;br&gt;
 Just some free flying text separated by some line breaks</code></pre>
-            </section>
-            
-            <section>
-                <h1>Divs</h1>
-                <p>Divs are used to group content for layouting and positioning with CSS. </p>
-                <pre><code>&lt;div&gt;
-    &lt;h3&gt;This is a heading&lt;/h3&gt;
-    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+      </section>
+      
+      <section>
+        <h1>Divs</h1>
+        <p>Divs are used to group content for layouting and positioning with CSS. </p>
+        <pre><code>&lt;div&gt;
+  &lt;h3&gt;This is a heading&lt;/h3&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-                <div>
-                    <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
-                    <pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;content-primary&quot;&gt;Main content area&lt;/div&gt;
-    &lt;div class=&quot;content-secondary&quot;&gt;Secondary content area&lt;/div&gt;
+        <div>
+          <p>Divs could be nested. This is useful if you are using divs to layout a web page.</p>
+          <pre><code>&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;content-primary&quot;&gt;Main content&lt;/div&gt;
+  &lt;div class=&quot;content-secondary&quot;&gt;Secondary content&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-                </div>
-            </section>
-            
-            <section>
-                <h1>Spans</h1>
-                <p><code>SPAN</code> carries no structural meaning itself, but it can be used to provide extra structure through its <code>LANG</code>, <code>DIR</code>, <code>CLASS</code>, and <code>ID</code> attributes.</p>
-                <pre><code>&lt;p&gt;A text which is unstyled &lt;span class=&quot;stand-out&quot;&gt;except from this part&lt;/span&gt;&lt;/p&gt;</code></pre>
-            </section>
-            
-            <section>
-                <h1>Images</h1>
-                <p>Used to display an image on a web page.</p>
-                <pre><code>&lt;img src=&quot;../image.png&quot; alt=&quot;The Jayway logotype&quot;&gt;</code></pre>
-                <ul>
-                    <li>The src (source) attribute points out the URL to the image to display.</li>
-                    <li>The required alt (alternative) attribute specifies an alternate text for an image, if the image cannot be displayed.</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h1>Links</h1>
-                <p>A link, when clicked (or tapped), takes you to another document or to a section within the current document.</p>
-                <pre><code>&lt;a href=&quot;http://www.jayway.com&quot; rel=&quot;start&quot;&gt;This is a link&lt;/a&gt;</code></pre>
-            </section>
-            
-            <section>
-                <h1>Links</h1>
-                <p>The id attribute can be used to create a bookmark inside the HTML document.</p>
-                <pre><code>&lt;a id=&quot;detailed-info&quot;&gt;This is a document internal anchor&lt;/a&gt;</code></pre>
-                <p>And here are two ways of linking to the anchor.</p>
-                <pre><code>&lt;a href=&quot;#detailed-info&quot;&gt;Click to read more&lt;/a&gt;</code></pre>
-                <pre><code>&lt;a href=&quot;http://www.jayway.com/page-with-anchors.html#detailed-info&quot;&gt;Click to read more on jayway.com&lt;/a&gt;</code></pre>
-            </section>
-            
-            <section>
-              <h1>Lists</h1>
-              <div class="side-by-side">
-                <p>Unordered List</p>
-                <pre><code>&lt;ul&gt;
+        </div>
+      </section>
+      
+      <section>
+        <h1>Spans</h1>
+        <p><code>SPAN</code> carries no structural meaning itself, but it can be used to provide extra structure through its <code>LANG</code>, <code>DIR</code>, <code>CLASS</code>, and <code>ID</code> attributes.</p>
+        <pre><code>&lt;p&gt;A text which is unstyled &lt;span class=&quot;stand-out&quot;&gt;except from this part&lt;/span&gt;&lt;/p&gt;</code></pre>
+      </section>
+      
+      <section>
+        <h1>Images</h1>
+        <p>Used to display an image on a web page.</p>
+        <pre><code>&lt;img src=&quot;../image.png&quot; alt=&quot;The Jayway logotype&quot;&gt;</code></pre>
+        <ul>
+          <li>The src (source) attribute points out the URL to the image to display.</li>
+          <li>The required alt (alternative) attribute specifies an alternate text for an image, if the image cannot be displayed.</li>
+          <li>The attribute itself is required, but the content of it is not! (Got nothing sensible to put in? Leave it empty.)</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Links</h1>
+        <p>A link, when clicked (or tapped), takes you to another document or to a section within the current document.</p>
+        <pre><code>&lt;a href=&quot;http://www.jayway.com&quot; rel=&quot;start&quot;&gt;This is a link&lt;/a&gt;</code></pre>
+      </section>
+      
+      <section>
+        <h1>Links</h1>
+        <p>The id attribute can be used to create a bookmark inside the HTML document.</p>
+        <pre><code>&lt;a id=&quot;detailed-info&quot;&gt;This is a document internal anchor&lt;/a&gt;</code></pre>
+        <p>And here are two ways of linking to the anchor.</p>
+        <pre><code>&lt;a href=&quot;#detailed-info&quot;&gt;Click to read more&lt;/a&gt;</code></pre>
+        <pre><code>&lt;a href=&quot;http://www.jayway.com/page-with-anchors.html#detailed-info&quot;&gt;Click to read more on jayway.com&lt;/a&gt;</code></pre>
+      </section>
+      
+      <section>
+        <h1>Lists</h1>
+        <div class="side-by-side">
+        <p>Unordered List</p>
+        <pre><code>&lt;ul&gt;
   &lt;li&gt;Tongue ham&lt;/li&gt;
   &lt;li&gt;Filet kielbasa&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-                <img src="resources/unordered-list.png">
-              </div>
-              <div class="side-by-side">
-                <p>Ordered List</p>
-                <pre><code>&lt;ol&gt;
+        <img src="resources/unordered-list.png">
+        </div>
+        <div class="side-by-side">
+        <p>Ordered List</p>
+        <pre><code>&lt;ol&gt;
   &lt;li&gt;Tongue ham&lt;/li&gt;
   &lt;li&gt;Filet kielbasa&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-                <img src="resources/ordered-list.png">
-              </div>
-              
-              <p>Definition List</p>
-              <div class="side-by-side">
-                <pre><code>&lt;dl&gt;
+        <img src="resources/ordered-list.png">
+        </div>
+        
+        <p>Definition List</p>
+        <div class="side-by-side">
+        <pre><code>&lt;dl&gt;
   &lt;dt&gt;Meat #1&lt;/dt&gt;
   &lt;dd&gt;Tongue ham&lt;/dd&gt;
   &lt;dt&gt;Meat #2&lt;/dt&gt;
   &lt;dd&gt;Filet kielbasa&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
-              </div>
-              <div class="side-by-side">
-                <img src="resources/definition-list.png">
-              </div>
-            </section>
-            
-            <section>
-              <h1>Tables</h1>
-              <div class="side-by-side"><pre><code>&lt;table border=&quot;1&quot;&gt;
+        </div>
+        <div class="side-by-side">
+        <img src="resources/definition-list.png">
+        </div>
+      </section>
+      
+      <section>
+        <h1>Tables</h1>
+        <div class="side-by-side"><pre><code>&lt;table border=&quot;1&quot;&gt;
   &lt;caption&gt;...&lt;/caption&gt;
   &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Chuck bresaola pork&lt;/th&gt;
-      ...    
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Chuck bresaola pork&lt;/th&gt;
+    ...  
+  &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Fatback ham&lt;/td&gt;
-      ...
-    &lt;/tr&gt;
-    &lt;tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fatback ham&lt;/td&gt;
     ...
-    &lt;/tr&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  ...
+  &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre></div>
-              <div class="side-by-side">
-                <img src="resources/table.png">
-              </div>
-
-            </section>  
-            
-            <section>
-              <h1>Forms</h1>
-              <p>Forms are used in HTML to group and capture user input and possibly submitting this data to some resource / destination for processing.</p>
-              <div class="side-by-side"><pre><code>&lt;form action=&quot;dest.php&quot;&gt;...
+        <div class="side-by-side">
+        <img src="resources/table.png">
+        </div>
+      </section>
+      
+      <section>
+        <h1>Forms</h1>
+        <p>Forms are used in HTML to group and capture user input and possibly submitting this data to some resource / destination for processing.</p>
+        <div class="side-by-side"><pre><code>&lt;form action=&quot;dest.php&quot;&gt;...
   &lt;label for=&quot;pwd&quot;&gt;Password:&lt;/label&gt;
   &lt;input type=&quot;password&quot; id=&quot;pwd&quot;&gt;
   &lt;label for=&quot;sex&quot;&gt;Sex:&lt;/label&gt;
@@ -272,348 +280,347 @@ Just some free flying text separated by some line breaks</code></pre>
   &lt;/select&gt;
   &lt;input type=&quot;submit&quot;&gt;
 &lt;/form&gt;</code></pre></div>
-              <div class="side-by-side"><img src="resources/html-form.png"></div>
-            </section>
-            
-            <section>
-              <h1>Input fields</h1>
-              <p>Input is captured through input fields. These comes in a number of different types.</p>
-              <ul>
-                <li>&lt;input type=&quot;text&quot;&gt;</li>
-                <li>&lt;input type=&quot;password&quot;&gt;</li>
-                <li>&lt;input type=&quot;hidden&quot;&gt;</li>
-                <li>&lt;input type=&quot;checkbox&quot;&gt;</li>
-                <li>&lt;input type=&quot;radio&quot;&gt;</li>
-                <li>&lt;input type=&quot;submit&quot;&gt;</li>
-                <li>&lt;textarea rows=&quot;10&quot;&gt;</li>
-              </ul>
-            </section>
-            
-            <section>
-              <h1>ID and class</h1>
-              <p>Core concept of HTML for hooking into specific content.</p>
-              <ul><strong>ID's:</strong>
-                <li>are unique</li>
-                <li>have browser specific functionality (# link anchors)</li>
-                <li>are used a lot for DOM manipulation</li>
-              </ul>
-              <pre><code>&lt;div <span style="color: #fff !important; font-weight: bold">id=&quot;page-header&quot;</span> class=&quot;header&quot;&gt;...&lt;/div&gt;</code></pre>
-            </section>
-            
-            <section>
-              <h1>ID and Classes</h1>
-              <ul><strong>Classes:</strong>
-                <li>are NOT unique</li>
-                <li>are used a lot for styling</li>
-                <li>often maps to your domain model</li>
-              </ul>
-              <pre><code>&lt;div id=&quot;page-header&quot; <span style="color: #fff !important; font-weight: bold">class=&quot;header&quot;</span>&gt;...&lt;/div&gt;</code></pre>
-            </section>
-            
-            <section>
-              <h1>HTML5 - Why?</h1>
-              <div class="side-by-side">
-                <ul>
-                  <li>Semantics</li>
-                  <li>New elements</li>
-                  <li>Form validation</li>
-                  <li>Local Storage</li>
-                  <li>SEO - maybe</li>
-                </ul>
-              </div>
-              <div class="side-by-side">
-                <img src="resources/html5.png" alt="">
-              </div>
-            </section>
-            
-            <section>
-                
-                <section>
-                    <h1>HTML5 Structure Elements</h1>
-                    <ul>
-                      <li>article</li>
-                      <li>section</li>
-                      <li>header</li>
-                      <li>nav</li>
-                      <li>aside</li>
-                      <li>footer</li>
-                      <li>time</li>
-                    </ul>
-                </section>
-            
-                <section>
-                    <h1>Links and resources</h1>
-                    <p><a href="http://dev.w3.org/html5/spec/">W3C HTML5 spec</a></p>
-                    <p><a href="http://webdesignledger.com/tips/html5-essentials-and-good-practices">HTML5 Essentials and Good Practices</a></p>
-                </section>
-            
-            </section>
-            
-            <section>
-                <h1>A Structure Example</h1>
-                <pre><code>&lt;header&gt;
-    &lt;h1&gt;Main title&lt;/h1&gt;
-    &lt;nav&gt;Main navigation&lt;/nav&gt;
+        <div class="side-by-side"><img src="resources/html-form.png"></div>
+      </section>
+      
+      <section>
+        <h1>Input fields</h1>
+        <p>Input is captured through input fields. These comes in a number of different types.</p>
+        <ul>
+        <li>&lt;input type=&quot;text&quot;&gt;</li>
+        <li>&lt;input type=&quot;password&quot;&gt;</li>
+        <li>&lt;input type=&quot;hidden&quot;&gt;</li>
+        <li>&lt;input type=&quot;checkbox&quot;&gt;</li>
+        <li>&lt;input type=&quot;radio&quot;&gt;</li>
+        <li>&lt;input type=&quot;submit&quot;&gt;</li>
+        <li>&lt;textarea rows=&quot;10&quot;&gt;</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>ID and class</h1>
+        <p>Core concept of HTML for hooking into specific content.</p>
+        <ul><strong>ID's:</strong>
+        <li>are unique</li>
+        <li>have browser specific functionality (# link anchors)</li>
+        <li>are used a lot for DOM manipulation</li>
+        </ul>
+        <pre><code>&lt;div <span style="color: #fff !important; font-weight: bold">id=&quot;page-header&quot;</span> class=&quot;header&quot;&gt;...&lt;/div&gt;</code></pre>
+      </section>
+      
+      <section>
+        <h1>ID and Classes</h1>
+        <ul><strong>Classes:</strong>
+        <li>are NOT unique</li>
+        <li>are used a lot for styling</li>
+        <li>often maps to your domain model</li>
+        </ul>
+        <pre><code>&lt;div id=&quot;page-header&quot; <span style="color: #fff !important; font-weight: bold">class=&quot;header&quot;</span>&gt;...&lt;/div&gt;</code></pre>
+      </section>
+      
+      <section>
+        
+        <section>
+          <h1>Some new HTML5 Elements</h1>
+          <div class="side-by-side">
+            <ul>
+              <li>article</li>
+              <li>section</li>
+              <li>header</li>
+              <li>nav</li>
+            </ul>
+          </div>
+          <div class="side-by-side">
+            <ul>
+              <li>aside</li>
+              <li>footer</li>
+              <li>time</li>
+            </ul>
+          </div>
+        </section>
+        
+        <section>
+          <h1>Links and resources</h1>
+          <p><a href="http://dev.w3.org/html5/spec/">W3C HTML5 spec</a></p>
+          <p><a href="http://webdesignledger.com/tips/html5-essentials-and-good-practices">HTML5 Essentials and Good Practices</a></p>
+        </section>
+        
+      </section>
+      
+      <section>
+        <h1>A Structure Example</h1>
+        <pre><code>&lt;header&gt;
+  &lt;h1&gt;Main title&lt;/h1&gt;
+  &lt;nav&gt;Main navigation&lt;/nav&gt;
 &lt;/header&gt;
 &lt;section&gt;
-    &lt;article&gt;
-        &lt;header&gt;
-	    &lt;h2&gt;Article title&lt;/h2&gt;
-	    &lt;p&gt;Posted on &lt;time datetime=&quot;2009-10-29T16:31:24+02:00&quot;&gt;October 29th 2012&lt;/time&gt;&lt;/p&gt;
-        &lt;/header&gt;
-        &lt;section&gt;&lt;h1&gt;Section title&lt;/h1&gt;
-          Article content
-        &lt;/section&gt;
-    &lt;/article&gt;
-    &lt;aside&gt;
-        &lt;nav&gt;Subpage navigation&lt;/nav&gt;
-    &lt;/aside&gt;
+  &lt;article&gt;
+    &lt;header&gt;
+    &lt;h2&gt;Article title&lt;/h2&gt;
+    &lt;p&gt;Posted on &lt;time datetime=&quot;2009-10-29T16:31:24+02:00&quot;&gt;October 29th 2012&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;section&gt;&lt;h1&gt;Section title&lt;/h1&gt;
+      Article content
+    &lt;/section&gt;
+  &lt;/article&gt;
+  &lt;aside&gt;
+    &lt;nav&gt;Subpage navigation&lt;/nav&gt;
+  &lt;/aside&gt;
 &lt;/section&gt;
 &lt;footer&gt;
-    &lt;nav&gt;Detailed navigation&lt;/nav&gt;
+  &lt;nav&gt;Detailed navigation&lt;/nav&gt;
 &lt;/footer&gt;</code></pre>
-            </section>
-
-            <section>
-            
-                <section>
-                    <h1>Other HTML5 Elements</h1>
-                    <ul>
-                        <li>audio</li>
-                        <li>video</li>
-                        <li>embed</li>
-                        <li>canvas</li>
-                    </ul>
-                </section>
-            
-                <section>
-                    <h1>Links and resources</h1>
-                    <p><a href="http://dev.w3.org/html5/spec/media-elements.html">W3C HTML5 media elements spec</a></p>
-                    <p><a href="http://html5demos.com/">HTML5 demos and examples</a></p>
-                </section>
-            
-            </section>
-
-            <section>
-                <h1>The Audio Element</h1>
-                <p>Used to easily output an audio track in a webpage.</p>
-                <pre><code>&lt;audio controls=&quot;controls&quot;&gt;
+      </section>
+      
+      <section>
+        <h1>Don't bother with them...</h1>
+        <p>They are pointless and confusing. There is absolutely no reason to use them at this point.</p>
+        <ul>
+          <li>They are not "more semantic"</li>
+          <li>They are unsupported by older versions of Internet Explorer (still in wide use) and poorly supported by IE9</li>
+          <li>They smell funny...</li>
+        </ul>
+      </section>
+      
+      <section>
+        
+        <section>
+          <h1>Other HTML5 Elements</h1>
+          <ul>
+            <li>audio</li>
+            <li>video</li>
+            <li>embed</li>
+            <li>canvas</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Links and resources</h1>
+          <p><a href="http://dev.w3.org/html5/spec/media-elements.html">W3C HTML5 media elements spec</a></p>
+          <p><a href="http://html5demos.com/">HTML5 demos and examples</a></p>
+        </section>
+        
+      </section>
+      
+      <section>
+        <h1>The Audio Element</h1>
+        <p>Used to easily output an audio track in a webpage.</p>
+        <pre><code>&lt;audio controls=&quot;controls&quot;&gt;
   &lt;source src=&quot;resources/horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
   &lt;source src=&quot;resources/horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 Your browser does not support the audio element.
 &lt;/audio&gt;</code></pre>
-                <p>Results in:</p>
-                <audio controls="controls">
-                  <source src="resources/horse.ogg" type="audio/ogg">
-                  <source src="resources/horse.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-                </audio>
-            </section>
-            
-            <section>
-                <h1>The Video Element</h1>
-                <p>Used to easily output a video in a webpage.</p>
-                <pre><code>&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
+        <p>Results in:</p>
+        <audio controls="controls">
+          <source src="resources/horse.ogg" type="audio/ogg">
+          <source src="resources/horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+      </section>
+      
+      <section>
+        <h1>The Video Element</h1>
+        <p>Used to easily output a video in a webpage.</p>
+        <pre><code>&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
   &lt;source src=&quot;resources/movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
   &lt;source src=&quot;resources/movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
 Your browser does not support the video tag.
 &lt;/video&gt;</code></pre>
-                <p>Results in:</p>
-                <video width="320" height="240" controls="controls">
-                  <source src="resources/movie.mp4" type="video/mp4">
-                  <source src="resources/movie.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-                </video>
-            </section>
-            
-            <section>
-                <h1>The Embed Element</h1>
-                <p>The &lt;embed&gt; element represents non-HTML applications or interactive content.</p>
-                <pre><code>&lt;embed src=&quot;resources/example.swf&quot; /&gt;</code></pre>
-                <p>Results in:</p>
-                <embed width="75%" height="15%" name="plugin" src="resources/example.swf" type="application/x-shockwave-flash">
-            </section>
-            
-            <section>
-                
-                <section>
-                    <h1>The Canvas Element</h1>
-                    <p>Used to draw graphics, on the fly, via scripting.</p>
-                    <pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+        <p>Results in:</p>
+        <video width="320" height="240" controls="controls">
+          <source src="resources/movie.mp4" type="video/mp4">
+          <source src="resources/movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
+      </section>
+      
+      <section>
+        <h1>The Embed Element</h1>
+        <p>The &lt;embed&gt; element represents non-HTML applications or interactive content.</p>
+        <pre><code>&lt;embed src=&quot;resources/example.swf&quot; /&gt;</code></pre>
+        <p>Results in:</p>
+        <embed width="75%" height="15%" name="plugin" src="resources/example.swf" type="application/x-shockwave-flash">
+      </section>
+      
+      <section>
+        
+        <section>
+          <h1>The Canvas Element</h1>
+          <p>Used to draw graphics, on the fly, via scripting.</p>
+          <pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
 &lt;script&gt;
-    var canvas = document.getElementById(&#x27;myCanvas&#x27;);
-    var context = canvas.getContext(&#x27;2d&#x27;);
-    context.beginPath();
-    context.moveTo(100, 150); 
-    context.lineTo(450, 50);
-    context.stroke();
+  var canvas = document.getElementById(&#x27;myCanvas&#x27;);
+  var context = canvas.getContext(&#x27;2d&#x27;);
+  context.beginPath();
+  context.moveTo(100, 150); 
+  context.lineTo(450, 50);
+  context.stroke();
 &lt;/script&gt;
 </code></pre>
-                    <img src="resources/canvas.png" alt="">
-                </section>
-            
-                <section>
-                    <h1>Links and resources</h1>
-                    <p><a href="http://html5gallery.com/tag/canvas/">The HTML5 Canvas Gallery</a></p>
-                    <p><a href="http://speckyboy.com/2011/12/07/20-amazing-implementations-of-html5-canvas/">20 amazing implementations @ Speckyboy</a></p>
-                    <p><a href="http://www.html5canvastutorials.com/">HTML5 Canvas Tutorials</a></p>
-                
-                </section>
-            </section>
-            
-            <section>
-                <section>
-                    <h1>Lab time!</h1>
-                    <p>Grab your laptops! We are going to take a dive into the pond of HTML.</p>
-                </section>
-            
-                <section>
-                    <h1>Lab 1</h1>
-                    <p>First, set up your basic document structure.</p>
-                    <p>You have 3 minutes!</p>
-                </section>
-            
-                <section>
-                  <h1>Lab 1</h1>
-                    <p>Does it look something like this?</p>
-                    <pre><code>&lt;!DOCTYPE html&gt;
+          <img src="resources/canvas.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Links and resources</h1>
+          <p><a href="http://html5gallery.com/tag/canvas/">The HTML5 Canvas Gallery</a></p>
+          <p><a href="http://speckyboy.com/2011/12/07/20-amazing-implementations-of-html5-canvas/">20 amazing implementations @ Speckyboy</a></p>
+          <p><a href="http://www.html5canvastutorials.com/">HTML5 Canvas Tutorials</a></p>
+        </section>
+      </section>
+      
+      <section>
+        <section>
+          <h1>Lab time!</h1>
+          <p>Grab your laptops! We are going to take a dive into the pond of HTML.</p>
+        </section>
+        
+        <section>
+          <h1>Lab 1</h1>
+          <p>First, set up your basic document structure.</p>
+          <p>You have 3 minutes!</p>
+        </section>
+        
+        <section>
+          <h1>Lab 1</h1>
+          <p>Does it look something like this?</p>
+          <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;la&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;&lt;/title&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 1</h1>
-                    <p>Add some content</p>
-                    <ul>
-                        <li>Two headlines</li>
-                        <li>Some paragraphs</li>
-                        <li>A few linked words in said paragraphs</li>
-                        <li>Two images (image_1.png and image_2.png)</li>
-                    </ul>
-                </section>
-            
-                <section>
-                  <h1>Lab 1</h1>
-                    <pre><code>&lt;!DOCTYPE html&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 1</h1>
+          <p>Add some content</p>
+          <ul>
+            <li>Two headlines</li>
+            <li>Some paragraphs</li>
+            <li>A few linked words in said paragraphs</li>
+            <li>Two images (image_1.png and image_2.png)</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 1</h1>
+          <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;la&quot;&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Bacon ipsum&lt;/title&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Bacon ipsum&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;h1&gt;Bacon ipsum&lt;/h1&gt;
   &lt;p&gt;Tri-tip leberkas turkey pork belly shankle beef ribs.&lt;/p&gt;
   &lt;img src=&quot;../image_1.png&quot; alt=&quot;Jerky sirloin flank&quot;&gt;
   &lt;p&gt;Bacon ipsum dolor sit amet beef ribs swine ... biltong tri-tip. &lt;a href=&quot;http://baconipsum.com&quot;&gt;Pork belly beef&lt;/a&gt; jowl salami. Pig corned beef fatback cow.&lt;/p&gt;
-    &lt;h2&gt;Doner bacon prosciutto&lt;/h2&gt;
-    &lt;p&gt;Tri-tip shoulder doner boudin capicola bacon cow prosciutto beef ... spare ribs beef turkey chuck kielbasa.&lt;/p&gt;
-    &lt;img src=&quot;../image_2.png&quot; alt=&quot;Beef ribs biltong ham hock&quot;&gt;
-    &lt;p&gt;Pork belly cow salami, jowl pork chop capicola ... Flank tenderloin ham shank, fatback biltong bresaola sausage pork loin.&lt;/p&gt;
-    &lt;p&gt;Hamburger venison ham hock andouille swine kielbasa. Corned beef ground round meatloaf chicken. Shankle andouille t-bone, pork chop cow salami bacon tri-tip. Short loin boudin filet mignon ham.&lt;/p&gt;
+  &lt;h2&gt;Doner bacon prosciutto&lt;/h2&gt;
+  &lt;p&gt;Tri-tip shoulder doner boudin capicola bacon cow prosciutto beef ... spare ribs beef turkey chuck kielbasa.&lt;/p&gt;
+  &lt;img src=&quot;../image_2.png&quot; alt=&quot;Beef ribs biltong ham hock&quot;&gt;
+  &lt;p&gt;Pork belly cow salami, jowl pork chop capicola ... Flank tenderloin ham shank, fatback biltong bresaola sausage pork loin.&lt;/p&gt;
+  &lt;p&gt;Hamburger venison ham hock andouille swine kielbasa. Corned beef ground round meatloaf chicken. Shankle andouille t-bone, pork chop cow salami bacon tri-tip. Short loin boudin filet mignon ham.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 2</h1>
-                    <ul>
-                      <li>Add two lists; one ordered and one unordered.</li>
-                      <li>Add a nested list inside one of the previous lists.</li>
-                      <li>Surround every item content in the unnested list with links.</li>
-                      <li>Move the unnested list to just below the h1 element.</li>
-                    </ul>
-                    <img src="resources/lab02.png" alt="">
-                </section>
-            
-                <section>
-                  <h1>Lab 2</h1>
-                  <pre><code>&lt;ul&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 2</h1>
+          <ul>
+            <li>Add two lists; one ordered and one unordered.</li>
+            <li>Add a nested list inside one of the previous lists.</li>
+            <li>Surround every item content in the unnested list with links.</li>
+            <li>Move the unnested list to just below the h1 element.</li>
+          </ul>
+          <img src="resources/lab02.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Lab 2</h1>
+          <pre><code>&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;&quot;&gt;Tri-tip shoulder&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;&quot;&gt;Frankfurter doner&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;&quot;&gt;Meatloaf rump&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-                  <pre><code>&lt;ol&gt;
+          <pre><code>&lt;ol&gt;
   &lt;li&gt;
-    Bacon ipsum
-    &lt;ol&gt;
-      &lt;li&gt;Rump tri-tip&lt;/li&gt;
-      &lt;li&gt;Doner bacon prosciutto ground&lt;/li&gt;
-    &lt;/ol&gt;
+  Bacon ipsum
+  &lt;ol&gt;
+    &lt;li&gt;Rump tri-tip&lt;/li&gt;
+    &lt;li&gt;Doner bacon prosciutto ground&lt;/li&gt;
+  &lt;/ol&gt;
   &lt;/li&gt;
   &lt;li&gt;Pig strip steak ham cow kielbasa&lt;/li&gt;
   &lt;li&gt;Ribeye turducken&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 3</h1>
-                    <p>Create a table with 3 columns, a row of table headers and 2 rows with data cells.</p>
-                    <img src="resources/lab03.png" alt="">
-                </section>
-            
-                <section>
-                  <h1>Lab 3</h1>
-                    <pre><code>&lt;table border=&quot;1&quot;&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 3</h1>
+          <p>Create a table with 3 columns, a row of table headers and 2 rows with data cells.</p>
+          <img src="resources/lab03.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Lab 3</h1>
+          <pre><code>&lt;table border=&quot;1&quot;&gt;
   &lt;caption&gt;Hamburger ground round venison, turkey short loin ham shankle.&lt;/caption&gt;
   &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Chuck bresaola pork&lt;/th&gt;
-      &lt;th scope=&quot;col&quot;&gt;Filet mignon ham&lt;/th&gt;
-      &lt;th scope=&quot;col&quot;&gt;Boudin cow filet &lt;/th&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;Chuck bresaola pork&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Filet mignon ham&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Boudin cow filet &lt;/th&gt;
+  &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Fatback ham hock&lt;/td&gt;
-        &lt;td&gt;Tail pancetta&lt;/td&gt;
-        &lt;td&gt;Prosciutto meatball&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;Swine pastrami&lt;/td&gt;
-        &lt;td&gt;Brisket meatball&lt;/td&gt;
-        &lt;td&gt;Rump short ribs&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
+    &lt;tr&gt;
+    &lt;td&gt;Fatback ham hock&lt;/td&gt;
+    &lt;td&gt;Tail pancetta&lt;/td&gt;
+    &lt;td&gt;Prosciutto meatball&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;td&gt;Swine pastrami&lt;/td&gt;
+    &lt;td&gt;Brisket meatball&lt;/td&gt;
+    &lt;td&gt;Rump short ribs&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 4</h1>
-                    <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containing checkbox resp. radiobutton groups and a submit button.</p>
-                    <img src="resources/form.png" alt="">
-                </section>
-            
-                <section>
-                    <h1>Lab 4</h1>
-                    <p>The form element</p>
-                    <pre><code>&lt;form action=&quot;solution.html&quot; method=&quot;post&quot;&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Create a form with labels, text, select, multiple select and textarea input fields, two fieldsets containing checkbox resp. radiobutton groups and a submit button.</p>
+          <img src="resources/form.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>The form element</p>
+          <pre><code>&lt;form action=&quot;solution.html&quot; method=&quot;post&quot;&gt;
 ...Put your input fields here...
 &lt;/form&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 4</h1>
-                    <p>Separated label and input field</p>
-                    <pre><code>&lt;label for=&quot;text-input&quot;&gt;Bacon&lt;/label&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Separated label and input field</p>
+          <pre><code>&lt;label for=&quot;text-input&quot;&gt;Bacon&lt;/label&gt;
 &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot; placeholder=&quot;bacon hint value&quot;&gt;</code></pre>
-                    <p>Nested input field within label</p>
-                    <pre><code>&lt;label&gt;Ipsum&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; placeholder=&quot;ipsum hint value&quot;&gt;&lt;/label&gt;</code></pre>
-                    <p>And here is a textarea</p>
-                    <pre><code>&lt;label for=&quot;textarea&quot;&gt;Mignon&lt;/label&gt;
-&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot; cols=&quot;30&quot; rows=&quot;5&quot; placeholder=&quot;mignon hint value&quot;&gt;&lt;/textarea&gt;</code></pre>       
-                </section>
-            
-                <section>
-                  <h1>Lab 4</h1>
-                    <p>Single and multiple select</p>
-                    <pre><code>&lt;label for=&quot;select-1&quot;&gt;Hamburger&lt;/label&gt;
+          <p>Nested input field within label</p>
+          <pre><code>&lt;label&gt;Ipsum&lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; placeholder=&quot;ipsum hint value&quot;&gt;&lt;/label&gt;</code></pre>
+          <p>And here is a textarea</p>
+          <pre><code>&lt;label for=&quot;textarea&quot;&gt;Mignon&lt;/label&gt;
+&lt;textarea name=&quot;textarea&quot; id=&quot;textarea&quot; cols=&quot;30&quot; rows=&quot;5&quot; placeholder=&quot;mignon hint value&quot;&gt;&lt;/textarea&gt;</code></pre>     
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Single and multiple select</p>
+          <pre><code>&lt;label for=&quot;select-1&quot;&gt;Hamburger&lt;/label&gt;
 &lt;select name=&quot;select-1&quot; id=&quot;select-1&quot;&gt;
   &lt;option value=&quot;option1&quot;&gt;Ground&lt;/option&gt;
   &lt;option value=&quot;option2&quot;&gt;Round&lt;/option&gt;
@@ -625,466 +632,466 @@ Your browser does not support the video tag.
   &lt;option value=&quot;option2&quot;&gt;Pork&lt;/option&gt;
   &lt;option value=&quot;option3&quot;&gt;Pastrami&lt;/option&gt;
 &lt;/select&gt;</code></pre>
-                </section>
-            
-                <section>
-                  <h1>Lab 4</h1>
-                    <p>Fieldset with checkbox group</p>
-                    <pre><code>&lt;fieldset&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Fieldset with checkbox group</p>
+          <pre><code>&lt;fieldset&gt;
   &lt;legend class=&quot;wrap&quot;&gt;Fatback&lt;/legend&gt;
   &lt;input type=&quot;checkbox&quot; value=&quot;one&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-1&quot; checked=&quot;checked&quot;&gt;
   &lt;label for=&quot;checkbox2-1&quot;&gt;Ham&lt;/label&gt;
   &lt;input type=&quot;checkbox&quot; value=&quot;two&quot; name=&quot;checkboxgroup2&quot; id=&quot;checkbox2-2&quot;&gt;
   &lt;label for=&quot;checkbox2-2&quot;&gt;Ribs&lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
-                </section>
-                  
-                <section>
-                  <h1>Lab 4</h1>
-                    <p>Fieldset with radiobutton group</p>
-                    <pre><code>&lt;fieldset&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Fieldset with radiobutton group</p>
+          <pre><code>&lt;fieldset&gt;
   &lt;legend class=&quot;wrap&quot;&gt;Pancetta&lt;/legend&gt;
   &lt;input type=&quot;radio&quot; value=&quot;one&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-1&quot; checked=&quot;checked&quot;&gt;
   &lt;label for=&quot;radio2-1&quot;&gt;Doner&lt;/label&gt;
   &lt;input type=&quot;radio&quot; value=&quot;two&quot; name=&quot;radiogroup2&quot; id=&quot;radio2-2&quot;&gt;
   &lt;label for=&quot;radio2-2&quot;&gt;Turkey&lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
-                </section>
-                  
-                <section>
-                  <h1>Lab 4</h1>
-                    <p>Finally, the submit button</p>
-                    <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit Beef&quot;&gt;</code></pre>
-                </section>
-            
-                <section>
-                    <h1>Lab 5</h1>
-                    <ul>
-                      <li>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation.</li>
-                      <li>Use divs to logically group form elements.</li>
-                    </ul>
-                    <img src="resources/form2.png" alt="">
-                </section>
-            
-                <section>
-                  <h1>Lab 5B</h1>
-                    <p>ID's are for unique elements,<br> classes can be used multiple times.</p>
-                    <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 4</h1>
+          <p>Finally, the submit button</p>
+          <pre><code>&lt;input type=&quot;submit&quot; value=&quot;Submit Beef&quot;&gt;</code></pre>
+        </section>
+        
+        <section>
+          <h1>Lab 5</h1>
+          <ul>
+            <li>Use ID's and classes to prepare the HTML elements for styling and DOM manipulation.</li>
+            <li>Use divs to logically group form elements.</li>
+          </ul>
+          <img src="resources/form2.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Lab 5B</h1>
+          <p>ID's are for unique elements,<br> classes can be used multiple times.</p>
+          <pre><code>&lt;div id=&quot;page-header&quot; class=&quot;header&quot;&gt;
   &lt;h1&gt;Bacon ipsum&lt;/h1&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Tri-tip shoulder&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Frankfurter doner&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Meatloaf rump&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Tri-tip shoulder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Frankfurter doner&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Meatloaf rump&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
-                    <p>Classify on what it is, rather than what it should look like.</p>
-                    <pre><code>&lt;div class=&quot;text&quot;&gt;
+          <p>Classify on what it is, rather than what it should look like.</p>
+          <pre><code>&lt;div class=&quot;text&quot;&gt;
   &lt;label for=&quot;text-input&quot;&gt;Bacon&lt;/label&gt;
   &lt;input type=&quot;text&quot; name=&quot;text-input&quot; value=&quot;&quot; id=&quot;text-input&quot; placeholder=&quot;bacon hint value&quot;&gt;
 &lt;/div&gt;</code></pre>
-                </section>
-                
-                <section>
-                  <h1>Lab 5C</h1>
-                  <ul>
-                    <li>Group everything within the body tag in a container div.</li>
-                    <li>Group everything from underneath the page-header div down to and including the table in one primary div.</li>
-                    <li>Group the entire form in another, secondary div.</li>
-                    <li>Move the nested list down to its' own footer div below the secondary div. Use this div to clear floating.</li>
-                  </ul>
-                </section>
-            
-            </section>
-            
-            <section>
-              <h1>CSS</h1>
-              <p>Cascading Style Sheet</p>
-            </section>
-            
-            <section>
-              <h1>Where is it defined?</h1>
-              <p>You can have your CSS:</p>
-              <ul>
-                <li>inline in your tags (not good practice)</li>
-                <pre><code>&lt;p style=&quot;color: blue&quot;&gt;Inline example&lt;/p&gt;</code></pre>
-                <li>within a style element in your HTML</li>
-                <pre><code>&lt;style type=&quot;text/css&quot;&gt;
+        </section>
+        
+        <section>
+          <h1>Lab 5C</h1>
+          <ul>
+          <li>Group everything within the body tag in a container div.</li>
+          <li>Group everything from underneath the page-header div down to and including the table in one primary div.</li>
+          <li>Group the entire form in another, secondary div.</li>
+          <li>Move the nested list down to its' own footer div below the secondary div. Use this div to clear floating.</li>
+          </ul>
+        </section>
+      
+      </section>
+      
+      <section>
+        <h1>CSS</h1>
+        <p>Cascading Style Sheet</p>
+      </section>
+      
+      <section>
+        <h1>Where is it defined?</h1>
+        <p>You can have your CSS:</p>
+        <ul>
+        <li>inline in your tags (not good practice)</li>
+        <pre><code>&lt;p style=&quot;color: blue&quot;&gt;Inline example&lt;/p&gt;</code></pre>
+        <li>within a style element in your HTML</li>
+        <pre><code>&lt;style type=&quot;text/css&quot;&gt;
   .banner { border: 1px solid #aaa; }
   .header { padding: 1em; }
 &lt;/style&gt;</code></pre>
-                <li>or in a separate CSS file (best practice)</li>
-                <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre>
-              </ul>
-            </section>
-            
-            <section>
-                <h1>Styling</h1>
-                <p>Selectors define the rule for what element(s) in your HTML document you want to target for styling.</p>
-                <p>There are different kinds of selectors. You can select by:</p> 
-                <p><strong>type, id, class, universal (*), descendant (.a .b), child (>), adjecent sibling (+), pseudo elements and classes.</strong></p>
-                <p>You can also group your selectors.</p>
-                <pre><code>p span.highlight { font-weight: bold; color: red; }
+        <li>or in a separate CSS file (best practice)</li>
+        <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code></pre>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Styling</h1>
+        <p>Selectors define the rule for what element(s) in your HTML document you want to target for styling.</p>
+        <p>There are different kinds of selectors. You can select by:</p> 
+        <p><strong>type, id, class, universal (*), descendant (.a .b), child (>), adjecent sibling (+), pseudo elements and classes.</strong></p>
+        <p>You can also group your selectors.</p>
+        <pre><code>p span.highlight { font-weight: bold; color: red; }
 h1, a:hover { text-decoration: underline; }
 li a { text-decoration: none; }
 body > p { margin: 0 10px; }
 h1 + h2 { margin-top: -5mm }</code></pre>
-            </section>
-            
-            <section>
-                <h1>The Type Selector</h1>
-                <p>A type selector matches every instance of an element type in the document tree.</p>
-                <pre><code>h1 { font-family: sans-serif; } 
+      </section>
+      
+      <section>
+        <h1>The Type Selector</h1>
+        <p>A type selector matches every instance of an element type in the document tree.</p>
+        <pre><code>h1 { font-family: sans-serif; } 
 ul { list-style-type: none; }</code></pre>
-            </section>
-            
-            <section>
-                <h1>The ID Selector</h1>
-                <p>No two id attributes can have the same value, they are unique within the HTML document.</p>
-                <pre><code>&lt;h1 id=&quot;chapter1&quot;&gt;Having a Good Time!&lt;/h1&gt;</code></pre>
-                <p>Styling the element by id.</p>
-                <pre><code>#chapter1 { font-weight: bold; }</code></pre>
-            </section>
-            
-            <section>
-                <h1>The Class Selector</h1>
-                <p>Classes are not unique and thus permits you to style multiple elements with the same properties.</p>
-                <pre><code>&lt;li class=&quot;menu-item&quot;&gt;Book Index&lt;/li&gt;
+      </section>
+      
+      <section>
+        <h1>The ID Selector</h1>
+        <p>No two id attributes can have the same value, they are unique within the HTML document.</p>
+        <pre><code>&lt;h1 id=&quot;chapter1&quot;&gt;Having a Good Time!&lt;/h1&gt;</code></pre>
+        <p>Styling the element by id.</p>
+        <pre><code>#chapter1 { font-weight: bold; }</code></pre>
+      </section>
+      
+      <section>
+        <h1>The Class Selector</h1>
+        <p>Classes are not unique and thus permits you to style multiple elements with the same properties.</p>
+        <pre><code>&lt;li class=&quot;menu-item&quot;&gt;Book Index&lt;/li&gt;
 &lt;li class=&quot;menu-item&quot;&gt;Chapter 1&lt;/li&gt;
 &lt;li class=&quot;menu-item&quot;&gt;Chapter 2&lt;/li&gt;
 &lt;li class=&quot;menu-item&quot;&gt;Chapter 3&lt;/li&gt;
 &lt;li class=&quot;menu-item&quot;&gt;Chapter 4&lt;/li&gt;</code></pre>
-                <p>Styling the element by class.</p>
-                <pre><code>.menu-item { padding: 5px; }</code></pre>
-            </section>
-            
-            <section>
-                <h1>Pseudo Classes</h1>
-                <p>To style elements based on user interaction or information that lies outside the document tree, pseudo classes can be used.</p>
-                <p>For example if a link has been visited or to style the first paragraph child of a div tag.</p>
-                <pre><code>a:visited { color: blue }
+        <p>Styling the element by class.</p>
+        <pre><code>.menu-item { padding: 5px; }</code></pre>
+      </section>
+      
+      <section>
+        <h1>Pseudo Classes</h1>
+        <p>To style elements based on user interaction or information that lies outside the document tree, pseudo classes can be used.</p>
+        <p>For example if a link has been visited or to style the first paragraph child of a div tag.</p>
+        <pre><code>a:visited { color: blue }
 div &gt; p:first-child { text-indent: 0 }</code></pre>
-            </section>
-            
-            <section>
-                <h1>Chained Selectors</h1>
-                <p></p>
-                <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
-                <p>This selector targets all menu items in the header list below but not those in the footer list.</p>
-                <pre><code>&lt;div id=&quot;header&quot;&gt;
-    &lt;ul&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
-    &lt;/ul&gt;
+      </section>
+      
+      <section>
+        <h1>Chained Selectors</h1>
+        <p></p>
+        <pre><code>#header .menu-item { text-transform: uppercase; }</code></pre>
+        <p>This selector targets all menu items in the header list below but not those in the footer list.</p>
+        <pre><code>&lt;div id=&quot;header&quot;&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div id=&quot;footer&quot;&gt;
-    &lt;ul&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
-        &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;ul&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 1&lt;/li&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 2&lt;/li&gt;
+    &lt;li class=&quot;menu-item&quot;&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
-            </section>
-            
-            <section>
-                <h1>Stacked Selectors</h1>
-                <p></p>
-                <pre><code>p.highlight { background-color: #eaeaae; }</code></pre>
-                <p>This selector targets the &lt;p&gt; element with a class attribute value set to 'highlight'.</p>
-                <pre><code>&lt;p class=&quot;highlight&quot;&gt;This paragraph is highlighted!&lt;/p&gt;
+      </section>
+      
+      <section>
+        <h1>Stacked Selectors</h1>
+        <p></p>
+        <pre><code>p.highlight { background-color: #eaeaae; }</code></pre>
+        <p>This selector targets the &lt;p&gt; element with a class attribute value set to 'highlight'.</p>
+        <pre><code>&lt;p class=&quot;highlight&quot;&gt;This paragraph is highlighted!&lt;/p&gt;
 &lt;p&gt;This &lt;span class=&quot;highlight&quot;&gt;This&lt;/span&gt; remains unstyled.&lt;/p&gt;</code></pre>
-            </section>
-            
-            <section>
-                <h1>Grouping Selectors</h1>
-                <p>To reuse and have the same styling declaration for a group of selectors you simply separate these selectors with a comma ','.</p>
-                <pre><code>h1#title, a:hover { text-decoration: underline; }</code></pre>
-            </section>
-            
-            <section>
-                <h1>The Universal Selector</h1>
-                <p>The universal selector, written as an asterisk (*), matches the name of any element type.</p>
-                <pre><code>.warning * { 
+      </section>
+      
+      <section>
+        <h1>Grouping Selectors</h1>
+        <p>To reuse and have the same styling declaration for a group of selectors you simply separate these selectors with a comma ','.</p>
+        <pre><code>h1#title, a:hover { text-decoration: underline; }</code></pre>
+      </section>
+      
+      <section>
+        <h1>The Universal Selector</h1>
+        <p>The universal selector, written as an asterisk (*), matches the name of any element type.</p>
+        <pre><code>.warning * { 
   border: 1px solid yellow; 
   background-color: #eecc00; 
 }</code></pre>
-                <p>The above example matches any element inside an element with the class “warning”.</p>
-                <div class="side-by-side"><pre><code>&lt;div class=&quot;warning&quot;&gt;
+        <p>The above example matches any element inside an element with the class “warning”.</p>
+        <div class="side-by-side"><pre><code>&lt;div class=&quot;warning&quot;&gt;
   &lt;p&gt;Hey, watch out!&lt;/p&gt;
   &lt;div&gt;Outside paragraph.&lt;p&gt;Another story...&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre></div>
 <div class="side-by-side"><img src="resources/universal-selector.png" alt=""></div>
-            </section>
-            
-            <section>
-                <h1>The Box Model</h1>
-                <p>Every element in the web is a rectangular box.</p>
-                <p>This is how the size of the box and the space around it is calculated.</p>
-                <div class="side-by-side"><pre><code>the_box {
+      </section>
+      
+      <section>
+        <h1>The Box Model</h1>
+        <p>Every element in the web is a rectangular box.</p>
+        <p>This is how the size of the box and the space around it is calculated.</p>
+        <div class="side-by-side"><pre><code>the_box {
   width: 300px; 
   padding: 20px; 
   border: 20px solid green; 
   margin: 20px 30px 30px 20px; 
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/boxmodel.png" alt=""></div>
-            </section>
-            
-            <section>
-                <h1>Layouting</h1>
-                <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
-                <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting <strong>width, margins, floating, using different positionings and display styles.</strong></p>
-            </section>
-            
-            <section>
-              <h1>Inline vs block display</h1>
-              <p>For so called <strong>phrase content</strong> (what makes up a paragraph) the default display type is <strong>'inline'</strong>. For <strong>flow content</strong> it is <strong>'block'</strong>. The difference is that block displayal (by default) has a width of 100%, that is, it automatically stretches horizontally within its' container.</p>
-              <div><img src="resources/inline-vs-block.png"></div>
-            </section>
-            
-            <section>
-                <h1>Positioning</h1>
-                <p>The position property enables you to place an element exactly where you want it on a webpage. There are four valid values:</p>
-                <ul>
-                    <li>Static (defalut value)</li>
-                    <li>Fixed</li>
-                    <li>Relative</li>
-                    <li>Absolute</li>
-                </ul>
-            </section>
-            
-            <section>
-                <h1>Static Positioning</h1>
-                <p>Using the 'static' value (which is default) the element is positioned exactly where it would be as without styling.</p>
-                <div class="side-by-side"><pre><code>#div-1 {
+        <div class="side-by-side"><img src="resources/boxmodel.png" alt=""></div>
+      </section>
+      
+      <section>
+        <h1>Layouting</h1>
+        <p>Layouting in CSS is about distributing sections of content in different ways on the page.</p>
+        <p>This is usually done by using &lt;div&gt;:s. You can achieve a lot by setting <strong>width, margins, floating, using different positionings and display styles.</strong></p>
+      </section>
+      
+      <section>
+        <h1>Inline vs block display</h1>
+        <p>For so called <strong>phrase content</strong> (what makes up a paragraph) the default display type is <strong>'inline'</strong>. For <strong>flow content</strong> it is <strong>'block'</strong>. The difference is that block displayal (by default) has a width of 100%, that is, it automatically stretches horizontally within its' container.</p>
+        <div><img src="resources/inline-vs-block.png"></div>
+      </section>
+      
+      <section>
+        <h1>Positioning</h1>
+        <p>The position property enables you to place an element exactly where you want it on a webpage. There are four valid values:</p>
+        <ul>
+          <li>Static (defalut value)</li>
+          <li>Fixed</li>
+          <li>Relative</li>
+          <li>Absolute</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h1>Static Positioning</h1>
+        <p>Using the 'static' value (which is default) the element is positioned exactly where it would be as without styling.</p>
+        <div class="side-by-side"><pre><code>#div-1 {
    position:static;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-static.png"></div>
-            </section>
-            
-            <section>
-                <h1>Fixed Positioning</h1>
-                <p>Used to position an element on a fixed position relative to the browser window, even when scrolling. In this case the #div-1 block will be stuck at the bottom of the browser viewport.</p>
-                <div class="side-by-side"><pre><code>#div-1 { 
-    position: fixed; 
-    left: 0px; 
-    bottom: 0px; 
+        <div class="side-by-side"><img src="resources/pos-static.png"></div>
+      </section>
+      
+      <section>
+        <h1>Fixed Positioning</h1>
+        <p>Used to position an element on a fixed position relative to the browser window, even when scrolling. In this case the #div-1 block will be stuck at the bottom of the browser viewport.</p>
+        <div class="side-by-side"><pre><code>#div-1 { 
+  position: fixed; 
+  left: 0px; 
+  bottom: 0px; 
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-fixed.png"></div>
-            </section>
-            
-            <section>
-                <h1>Relative Positioning</h1>
-                <p>If you specify position:relative, then you can use top or bottom and left or right to move the element relative to where it would normally occur in the document.</p>
-                <div class="side-by-side"><pre><code>#div-1 {
-    position:relative;
-    top:20px;
-    left:-40px;
+        <div class="side-by-side"><img src="resources/pos-fixed.png"></div>
+      </section>
+      
+      <section>
+        <h1>Relative Positioning</h1>
+        <p>If you specify position:relative, then you can use top or bottom and left or right to move the element relative to where it would normally occur in the document.</p>
+        <div class="side-by-side"><pre><code>#div-1 {
+  position:relative;
+  top:20px;
+  left:-40px;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-rel.png"></div>
-            </section>
-            
-            <section>
-                <h1>Absolute Positioning</h1>
-                <p>When you specify position:absolute, the element is removed from the document and placed exactly where you tell it to go.</p>
-                <div style="float:left; width:50%;"><pre><code>#div-1a {
-    position:absolute;
-    top:0;
-    right:0;
-    width:200px;
+        <div class="side-by-side"><img src="resources/pos-rel.png"></div>
+      </section>
+      
+      <section>
+        <h1>Absolute Positioning</h1>
+        <p>When you specify position:absolute, the element is removed from the document and placed exactly where you tell it to go.</p>
+        <div style="float:left; width:50%;"><pre><code>#div-1a {
+  position:absolute;
+  top:0;
+  right:0;
+  width:200px;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-abs.png"></div>
-            </section>
-            
-            <section>
-                <h1>Combined Positioning</h1>
-                <p>If we set relative positioning on div-1, any elements within div-1 will be positioned relative to div-1. Then if we set absolute positioning on div-1a, we can move it to the top right of div-1.</p>
-                <div style="float:left; width:50%;"><pre><code>#div-1 {
-    position:relative;
+        <div class="side-by-side"><img src="resources/pos-abs.png"></div>
+      </section>
+      
+      <section>
+        <h1>Combined Positioning</h1>
+        <p>If we set relative positioning on div-1, any elements within div-1 will be positioned relative to div-1. Then if we set absolute positioning on div-1a, we can move it to the top right of div-1.</p>
+        <div style="float:left; width:50%;"><pre><code>#div-1 {
+  position:relative;
 }
 #div-1a {
-    position:absolute;
-    top:0;
-    right:0;
-    width:200px;
+  position:absolute;
+  top:0;
+  right:0;
+  width:200px;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-rel-abs.png"></div>
-            </section>
-            
-            <section>
-                <h1>Floating Columns</h1>
-                <p>If we float one column to the left, then also float the second column to the left, they will push up against each other.</p>
-                <div class="side-by-side"><pre><code>#div-1a {
-    float:left;
-    width:150px;
+        <div class="side-by-side"><img src="resources/pos-rel-abs.png"></div>
+      </section>
+      
+      <section>
+        <h1>Floating Columns</h1>
+        <p>If we float one column to the left, then also float the second column to the left, they will push up against each other.</p>
+        <div class="side-by-side"><pre><code>#div-1a {
+  float:left;
+  width:150px;
 }
 #div-1b {
-    float:left;
-    width:150px;
+  float:left;
+  width:150px;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-float-col.png"></div>
-            </section>
-            
-            <section>
-                <h1>Clearing Floats</h1>
-                <p>Then after the floating elements we can "clear" the floats to push down the rest of the content.</p>
-                <div class="side-by-side"><pre><code>#div-1a {
-    float:left;
-    width:190px;
+        <div class="side-by-side"><img src="resources/pos-float-col.png"></div>
+      </section>
+      
+      <section>
+        <h1>Clearing Floats</h1>
+        <p>Then after the floating elements we can "clear" the floats to push down the rest of the content.</p>
+        <div class="side-by-side"><pre><code>#div-1a {
+  float:left;
+  width:190px;
 }
 #div-1b {
-    float:left;
-    width:190px;
+  float:left;
+  width:190px;
 }
 #div-1c {
-    clear:both;
+  clear:both;
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-float-col-clear.png"></div>
-            </section>
-            
-            <section>
-                <h1>Centering Content</h1>
-                <p>Now, if we want to center div-1a and div-1c horizontally this can be done by setting its right and left margin widths to "auto". </p>
-                <div class="side-by-side"><pre><code>#div-1a, #div-1c { 
-    margin: 0px auto; 
-    width: 200px; 
+        <div class="side-by-side"><img src="resources/pos-float-col-clear.png"></div>
+      </section>
+      
+      <section>
+        <h1>Centering Content</h1>
+        <p>Now, if we want to center div-1a and div-1c horizontally this can be done by setting its right and left margin widths to "auto". </p>
+        <div class="side-by-side"><pre><code>#div-1a, #div-1c { 
+  margin: 0px auto; 
+  width: 200px; 
 }</code></pre></div>
-                <div class="side-by-side"><img src="resources/pos-centering.png"></div>
-            </section>
-            
-            <section>
-                <h1>The Cascade - Inheritance</h1>
-                <p>Inheritance is the process by which properties are passed from parent to child elements even though those properties have not been explicitly defined by other means.</p>
-            </section>
-            
-            <section>
-                <h1>The Cascade - Inheritance</h1>
-                <p>Why is this a good thing? Consider the following code:</p>
-                <div class="side-by-side"><pre><code>div {
+        <div class="side-by-side"><img src="resources/pos-centering.png"></div>
+      </section>
+      
+      <section>
+        <h1>The Cascade - Inheritance</h1>
+        <p>Inheritance is the process by which properties are passed from parent to child elements even though those properties have not been explicitly defined by other means.</p>
+      </section>
+      
+      <section>
+        <h1>The Cascade - Inheritance</h1>
+        <p>Why is this a good thing? Consider the following code:</p>
+        <div class="side-by-side"><pre><code>div {
   font-size: 20px;
 }</code></pre></div>
-                <div class="side-by-side"><pre><code>&lt;div&gt;
+        <div class="side-by-side"><pre><code>&lt;div&gt;
   &lt;p&gt;
-    This &lt;em&gt;sentence&lt;/em&gt; will have a 20px
-    &lt;a href=&quot;#&quot;&gt;font-size&lt;/a&gt;.
+  This &lt;em&gt;sentence&lt;/em&gt; will have a 20px
+  &lt;a href=&quot;#&quot;&gt;font-size&lt;/a&gt;.
   &lt;/p&gt;
 &lt;/div&gt;</code></pre></div>
-                <p>If inheritance wasn’t at work in the above code, we’d have to specify a font-size declaration for each element in turn, to make sure that all the content in the sentence was rendered at 20px.</p>
-            </section>
-            
-            <section>
-              <section>
-                <h1>The Cascade - Inheritance</h1>
-                <p>Some properties are automatically inherited to an element from its' parent. Example of these are:</p>
-                <p><strong>font-family, font-size, color, background-color.</strong></p>
-                <p>Though, if you want to manually inherit, for example, a parent elements' border, this is how to do it:</p>
-                <div class="side-by-side"><pre><code>.parent { border: 5px solid #666; padding: 10px; }
+        <p>If inheritance wasn’t at work in the above code, we’d have to specify a font-size declaration for each element in turn, to make sure that all the content in the sentence was rendered at 20px.</p>
+      </section>
+      
+      <section>
+        <section>
+        <h1>The Cascade - Inheritance</h1>
+        <p>Some properties are automatically inherited to an element from its' parent. Example of these are:</p>
+        <p><strong>font-family, font-size, color, background-color.</strong></p>
+        <p>Though, if you want to manually inherit, for example, a parent elements' border, this is how to do it:</p>
+        <div class="side-by-side"><pre><code>.parent { border: 5px solid #666; padding: 10px; }
 .child { border: inherit; }</code></pre></div>
 <div class="side-by-side"><img src="resources/inherit-border.png" /></div>
-              </section>      
-              <section>
-                <h1>Links and Resources</h1>
-                <p><a href="http://www.w3.org/TR/CSS21/propidx.html">Is the property inherited?</a></p>
-              </section>
-            </section>
-            
-            <section>
-                <h1>The Cascade - Specificity</h1>
-                <p>Specificity is a mechanism within the CSS cascade that aids conflict resolution. In order of importance:</p>
-                <ol>
-                    <li>Existance of style attribute</li>
-                    <li>Counting id selectors</li>
-                    <li>Counting class, attribute and pseudo selectors</li>
-                    <li>Counting element type selectors and pseudo-element</li>
-                </ol>
-            </section>
-            
-            <section>
-                <h1>Specificity Example</h1>
-                <pre><code>&lt;p class="message" style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre>
-<table id="specificity" border="1" style="font-size: 0.5em;">
-    <caption>In order of importance, from left to right:</caption>
-    <thead>
-        <tr style="background-color: #eee;">
-            <th scope="col">Selector</th>
-            <th scope="col">Inline Style</th>
-            <th scope="col">IDs</th>
-            <th scope="col">Classes, Attributes and Pseudo-classes</th>
-            <th scope="col">Element Types and Pseudo-elements</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr style="background-color: white; font-weight: bold;">
-            <td>Inline Style</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>body#home div#warning p.message {
-  color: blue;
-}</td>
-            <td>0</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>* body#home>div#warning .message {
-  color: red;
-}</td>
-            <td>0</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>#home #warning p.message {
-  color: yellow;
-}</td>
-            <td>0</td>
-            <td>2</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>#warning p.message {
-  color: white;
-}</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        <tr style="background-color: white;">
-            <td>p.message {
-  color: green;
-}</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-    </tbody>
-</table>            
-            </section>
-            
-            <section>
-                <h1>Avoid Inline Styling</h1>
-                <p>Inline style rules always have the highest specificity, the only way to overwrite them within the CSS cascade is to use the <span style="font-weight: bold">!important</span> statement on the relevant declarations—an approach that creates a maintenance nightmare.</p>
-                <div class="side-by-side"><pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre></div>
-                <div class="side-by-side"><pre><code>p {
+        </section>    
+        <section>
+        <h1>Links and Resources</h1>
+        <p><a href="http://www.w3.org/TR/CSS21/propidx.html">Is the property inherited?</a></p>
+        </section>
+      </section>
+      
+      <section>
+        <h1>The Cascade - Specificity</h1>
+        <p>Specificity is a mechanism within the CSS cascade that aids conflict resolution. In order of importance:</p>
+        <ol>
+          <li>Existance of style attribute</li>
+          <li>Counting id selectors</li>
+          <li>Counting class, attribute and pseudo selectors</li>
+          <li>Counting element type selectors and pseudo-element</li>
+        </ol>
+      </section>
+      
+      <section>
+        <h1>Specificity Example</h1>
+        <pre><code>&lt;p class="message" style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre>
+        <table id="specificity" border="1" style="font-size: 0.5em;">
+          <caption>In order of importance, from left to right:</caption>
+          <thead>
+            <tr style="background-color: #eee;">
+              <th scope="col">Selector</th>
+              <th scope="col">Inline Style</th>
+              <th scope="col">IDs</th>
+              <th scope="col">Classes, Attributes and Pseudo-classes</th>
+              <th scope="col">Element Types and Pseudo-elements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: white; font-weight: bold;">
+              <td>Inline Style</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr style="background-color: white;">
+              <td>body#home div#warning p.message {
+          color: blue;
+        }</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>3</td>
+            </tr>
+            <tr style="background-color: white;">
+              <td>* body#home>div#warning .message {
+          color: red;
+        }</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>2</td>
+            </tr>
+            <tr style="background-color: white;">
+              <td>#home #warning p.message {
+          color: yellow;
+        }</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr style="background-color: white;">
+              <td>#warning p.message {
+          color: white;
+        }</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr style="background-color: white;">
+              <td>p.message {
+          color: green;
+        }</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <section>
+        <h1>Avoid Inline Styling</h1>
+        <p>Inline style rules always have the highest specificity, the only way to overwrite them within the CSS cascade is to use the <span style="font-weight: bold">!important</span> statement on the relevant declarations—an approach that creates a maintenance nightmare.</p>
+        <div class="side-by-side"><pre><code>&lt;p style=&quot;color:red;&quot;&gt;Red Text&lt;/p&gt;</code></pre></div>
+        <div class="side-by-side"><pre><code>p {
   color: blue !important;
 }</code></pre></div>
-                <p style="color:blue;">Red text</p>
-            
-            </section>
-            
-            <section>
-                <section>
-                    <h1>Media Queries</h1>
-                    <p>You can apply different styles depending on a number of so called media queries.</p>
-                    <pre><code>/* Type */
+        <p style="color:blue;">Red text</p>
+        
+      </section>
+      
+      <section>
+        <section>
+          <h1>Media Queries</h1>
+          <p>You can apply different styles depending on a number of so called media queries.</p>
+          <pre><code>/* Type */
 @media screen, projection { ... }
 
 /* Dimension */
@@ -1098,241 +1105,236 @@ div &gt; p:first-child { text-indent: 0 }</code></pre>
 @media (color) { /* Screen is in color */ }
 @media (min-color-index: 256) { /* At least 256 colors */ }
 @media (monochrome) { /* Screen is monochrome */ }</code></pre>
-
-                </section>
-                
-                <section> 
-                    <h1>Links and Resources</h1>
-                    <ul>
-                        <li><a href="http://easy-readers.net/books/adaptive-web-design/">Adaptive Web Design</a></li>
-                        <li><a href="http://stuffandnonsense.co.uk/projects/320andup/">320 and Up</a></li>
-                    </ul>
-                </section>
-            
-            </section>
-            
-            <section>
-                
-                <section>
-                    
-                    <h1>Browser Compatibility</h1>
-                    <p>One of the biggest challenges in web development is to make your pages look good in all major browsers. There are tools, resources and different approaches of how to solve this.</p>
-                    <ul>
-                        <li>Validators</li>
-                        <li>Compatibility Tables</li>
-                        <li>Online Site Checks</li>
-                        <li>Feature Detection Tools</li>
-                    </ul>
-                
-                </section>
-                
-                <section>
-                    
-                    <h1>Links and Resources</h1>
-                    <ul>
-                        <li><a href="http://validator.w3.org/">W3C Markup Validator</a></li>
-                        <li><a href="http://jigsaw.w3.org/css-validator/">W3C CSS Validator</a></li>
-                        <li><a href="http://caniuse.com/">CanIUse - Browser Compatibility Tables</a></li>
-                        <li><a href="http://crossbrowsertesting.com/">Cross Browser Testing Online</a></li>
-                        <li><a href="http://browsershots.org/">Browser Shots</a></li>
-                        <li><a href="http://modernizr.com/">Modernizr</a></li>
-                        <li><a href="http://code.google.com/p/html5shiv/">html5shiv</a></li>
-                        <li><a href="http://code.google.com/p/ie7-js/">ie7.js (ie8.js and ie9.js)</a></li>
-                    </ul>
-                
-                </section>
-                
-            </section>
-            
-            <section>
-                <section>
-                    <h1>Lab time!</h1>
-                    <p>Warm-up! It is time to get intimate with beautiful CSS stuff.</p>
-                </section>
-            
-                <section>
-                    <h1>Lab 6 - Tools</h1>
-                    <p>Besides an editor, your browser is your primary tool. We'll be focusing on <em>Google Chrome</em> since it has an excellent inspector tool that comes free with the browser.</p>
-                    <p>Check out <strong>http://goo.gl/4NMEA</strong> for more info.</p>
-                </section>
-                
-                <section>
-                    <h1>Google Chrome Inspector</h1>
-                    <ul>
-                        <li>You can edit your stylesheets and see the results right in you browser</li>
-                        <li>You can see how stylesheet rules applies to your document</li>
-                        <li>You can also edit the HTML of the webpage</li>
-                        <li>JavaScript can be manipulated as well (but we'll hold off on that for now…)</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h1>Try for yourself!</h1>
-                    <ul>
-                      <li>Study the positioning styling in the lab material.</li>
-                      <li>Get familiar with selectors, pseudo-selectors and properties.</li>
-                      <li>Disable a style property on a selected element.</li>
-                      <li>Change the color of your paragraph text.</li>
-                      <li>Add a new style rule (both on a single element and globally).</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h1>Other browser tools available</h1>
-                    <p>Firefox, Safari and IE has similar tools. Try them out and compare!</p>
-                </section>
-            
-                <section>
-                    <h1>Lab 7 - Layout &amp; styling</h1>
-                    <ul>
-                        <li>Make text wrap around the images.</li>
-                        <li><strong>All</strong> headers should use the color code #444.</li>
-                        <li><strong>All</strong> paragraphs should use the color code #666.</li>
-                        <li>The list in the header should be distributed horizontally.</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h1>Lab 7b</h1>
-                    <ul>
-                      <li>Set a background image on the body element.</li>
-                      <li>Set the width of the container div to 980px.</li>
-                      <li>Set the background of the container div to #ddd.</li>
-                      <li>Center the container div in the browser window.</li>
-                      <li>The primary div should be 600px and the secondary 320px wide. Both of these divs should be positioned (floated) next to each other, to the left.</li>
-                      <li>Set background-color on the header, primary, secondary and footer divs to #fefefe.</li>
-                    </ul>
-                </section>
-            
-                <section>
-                    <h1>Lab 7</h1>
-                    <img src="resources/lab7-layout.png" alt="" width="600px">
-                </section>
-            
-                <section>
-                    <h1>Lab 8 - Use the cascade, Luke</h1>
-                    <ul>
-                        <li>
-                            <strong>ALL</strong> text should:
-                            <ul>
-                                <li>have a line height of 1.5.</li>
-                                <li>have an increased font size of 1.2em.</li>
-                                <li>use the font family "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>ALL</strong> divs should have 10 pixels of margin and padding
-                            <ul>
-                                <li>…except for divs inside forms!</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h1>Lab 8</h1>
-                    <img src="resources/lab8.png" alt="" width="600px">
-                </section>
-            
-                <section>
-                    <h1>Lab 9</h1>
-                    <p>Style the form so that every input field (except checkbox and radio buttons) has:</p>
-                    <div class="side-by-side">
-                      <ul>
-                        <li>A solid border of 1px.</li>
-                        <li>A border radius of 5px.</li>
-                        <li>A padding of 5px.</li>
-                        <li>A font size of 0.75em</li>
-                      </ul>
-                    </div>
-                    <div class="side-by-side">
-                      <img src="resources/lab9.png" alt="" width="500px">
-                    </div>
-                </section>
-            
-                <section>
-                    <h1>Lab 10 - Media Queries</h1>
-                    <ul>
-                        <li>For widths less than 1020px:</li>
-                        <ul>
-                            <li>set image widths to 100% and no margins.</li>
-                            <li>set no margins for all divs.</li>
-                            <li>set the primary and secondary div widths to 50%.</li>
-                            <li>set the containers width to 100%, no margins, 10px padding and a #fefefe background color.</li>
-                        </ul>
-                        <li>For widths less than 768px:</li>
-                        <ul>
-                            <li>set primary and secondary div width to 100%.</li>
-                        </ul>
-                    </ul>
-                </section>
-                
-                <section>
-                  <h1>Lab 10</h1>
-                  <img src="resources/lab10.png" alt="">
-                </section>
-                
-                <section>
-                    <h1>Lab 11 - Freeride</h1>
-                    <p>For example, you can:</p>
-                    <ul>
-                      <li>Fix the nested form input field within the label.</li>
-                      <li>Style the images differently.</li>
-                      <li>Make the container background color fade to transparent downwards.</li>
-                      <li>Use a nice webfont. <a href="http://www.google.com/webfonts">Google Web Fonts</a></li>
-                      <li>Use Twitter Bootstrap for styling and responsiveness. This requires HTML adaptation.</li>
-                    </ul>
-                </section>
-                
-                <section>
-                  <h1>Lab 11</h1>
-                  <img src="resources/lab11.png" alt="" width="650px">
-                </section>
-                
-            </section>
-            
-        </div>
-
-        <!-- The navigational controls UI -->
-        <aside class="controls">
-            <a class="left" href="#">&#x25C4;</a>
-            <a class="right" href="#">&#x25BA;</a>
-            <a class="up" href="#">&#x25B2;</a>
-            <a class="down" href="#">&#x25BC;</a>
-        </aside>
-
-        <!-- Presentation progress bar -->
-        <div class="progress"><span></span></div>
-
+        </section>
+        
+        <section> 
+          <h1>Links and Resources</h1>
+          <ul>
+            <li><a href="http://easy-readers.net/books/adaptive-web-design/">Adaptive Web Design</a></li>
+            <li><a href="http://stuffandnonsense.co.uk/projects/320andup/">320 and Up</a></li>
+          </ul>
+        </section>
+        
+      </section>
+      
+      <section>
+        
+        <section>
+          
+          <h1>Browser Compatibility</h1>
+          <p>One of the biggest challenges in web development is to make your pages look good in all major browsers. There are tools, resources and different approaches of how to solve this.</p>
+          <ul>
+            <li>Validators</li>
+            <li>Compatibility Tables</li>
+            <li>Online Site Checks</li>
+            <li>Feature Detection Tools</li>
+          </ul>
+          
+        </section>
+        
+        <section>
+          
+          <h1>Links and Resources</h1>
+          <ul>
+            <li><a href="http://validator.w3.org/">W3C Markup Validator</a></li>
+            <li><a href="http://jigsaw.w3.org/css-validator/">W3C CSS Validator</a></li>
+            <li><a href="http://caniuse.com/">CanIUse - Browser Compatibility Tables</a></li>
+            <li><a href="http://crossbrowsertesting.com/">Cross Browser Testing Online</a></li>
+            <li><a href="http://browsershots.org/">Browser Shots</a></li>
+            <li><a href="http://modernizr.com/">Modernizr</a></li>
+            <li><a href="http://code.google.com/p/html5shiv/">html5shiv</a></li>
+            <li><a href="http://code.google.com/p/ie7-js/">ie7.js (ie8.js and ie9.js)</a></li>
+          </ul>
+          
+        </section>
+        
+      </section>
+      
+      <section>
+        <section>
+          <h1>Lab time!</h1>
+          <p>Warm-up! It is time to get intimate with beautiful CSS stuff.</p>
+        </section>
+        
+        <section>
+          <h1>Lab 6 - Tools</h1>
+          <p>Besides an editor, your browser is your primary tool. We'll be focusing on <em>Google Chrome</em> since it has an excellent inspector tool that comes free with the browser.</p>
+          <p>Check out <strong>http://goo.gl/4NMEA</strong> for more info.</p>
+        </section>
+        
+        <section>
+          <h1>Google Chrome Inspector</h1>
+          <ul>
+            <li>You can edit your stylesheets and see the results right in you browser</li>
+            <li>You can see how stylesheet rules applies to your document</li>
+            <li>You can also edit the HTML of the webpage</li>
+            <li>JavaScript can be manipulated as well (but we'll hold off on that for now…)</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Try for yourself!</h1>
+          <ul>
+            <li>Study the positioning styling in the lab material.</li>
+            <li>Get familiar with selectors, pseudo-selectors and properties.</li>
+            <li>Disable a style property on a selected element.</li>
+            <li>Change the color of your paragraph text.</li>
+            <li>Add a new style rule (both on a single element and globally).</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Other browser tools available</h1>
+          <p>Firefox, Safari and IE has similar tools. Try them out and compare!</p>
+        </section>
+        
+        <section>
+          <h1>Lab 7 - Layout &amp; styling</h1>
+          <ul>
+            <li>Make text wrap around the images.</li>
+            <li><strong>All</strong> headers should use the color code #444.</li>
+            <li><strong>All</strong> paragraphs should use the color code #666.</li>
+            <li>The list in the header should be distributed horizontally.</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 7b</h1>
+          <ul>
+            <li>Set a background image on the body element.</li>
+            <li>Set the width of the container div to 980px.</li>
+            <li>Set the background of the container div to #ddd.</li>
+            <li>Center the container div in the browser window.</li>
+            <li>The primary div should be 600px and the secondary 320px wide. Both of these divs should be positioned (floated) next to each other, to the left.</li>
+            <li>Set background-color on the header, primary, secondary and footer divs to #fefefe.</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 7</h1>
+          <img src="resources/lab7-layout.png" alt="" width="600px">
+        </section>
+        
+        <section>
+          <h1>Lab 8 - Use the cascade, Luke</h1>
+          <ul>
+            <li>
+              <strong>ALL</strong> text should:
+              <ul>
+                <li>have a line height of 1.5.</li>
+                <li>have an increased font size of 1.2em.</li>
+                <li>use the font family "HelveticaNeue-Light", Helvetica, Arial, "Lucida Grande", sans-serif.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>ALL</strong> divs should have 10 pixels of margin and padding
+              <ul>
+                <li>…except for divs inside forms!</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 8</h1>
+          <img src="resources/lab8.png" alt="" width="600px">
+        </section>
+        
+        <section>
+          <h1>Lab 9</h1>
+          <p>Style the form so that every input field (except checkbox and radio buttons) has:</p>
+          <div class="side-by-side">
+            <ul>
+            <li>A solid border of 1px.</li>
+            <li>A border radius of 5px.</li>
+            <li>A padding of 5px.</li>
+            <li>A font size of 0.75em</li>
+            </ul>
+          </div>
+          <div class="side-by-side">
+            <img src="resources/lab9.png" alt="" width="500">
+          </div>
+        </section>
+        
+        <section>
+          <h1>Lab 10 - Media Queries</h1>
+          <ul>
+            <li>For widths less than 1020px:</li>
+            <ul>
+              <li>set image widths to 100% and no margins.</li>
+              <li>set no margins for all divs.</li>
+              <li>set the primary and secondary div widths to 50%.</li>
+              <li>set the containers width to 100%, no margins, 10px padding and a #fefefe background color.</li>
+            </ul>
+            <li>For widths less than 768px:</li>
+            <ul>
+              <li>set primary and secondary div width to 100%.</li>
+            </ul>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 10</h1>
+          <img src="resources/lab10.png" alt="">
+        </section>
+        
+        <section>
+          <h1>Lab 11 - Freeride</h1>
+          <p>For example, you can:</p>
+          <ul>
+            <li>Fix the nested form input field within the label.</li>
+            <li>Style the images differently.</li>
+            <li>Make the container background color fade to transparent downwards.</li>
+            <li>Use a nice webfont. <a href="http://www.google.com/webfonts">Google Web Fonts</a></li>
+            <li>Use Twitter Bootstrap for styling and responsiveness. This requires HTML adaptation.</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h1>Lab 11</h1>
+          <img src="resources/lab11.png" alt="" width="650px">
+        </section>
+        
+      </section>
+      
     </div>
-
-    <script src="../reveal.js/lib/js/head.min.js"></script>
-    <script src="../reveal.js/js/reveal.min.js"></script>
-
-    <script>
-
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
-
-        theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
-
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-        { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-        { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
-        ]
-    });
-
-    </script>
-
+    
+    <!-- The navigational controls UI -->
+    <aside class="controls">
+      <a class="left" href="#">&#x25C4;</a>
+      <a class="right" href="#">&#x25BA;</a>
+      <a class="up" href="#">&#x25B2;</a>
+      <a class="down" href="#">&#x25BC;</a>
+    </aside>
+    
+    <!-- Presentation progress bar -->
+    <div class="progress"><span></span></div>
+    
+  </div>
+  
+  <script src="../reveal.js/lib/js/head.min.js"></script>
+  <script src="../reveal.js/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    
+    theme: Reveal.getQueryHash().theme || 'jayway', // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/linear(2d)
+    
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+    { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+    { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+    { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+    ]
+  });
+  </script>
 </body>
 </html>
