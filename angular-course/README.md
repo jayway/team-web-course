@@ -2,16 +2,40 @@
 
 ## Goals of the course
 
-  * Participant should be able to work in an AngularJS project.
-  * Participant should be able to understand where to look in the code to solve a problem.
-  * Participant should not necessarily be able to start and lead an AngularJS project.
-  * Participant should not necessarily know everything about how to best structure an application.
+After this course...
 
-### Tips for the instructor:
+  * ...participant should be able to work in an AngularJS project.
+  * ...participant should be able to understand where to look in the code to solve a problem.
+  * ...participant should not necessarily be able to start and lead an AngularJS project.
+  * ...participant should not necessarily know everything about how to best structure an application.
 
-  * Don't try to teach too many details.
-  * Don't make the examples/labs over-architectured.
-  * Emphazise differences between the jQuery way and the AngularJS way.
+## Sections
+
+This course follows closely the structure of the official AngularJS Tutorial, and uses it specifically for labs.
+
+<ol start="0">
+  <li>Bootstrapping</li>
+  <li>Static Template</li>
+  <li>Angular Templates</li>
+  <li>Filtering Repeaters</li>
+  <li>Two-way Data Binding</li>
+  <li>XHRs &amp; Dependency Injection</li>
+  <li>Templating Links &amp; Images</li>
+  <li>Routing &amp; Multiple Views</li>
+  <li>More Templating</li>
+  <li>Filters</li>
+  <li>Event Handlers</li>
+  <li>REST and Custom Services</li>
+  <li>Applying Animations</li>
+</ol>
+
+In addition, differences between the jQuery way and _The Angular Way_ is empazised throughout.
+
+## Tips for the instructor:
+
+  * Don't try to teach too many details at once.
+  * Don't make examples over-architectured.
+  * Emphazise differences between the jQuery way and the AngularJS way, wherever applicable.
 
 ## Lab
 
