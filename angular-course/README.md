@@ -7,7 +7,7 @@
   * Participant should not necessarily be able to start and lead an AngularJS project.
   * Participant should not necessarily know everything about how to best structure an application.
 
-### Specifically...
+### Tips for the instructor:
 
   * Don't try to teach too many details.
   * Don't make the examples/labs over-architectured.
@@ -18,13 +18,13 @@
 ### Prerequisites
 
   * Install git
-  * Install NodeJS v0.8, recommended to [install via nvm](https://github.com/creationix/nvm/tree/master#readme):
+  * Install NodeJS v0.10, recommended to [install via nvm](https://github.com/creationix/nvm/tree/master#readme):
     1. `curl https://raw.github.com/creationix/nvm/master/install.sh | sh`
-    1. `nvm install 0.8`
-    1. `nvm alias default 0.8`
+    1. `nvm install 0.10`
+    1. `nvm alias default 0.10`
     1. Test installation with `node --version`
-  * Install [Testacular](http://testacular.github.com/) for running tests in the exercises
-    1. `npm install -g testacular`
+  * Install [Karma](http://karma-runner.github.io/) for running tests in the exercises
+    1. `npm install -g karma`
 
 ### Optionally install
 
@@ -56,16 +56,16 @@ When you need to create an AngularJS project (for fun or profit), we recommend Y
 
 ### How to get started with Yeoman and AngularJS
 
-These instructions are valid for a clean Ubuntu 12.10.
+These instructions are at least valid for a clean Ubuntu 12.10.
 
-  1. Install prerequisites as specified above (git, nodejs, testacular).
+  1. Install prerequisites as specified above (git, nodejs, karma).
   1. `sudo apt-get install aptitude`
   1. `sudo aptitude install ruby-compass`
   1. Follow instructions on front page of [yeoman.io](http://yeoman.io/) for setting up and running an AngularJS project.
 
 ### Optionally customize project configuration
 
-  * Edit `testacular.conf`:
+  * Edit `karma.conf`:
     * Change browser(s) to run end-2-end tests on, for example `browsers = ['Chrome'];` to `browsers = ['Firefox'];`
   * Edit `Gruntfile.js`:
     * Change `hostname: 'localhost'` to `hostname: '0.0.0.0'` if you want to access the local server from another computer.
