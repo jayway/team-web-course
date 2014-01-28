@@ -46,6 +46,7 @@
   <li><strong>Do: Filters</strong></li>
   <li><strong>Do: Event Handlers</strong></li>
   <li>(Optional: REST and Custom Services)</li>
+  <li>(Optional: Applying Animations)</li>
 </ol>
 
 ### Go ahead --> [docs.angularjs.org/tutorial](http://docs.angularjs.org/tutorial/)
